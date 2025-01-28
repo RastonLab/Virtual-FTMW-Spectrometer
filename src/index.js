@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 // components
 import App from "./App";
-import ExperimentalSetup from "./routes/ExperimentalSetup";
+import ExperimentalSetup from './components/ExperimentalSetup/ExperimentalSetup';
 import FindPeaks from "./routes/FindPeaks";
 import InstrumentWindow from "./routes/InstrumentWindow";
 import NotFound from "./components/NotFound";
