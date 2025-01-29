@@ -1,4 +1,4 @@
-import { Grid, Input, Slider, Typography } from "@mui/material";
+import { Grid, Input, Slider } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice';
 import "../../style/components/NumberInputs.css"
