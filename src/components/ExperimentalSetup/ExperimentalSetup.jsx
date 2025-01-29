@@ -27,11 +27,11 @@ const ExperimentalSetup = () => {
           </div>
 
           <div className="parameter">
-            <StepSizeOptions/>
+            <FrequencyRange min={2} max={40}/>
           </div>
 
           <div className="parameter">
-            <FrequencyRange min={2} max={40}/>
+            <StepSizeOptions/>
           </div>
 
           <div className="parameter">

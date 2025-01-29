@@ -4,7 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { useDispatch, useSelector } from 'react-redux';
-import { setStepSize, setStepSizeInGHz } from '../../redux/experimentalSetupSlice';
+import { setStepSize } from '../../redux/experimentalSetupSlice';
 
 /**
  * A component that contains a MUI RadioGroup for the step size values
@@ -18,7 +18,6 @@ export default function StepSizeOptions() {
    */
   const handleChange = (event, data) => {
     dispatch(setStepSize(parseFloat(data)));
-    dispatch(setStepSizeInGHz(parseFloat(data) / 1000));
   }
 
   return (

@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   molecule: "HCN",
   stepSize: 0.1,
-  stepSizeInGHz: 0.0001,
   frequencyMin: 2,
   frequencyMax: 40,
   numCyclesPerStep: 1,
@@ -28,12 +27,6 @@ const experimentalSetupSlice = createSlice({
      */
     setStepSize: (state, { payload }) => {
       state.stepSize = payload;
-    },
-    /**
-     * Sets the step size in GHz value
-     */
-    setStepSizeInGHz: (state, { payload }) => {
-      state.stepSizeInGHz = payload
     },
     /**
      * Sets the minimum frequency value
@@ -65,7 +58,6 @@ const experimentalSetupSlice = createSlice({
 export const {
   setMolecule,
   setStepSize,
-  setStepSizeInGHz,
   setFrequencyMin,
   setFrequencyMax,
   setNumCyclesPerStep,

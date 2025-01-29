@@ -9,7 +9,7 @@ import FormLabel from '@mui/material/FormLabel';
  */
 export default function FrequencyRange({ min, max }) {
   const dispatch = useDispatch();
-  const { frequencyMin, frequencyMax, stepSizeInGHz } = useSelector((store) => store.experimentalSetup);
+  const { frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
 
   /**
    * Sets the min and max value depending on the the slider
@@ -74,7 +74,6 @@ export default function FrequencyRange({ min, max }) {
             onChange={handleInputChangeMin}
             onBlur={handleBlur}
             inputProps={{
-              step: stepSizeInGHz,
               min: min,
               max: max,
               type: "number",
@@ -91,7 +90,6 @@ export default function FrequencyRange({ min, max }) {
             ]}
             min={min}
             max={max}
-            step={stepSizeInGHz}
             onChange={handleSliderChange}
             aria-labelledby="input-slider"
           />
@@ -104,7 +102,6 @@ export default function FrequencyRange({ min, max }) {
             onChange={handleInputChangeMax}
             onBlur={handleBlur}
             inputProps={{
-              step: stepSizeInGHz,
               min: min,
               max: max,
               type: "number",
