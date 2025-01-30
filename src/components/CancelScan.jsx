@@ -34,7 +34,7 @@ export default function CancelScan() {
       onClick={handleClick}
       disabled={!fetching}
     >
-      Cancel Scan
+      Cancel
     </button>
   );
 }

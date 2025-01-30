@@ -75,7 +75,7 @@ export const menuItems = [
           <Fetch
             type="background"
             fetchURL={BACKGROUND}
-            buttonText={"Collect Background Spectrum"}
+            buttonText={"Acquire spectrum"}
           />
         ),
       },
@@ -85,12 +85,12 @@ export const menuItems = [
           <Fetch
             type="sample"
             fetchURL={SAMPLE}
-            buttonText={"Collect Sample Spectrum"}
+            buttonText={"Stop acquisition"}
           />
         ),
       },
       {
-        label: "Cancel Scan",
+        label: "Cancel",
         component: <CancelScan />,
       },
     ],
