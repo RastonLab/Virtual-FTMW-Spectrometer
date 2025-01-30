@@ -59,7 +59,7 @@ export default function Tutorial() {
             and Mercury-Cadmium-Telluride (MCT) detector.
           </li>
           <li>
-            Navigate to the <b>Measure</b> menu and select{" "}
+            Navigate to the <b>Acquire</b> menu and select{" "}
             <b>Collect Background Spectrum</b>. You will be taken to the{" "}
             <b>Instrument window</b> where you will see the corner cube mirror
             on the right move back and forth as the spectrum is acquired. While
@@ -70,7 +70,7 @@ export default function Tutorial() {
           </li>
           <li>
             After the background scans have been completed, navigate to the{" "}
-            <b>Measure</b> menu and choose <b>Collect Sample Spectrum</b>. This
+            <b>Acquire</b> menu and choose <b>Collect Sample Spectrum</b>. This
             will initiate the acquisition of a spectrum with your sample in the
             gas cell. Once again, you will be taken to the{" "}
             <b>Instrument window</b> where you can learn more about the FTIR
