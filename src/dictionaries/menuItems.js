@@ -90,7 +90,7 @@ export const menuItems = [
         ),
       },
       {
-        label: "Cancel Scan",
+        label: "Cancel",
         component: <CancelScan />,
       },
     ],
