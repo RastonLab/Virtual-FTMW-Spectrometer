@@ -43,7 +43,7 @@ export default function Tutorial() {
 
         <p>
           This is a brief tutorial that shows how to acquire spectra, find
-          peaks, and export data using FTMW-SIS. In this tutorial we focus on
+          peaks, and export data using FTIR-SIS. In this tutorial we focus on
           carbon monoxide (CO) in the mid-IR.
         </p>
         <ol>
@@ -84,7 +84,7 @@ export default function Tutorial() {
             Transmittance Spectrum (T=I/I<sub>o</sub>), and Absorbance Spectrum
             (-log<sub>10</sub>T). These spectra are graphed with plotly, which
             allows for the user to zoom in by dragging a rectangle over the
-            region of interest. Click/tap on "Absorbance Spectrum" and zoom in
+            region of interest. Click/tap on “Absorbance Spectrum” and zoom in
             on the (rotationally resolved) fundamental band of CO (~2000-2250 cm
             <sup>-1</sup>). You can download an image of this plot by selecting
             the camera icon in plotly's menu bar:
@@ -102,15 +102,15 @@ export default function Tutorial() {
             then <b>Absorbance Spectrum Data</b>.
           </li>
           <li>
-            A particularly useful feature of FTMW-SIS is the ability to generate
+            A particularly useful feature of FTIR-SIS is the ability to generate
             a list of peaks and their intensities. Using these values you can
             perform analyses to determine molecular constants and the rotational
             temperature. To generate such a list, navigate to the <b>Window</b>{" "}
-            menu and choose <b>Find Peaks</b>. Set the "Lower Domain Bound" to
-            2000 cm<sup>-1</sup>, the "Upper Domain Bound" to 2250 cm
-            <sup>-1</sup>, and the "Threshold" to a positive number like 0.1
+            menu and choose <b>Find Peaks</b>. Set the “Lower Domain Bound” to
+            2000 cm<sup>-1</sup>, the “Upper Domain Bound” to 2250 cm
+            <sup>-1</sup>, and the “Threshold” to a positive number like 0.1
             (this is the absorbance value above which peaks will be identified).
-            Click/tap on "Find Peaks", after which a list of peak positions and
+            Click/tap on “Find Peaks”, after which a list of peak positions and
             their intensities will appear. Note that if you have a very large
             number of peaks you might want to consider increasing the threshold.
             These values can be selected and copied to a spreadsheet for
@@ -130,8 +130,8 @@ export default function Tutorial() {
         </ol>
         <p>
           That's it for now. Please note that the spectra you have generated
-          with FTMW-SIS will be almost indistinguishable from real spectra
-          collected with a commercial grade FTMW spectrometer. We hope you enjoy
+          with FTIR-SIS will be almost indistinguishable from real spectra
+          collected with a commercial grade FTIR spectrometer. We hope you enjoy
           the program we have developed!
         </p>
       </Dialog>

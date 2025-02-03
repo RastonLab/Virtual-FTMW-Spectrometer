@@ -47,8 +47,8 @@ export default function LandingPage({ isMenu }) {
           Welcome to
           <span className="red"> F</span>
           <span className="orange">T</span>
-          <span className="yellow">M</span>
-          <span className="green">W</span>
+          <span className="yellow">I</span>
+          <span className="green">R</span>
           <span className="teal">-</span>
           <span className="blue">S</span>
           <span className="indigo">I</span>
@@ -57,7 +57,7 @@ export default function LandingPage({ isMenu }) {
 
         <h2>
           <u className="red">F</u>ourier <u className="orange">T</u>ransform{" "}
-          <u className="yellow">M</u>icro<u className="green">W</u>ave
+          <u className="yellow">I</u>nfra<u className="green">R</u>ed
           <span className="teal">-</span>
           <u className="blue">S</u>cientific <u className="indigo">I</u>
           nstrument
