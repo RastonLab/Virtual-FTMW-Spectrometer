@@ -148,8 +148,8 @@ export default function App() {
             <Link className="logo" to="/">
               <span className="red">F</span>
               <span className="orange">T</span>
-              <span className="yellow">I</span>
-              <span className="green">R</span>
+              <span className="yellow">M</span>
+              <span className="green">W</span>
               <span className="teal">-</span>
               <span className="blue">S</span>
               <span className="indigo">I</span>
