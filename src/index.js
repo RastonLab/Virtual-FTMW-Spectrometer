@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import ExperimentalSetup from './components/ExperimentalSetup/ExperimentalSetup';
 import FindPeaks from "./routes/FindPeaks";
-import InstrumentWindow from "./routes/InstrumentWindow";
+import InstrumentWindow from './components/InstrumentWindow/InstrumentWindow';
 import NotFound from "./components/NotFound";
 import SpectraWindow from "./routes/SpectraWindow";
 

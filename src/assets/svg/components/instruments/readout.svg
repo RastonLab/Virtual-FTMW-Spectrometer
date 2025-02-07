@@ -1,19 +1,198 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="1530" height="530" version="1.1" viewBox="0 0 1530 530" xmlns="http://www.w3.org/2000/svg">
- <g id="readout" transform="translate(486.03 341.41)">
-  <path id="background" d="m-478.38-333.76v514.71h1514.7v-514.71h-757.35z" fill="#1d2022" stroke="#daa520" stroke-linecap="square" stroke-linejoin="round" stroke-width="15.293" style="paint-order:fill markers stroke"/>
-  <text id="resolution-text" x="573.35425" y="36.863239" fill="#ffffff" font-family="sans-serif" font-size="74.667px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="573.35425" y="36.863239" font-size="74.667px">Gas</tspan></text>
-  <rect id="resolution-text-box" x="303.97" y="63.592" width="700" height="100" fill="#fff" style="paint-order:fill markers stroke"/>
-  <text id="resolution-value" x="651.38818" y="120.09432" display="none" dominant-baseline="central" fill="#000000" font-family="sans-serif" font-size="85.333px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="651.38818" y="120.09432">props.resolution</tspan></text>
-  <text id="range-title" x="-219.53375" y="38.321575" fill="#ffffff" font-family="sans-serif" font-size="74.667px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0;paint-order:fill markers stroke" xml:space="preserve"><tspan x="-219.53375" y="38.321575" font-size="74.667px" style="line-height:0">Cycle</tspan></text>
-  <rect id="range-text-box" x="-446.03" y="63.592" width="700" height="100" fill="#fff" style="paint-order:fill markers stroke"/>
-  <text id="range-value" x="-98.611832" y="120.09432" display="none" dominant-baseline="central" fill="#000000" font-family="sans-serif" font-size="85.333px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="-98.611824" y="120.09432">props.range</tspan></text>
-  <text id="scan-title" x="336.79764" y="-219.67842" fill="#ffffff" font-family="sans-serif" font-size="74.667px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="336.79764" y="-219.67842" font-size="74.667px">Frequency (GHz)</tspan></text>
-  <rect id="scan-text-box" x="303.97" y="-186.41" width="700" height="100" fill="#fff" style="paint-order:fill markers stroke"/>
-  <text id="scan-value" x="651.38818" y="-129.90564" display="none" dominant-baseline="central" fill="#000000" font-family="sans-serif" font-size="85.333px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="651.38818" y="-129.90564">props.scan</tspan></text>
-  <text id="opd-title" x="-227.57184" y="-222.12114" fill="#ffffff" font-family="'Franklin Gothic Medium'" font-size="74.667px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="-227.57184" y="-222.12114" font-family="sans-serif" font-size="74.667px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Range</tspan></text>
-  <rect id="opd-text-box" x="-446.03" y="-186.41" width="700" height="100" fill="#fff" style="paint-order:fill markers stroke"/>
-  <text id="opd-value" x="-98.611832" y="-129.90564" display="none" dominant-baseline="central" fill="#000000" font-family="sans-serif" font-size="85.333px" stroke-linecap="square" stroke-linejoin="round" stroke-width="15" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;paint-order:fill markers stroke" xml:space="preserve"><tspan x="-98.611824" y="-129.90564">props.opd</tspan></text>
- </g>
+
+<svg
+   width="1530"
+   height="530"
+   version="1.1"
+   viewBox="0 0 1530 530"
+   id="svg8"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <g
+     id="readout"
+     transform="matrix(1.0011697,0,0,1.0046483,488.01776,342.42075)">
+    <path
+       id="background-1"
+       d="m -478.38,-333.76 v 514.71 h 1514.7 V -333.76 H 278.97 Z"
+       fill="#1d2022"
+       stroke="#daa520"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15.293"
+       style="paint-order:fill markers stroke" />
+    <text
+       id="gas-text"
+       x="573.35425"
+       y="36.863239"
+       fill="#ffffff"
+       font-family="sans-serif"
+       font-size="74.667px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="573.35425"
+         y="36.863239"
+         font-size="74.667px"
+         id="tspan1-8">Gas</tspan></text>
+    <rect
+       id="gas-text-box"
+       x="303.97"
+       y="63.591999"
+       width="700"
+       height="100"
+       fill="#ffffff"
+       style="paint-order:fill markers stroke" />
+    <text
+       id="gas-value"
+       x="651.38818"
+       y="120.09432"
+       display="none"
+       dominant-baseline="central"
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="85.333px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       text-anchor="middle"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="651.38818"
+         y="120.09432"
+         id="tspan2-0">gas</tspan></text>
+    <text
+       id="cycle-title"
+       x="-219.53375"
+       y="38.321575"
+       fill="#ffffff"
+       font-family="sans-serif"
+       font-size="74.667px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       style="line-height:0;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="-219.53375"
+         y="38.321575"
+         font-size="74.667px"
+         style="line-height:0"
+         id="tspan3-6">Cycle</tspan></text>
+    <rect
+       id="cycle-text-box"
+       x="-446.03"
+       y="63.591999"
+       width="700"
+       height="100"
+       fill="#ffffff"
+       style="paint-order:fill markers stroke" />
+    <text
+       id="cycle-value"
+       x="-98.611832"
+       y="120.09432"
+       display="none"
+       dominant-baseline="central"
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="85.333px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       text-anchor="middle"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="-98.611824"
+         y="120.09432"
+         id="tspan4-2">cycle</tspan></text>
+    <text
+       id="frequency-title"
+       x="336.79764"
+       y="-219.67842"
+       fill="#ffffff"
+       font-family="sans-serif"
+       font-size="74.667px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="336.79764"
+         y="-219.67842"
+         font-size="74.667px"
+         id="tspan5-9">Frequency (MHz)</tspan></text>
+    <rect
+       id="frequency-text-box"
+       x="303.97"
+       y="-186.41"
+       width="700"
+       height="100"
+       fill="#ffffff"
+       style="paint-order:fill markers stroke" />
+    <text
+       id="frequency-value"
+       x="651.38818"
+       y="-129.90564"
+       display="none"
+       dominant-baseline="central"
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="85.333px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       text-anchor="middle"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="651.38818"
+         y="-129.90564"
+         id="tspan6-3">frequency</tspan></text>
+    <text
+       id="range-title"
+       x="-227.57184"
+       y="-222.12114"
+       fill="#ffffff"
+       font-family="'Franklin Gothic Medium'"
+       font-size="74.667px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="-227.57184"
+         y="-222.12114"
+         font-family="sans-serif"
+         font-size="74.667px"
+         style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan7-8">Range</tspan></text>
+    <rect
+       id="range-text-box"
+       x="-446.03"
+       y="-186.41"
+       width="700"
+       height="100"
+       fill="#ffffff"
+       style="paint-order:fill markers stroke" />
+    <text
+       id="range-value"
+       x="-98.611832"
+       y="-129.90564"
+       display="none"
+       dominant-baseline="central"
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="85.333px"
+       stroke-linecap="square"
+       stroke-linejoin="round"
+       stroke-width="15"
+       text-anchor="middle"
+       style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;paint-order:fill markers stroke"
+       xml:space="preserve"><tspan
+         x="-98.611824"
+         y="-129.90564"
+         id="tspan8-8">range</tspan></text>
+  </g>
 </svg>
