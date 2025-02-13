@@ -1,16 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import SvgInstrumentWindow from './SvgInstrumentWindow';
+import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
+import '../../style/InstrumentWindow.css';
+
 
 /**
  * A component that contains the instrument window
  */
 const InstrumentWindow = () => {
-  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
+  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, microwavePulseWidth } = useSelector((store) => store.experimentalSetup);
 
   return (
     <div id='instrument-window'>
-      <SvgInstrumentWindow molecule={molecule} range={`${frequencyMin} - ${frequencyMax}`} frequency={stepSize} cyclePerStep={`${numCyclesPerStep} / ${stepSize}`} />
+      <SvgInstrumentWindowComponent 
+        molecule={molecule} 
+        range={`${frequencyMin} - ${frequencyMax}`} 
+        frequency={stepSize} 
+        cyclePerStep={`${numCyclesPerStep} / ${stepSize}`} 
+        microwavePulseWidth={microwavePulseWidth} />
     </div>
   );
 }

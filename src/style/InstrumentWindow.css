@@ -1,0 +1,10 @@
+#molecule-value tspan,
+#range-value tspan,
+#frequency-value tspan,
+#cycle-value tspan,
+#gas-value tspan,
+#pressure-value tspan,
+#mw-band-value tspan,
+#mw-pulse-width-value tspan{
+    dominant-baseline: middle;
+}
