@@ -22,7 +22,7 @@ export default function FrequencyRange({ min, max }) {
     if (band) {
       dispatch(experimentalSetupReducer.setsMWBand(band));
     }
-  }, [frequencyMin, frequencyMax]);
+  }, [frequencyMin, frequencyMax, dispatch]);
 
   /**
    * Sets the min and max value depending on the the slider
