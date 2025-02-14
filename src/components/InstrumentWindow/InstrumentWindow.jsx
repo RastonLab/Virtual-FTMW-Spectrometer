@@ -1,14 +1,27 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import '../../style/InstrumentWindow.css';
+import { getMWBand } from '../../functions/getMWBand';
+import { setsMWBand } from '../../redux/experimentalSetupSlice';
 
 
 /**
  * A component that contains the instrument window
  */
 const InstrumentWindow = () => {
-  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, microwavePulseWidth } = useSelector((store) => store.experimentalSetup);
+  const dispatch = useDispatch();
+  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, microwavePulseWidth, mwBand } = useSelector((store) => store.experimentalSetup);
+
+  /**
+   * Calls the helper method to get mw band value depending on the frequency range on mount
+   */
+  useEffect(() => {
+    const band = getMWBand(frequencyMin, frequencyMax);
+    if (band) {
+      dispatch(setsMWBand(band));
+    }
+  });
 
   return (
     <div id='instrument-window'>
@@ -17,7 +30,8 @@ const InstrumentWindow = () => {
         range={`${frequencyMin} - ${frequencyMax}`} 
         frequency={stepSize} 
         cyclePerStep={`${numCyclesPerStep} / ${stepSize}`} 
-        microwavePulseWidth={microwavePulseWidth} />
+        microwavePulseWidth={microwavePulseWidth}
+        mwBand={mwBand} />
     </div>
   );
 }

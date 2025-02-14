@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice';
 import "../../style/components/NumberInputs.css"
 import FormLabel from '@mui/material/FormLabel';
+import { useEffect } from "react";
+import { getMWBand } from "../../functions/getMWBand";
 
 /**
  * A component that contains a MUI Slider and Inputs for the frequency range values
@@ -10,6 +12,17 @@ import FormLabel from '@mui/material/FormLabel';
 export default function FrequencyRange({ min, max }) {
   const dispatch = useDispatch();
   const { frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
+
+  /**
+   * Calls the helper method to get mw band value depending on the frequency range
+   */
+  useEffect(() => {
+    const band = getMWBand(frequencyMin, frequencyMax);
+  
+    if (band) {
+      dispatch(experimentalSetupReducer.setsMWBand(band));
+    }
+  }, [frequencyMin, frequencyMax]);
 
   /**
    * Sets the min and max value depending on the the slider

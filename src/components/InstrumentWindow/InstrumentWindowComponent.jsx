@@ -2018,7 +2018,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               fontSize: "43.8186px",
             }}
           >
-            {pressure ?? ''}
+            1.3 x 10⁻⁶ Torr
           </tspan>
         </text>
       </g>

@@ -4,9 +4,10 @@ const initialState = {
   molecule: "HCN",
   stepSize: 0.1,
   frequencyMin: 2,
-  frequencyMax: 40,
+  frequencyMax: 4,
   numCyclesPerStep: 1,
   microwavePulseWidth: 0,
+  mwBand: ""
 };
 
 /**
@@ -52,6 +53,12 @@ const experimentalSetupSlice = createSlice({
     setMicrowavePulseWidth: (state, { payload }) => {
       state.microwavePulseWidth = payload;
     },
+    /**
+     * Sets the microwave band value
+     */
+    setsMWBand: (state, { payload }) => {
+      state.mwBand = payload;
+    }
   },
 });
 
@@ -62,6 +69,7 @@ export const {
   setFrequencyMax,
   setNumCyclesPerStep,
   setMicrowavePulseWidth,
+  setsMWBand
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;
