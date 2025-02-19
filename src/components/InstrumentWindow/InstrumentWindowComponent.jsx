@@ -2189,7 +2189,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           transform="matrix(-.0378 0 0 -.07767 326.624 194.713)"
         >
           <path
-            id="path78-3"
+            id="inside-threaded-spacer"
             fill="url(#linearGradient113)"
             strokeWidth={5.718}
             d="M-745.025 63.298c21.28.062 33.857-17.244 32.862-35.858C-713.202 7.987-723.79-9.919-743.4-9.998c-12.436-.05-16.553 73.251-1.626 73.298zm.65-73.504c.523-.257 1.52-.47 2.481-.674l.508.13z"
@@ -2242,7 +2242,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             transform="rotate(.018)skewX(-.075)"
           />
           <g
-            id="g355"
+            id="attachment-and-threaded-spacer"
             style={{
               strokeWidth: 16.6195,
               strokeDasharray: "none",
@@ -2341,7 +2341,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             }}
           />
           <g
-            id="attachment-and-spacer"
+            id="attachment-and-smooth-spacer"
             style={{
               strokeWidth: 16.6195,
               strokeDasharray: "none",

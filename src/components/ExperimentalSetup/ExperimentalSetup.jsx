@@ -1,14 +1,14 @@
 import React from 'react';
-import Molecule from './MoleculeField.js';
+import Molecule from './inputs/MoleculeField.js';
 import Spinner from '../Spinner';
 import BackgroundPlotly from '../BackgroundPlotly';
 import { SamplePlotly } from '../SamplePlotly';
 import { useSelector } from 'react-redux';
 import "../../style/routes/ExperimentalSetup.css";
-import FrequencyRange from './FrequencyRange.js';
-import StepSizeOptions from './StepSizeOptions';
-import NumCyclesInput from './NumCyclesInput';
-import MicrowavePulseInput from './MicrowavePulseInput';
+import FrequencyRange from './inputs/FrequencyRange.js';
+import StepSizeOptions from './inputs/StepSizeOptions';
+import NumCyclesInput from './inputs/NumCyclesInput';
+import MicrowavePulseInput from './inputs/MicrowavePulseInput';
 
 /**
  * A component that contains all the experimental setup components
