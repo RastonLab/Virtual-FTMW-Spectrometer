@@ -36,23 +36,23 @@ export function moveMirror() {
     // keyframes to compress the bellows
     const bellowAnimation = [
         { transform: "scale(1, 1)" },
-        { transform: "scale(0.14, 1)" },
+        { transform: "scale(0.03, 1)" },
         { transform: "scale(1, 1)" },
     ];
 
     // set the transform origin for the wire and bellows animation
-    wireAndBellows.style.transformOrigin = "155px 80px";
+    wireAndBellows.style.transformOrigin = "160px 80px";
 
     // timing options for the mirror animation and necessary components
     const timing = {
         duration: 2000,
-        iterations: 1,
+        iterations: 2,
         easing: easing,
     };
 
     const bellowsTiming = {
         duration: 2000,
-        iterations: 1,
+        iterations: 2,
         easing: easing,
     };
   
