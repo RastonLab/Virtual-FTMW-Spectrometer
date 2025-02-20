@@ -7,13 +7,37 @@
    viewBox="0 0 1122.5197 793.70081"
    version="1.1"
    id="schematic-window"
+   sodipodi:docname="Fixed-mirror.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.56880962"
+     inkscape:cx="-115.15276"
+     inkscape:cy="490.49803"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="schematic-window" />
   <defs
      id="defs1">
     <linearGradient
-       id="linearGradient3087">
+       id="linearGradient3087"
+       inkscape:collect="always">
       <stop
          style="stop-color:#d4d4d4;stop-opacity:1;"
          offset="0"
@@ -36,7 +60,8 @@
          id="stop3089" />
     </linearGradient>
     <linearGradient
-       id="linearGradient3082">
+       id="linearGradient3082"
+       inkscape:collect="always">
       <stop
          style="stop-color:#323545;stop-opacity:1;"
          offset="0"
@@ -59,25 +84,26 @@
          id="stop3084" />
     </linearGradient>
     <linearGradient
-       id="linearGradient3077">
+       id="linearGradient3077"
+       inkscape:collect="always">
       <stop
-         style="stop-color:#707070;stop-opacity:1;"
+         style="stop-color:#7a7a7a;stop-opacity:1;"
          offset="0"
          id="stop3078" />
       <stop
-         style="stop-color:#5d5d5d;stop-opacity:1;"
+         style="stop-color:#7b7b7b;stop-opacity:1;"
          offset="0.5"
          id="stop3080" />
       <stop
-         style="stop-color:#6e6e6e;stop-opacity:1;"
+         style="stop-color:#6d6d6d;stop-opacity:1;"
          offset="0.75"
          id="stop3081" />
       <stop
-         style="stop-color:#787878;stop-opacity:1;"
+         style="stop-color:#818181;stop-opacity:1;"
          offset="0.875"
          id="stop3082" />
       <stop
-         style="stop-color:#969696;stop-opacity:1;"
+         style="stop-color:#8b8b8b;stop-opacity:1;"
          offset="1"
          id="stop3079" />
     </linearGradient>
@@ -97,6 +123,7 @@
          id="rect1" />
     </clipPath>
     <linearGradient
+       inkscape:collect="always"
        xlink:href="#linearGradient3077"
        id="linearGradient3079"
        x1="714.60978"
@@ -105,6 +132,7 @@
        y2="531.86035"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
+       inkscape:collect="always"
        xlink:href="#linearGradient3082"
        id="linearGradient3084"
        x1="714.60978"
@@ -135,6 +163,7 @@
          id="stop3" />
     </linearGradient>
     <linearGradient
+       inkscape:collect="always"
        xlink:href="#linearGradient3087"
        id="linearGradient3089"
        x1="693.1243"
@@ -144,6 +173,8 @@
        gradientUnits="userSpaceOnUse" />
   </defs>
   <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
      id="layer1" />
   <g
      id="g3068"
