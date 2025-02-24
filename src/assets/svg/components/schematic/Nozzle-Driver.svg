@@ -8,7 +8,7 @@
    version="1.1"
    id="schematic-window"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="Nozzle Driver.svg"
+   sodipodi:docname="Nozzle-Driver.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.36904168"
-     inkscape:cx="285.87557"
-     inkscape:cy="447.10397"
+     inkscape:zoom="2.087615"
+     inkscape:cx="458.17835"
+     inkscape:cy="443.56838"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g384"
+     inkscape:current-layer="g7-9-3"
      showgrid="false" />
   <defs
      id="defs1">
@@ -88,19 +88,19 @@
        id="linearGradient8"
        inkscape:collect="always">
       <stop
-         style="stop-color:#303030;stop-opacity:1;"
+         style="stop-color:#2a2a2a;stop-opacity:1;"
          offset="0"
          id="stop5" />
       <stop
-         style="stop-color:#1f1f1f;stop-opacity:1;"
+         style="stop-color:#212121;stop-opacity:1;"
          offset="0.5"
          id="stop6" />
       <stop
-         style="stop-color:#212121;stop-opacity:1;"
+         style="stop-color:#2e2e2e;stop-opacity:1;"
          offset="0.75"
          id="stop7" />
       <stop
-         style="stop-color:#292929;stop-opacity:1;"
+         style="stop-color:#1c1c1c;stop-opacity:1;"
          offset="1"
          id="stop8" />
     </linearGradient>
@@ -108,19 +108,19 @@
        id="linearGradient4"
        inkscape:collect="always">
       <stop
-         style="stop-color:#2b2b2b;stop-opacity:1;"
+         style="stop-color:#191919;stop-opacity:1;"
          offset="0"
          id="stop1" />
       <stop
-         style="stop-color:#1e1e1e;stop-opacity:1;"
+         style="stop-color:#222222;stop-opacity:1;"
          offset="0.25"
          id="stop2" />
       <stop
-         style="stop-color:#393939;stop-opacity:1;"
+         style="stop-color:#404040;stop-opacity:1;"
          offset="0.50453514"
          id="stop3" />
       <stop
-         style="stop-color:#2c2c2c;stop-opacity:1;"
+         style="stop-color:#2b2b2b;stop-opacity:1;"
          offset="0.75"
          id="stop4" />
     </linearGradient>
@@ -1677,7 +1677,7 @@
        x2="809.40654"
        y2="373.95215"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-47.587215,10.21729)" />
+       gradientTransform="matrix(1.0470062,0,0,1.0468277,-85.244528,-7.467929)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient398"
@@ -1707,7 +1707,7 @@
        x2="870.15348"
        y2="683.04997"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.84507731,0,0,0.76822919,50.290252,132.55463)" />
+       gradientTransform="matrix(0.84507731,0,0,0.74621688,50.290252,147.98716)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient259"
@@ -1717,7 +1717,7 @@
        x2="874.02578"
        y2="683.31029"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.7546351,0,0,0.67318168,127.47819,197.10934)" />
+       gradientTransform="matrix(0.76553901,0,0,0.66607892,118.2866,202.2836)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient272"
@@ -1986,26 +1986,6 @@
        y2="138.77779" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient259"
-       id="linearGradient420"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.7546351,0,0,0.67318168,202.26943,195.80918)"
-       x1="827.43035"
-       y1="683.31029"
-       x2="874.02578"
-       y2="683.31029" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient256"
-       id="linearGradient421"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.84507731,0,0,0.76822919,124.91213,131.59319)"
-       x1="832.07109"
-       y1="683.04997"
-       x2="870.15348"
-       y2="683.04997" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient391"
        id="linearGradient349-5"
        x1="166.36621"
@@ -2154,6 +2134,26 @@
        y2="669.9458"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.921909,0,0,1.0340952,78.661171,-8.8698512)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient259"
+       id="linearGradient1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.76553901,0,0,0.70317512,192.55359,177.39509)"
+       x1="827.43035"
+       y1="683.31029"
+       x2="874.02578"
+       y2="683.31029" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient256"
+       id="linearGradient2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.84507731,0,0,0.78777624,124.55724,120.07469)"
+       x1="832.07109"
+       y1="683.04997"
+       x2="870.15348"
+       y2="683.04997" />
   </defs>
   <g
      inkscape:label="图层 1"
@@ -2342,13 +2342,13 @@
       <text
          xml:space="preserve"
          style="font-size:32px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3.77953;stroke-opacity:1"
-         x="379.37949"
-         y="424.68399"
+         x="379.98727"
+         y="424.21628"
          id="text115-53-9-3-8"><tspan
            sodipodi:role="line"
            id="tspan115-6-5-8-1"
-           x="379.37949"
-           y="424.68399"
+           x="379.98727"
+           y="424.21628"
            style="font-size:32px;fill:#f9f9f9">0</tspan></text>
       <text
          xml:space="preserve"
@@ -2634,19 +2634,19 @@
            rx="11.57729"
            ry="10.748278" />
         <ellipse
-           style="fill:url(#linearGradient240);fill-rule:evenodd;stroke:none;stroke-width:1.60753;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:url(#linearGradient240);fill-rule:evenodd;stroke:none;stroke-width:1.68295;stroke-dasharray:none;stroke-opacity:1"
            id="path60-0"
-           cx="753.06732"
-           cy="384.16943"
-           rx="8.7520018"
-           ry="8.3552055" />
+           cx="753.04565"
+           cy="383.99554"
+           rx="9.1633997"
+           ry="8.7464609" />
         <ellipse
-           style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.09182;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.94348;stroke-dasharray:none;stroke-opacity:1"
            id="path61-0"
            cx="753.08698"
-           cy="384.20834"
-           rx="6.1499634"
-           ry="6.0884204" />
+           cy="384.1214"
+           rx="5.6303034"
+           ry="5.7406378" />
         <ellipse
            style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.36018;stroke-dasharray:none;stroke-opacity:1"
            id="path61-1-4"
@@ -2848,21 +2848,22 @@
          ry="1.5263548" />
     </g>
     <g
-       id="g9">
+       id="g9"
+       transform="matrix(1,0,0,1.0556934,0,-35.749422)">
       <ellipse
-         style="fill:url(#linearGradient261);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.251583"
+         style="fill:url(#linearGradient261);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.252053"
          id="path56"
-         cx="769.46747"
-         cy="657.10132"
-         rx="17.581274"
-         ry="15.204454" />
+         cx="769.55219"
+         cy="657.42218"
+         rx="17.83531"
+         ry="15.044032" />
       <ellipse
-         style="fill:url(#linearGradient257);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.229768"
+         style="fill:url(#linearGradient257);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.226452"
          id="path56-7"
          cx="769.54596"
-         cy="657.29352"
+         cy="657.69055"
          rx="16.091282"
-         ry="13.856229" />
+         ry="13.459202" />
       <ellipse
          style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.163294"
          id="path56-7-2"
@@ -3141,37 +3142,6 @@
        y="-130.64449"
        transform="rotate(90)" />
     <g
-       id="g8">
-      <ellipse
-         style="fill:url(#linearGradient420);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.251583"
-         id="path56-1"
-         cx="844.25873"
-         cy="655.80115"
-         rx="17.581274"
-         ry="15.204454" />
-      <ellipse
-         style="fill:url(#linearGradient421);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.229768"
-         id="path56-7-0"
-         cx="844.16785"
-         cy="656.33209"
-         rx="16.091282"
-         ry="13.856229" />
-      <ellipse
-         style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.163294"
-         id="path56-7-2-3"
-         cx="844.26202"
-         cy="656.88458"
-         rx="11.652409"
-         ry="9.6645041" />
-      <ellipse
-         style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.031502"
-         id="path56-7-2-6-7"
-         cx="844.42389"
-         cy="657.48718"
-         rx="2.0783582"
-         ry="2.0165501" />
-    </g>
-    <g
        id="g5-5-4-6"
        transform="matrix(0.69171069,0,0,0.75904713,278.75751,173.88906)">
       <ellipse
@@ -3267,5 +3237,33 @@
          rx="2.3934321"
          ry="2.1690478" />
     </g>
+    <ellipse
+       style="fill:url(#linearGradient1);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.258977"
+       id="path56-1"
+       cx="843.81915"
+       cy="657.8819"
+       rx="17.83531"
+       ry="15.881886" />
+    <ellipse
+       style="fill:url(#linearGradient2);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.232672"
+       id="path56-7-7"
+       cx="843.81293"
+       cy="658.16522"
+       rx="16.091282"
+       ry="14.208791" />
+    <ellipse
+       style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.16778"
+       id="path56-7-2-1"
+       cx="843.73773"
+       cy="658.68695"
+       rx="11.652409"
+       ry="10.202753" />
+    <ellipse
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0323673"
+       id="path56-7-2-6-1"
+       cx="843.8996"
+       cy="659.32306"
+       rx="2.0783582"
+       ry="2.1288586" />
   </g>
 </svg>
