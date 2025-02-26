@@ -24,15 +24,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.53672619"
-     inkscape:cx="97.815238"
-     inkscape:cy="-16.768326"
+     inkscape:zoom="1.5180909"
+     inkscape:cx="431.79232"
+     inkscape:cy="326.06743"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g1"
+     showgrid="false" />
   <defs
      id="defs1">
     <linearGradient
@@ -1234,16 +1235,16 @@
            id="tspan71"
            x="465.81799"
            y="279.25623"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13386;stroke-dasharray:none;stroke-opacity:1">MITEQ</tspan></text>
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.13386;stroke-dasharray:none;stroke-opacity:1">MANOA</tspan></text>
       <rect
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.08397;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.82522;stroke-opacity:1"
          id="rect71-0"
-         width="3.9318936"
-         height="38.334568"
-         x="485.35712"
-         y="219.16612"
-         transform="matrix(0.99998419,0.00561954,-9.6294336e-4,0.99999951,0,0)"
-         ry="2.3745239" />
+         width="4.0697274"
+         height="21.465134"
+         x="238.17044"
+         y="-498.16229"
+         transform="matrix(-0.00304004,0.99999538,-0.99999842,-0.00178002,0,0)"
+         ry="0" />
       <rect
          style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.08397;stroke-opacity:1"
          id="rect71-8"
@@ -1302,7 +1303,7 @@
            rx="13.158066"
            ry="13.487426" />
         <rect
-           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#969696;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#adadad;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"
            id="rect81-3"
            width="0.12351039"
            height="9.2221088"
@@ -1311,7 +1312,7 @@
            ry="0.058223356"
            transform="rotate(-49.68834)" />
         <rect
-           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#969696;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#adadad;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"
            id="rect81"
            width="0.12351039"
            height="9.2221088"
@@ -1319,7 +1320,7 @@
            y="369.70776"
            ry="0.058223356" />
         <rect
-           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#979797;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#adadad;stroke-width:1.88976;stroke-dasharray:none;stroke-opacity:1"
            id="rect81-3-5"
            width="0.12351039"
            height="9.2221088"
