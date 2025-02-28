@@ -50,6 +50,14 @@ export const menuItems = [
         ),
       },
       {
+        label: "Schematic",
+        component: (
+          <Link to="/schematic">
+            <div>Schematic</div>
+          </Link>
+        ),
+      },
+      {
         label: "Spectra",
         component: (
           <Link to="/spectra">
