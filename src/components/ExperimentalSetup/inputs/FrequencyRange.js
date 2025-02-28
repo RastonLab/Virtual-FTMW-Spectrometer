@@ -1,10 +1,10 @@
 import { Grid, Input, Slider } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice';
-import "../../style/components/NumberInputs.css"
+import * as experimentalSetupReducer from '../../../redux/experimentalSetupSlice';
+import "../../../style/components/NumberInputs.css"
 import FormLabel from '@mui/material/FormLabel';
 import { useEffect } from "react";
-import { getMWBand } from "../../functions/getMWBand";
+import { getMWBand } from "../../../functions/getMWBand";
 
 /**
  * A component that contains a MUI Slider and Inputs for the frequency range values

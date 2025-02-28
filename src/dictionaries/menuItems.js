@@ -1,16 +1,17 @@
 // components
 import { Open } from "../components/Open";
 import CancelScan from "../components/CancelScan";
-import Fetch from "../components/Fetch";
+import Fetch from "../components/Fetch/Fetch";
 import LandingPage from "../components/LandingPage";
 import Save from "../components/Save";
 import Tutorial from "../components/Tutorial";
 
 // constants
-import { BACKGROUND, SAMPLE } from "../dictionaries/constants";
+import { BACKGROUND } from "../dictionaries/constants";
 
 // router
 import { Link } from "react-router-dom";
+import { cancelMirrorMovement, pauseMirrorMovement } from "../components/InstrumentWindow/animations/mirrorAnimation";
 
 /**
  * Controls what appears in the MenuBar. To remove something, either remove the code or comment it out
@@ -70,28 +71,22 @@ export const menuItems = [
     label: "Measure",
     submenu: [
       {
-        label: "Collect Background",
+        label: "Acquire Spectrum",
         component: (
           <Fetch
-            type="background"
+            type="acquire-spectrum"
             fetchURL={BACKGROUND}
-            buttonText={"Acquire spectrum"}
+            buttonText={"Acquire Spectrum"}
           />
         ),
       },
       {
-        label: "Collect Sample",
-        component: (
-          <Fetch
-            type="sample"
-            fetchURL={SAMPLE}
-            buttonText={"Stop acquisition"}
-          />
-        ),
+        label: "Stop Aquisition",
+        component: <CancelScan buttonText="Stop Acquisition" animationToggle={pauseMirrorMovement} />,
       },
       {
-        label: "Cancel",
-        component: <CancelScan />,
+        label: "Cancel Acquisition",
+        component: <CancelScan buttonText="Cancel Acquisition" animationToggle={cancelMirrorMovement} />,
       },
     ],
   },

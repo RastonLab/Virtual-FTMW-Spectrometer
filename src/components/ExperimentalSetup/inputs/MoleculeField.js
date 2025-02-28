@@ -1,7 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice';
-import { molecules } from '../../dictionaries/molecule';
+import * as experimentalSetupReducer from '../../../redux/experimentalSetupSlice';
+import { molecules } from '../../../dictionaries/molecule';
 
 /**
  * A component that contains a MUI Select (dropdown) for the molecule values

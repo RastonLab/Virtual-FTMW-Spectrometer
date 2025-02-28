@@ -1,21 +1,21 @@
 import { Grid, Input, Slider } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice';
-import "../../style/components/NumberInputs.css"
+import * as experimentalSetupReducer from '../../../redux/experimentalSetupSlice';
+import "../../../style/components/NumberInputs.css"
 import FormLabel from '@mui/material/FormLabel';
 
 /**
  * A component that contains a MUI Input for the number of cycle per step
  */
-export default function NumCyclesInput({ min, max }) {
+export default function MicrowavePulseInput({ min, max }) {
   const dispatch = useDispatch();
-  const { numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
+  const { microwavePulseWidth } = useSelector((store) => store.experimentalSetup);
 
   /**
-   * Handles the slider change event
+   * Sets the value depending on the slider
    */
   const handleSliderChange = (event, newValue) => {
-    dispatch(experimentalSetupReducer.setNumCyclesPerStep(newValue));
+    dispatch(experimentalSetupReducer.setMicrowavePulseWidth(newValue));
   }
 
   /**
@@ -23,7 +23,7 @@ export default function NumCyclesInput({ min, max }) {
    */
   const handleInputChange = (event) => {
     dispatch(
-      experimentalSetupReducer.setNumCyclesPerStep(event.target.value === "" ? "" : Number(event.target.value))
+      experimentalSetupReducer.setMicrowavePulseWidth(event.target.value === "" ? "" : (event.target.value))
     );
   };
 
@@ -31,23 +31,23 @@ export default function NumCyclesInput({ min, max }) {
    * Handles the blur event for the inputs
    */
   const handleBlur = () => {
-    let value = parseFloat(numCyclesPerStep);
+    let value = parseFloat(microwavePulseWidth);
 
     if (value < min) value = min;
     if (value > max) value = max;
 
-    dispatch(experimentalSetupReducer.setNumCyclesPerStep(value));
+    dispatch(experimentalSetupReducer.setMicrowavePulseWidth(value));
   };
 
 
   return (
     <div>
-      <FormLabel>Number of Cycles per Step:</FormLabel>
+      <FormLabel>Microwave Pulse Width (μs):</FormLabel>
       <Grid container spacing={2} alignItems="center">
         <Grid item>
           <Slider
             sx={{ minWidth: "200px" }}
-            value={typeof numCyclesPerStep === "number" ? numCyclesPerStep : min}
+            value={typeof microwavePulseWidth === "number" ? microwavePulseWidth : min}
             min={min}
             max={max}
             onChange={handleSliderChange}
@@ -57,7 +57,7 @@ export default function NumCyclesInput({ min, max }) {
         <Grid item>
           <Input
             sx={{ minWidth: "75px", maxWidth: "75px" }}
-            value={numCyclesPerStep}
+            value={microwavePulseWidth}
             onChange={handleInputChange}
             onBlur={handleBlur}
             inputProps={{

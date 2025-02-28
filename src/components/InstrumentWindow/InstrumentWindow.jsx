@@ -5,7 +5,6 @@ import '../../style/InstrumentWindow.css';
 import { getMWBand } from '../../functions/getMWBand';
 import { setsMWBand } from '../../redux/experimentalSetupSlice';
 
-
 /**
  * A component that contains the instrument window
  */
