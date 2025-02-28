@@ -1,8 +1,8 @@
 {
-  "name": "virtual-ftir-spectrometer",
+  "name": "virtual-ftmw-spectrometer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ftir.rastonlab.org",
+  "homepage": "https://ftmw.rastonlab.org",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
