@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 import { OPD } from "../dictionaries/constants";
 
 // functions
-import { animateCornerCube } from "../functions/animation";
 import checkParams from "../functions/checkParams";
+import { moveMirror } from "./InstrumentWindow/animations/mirrorAnimation";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -84,8 +84,8 @@ export default function Fetch({
         });
     }
 
-    if (document.getElementById("instrument") !== null && postfetch && !devMode) {
-      animateCornerCube(scan / 2, OPD[resolution].time * 2);
+    if (document.getElementById("instrument-window") !== null && postfetch && !devMode) {
+      moveMirror();
     }
   });
 

@@ -4,8 +4,6 @@ import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import '../../style/InstrumentWindow.css';
 import { getMWBand } from '../../functions/getMWBand';
 import { setsMWBand } from '../../redux/experimentalSetupSlice';
-import { moveMirror } from './animations/moveMirror';
-
 
 /**
  * A component that contains the instrument window
@@ -22,8 +20,6 @@ const InstrumentWindow = () => {
     if (band) {
       dispatch(setsMWBand(band));
     }
-
-    moveMirror();
   });
 
   return (
