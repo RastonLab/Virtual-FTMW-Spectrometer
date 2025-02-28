@@ -190,7 +190,7 @@ export default function App() {
               {SHOW_DEVMODE && <DevMode />}
               {/* Icons */}
               <a
-                href="https://github.com/RastonLab/Virtual-FTIR-Spectrometer#readme"
+                href="https://github.com/FTMW-Scientific-Simulator/Virtual-FTMW-Spectrometer#readme"
                 target="_blank"
                 rel="noreferrer"
               >
