@@ -24,15 +24,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.77864522"
-     inkscape:cx="296.02699"
-     inkscape:cy="309.51195"
+     inkscape:zoom="6.2291618"
+     inkscape:cx="517.48536"
+     inkscape:cy="414.82307"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g29" />
+     inkscape:current-layer="layer1"
+     showgrid="false" />
   <defs
      id="defs1">
     <linearGradient
@@ -175,7 +176,7 @@
        y1="397.84579"
        x2="541.34613"
        y2="396.16071"
-       gradientTransform="matrix(1.0010832,0.03898187,0.00364476,1.1311723,-236.42658,-206.64584)" />
+       gradientTransform="matrix(1.0015517,0.05584393,0.00522136,1.1879123,-237.93155,-260.80881)" />
     <linearGradient
        id="linearGradient43"
        inkscape:collect="always">
@@ -205,7 +206,7 @@
        xlink:href="#linearGradient14"
        id="linearGradient3-3"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.99390882,0,0,0.91537626,-2059.8048,993.80318)"
+       gradientTransform="matrix(0.99386497,1.139816e-8,0,0.86981451,-2476.0884,1398.2549)"
        x1="498.58884"
        y1="621.24884"
        x2="534.59454"
@@ -279,8 +280,8 @@
            transform="matrix(1.0199542,-0.08271486,-0.01403244,0.67993403,-9.7860169,268.13755)"
            style="fill:url(#linearGradient28);fill-opacity:1">
           <path
-             style="fill:url(#linearGradient31-9);fill-opacity:1;fill-rule:evenodd;stroke-width:1.08854;stroke-linejoin:bevel"
-             d="m 298.33706,158.93276 1.44835,45.73084 3.19587,128.18108 2.06028,74.55501 8.37783,303.17805 -32.52183,9.86702 -19.008,-586.75768 c 0.17994,-1.80555 -1.20719,-1.02026 35.68836,-12.05123 z"
+             style="fill:url(#linearGradient31-9);fill-opacity:1;fill-rule:evenodd;stroke-width:1.1157;stroke-linejoin:bevel"
+             d="m 297.56241,131.05375 1.51263,48.04409 3.37568,134.65214 2.16494,78.32182 8.80345,318.49581 -32.52155,9.87715 -19.83289,-616.4446 c 0.1775,-1.89335 -1.20911,-1.08937 35.68635,-12.123662 z"
              id="path28-1"
              sodipodi:nodetypes="ccccccccc" />
           <rect
@@ -294,13 +295,13 @@
         </g>
       </g>
       <ellipse
-         style="fill:url(#linearGradient3-3);fill-opacity:1;fill-rule:evenodd;stroke:#b9b5ac;stroke-width:1.25171;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:url(#linearGradient3-3);fill-opacity:1;fill-rule:evenodd;stroke:#b9b5ac;stroke-width:1.22013;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
          id="path299-2"
-         ry="8.3185081"
-         rx="14.686763"
-         cy="1562.479"
-         cx="-1548.9138"
-         transform="matrix(0.37008646,-0.92899732,0.86253262,-0.50600146,0,0)" />
+         ry="7.9044642"
+         rx="14.686116"
+         cy="1938.6256"
+         cx="-1965.22"
+         transform="matrix(0.39822089,-0.91728955,0.8036278,-0.59513222,0,0)" />
       <g
          id="g3"
          transform="matrix(1.5710723,0,0,1.5201387,633.10597,122.50546)" />
