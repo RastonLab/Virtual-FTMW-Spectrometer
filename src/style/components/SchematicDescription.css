@@ -1,0 +1,8 @@
+#schematic-description {
+  margin: 1em;
+}
+
+#schematic-description p {
+    text-align: justify;
+    font-size: clamp(14px, 2vw, 30px);
+}

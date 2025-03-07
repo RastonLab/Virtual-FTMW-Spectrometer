@@ -5,7 +5,7 @@ const SvgSchematicWindowComponent = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     xmlSpace="preserve"
     id="svg1"
-    viewBox="0 0 1122.52 540.472"
+    viewBox="0 0 1122.52 502.677"
     {...props}
   >
     <defs id="defs1">
@@ -1978,33 +1978,191 @@ const SvgSchematicWindowComponent = (props) => (
       <path id="rect90" d="M57.542 137.65h91.39v30.463h-91.39z" />
       <path id="rect5" d="M628.976 1299.1H671.3v5.878h-42.324z" />
     </defs>
-    <g id="schematic" transform="translate(182.265 -197.471)scale(1.50455)">
+    <g
+      id="microwave-chamber"
+      transform="translate(-260.99 -45.15)scale(1.26172)"
+    >
       <path
-        id="component-11"
-        d="M181.038 324.344v42.38h41.624v-42.38zm2.688 2.69h36.25v37h-36.25zm13.558 5.848v4.4a8.65 8.65 0 0 0-4.393 3.675c-.993 1.674-1.3 3.323-1.335 4.418-.049 1.535-.506 5.133 2.15 7.68 1.123 1.076 2.11 1.767 3.226 2.12 1.117.352 2.183.355 3.566.378h.002c3.012.05 5.121-.952 7.35-3.127 2.651-2.586 3.095-6.902 1.548-11.364l-2.773.962c1.3 3.75.744 6.77-.825 8.302-1.99 1.942-2.752 2.335-5.253 2.293-1.374-.022-2.16-.063-2.732-.244-.572-.18-1.108-.511-2.077-1.44-1.525-1.461-1.306-3.646-1.248-5.467.019-.583.249-1.875.924-3.014.43-.725 1.012-1.406 1.87-1.93v3.495l9.425-5.409z"
+        id="rect3"
+        d="M274.44 156.347h264.903v274.494H274.44z"
         style={{
           display: "inline",
+          opacity: 1,
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.64033,
+          strokeDasharray: "none",
           paintOrder: "markers fill stroke",
         }}
       />
       <path
+        id="path3"
+        d="M499.778 177.889s14.952 66.072 15.356 117.65c.309 39.381-15.672 117.293-15.672 117.293"
+        style={{
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 12.1928,
+          strokeLinecap: "round",
+          strokeDasharray: "none",
+          strokeOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path5"
+        d="M337.708 177.889s-16.532 63.916-16.353 116.055c.14 40.398 16.67 118.888 16.67 118.888"
+        style={{
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 12.1928,
+          strokeLinecap: "round",
+          strokeDasharray: "none",
+          strokeOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path4"
+        d="M500.777 291.234v1.7h-.023v8.976h4.2v-6.478l64.499-.08.079-4.118z"
+        style={{
+          fill: "#737373",
+          fillOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path79"
+        d="M460.615 251.605v6.262h-97.969v7.223h97.97v6.543l14.103-10.438z"
+        style={{
+          fill: "#b200ff",
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path80"
+        d="M376.35 322.123v6.261h97.97v7.223h-97.97v6.543l-14.103-10.437Z"
+        style={{
+          fill: "#00ff2d",
+          fillOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path81"
+        d="M564.052 110.896H248.63l.565 182.3h35.624"
+        style={{
+          opacity: 1,
+          fill: "none",
+          fillOpacity: 1,
+          stroke: "#000",
+          strokeWidth: 2.68724,
+          strokeDasharray: "8.06172,2.68724",
+          strokeDashoffset: 0,
+          strokeOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path2"
+        d="m314.979 291.965-.063 1.87.063 1.867h13.11v-3.737z"
+        style={{
+          baselineShift: "baseline",
+          display: "inline",
+          overflow: "visible",
+          vectorEffect: "none",
+          fill: "#fff",
+          strokeWidth: 1.3576,
+          paintOrder: "markers fill stroke",
+          stopColor: "#000",
+          stopOpacity: 1,
+        }}
+      />
+      <path
+        id="path1"
+        d="M316.966 273.016v8.555h-34.79l.104 11.935-.103 11.934h34.789v8.557h11.232v-19.328h-13.045l-.055-1.163.055-1.164h13.045v-19.326z"
+        style={{
+          baselineShift: "baseline",
+          display: "inline",
+          overflow: "visible",
+          vectorEffect: "none",
+          fill: "url(#radialGradient180-4)",
+          paintOrder: "fill markers stroke",
+          stopColor: "#000",
+          stopOpacity: 1,
+        }}
+      />
+      <path
+        id="path65-9"
+        d="m293.519 105.047-9.966 5.753 9.858 5.692"
+        style={{
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 1.29705,
+          strokeDasharray: "none",
+          strokeDashoffset: 0,
+          strokeOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path10-6"
+        d="m313.886 414.535-6.094 9.953 1.12-6.966h-18.784l1.368 7.338-7.338-10.325 7.338-10.321-1.368 7.338h18.784l-1.12-6.966z"
+        style={{
+          fill: "#000",
+          fillOpacity: 1,
+          stroke: "none",
+          strokeWidth: 3.36674,
+          strokeDasharray: "none",
+          strokeOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+      <path
+        id="path212"
+        d="m243.402 216.717 5.753 9.966 5.692-9.858"
+        style={{
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 1.29705,
+          strokeDasharray: "none",
+          strokeDashoffset: 0,
+          strokeOpacity: 1,
+          paintOrder: "markers fill stroke",
+        }}
+      />
+    </g>
+    <g id="schematic" transform="translate(181.467 -197.471)scale(1.50455)">
+      <path
+        id="component-11"
+        d="M199.943 328.317c-9.41 0-17.056 7.646-17.056 17.056s7.646 17.056 17.056 17.056S217 354.783 217 345.373s-7.648-17.056-17.058-17.056m0 1.761c8.457 0 15.296 6.838 15.296 15.295s-6.839 15.293-15.296 15.293-15.295-6.836-15.295-15.293c0-6.482 4.019-12.008 9.702-14.238l.507 2.229-1.345.623s-2.994 1.373-5.063 4.608c-1.688 2.64-2.494 5.65-1.951 8.825.696 4.066 2.807 8.251 7.263 10.184 3.41 1.479 6.18 1.557 6.18 1.557l2.32.046.096-4.64-2.322-.05s-1.753-.013-4.428-1.173c-2.777-1.205-3.992-3.546-4.533-6.705-.352-2.059.04-3.588 1.288-5.54 1.317-2.061 3.101-2.9 3.101-2.9l.445-.206.408 1.791 7.158-5.898-8.992-2.803a15.3 15.3 0 0 1 5.46-1.005"
+        style={{
+          baselineShift: "baseline",
+          display: "inline",
+          overflow: "visible",
+          vectorEffect: "none",
+          strokeLinecap: "square",
+          paintOrder: "markers fill stroke",
+          stopColor: "#000",
+          stopOpacity: 1,
+        }}
+      />
+      <path
         id="component-2"
-        d="M444.811 31.02v86.659H278.433V31.02h165.591zm-2.69 2.687h-161V50.41h114.367V37.197h41.879v.045h.336v13.837h4.419V33.946zm-6.154 5.225h-38.74V52h-.24v.148H281.122v16.326h75.897V54.758h36.863v14.048h48.241V52.815h-6.155V39.258Zm-43.824 17.562h-33.387V70.21h-77.634v4.284h69.269V88.21h42.253V74.327h49.478v-3.782h-49.979V56.572Zm49.979 19.571h-47.74v13.883h-45.727V76.232h-67.534v30.711h61.68v-14.05h5.753v14.05h93.568V76.597zm-95.306 18.566h-2.277v14.048h-63.418v6.312h161.001v-6.312h-95.306V94.77z"
+        d="M283.105 150.699v86.659h166.379V150.7H283.892zm2.69 2.688h161v16.701H332.43v-13.212h-41.88v.045h-.335v13.837h-4.419v-17.132zm6.155 5.224h38.74v13.068h.239v.147h115.866v16.326H370.9v-13.715h-36.863v14.048h-48.241v-15.991h6.155v-13.557zm43.824 17.562h33.387v13.715h77.634v4.286h-69.27v13.715h-42.253v-13.883h-49.477v-3.782h49.979v-13.972zm-49.98 19.571h47.741v13.883h45.727v-13.716h67.533v30.711h-61.68v-14.05h-5.752v14.05h-93.568v-30.345zm95.307 18.566h2.277v14.048h63.417v6.313h-161v-6.313H381.1V214.45z"
         style={{
           strokeLinecap: "square",
           strokeDasharray: "1.77712,.592373",
           paintOrder: "markers fill stroke",
         }}
-        transform="matrix(-1 0 0 1 727.917 119.68)"
       />
       <path
         id="component-8"
-        d="M292.894 348.53v48.449H246.28v-48.45zm-1.908 1.908h-42.798v44.632h42.798zm-4.588 4.695 1.32 1.38-7.435 7.099v16.917l7.274 7.803-1.397 1.301-7.785-8.352v-18.486zm-34.128 0 8.022 7.662v18.486l-7.784 8.352-1.397-1.3 7.274-7.804v-16.917l-7.433-7.099zm16.966 10.955c3.477 0 6.314 2.839 6.314 6.315s-2.837 6.314-6.314 6.314-6.315-2.838-6.315-6.314 2.84-6.315 6.315-6.315m0 1.91a4.39 4.39 0 0 0-4.406 4.405 4.39 4.39 0 0 0 4.406 4.405 4.39 4.39 0 0 0 4.407-4.405 4.39 4.39 0 0 0-4.407-4.405"
+        d="M527.696 344.875v69.604h66.97v-69.604Zm2.742 2.742h61.485v64.12h-61.485zm6.591 6.745-1.895 1.983 10.68 10.198v24.305l-10.45 11.21 2.007 1.868 11.184-11.999V365.37zm49.03 0-11.525 11.008v26.557l11.183 12 2.007-1.87-10.45-11.21v-24.304l10.679-10.198zM561.685 370.1c-4.994 0-9.07 4.078-9.07 9.072s4.076 9.07 9.07 9.07 9.073-4.076 9.073-9.07-4.079-9.072-9.073-9.072m0 2.743a6.31 6.31 0 0 1 6.33 6.329 6.31 6.31 0 0 1-6.33 6.329 6.31 6.31 0 0 1-6.33-6.33 6.31 6.31 0 0 1 6.33-6.328"
         style={{
           display: "inline",
+          strokeWidth: 1.43664,
           paintOrder: "markers fill stroke",
         }}
-        transform="matrix(-1.43664 0 0 1.43664 948.48 -155.836)"
       />
       <path
         id="component-13"
@@ -2017,11 +2175,11 @@ const SvgSchematicWindowComponent = (props) => (
       />
       <path
         id="component-10"
-        d="M321.031 318.489v24.895h-25.108V318.49zm-1.909 1.907h-21.29v21.08h21.29zm-10.397 2.573 5.64 3.455-3.948-.636v10.65l4.16-.776-5.852 4.16-5.853-4.16 4.16.775v-10.649l-3.95.636z"
+        d="M398.995 326.105v28.562H427.8v-28.562zm2.19 2.188h24.426v24.185h-24.426zm11.929 2.952-6.472 3.963 4.53-.729v12.218l-4.772-.89 6.714 4.773 6.715-4.773-4.773.89v-12.218l4.532.73z"
         style={{
+          strokeWidth: 1.14728,
           paintOrder: "markers fill stroke",
         }}
-        transform="matrix(-1.14728 0 0 1.14728 767.308 -39.291)"
       />
       <path
         id="component-3"
@@ -2033,29 +2191,29 @@ const SvgSchematicWindowComponent = (props) => (
       />
       <path
         id="component-1"
-        d="M242.486 184.812v54.725h54.074v-54.725Zm2.16 2.16H294.4v50.405h-49.754zm12.748 9.09 10.865 14.593-10.798 14.459 22.471.267-.145-7.606-3.884 4.15-12.525-.134 7.64-11.034-6.997-11.289 11.823.133 3.456 4.747.134-8.286z"
+        d="M475.121 167.016v68.336h67.524v-68.336Zm2.698 2.697h62.129v62.941h-62.13zm15.919 11.35 13.567 18.224-13.484 18.054 28.06.335-.18-9.5-4.85 5.184-15.641-.167 9.54-13.78-8.737-14.096 14.764.166 4.315 5.928.167-10.347z"
         style={{
           display: "inline",
+          strokeWidth: 1.24873,
           paintOrder: "markers fill stroke",
         }}
-        transform="translate(172.323 -63.764)scale(1.24873)"
       />
       <path
         id="component-7"
-        d="M405.582 454.445h-24.05v24.474h24.05zm-1.908 1.908v20.66H383.44v-20.66h9.861v8.003h.13l-.064.067 5.008 4.784.937-.983-4.654-4.443v-7.428zm-9.117 14.56h-1.155v6.066h1.155z"
+        d="M260.858 260.068v28.486h28.987v-28.486zm2.26 2.26h24.469v23.966h-24.47v-11.68h9.48v-.154l.078.075 5.667-5.93-1.164-1.11-5.263 5.512h-8.797zm17.245 10.799v1.368h7.184v-1.368z"
         style={{
           display: "inline",
+          strokeWidth: 1.1844,
           paintOrder: "markers fill stroke",
         }}
-        transform="rotate(-90 231.526 508.914)scale(1.1844)"
       />
       <path
         id="component-5"
-        d="M310.84 367.428c6.825 0 12.379 5.552 12.379 12.377s-5.555 12.38-12.38 12.38c-6.824 0-12.377-5.555-12.377-12.38s5.553-12.377 12.378-12.377m0 1.907a10.454 10.454 0 0 0-10.468 10.47c0 5.793 4.674 10.47 10.468 10.47s10.469-4.677 10.469-10.47-4.676-10.47-10.47-10.47m4.684 4.93 1.349 1.35-4.685 4.685 4.685 4.685-1.349 1.348-4.686-4.684-4.684 4.684-1.349-1.348 4.684-4.685-4.684-4.684 1.349-1.35 4.684 4.684z"
+        d="M413.006 259.265c-8.147 0-14.778 6.627-14.778 14.774s6.63 14.777 14.778 14.777c8.146 0 14.775-6.63 14.775-14.777s-6.629-14.774-14.775-14.774m0 2.277A12.48 12.48 0 0 1 425.5 274.04a12.48 12.48 0 0 1-12.495 12.5 12.48 12.48 0 0 1-12.498-12.5 12.48 12.48 0 0 1 12.498-12.497m-5.592 5.885-1.61 1.612 5.591 5.592-5.591 5.591 1.61 1.61 5.593-5.591 5.592 5.591 1.61-1.61-5.592-5.591 5.592-5.592-1.61-1.612-5.592 5.592z"
         style={{
+          strokeWidth: 1.1937,
           paintOrder: "markers fill stroke",
         }}
-        transform="matrix(-1.1937 0 0 1.1937 784.053 -179.332)"
       />
       <path
         id="component-15"
@@ -2363,7 +2521,7 @@ const SvgSchematicWindowComponent = (props) => (
         />
         <path
           id="path50"
-          d="m258.4 418.426-56.947.334.167-52.365"
+          d="m258.4 418.426-57.978.334-.02-56.865"
           style={{
             display: "inline",
             fill: "none",
@@ -2377,7 +2535,7 @@ const SvgSchematicWindowComponent = (props) => (
         />
         <path
           id="path52"
-          d="M262.054 273.849h-61.63v50.66"
+          d="M262.054 273.849h-61.63v55.066"
           style={{
             display: "inline",
             fill: "none",
@@ -2720,159 +2878,479 @@ const SvgSchematicWindowComponent = (props) => (
         />
       </g>
     </g>
-    <g
-      id="microwave-chamber"
-      transform="translate(-260.191 -45.15)scale(1.26172)"
-    >
-      <path
-        id="rect3"
-        d="M274.44 156.347h264.903v274.494H274.44z"
+    <g id="component-numbers" transform="translate(-.798)">
+      <text
+        xmlSpace="preserve"
+        id="text1"
+        x={124.901}
+        y={342.561}
         style={{
-          display: "inline",
-          opacity: 1,
+          fontSize: "10.6344px",
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
           fill: "none",
           stroke: "#000",
-          strokeWidth: 2.64033,
-          strokeDasharray: "none",
+          strokeWidth: 1.37661,
+          strokeLinecap: "square",
+          strokeDasharray: ".9102,.303401",
           paintOrder: "markers fill stroke",
         }}
-      />
-      <path
-        id="path3"
-        d="M499.778 177.889s14.952 66.072 15.356 117.65c.309 39.381-15.672 117.293-15.672 117.293"
+        transform="translate(182.265 -197.471)scale(1.50455)"
+      >
+        <tspan
+          id="tspan1"
+          x={124.901}
+          y={342.561}
+          style={{
+            fontSize: "10.6344px",
+            strokeWidth: 1.37661,
+          }}
+        >
+          {"8"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text2"
+        x={-45.58}
+        y={334.872}
         style={{
+          fontSize: "10.6344px",
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
           fill: "none",
           stroke: "#000",
-          strokeWidth: 12.1928,
-          strokeLinecap: "round",
-          strokeDasharray: "none",
-          strokeOpacity: 1,
+          strokeWidth: 1.37661,
+          strokeLinecap: "square",
+          strokeDasharray: ".9102,.303401",
           paintOrder: "markers fill stroke",
         }}
-      />
-      <path
-        id="path5"
-        d="M337.708 177.889s-16.532 63.916-16.353 116.055c.14 40.398 16.67 118.888 16.67 118.888"
+        transform="translate(182.265 -197.471)scale(1.50455)"
+      >
+        <tspan
+          id="tspan2"
+          x={-45.58}
+          y={334.872}
+          style={{
+            strokeWidth: 1.37661,
+          }}
+        >
+          {"10"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text3"
+        x={151.149}
+        y={229.084}
         style={{
+          fontSize: "10.6344px",
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
           fill: "none",
           stroke: "#000",
-          strokeWidth: 12.1928,
-          strokeLinecap: "round",
-          strokeDasharray: "none",
-          strokeOpacity: 1,
+          strokeWidth: 1.37661,
+          strokeLinecap: "square",
+          strokeDasharray: ".9102,.303401",
           paintOrder: "markers fill stroke",
         }}
-      />
-      <path
-        id="path4"
-        d="M500.777 291.234v1.7h-.023v8.976h4.2v-6.478h62.523v-4.198z"
+        transform="translate(182.265 -197.471)scale(1.50455)"
+      >
+        <tspan
+          id="tspan3"
+          x={151.149}
+          y={229.084}
+          style={{
+            strokeWidth: 1.37661,
+          }}
+        >
+          {"9"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text4"
+        x={510.14}
+        y={288.212}
         style={{
-          fill: "#737373",
-          fillOpacity: 1,
-          paintOrder: "markers fill stroke",
-        }}
-      />
-      <path
-        id="path79"
-        d="M460.615 251.605v6.262h-97.969v7.223h97.97v6.543l14.103-10.438z"
-        style={{
-          fill: "#b200ff",
-          paintOrder: "markers fill stroke",
-        }}
-      />
-      <path
-        id="path80"
-        d="M376.35 322.123v6.261h97.97v7.223h-97.97v6.543l-14.103-10.437Z"
-        style={{
-          fill: "#00ff2d",
-          fillOpacity: 1,
-          paintOrder: "markers fill stroke",
-        }}
-      />
-      <path
-        id="path81"
-        d="M564.052 110.896H248.63l.565 182.3h35.624"
-        style={{
-          opacity: 1,
-          fill: "none",
-          fillOpacity: 1,
-          stroke: "#000",
-          strokeWidth: 2.68724,
-          strokeDasharray: "8.06172,2.68724",
-          strokeDashoffset: 0,
-          strokeOpacity: 1,
-          paintOrder: "markers fill stroke",
-        }}
-      />
-      <path
-        id="path2"
-        d="m314.979 291.965-.063 1.87.063 1.867h13.11v-3.737z"
-        style={{
-          baselineShift: "baseline",
-          display: "inline",
-          overflow: "visible",
-          vectorEffect: "none",
-          fill: "#fff",
-          strokeWidth: 1.3576,
-          paintOrder: "markers fill stroke",
-          stopColor: "#000",
-          stopOpacity: 1,
-        }}
-      />
-      <path
-        id="path1"
-        d="M316.966 273.016v8.555h-34.79l.104 11.935-.103 11.934h34.789v8.557h11.232v-19.328h-13.045l-.055-1.163.055-1.164h13.045v-19.326z"
-        style={{
-          baselineShift: "baseline",
-          display: "inline",
-          overflow: "visible",
-          vectorEffect: "none",
-          fill: "url(#radialGradient180-4)",
-          paintOrder: "fill markers stroke",
-          stopColor: "#000",
-          stopOpacity: 1,
-        }}
-      />
-      <path
-        id="path65-9"
-        d="m293.519 105.047-9.966 5.753 9.858 5.692"
-        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
           fill: "none",
           stroke: "#000",
-          strokeWidth: 1.29705,
-          strokeDasharray: "none",
-          strokeDashoffset: 0,
-          strokeOpacity: 1,
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
           paintOrder: "markers fill stroke",
         }}
-      />
-      <path
-        id="path10-6"
-        d="m313.886 414.535-6.094 9.953 1.12-6.966h-18.784l1.368 7.338-7.338-10.325 7.338-10.321-1.368 7.338h18.784l-1.12-6.966z"
+      >
+        <tspan id="tspan4" x={510.14} y={288.212}>
+          {"7"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text5"
+        x={607.858}
+        y={408.718}
         style={{
-          fill: "#000",
-          fillOpacity: 1,
-          stroke: "none",
-          strokeWidth: 3.36674,
-          strokeDasharray: "none",
-          strokeOpacity: 1,
-          paintOrder: "markers fill stroke",
-        }}
-      />
-      <path
-        id="path212"
-        d="m243.402 216.717 5.753 9.966 5.692-9.858"
-        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
           fill: "none",
           stroke: "#000",
-          strokeWidth: 1.29705,
-          strokeDasharray: "none",
-          strokeDashoffset: 0,
-          strokeOpacity: 1,
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
           paintOrder: "markers fill stroke",
         }}
-      />
+      >
+        <tspan id="tspan6" x={607.858} y={408.718}>
+          {"6"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text7"
+        x={696.71}
+        y={408.435}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan7" x={696.71} y={408.435}>
+          {"5"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text8"
+        x={813.486}
+        y={408.435}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan8" x={813.486} y={408.435}>
+          {"4"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text9"
+        x={919.826}
+        y={397.153}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan9" x={919.826} y={397.153}>
+          {"3"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text10"
+        x={1048.731}
+        y={317.891}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan10" x={1048.731} y={317.891}>
+          {"17"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text11"
+        x={919.826}
+        y={281.787}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan11" x={919.826} y={281.787}>
+          {"1"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text12"
+        x={813.486}
+        y={289.967}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan12" x={813.486} y={289.967}>
+          {"2"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text13"
+        x={813.486}
+        y={190.396}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan13" x={813.486} y={190.396}>
+          {"14"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text14"
+        x={893.029}
+        y={190.396}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan14" x={893.029} y={190.396}>
+          {"15"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text15"
+        x={686.555}
+        y={190.396}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan15" x={686.555} y={190.396}>
+          {"13"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text16"
+        x={609.268}
+        y={190.396}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan16" x={609.268} y={190.396}>
+          {"12"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text17"
+        x={541.008}
+        y={26.232}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan17" x={541.008} y={26.232}>
+          {"11"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text18"
+        x={844.232}
+        y={26.232}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan18" x={844.232} y={26.232}>
+          {"18"}
+        </tspan>
+      </text>
+      <text
+        xmlSpace="preserve"
+        id="text19"
+        x={988.087}
+        y={51.901}
+        style={{
+          fontSize: 16,
+          textAlign: "center",
+          writingMode: "lr-tb",
+          direction: "ltr",
+          textAnchor: "middle",
+          fill: "none",
+          stroke: "#000",
+          strokeWidth: 2.07118,
+          strokeLinecap: "square",
+          strokeDasharray: "1.36944,.456481",
+          paintOrder: "markers fill stroke",
+        }}
+      >
+        <tspan id="tspan19" x={988.087} y={51.901}>
+          {"16"}
+        </tspan>
+      </text>
     </g>
+    <path
+      id="green-arrow"
+      d="m465.384 357.547-9.772 12.66h5.907v104.205h295.748v-7.56h-288.19v-96.645h6.586z"
+      style={{
+        baselineShift: "baseline",
+        display: "inline",
+        overflow: "visible",
+        vectorEffect: "none",
+        fill: "#00ff2d",
+        strokeLinecap: "square",
+        strokeDasharray: "3.72148,1.24049",
+        paintOrder: "markers fill stroke",
+        stopColor: "#000",
+        stopOpacity: 1,
+      }}
+    />
+    <path
+      id="purple-arrow"
+      d="M753.02 159.852v7.863h-291.5v114.178h7.558V175.275H753.02v8.112l14.86-12.067z"
+      style={{
+        baselineShift: "baseline",
+        display: "inline",
+        overflow: "visible",
+        vectorEffect: "none",
+        fill: "#b200ff",
+        strokeLinecap: "square",
+        strokeDasharray: "4.36821,1.45607",
+        paintOrder: "markers fill stroke",
+        stopColor: "#000",
+        stopOpacity: 1,
+      }}
+    />
   </svg>
 );
 export default SvgSchematicWindowComponent;
