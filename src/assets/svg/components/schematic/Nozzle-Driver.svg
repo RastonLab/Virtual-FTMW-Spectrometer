@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.087615"
-     inkscape:cx="458.17835"
-     inkscape:cy="443.56838"
+     inkscape:zoom="0.36904168"
+     inkscape:cx="-6.7743025"
+     inkscape:cy="-124.64717"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g7-9-3"
+     inkscape:current-layer="g58-5"
      showgrid="false" />
   <defs
      id="defs1">
@@ -2239,9 +2239,9 @@
          transform="matrix(0.70639811,0,0,0.65765069,942.36959,273.58682)"><tspan
            x="571.05469"
            y="365.17688"
-           id="tspan2"><tspan
+           id="tspan6"><tspan
              style="fill:#f9f9f9"
-             id="tspan1">START</tspan></tspan></text>
+             id="tspan5">START</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-size:16px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:64.938;display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3.77953;stroke-opacity:1"
@@ -2251,9 +2251,9 @@
          transform="matrix(0.70639811,0,0,0.65765069,1012.3128,274.83825)"><tspan
            x="571.05469"
            y="365.17688"
-           id="tspan4"><tspan
+           id="tspan8"><tspan
              style="fill:#ffffff"
-             id="tspan3">STOP</tspan></tspan></text>
+             id="tspan7">STOP</tspan></tspan></text>
       <path
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:3.19419;stroke-opacity:1"
          d="m 1383.7799,542.28353 h 30.4322"
@@ -2602,27 +2602,6 @@
            x="676.29944"
            y="423.9501"
            style="stroke-width:3.04896;stroke-dasharray:none">EXTERNAL</tspan></text>
-      <ellipse
-         style="fill:#b8b8b6;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.61237;stroke-dasharray:none;stroke-opacity:1"
-         id="path60"
-         cx="478.58075"
-         cy="-327.53827"
-         rx="14.792738"
-         ry="13.054634" />
-      <ellipse
-         style="fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3.39938;stroke-dasharray:none;stroke-opacity:1"
-         id="path61"
-         cx="478.5036"
-         cy="-328.00189"
-         rx="10.394742"
-         ry="9.5128841" />
-      <ellipse
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.03832;stroke-dasharray:none;stroke-opacity:1"
-         id="path61-1"
-         cx="478.41116"
-         cy="-328.01776"
-         rx="3.0779994"
-         ry="2.997205" />
       <g
          id="g379"
          transform="matrix(1.0476047,0,0,1.2933868,-35.747245,-115.08433)">
@@ -2658,15 +2637,15 @@
       <text
          xml:space="preserve"
          style="font-size:16.4398px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0c0c0c;fill-opacity:1;fill-rule:evenodd;stroke:#9f9f9f;stroke-width:1.89764;stroke-dasharray:none;stroke-opacity:1"
-         x="687.17377"
-         y="389.95404"
+         x="691.45483"
+         y="391.93698"
          id="text61"
          transform="scale(1.1020945,0.9073632)"><tspan
            sodipodi:role="line"
            id="tspan61"
            style="fill:#0c0c0c;fill-opacity:1;stroke:#9f9f9f;stroke-width:1.89764;stroke-dasharray:none;stroke-opacity:1"
-           x="687.17377"
-           y="389.95404">IOTA ONE</tspan></text>
+           x="691.45483"
+           y="391.93698">MANOA ONE</tspan></text>
       <rect
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.41006;stroke-dasharray:none;stroke-opacity:1"
          id="rect62"
@@ -2901,7 +2880,7 @@
            id="tspan270"
            x="654.21808"
            y="400.78336"
-           style="fill:#1a1a1a;stroke:#000000;stroke-width:1.56725;stroke-dasharray:none;stroke-opacity:1">Parker</tspan></text>
+           style="fill:#1a1a1a;stroke:#000000;stroke-width:1.56725;stroke-dasharray:none;stroke-opacity:1">Manoa</tspan></text>
       <rect
          style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.44538;stroke-dasharray:none;stroke-opacity:1"
          id="rect271"

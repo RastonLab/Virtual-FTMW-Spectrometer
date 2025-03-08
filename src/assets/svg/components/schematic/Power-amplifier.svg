@@ -8,7 +8,7 @@
    version="1.1"
    id="schematic-window"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="绘图.svg"
+   sodipodi:docname="Power-amplifier.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.75904547"
-     inkscape:cx="-17.785496"
-     inkscape:cy="9.2221089"
+     inkscape:zoom="1.0734524"
+     inkscape:cx="419.67394"
+     inkscape:cy="414.55029"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -1454,7 +1454,8 @@
   </g>
   <g
      id="g639"
-     transform="matrix(0.9970238,0,0,0.95442912,-99.633573,-5.0572542)">
+     transform="matrix(0.9970238,0,0,0.95442912,-99.633573,-5.0572542)"
+     sodipodi:insensitive="true">
     <rect
        style="fill:url(#linearGradient668);fill-opacity:1;fill-rule:evenodd;stroke-width:8.41756;stroke-opacity:0.230216"
        id="rect1"
@@ -1490,27 +1491,10 @@
        d="m 304.98059,153.38058 513.9437,0.0959 1.26738,39.48428 -537.13497,1.06973 z"
        sodipodi:nodetypes="ccccc"
        transform="matrix(1.0612325,0,0,1.3220154,180.0203,12.003825)" />
-    <path
-       id="rect626-2"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.51135;stroke-dasharray:none;stroke-opacity:1"
-       d="m 840.10744,220.85918 177.80976,0.0491 0.4384,20.17728 -185.83319,0.54665 z"
-       sodipodi:nodetypes="ccccc" />
-    <text
-       xml:space="preserve"
-       style="font-size:10.6017px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.46289;stroke-dasharray:none;stroke-opacity:1"
-       x="798.77246"
-       y="249.21451"
-       id="text635"
-       transform="matrix(1.066972,-1.4006591e-4,-0.00386388,0.93723222,0,0)"><tspan
-         sodipodi:role="line"
-         id="tspan635"
-         x="798.77246"
-         y="249.21451"
-         style="font-size:10.6017px;stroke-width:1.46289">Mano Microwave</tspan></text>
   </g>
   <g
      id="g638"
-     transform="matrix(0.9970238,0,0,0.95442912,-225.7318,-20.146139)">
+     transform="matrix(0.9970238,0,0,0.95442912,-229.45809,-23.872434)">
     <rect
        style="fill:#dadbdf;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.47015;stroke-dasharray:none;stroke-opacity:1"
        id="rect635"
@@ -1632,7 +1616,7 @@
      transform="matrix(0.9970238,0,0,0.95442912,-258.23983,-57.489228)">
     <text
        xml:space="preserve"
-       style="font-size:14.7881px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.11669;stroke-dasharray:none;stroke-opacity:0.98198199"
+       style="font-size:14.7881px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.11669;stroke-dasharray:none;stroke-opacity:0.981982"
        x="727.77521"
        y="345.94287"
        id="text629"
@@ -1641,7 +1625,7 @@
          x="727.77521"
          y="345.94287"
          sodipodi:role="line"
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.11669;stroke-opacity:0.98198199">RF COMPONENTS ON DEMAN.</tspan></text>
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.11669;stroke-opacity:0.981982">RF COMPONENTS ON DEMAND.</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:25.5651px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.14268;stroke-dasharray:none;stroke-opacity:0.981982"
@@ -1693,7 +1677,7 @@
   </g>
   <g
      id="g633"
-     transform="matrix(0.9970238,0,0,0.95442912,-251.73823,-64.602196)">
+     transform="matrix(0.9970238,0,0,0.95442912,-256.3961,-60.875901)">
     <text
        xml:space="preserve"
        style="font-size:24.3969px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.84227;stroke-dasharray:none;stroke-opacity:0.981982"

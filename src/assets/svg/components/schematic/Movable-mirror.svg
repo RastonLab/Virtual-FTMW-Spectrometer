@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="0.77864522"
-     inkscape:cx="170.16736"
-     inkscape:cy="100.17399"
+     inkscape:zoom="0.38932261"
+     inkscape:cx="-104.02684"
+     inkscape:cy="120.7225"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -57,30 +57,10 @@
          id="stop13" />
     </linearGradient>
     <linearGradient
-       id="linearGradient7"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#caad7a;stop-opacity:1;"
-         offset="0"
-         id="stop8" />
-      <stop
-         style="stop-color:#d5c29c;stop-opacity:1;"
-         offset="0.5"
-         id="stop10" />
-      <stop
-         style="stop-color:#d1bd8e;stop-opacity:1;"
-         offset="0.75"
-         id="stop11" />
-      <stop
-         style="stop-color:#c5b27f;stop-opacity:1;"
-         offset="1"
-         id="stop9" />
-    </linearGradient>
-    <linearGradient
        id="linearGradient2"
        inkscape:collect="always">
       <stop
-         style="stop-color:#acacb2;stop-opacity:1;"
+         style="stop-color:#a2a2a5;stop-opacity:1;"
          offset="0"
          id="stop2" />
       <stop
@@ -92,15 +72,15 @@
          offset="0.75"
          id="stop5" />
       <stop
-         style="stop-color:#c6c6ca;stop-opacity:1;"
+         style="stop-color:#c4c4c9;stop-opacity:1;"
          offset="0.8125"
          id="stop7" />
       <stop
-         style="stop-color:#c1c1c9;stop-opacity:1;"
+         style="stop-color:#c1c1c8;stop-opacity:1;"
          offset="0.875"
          id="stop6" />
       <stop
-         style="stop-color:#a2a2a2;stop-opacity:1;"
+         style="stop-color:#a3a3a3;stop-opacity:1;"
          offset="1"
          id="stop3" />
     </linearGradient>
@@ -146,17 +126,7 @@
        x2="637.0038"
        y2="401.33809"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.98502823,0,0,0.97634254,141.64122,12.292364)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient7"
-       id="linearGradient9"
-       x1="114.44447"
-       y1="402.62243"
-       x2="720.33884"
-       y2="402.62243"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.98502823,0,0,0.97634254,147.00839,14.065645)" />
+       gradientTransform="matrix(1.1186367,0,0,1.2016185,87.723227,-75.292756)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient11"
@@ -166,32 +136,25 @@
        x2="427.27732"
        y2="403.26449"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0982828,0,0,1.0885985,103.96919,-45.360728)" />
+       gradientTransform="matrix(1.2472973,0,0,1.3246421,40.006465,-128.06477)" />
   </defs>
   <g
      inkscape:label="图层 1"
      inkscape:groupmode="layer"
      id="layer1">
     <ellipse
-       style="fill:url(#linearGradient9);fill-rule:evenodd;stroke:#000000;stroke-width:2.2378;stroke-linejoin:bevel;stroke-opacity:0.258799"
-       id="path1"
-       cx="558.15094"
-       cy="407.16306"
-       rx="297.28766"
-       ry="261.43799" />
-    <ellipse
-       style="fill:url(#linearGradient3);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.55372;stroke-linejoin:bevel;stroke-opacity:0.134576"
+       style="fill:url(#linearGradient3);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.01909;stroke-linejoin:bevel;stroke-opacity:0.134576"
        id="path2"
-       cx="556.57886"
-       cy="404.13583"
-       rx="212.52907"
-       ry="199.9969" />
+       cx="558.94275"
+       cy="406.96259"
+       rx="241.35635"
+       ry="246.14311" />
     <ellipse
-       style="fill:url(#linearGradient13);fill-rule:evenodd;stroke:#000000;stroke-width:1.26717;stroke-linejoin:bevel;stroke-opacity:0.134576"
+       style="fill:url(#linearGradient13);fill-rule:evenodd;stroke:#000000;stroke-width:1.48962;stroke-linejoin:bevel;stroke-opacity:0.134576"
        id="path11"
-       cx="560.97272"
-       cy="393.63235"
-       rx="11.63142"
-       ry="11.528859" />
+       cx="559.01593"
+       cy="406.1163"
+       rx="13.209565"
+       ry="14.02869" />
   </g>
 </svg>

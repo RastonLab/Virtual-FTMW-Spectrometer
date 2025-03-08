@@ -25,14 +25,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.40220913"
-     inkscape:cx="-177.76822"
-     inkscape:cy="-37.294032"
+     inkscape:cx="478.60674"
+     inkscape:cy="350.5639"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g112"
+     inkscape:current-layer="g70"
      showgrid="false" />
   <defs
      id="defs1">
@@ -2032,13 +2032,13 @@
       <text
          xml:space="preserve"
          style="font-size:23.9886px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#6b8080;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.07108;stroke-dasharray:none;stroke-opacity:1"
-         x="473.42905"
+         x="549.09753"
          y="397.3754"
          id="text49"
-         transform="scale(0.94096421,1.0627397)"><tspan
+         transform="scale(0.94096419,1.0627397)"><tspan
            sodipodi:role="line"
            id="tspan49"
-           x="473.42905"
+           x="549.09753"
            y="397.3754"
            style="stroke-width:2.07108">GND</tspan></text>
       <text
@@ -2056,14 +2056,14 @@
       <text
          xml:space="preserve"
          style="font-size:23.9886px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#6b8080;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.07108;stroke-dasharray:none;stroke-opacity:1"
-         x="604.67596"
-         y="396.71194"
+         x="633.1684"
+         y="397.53906"
          id="text49-9"
-         transform="scale(0.94096411,1.0627397)"><tspan
+         transform="scale(0.94096418,1.0627397)"><tspan
            sodipodi:role="line"
            id="tspan49-1"
-           x="604.67596"
-           y="396.71194"
+           x="633.1684"
+           y="397.53906"
            style="stroke-width:2.07108">+15V</tspan></text>
     </g>
   </g>
