@@ -32,6 +32,8 @@ export default function StepSizeOptions() {
         <FormControlLabel value={0.2} control={<Radio />} label="0.2" />
         <FormControlLabel value={0.5} control={<Radio />} label="0.5" />
         <FormControlLabel value={1.0} control={<Radio />} label="1.0" />
+        <FormControlLabel value={2.0} control={<Radio />} label="2.0" />
+        <FormControlLabel value={5.0} control={<Radio />} label="5.0" />
       </RadioGroup>
     </FormControl>
   );

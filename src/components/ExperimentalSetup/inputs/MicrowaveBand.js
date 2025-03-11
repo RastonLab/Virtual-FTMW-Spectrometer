@@ -1,32 +1,32 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import * as experimentalSetupReducer from '../../../redux/experimentalSetupSlice';
-import { molecules } from '../../../dictionaries/molecule';
+import { microwaveBand } from "../../../dictionaries/microwaveBand.js";
 
 /**
- * A component that contains a MUI Select (dropdown) for the molecule values
+ * A component that contains a MUI Select (dropdown) for the microwave band values
  */
-export default function Molecule() {
+export default function MicrowaveBand() {
   const dispatch = useDispatch();
-  const { molecule } = useSelector((store) => store.experimentalSetup)
+  const { mwBand } = useSelector((store) => store.experimentalSetup)
 
   const handleChange = (event) => {
-    dispatch(experimentalSetupReducer.setMolecule(event.target.value));
+    dispatch(experimentalSetupReducer.setsMWBand(event.target.value));
   };
 
   return (
     <div>
       <FormControl fullWidth>
-        <InputLabel>Molecule</InputLabel>
+        <InputLabel>Microwave Band</InputLabel>
         <Select
-          value={molecule}
-          label="Molecule"
+          value={mwBand}
+          label="Microwave Band"
           onChange={handleChange}
           sx={{ maxWidth: "120px" }}
         >
-          {Object.keys(molecules).map((option) => (
+          {Object.keys(microwaveBand).map((option) => (
             <MenuItem key={option} value={option}>
-              {molecules[option]}
+              {microwaveBand[option]}
             </MenuItem>
           ))}
         </Select>
