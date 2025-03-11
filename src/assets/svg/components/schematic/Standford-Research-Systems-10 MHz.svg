@@ -4,7 +4,7 @@
    width="624"
    height="411"
    id="schematic-window"
-   sodipodi:docname="Microwave-synthesizer.svg"
+   sodipodi:docname="Standford-Research-Systems-10 MHz.svg"
    xml:space="preserve"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -468,15 +468,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.28"
-     inkscape:cx="262.10938"
-     inkscape:cy="75"
+     inkscape:zoom="1.8101934"
+     inkscape:cx="226.77135"
+     inkscape:cy="127.05825"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="schematic-window" /><path
+     inkscape:current-layer="g456" /><path
      id="rect94-1-61"
      style="fill:url(#linearGradient28);stroke-width:1.31764;paint-order:fill markers stroke"
      d="m 160.29009,322.93065 0.0194,-9.82976 334.45154,0.6405 -0.0488,9.71837 z"
@@ -756,7 +756,7 @@
          id="tspan418"
          x="247.46472"
          y="116.50637"
-         style="stroke-width:3.03888">MODEL FS725  Rubidum Frequency Manoa</tspan></text></g><g
+         style="stroke-width:3.03888">MODEL FS725  Rubidum Frequency Standard</tspan></text></g><g
      id="g60"
      transform="matrix(1,0,0,0.74525628,0,21.541622)"><path
        id="rect520-2"
