@@ -11,6 +11,7 @@ const initialState = {
   frequencyRange: { min: 2, max: 40 },
   repetitionRate: 1,
   molecularPulseWidth: 500,
+  acquisitionType: 'Single Frequency',
 };
 
 /**
@@ -80,6 +81,12 @@ const experimentalSetupSlice = createSlice({
     setMolecularPulseWidth: (state, { payload }) => {
       state.molecularPulseWidth = payload;
     },
+    /**
+     * Sets the acquisition type
+     */
+    setAcquisitionType: (state, { payload }) => {
+      state.acquisitionType = payload;
+    }
   },
 });
 
@@ -94,6 +101,7 @@ export const {
   setFrequencyRange,
   setRepetitionRate,
   setMolecularPulseWidth,
+  setAcquisitionType,
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;

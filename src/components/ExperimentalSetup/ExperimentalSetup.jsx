@@ -10,6 +10,7 @@ import { setFrequencyRange, setFrequencyMin, setFrequencyMax, } from '../../redu
 import MicrowaveBand from './inputs/MicrowaveBand.js';
 import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js';
 import SliderComponent from '../SliderComponent.jsx';
+import SwitchComponent from '../SwitchComponent.jsx';
 
 /**
  * A component that contains all the experimental setup components
@@ -20,7 +21,7 @@ const ExperimentalSetup = () => {
   const { fetching, prefetch } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
   const { devMode } = useSelector((store) => store.devMode);
-  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth } = useSelector((store) => store.experimentalSetup);
+  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType } = useSelector((store) => store.experimentalSetup);
 
   /**
    * Calls the helper method to get frequency range value depending on the mw band
@@ -68,6 +69,18 @@ const ExperimentalSetup = () => {
         <div className="exp-col">
           <div className="parameter">
             <Molecule/>
+          </div>
+
+          <div className="parameter">
+            <SwitchComponent
+              leftOptionData={"Single Frequency"}
+              rightOptionData={"Frequency Range"}
+              value={acquisitionType}
+              setValueAction={experimentalSetupReducer.setAcquisitionType}
+              fieldLabel="Acquisition Type:"
+              leftOptionLabel={"Single Frequency"}
+              rightOptionLabel={"Frequency Range"}
+            />
           </div>
 
           <div className="parameter">
