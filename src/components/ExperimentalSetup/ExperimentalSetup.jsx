@@ -6,11 +6,10 @@ import { SamplePlotly } from '../SamplePlotly';
 import { useDispatch, useSelector } from 'react-redux';
 import "../../style/routes/ExperimentalSetup.css";
 import FrequencyRange from './inputs/FrequencyRange.js';
-import StepSizeOptions from './inputs/StepSizeOptions';
-import NumCyclesInput from './inputs/NumCyclesInput';
-import MicrowavePulseInput from './inputs/MicrowavePulseInput';
 import { setFrequencyRange, setFrequencyMin, setFrequencyMax, } from '../../redux/experimentalSetupSlice.js';
 import MicrowaveBand from './inputs/MicrowaveBand.js';
+import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js';
+import SliderComponent from '../SliderComponent.jsx';
 
 /**
  * A component that contains all the experimental setup components
@@ -21,7 +20,7 @@ const ExperimentalSetup = () => {
   const { fetching, prefetch } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
   const { devMode } = useSelector((store) => store.devMode);
-  const { mwBand, frequencyRange } = useSelector((store) => store.experimentalSetup);
+  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth } = useSelector((store) => store.experimentalSetup);
 
   /**
    * Calls the helper method to get frequency range value depending on the mw band
@@ -80,15 +79,59 @@ const ExperimentalSetup = () => {
           </div>
 
           <div className="parameter">
-            <StepSizeOptions/>
+            <SliderComponent
+              min={0.1}
+              max={10}
+              value={stepSize}
+              setValueAction={experimentalSetupReducer.setStepSize}
+              label="Step Size (MHz):"
+              disabled={false}
+              stepSize={0.1}
+            />
           </div>
 
           <div className="parameter">
-            <NumCyclesInput min={1} max={100}/>
+            <SliderComponent
+              min={0}
+              max={100}
+              value={numCyclesPerStep}
+              setValueAction={experimentalSetupReducer.setNumCyclesPerStep}
+              label="Number of Cycles per Step:"
+              disabled={false}
+            />
           </div>
 
           <div className="parameter">
-            <MicrowavePulseInput min={0} max={10}/>
+            <SliderComponent
+              min={0}
+              max={10}
+              value={repetitionRate}
+              setValueAction={experimentalSetupReducer.setRepetitionRate}
+              label="Repetition Rate (Hz):"
+              disabled={true}
+            />
+          </div>
+
+          <div className="parameter">
+            <SliderComponent
+              min={0}
+              max={1000}
+              value={molecularPulseWidth}
+              setValueAction={experimentalSetupReducer.setMolecularPulseWidth}
+              label="Molecular Pulse Width (μs):"
+              disabled={true}
+            />
+          </div>
+
+          <div className="parameter">
+            <SliderComponent
+              min={0}
+              max={10}
+              value={microwavePulseWidth}
+              setValueAction={experimentalSetupReducer.setMicrowavePulseWidth}
+              label="Microwave Pulse Width (μs):"
+              disabled={true}
+            />
           </div>
         </div>
       </div>

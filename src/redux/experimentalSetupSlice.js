@@ -6,9 +6,11 @@ const initialState = {
   frequencyMin: 2000,
   frequencyMax: 4000,
   numCyclesPerStep: 1,
-  microwavePulseWidth: 0,
+  microwavePulseWidth: 1,
   mwBand: "S",
-  frequencyRange: { min: 2, max: 40 }
+  frequencyRange: { min: 2, max: 40 },
+  repetitionRate: 1,
+  molecularPulseWidth: 500,
 };
 
 /**
@@ -65,7 +67,19 @@ const experimentalSetupSlice = createSlice({
      */
     setFrequencyRange: (state, { payload }) => {
       state.frequencyRange = payload;
-    }
+    },
+    /**
+     * Sets the repetition rate
+     */
+    setRepetitionRate: (state, { payload }) => {
+      state.repetitionRate = payload;
+    },
+    /**
+     * Sets the molecular pulse width
+     */
+    setMolecularPulseWidth: (state, { payload }) => {
+      state.molecularPulseWidth = payload;
+    },
   },
 });
 
@@ -77,7 +91,9 @@ export const {
   setNumCyclesPerStep,
   setMicrowavePulseWidth,
   setsMWBand,
-  setFrequencyRange
+  setFrequencyRange,
+  setRepetitionRate,
+  setMolecularPulseWidth,
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;
