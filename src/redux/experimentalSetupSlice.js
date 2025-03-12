@@ -3,11 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   molecule: "HCN",
   stepSize: 0.1,
-  frequencyMin: 2,
-  frequencyMax: 4,
+  frequencyMin: 2000,
+  frequencyMax: 4000,
   numCyclesPerStep: 1,
-  microwavePulseWidth: 0,
-  mwBand: ""
+  microwavePulseWidth: 1,
+  mwBand: "S",
+  frequencyRange: { min: 2, max: 40 },
+  repetitionRate: 1,
+  molecularPulseWidth: 500,
+  acquisitionType: 'Single Frequency',
 };
 
 /**
@@ -58,6 +62,30 @@ const experimentalSetupSlice = createSlice({
      */
     setsMWBand: (state, { payload }) => {
       state.mwBand = payload;
+    },
+    /**
+     * Sets the frequency range
+     */
+    setFrequencyRange: (state, { payload }) => {
+      state.frequencyRange = payload;
+    },
+    /**
+     * Sets the repetition rate
+     */
+    setRepetitionRate: (state, { payload }) => {
+      state.repetitionRate = payload;
+    },
+    /**
+     * Sets the molecular pulse width
+     */
+    setMolecularPulseWidth: (state, { payload }) => {
+      state.molecularPulseWidth = payload;
+    },
+    /**
+     * Sets the acquisition type
+     */
+    setAcquisitionType: (state, { payload }) => {
+      state.acquisitionType = payload;
     }
   },
 });
@@ -69,7 +97,11 @@ export const {
   setFrequencyMax,
   setNumCyclesPerStep,
   setMicrowavePulseWidth,
-  setsMWBand
+  setsMWBand,
+  setFrequencyRange,
+  setRepetitionRate,
+  setMolecularPulseWidth,
+  setAcquisitionType,
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;
