@@ -11,7 +11,7 @@ const initialState = {
   frequencyRange: { min: 2, max: 40 },
   repetitionRate: 1,
   molecularPulseWidth: 500,
-  acquisitionType: 'Single Frequency',
+  acquisitionType: 'single',
 };
 
 /**
