@@ -73,8 +73,8 @@ const ExperimentalSetup = () => {
 
           <div className="parameter">
             <SwitchComponent
-              leftOptionData={"Single Frequency"}
-              rightOptionData={"Frequency Range"}
+              leftOptionData={"single"}
+              rightOptionData={"range"}
               value={acquisitionType}
               setValueAction={experimentalSetupReducer.setAcquisitionType}
               fieldLabel="Acquisition Type:"
@@ -87,21 +87,26 @@ const ExperimentalSetup = () => {
             <MicrowaveBand/>
           </div>
 
-          <div className="parameter">
-            <FrequencyRange min={frequencyRange.min} max={frequencyRange.max}/>
-          </div>
+        {
+          acquisitionType === 'single' &&
+          <>
+            <div className="parameter">
+              <FrequencyRange min={frequencyRange.min} max={frequencyRange.max}/>
+            </div>
 
-          <div className="parameter">
-            <SliderComponent
-              min={0.1}
-              max={10}
-              value={stepSize}
-              setValueAction={experimentalSetupReducer.setStepSize}
-              label="Step Size (MHz):"
-              disabled={false}
-              stepSize={0.1}
-            />
-          </div>
+            <div className="parameter">
+              <SliderComponent
+                min={0.1}
+                max={10}
+                value={stepSize}
+                setValueAction={experimentalSetupReducer.setStepSize}
+                label="Step Size (MHz):"
+                disabled={false}
+                stepSize={0.1}
+              />
+            </div>
+          </>
+        }
 
           <div className="parameter">
             <SliderComponent
