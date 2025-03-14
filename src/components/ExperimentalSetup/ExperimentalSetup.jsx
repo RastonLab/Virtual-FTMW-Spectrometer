@@ -88,7 +88,7 @@ const ExperimentalSetup = () => {
           </div>
 
         {
-          acquisitionType === 'single' &&
+          acquisitionType === 'range' &&
           <>
             <div className="parameter">
               <FrequencyRange min={frequencyRange.min} max={frequencyRange.max}/>
