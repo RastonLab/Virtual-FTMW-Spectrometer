@@ -6,11 +6,11 @@ import { SamplePlotly } from '../SamplePlotly';
 import { useDispatch, useSelector } from 'react-redux';
 import "../../style/routes/ExperimentalSetup.css";
 import FrequencyRange from './inputs/FrequencyRange.js';
-import { setFrequencyRange, setFrequencyMin, setFrequencyMax, } from '../../redux/experimentalSetupSlice.js';
 import MicrowaveBand from './inputs/MicrowaveBand.js';
-import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js';
 import SliderComponent from '../SliderComponent.jsx';
 import SwitchComponent from '../SwitchComponent.jsx';
+import TextFieldComponent from '../TextFieldComponent.jsx';
+import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js';
 
 /**
  * A component that contains all the experimental setup components
@@ -21,22 +21,23 @@ const ExperimentalSetup = () => {
   const { fetching, prefetch } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
   const { devMode } = useSelector((store) => store.devMode);
-  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType } = useSelector((store) => store.experimentalSetup);
+  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres } = useSelector((store) => store.experimentalSetup);
 
   /**
    * Calls the helper method to get frequency range value depending on the mw band
    */
   useEffect(() => {
     const range = minMaxFrequencyRange();
-    dispatch(setFrequencyRange(range));
+    dispatch(experimentalSetupReducer.setFrequencyRange(range));
   }, [mwBand, dispatch]);
 
   /**
    * Sets the min and max frequency values depending on the frequency range
    */
   useEffect(() => {
-    dispatch(setFrequencyMin(frequencyRange.min));
-    dispatch(setFrequencyMax(frequencyRange.max));
+    dispatch(experimentalSetupReducer.setFrequencyMin(frequencyRange.min));
+    dispatch(experimentalSetupReducer.setFrequencyMax(frequencyRange.max));
+    dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
   },[frequencyRange, dispatch]);
 
   /**
@@ -84,29 +85,41 @@ const ExperimentalSetup = () => {
           </div>
 
           <div className="parameter">
-            <MicrowaveBand/>
+              <MicrowaveBand/>
           </div>
 
-        {
-          acquisitionType === 'range' &&
-          <>
-            <div className="parameter">
-              <FrequencyRange min={frequencyRange.min} max={frequencyRange.max}/>
-            </div>
+          {
+            acquisitionType === 'range' ?
+            <>
+              <div className="parameter">
+                <FrequencyRange min={frequencyRange.min} max={frequencyRange.max}/>
+              </div>
 
+              <div className="parameter">
+                <SliderComponent
+                  min={0.1}
+                  max={10}
+                  value={stepSize}
+                  setValueAction={experimentalSetupReducer.setStepSize}
+                  label="Step Size (MHz):"
+                  disabled={false}
+                  stepSize={0.1}
+                />
+              </div>
+            </>
+            :
             <div className="parameter">
-              <SliderComponent
-                min={0.1}
-                max={10}
-                value={stepSize}
-                setValueAction={experimentalSetupReducer.setStepSize}
-                label="Step Size (MHz):"
-                disabled={false}
-                stepSize={0.1}
+              <TextFieldComponent
+                min={frequencyRange.min}
+                max={frequencyRange.max}
+                step={0.1}
+                store={vres}
+                label="Frequency:"
+                unit="MHz"
+                reducer={experimentalSetupReducer.setVres}
               />
             </div>
-          </>
-        }
+          }
 
           <div className="parameter">
             <SliderComponent
