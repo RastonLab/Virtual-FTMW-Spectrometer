@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   molecule: "HCN",
-  stepSize: 0.1,
+  stepSize: 1,
   frequencyMin: 2000,
   frequencyMax: 4000,
   numCyclesPerStep: 1,
@@ -12,6 +12,7 @@ const initialState = {
   repetitionRate: 1,
   molecularPulseWidth: 500,
   acquisitionType: 'single',
+  vres: 0
 };
 
 /**
@@ -86,6 +87,12 @@ const experimentalSetupSlice = createSlice({
      */
     setAcquisitionType: (state, { payload }) => {
       state.acquisitionType = payload;
+    },
+    /**
+     * Sets the vres for single frequency acquisition
+     */
+    setVres: (state, { payload }) => {
+      state.vres = payload;
     }
   },
 });
@@ -102,6 +109,7 @@ export const {
   setRepetitionRate,
   setMolecularPulseWidth,
   setAcquisitionType,
+  setVres
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;

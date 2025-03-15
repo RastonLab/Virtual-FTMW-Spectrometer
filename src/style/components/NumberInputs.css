@@ -10,3 +10,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+#number-input .MuiTextField-root {
+  width: 50%;
+}
