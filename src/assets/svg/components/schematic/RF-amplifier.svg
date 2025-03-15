@@ -25,15 +25,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.8101934"
-     inkscape:cx="484.20242"
-     inkscape:cy="212.68446"
+     inkscape:zoom="0.9050967"
+     inkscape:cx="377.30775"
+     inkscape:cy="274.00387"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="schematic-window"
+     inkscape:current-layer="g17"
      showguides="true" />
   <defs
      id="defs1">
@@ -1564,7 +1564,8 @@
        height="226.60039"
        x="660.48352"
        y="184.89142"
-       ry="1.9761662" />
+       ry="1.9761662"
+       sodipodi:insensitive="true" />
     <rect
        style="fill:#e7e7d4;fill-opacity:1;fill-rule:evenodd;stroke-width:1.06496"
        id="rect8"
@@ -1572,7 +1573,8 @@
        height="162.99995"
        x="699.1261"
        y="216.45886"
-       ry="2.1447365" />
+       ry="2.1447365"
+       sodipodi:insensitive="true" />
     <rect
        style="fill:#e7e7d4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.988716;stroke-opacity:1"
        id="rect8-5"
@@ -1580,7 +1582,8 @@
        height="151.79005"
        x="708.02563"
        y="222.22697"
-       ry="1.9972377" />
+       ry="1.9972377"
+       sodipodi:insensitive="true" />
   </g>
   <g
      id="g34"
@@ -1777,7 +1780,18 @@
          id="tspan7"
          x="709.57831"
          y="313.19339"
-         style="stroke:none;stroke-width:0.732815;stroke-dasharray:none">GND +12V</tspan></text>
+         style="stroke:none;stroke-width:0.732815;stroke-dasharray:none">GND</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.5751px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.732815;stroke-dasharray:none;stroke-opacity:1"
+       x="751.60559"
+       y="313.56366"
+       id="text7-1"
+       transform="scale(0.92740807,1.078274)"><tspan
+         id="tspan7-9"
+         x="751.60559"
+         y="313.56366"
+         style="stroke:none;stroke-width:0.732815;stroke-dasharray:none">+12V</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:11.3092px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.49068;stroke-dasharray:none;stroke-opacity:1"

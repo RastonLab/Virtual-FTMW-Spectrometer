@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.5367262"
-     inkscape:cx="369.83475"
-     inkscape:cy="322.32449"
+     inkscape:zoom="1.0734524"
+     inkscape:cx="496.06298"
+     inkscape:cy="333.50338"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g631"
+     inkscape:current-layer="schematic-window"
      showgrid="false" />
   <defs
      id="defs1">
@@ -1733,31 +1733,31 @@
     <text
        xml:space="preserve"
        style="font-size:24.3969px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.84227;stroke-dasharray:none;stroke-opacity:0.981982"
-       x="571.93561"
-       y="495.29984"
+       x="568.18195"
+       y="470.51788"
        id="text630"
        transform="scale(1.0560826,0.94689563)"><tspan
          sodipodi:role="line"
          id="tspan630"
-         x="571.93561"
-         y="495.29984"
+         x="568.18195"
+         y="470.51788"
          style="stroke-width:1.84227">RF</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:24.3969px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.84227;stroke-dasharray:none;stroke-opacity:0.981982"
-       x="573.22107"
-       y="523.65784"
+       x="569.46741"
+       y="498.87589"
        id="text630-0"
        transform="scale(1.0560826,0.94689563)"><tspan
          sodipodi:role="line"
          id="tspan630-7"
-         x="573.22107"
-         y="523.65784"
+         x="569.46741"
+         y="498.87589"
          style="stroke-width:1.84227">IN</tspan></text>
   </g>
   <g
      id="g630"
-     transform="matrix(0.9970238,0,0,0.95442912,-250.49875,-91.160426)">
+     transform="matrix(0.9970238,0,0,0.95442912,-251.62326,-112.89825)">
     <text
        xml:space="preserve"
        style="font-size:24.3969px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.84227;stroke-dasharray:none;stroke-opacity:0.981982"

@@ -25,8 +25,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.38932261"
-     inkscape:cx="-304.37482"
-     inkscape:cy="-130.99676"
+     inkscape:cx="404.54881"
+     inkscape:cy="241.44501"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -216,7 +216,7 @@
      id="layer1">
     <g
        id="g1"
-       transform="matrix(1.0000592,0,0,0.98109211,0.18607007,-13.360712)">
+       transform="matrix(1.0001749,0,0,0.94468005,0.11913317,11.147265)">
       <ellipse
          style="fill:url(#linearGradient3);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.01909;stroke-linejoin:bevel;stroke-opacity:0.134576"
          id="path2"
@@ -234,7 +234,7 @@
     </g>
     <g
        id="g313"
-       transform="matrix(-0.14976169,-0.20350601,0.21469775,-0.11430632,556.2409,634.48467)">
+       transform="matrix(-0.14977902,-0.19595313,0.21472259,-0.11006398,556.23829,634.94864)">
       <g
          id="rect585"
          transform="matrix(0.62338643,-0.77744736,0.47209082,0.35490255,252.87717,609.78546)">
