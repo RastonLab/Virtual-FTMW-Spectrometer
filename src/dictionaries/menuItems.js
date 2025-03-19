@@ -7,7 +7,7 @@ import Save from "../components/Save";
 import Tutorial from "../components/Tutorial";
 
 // constants
-import { BACKGROUND } from "../dictionaries/constants";
+import { ACQUIRE_SPECTRUM } from "../dictionaries/constants";
 
 // router
 import { Link } from "react-router-dom";
@@ -83,18 +83,18 @@ export const menuItems = [
         component: (
           <Fetch
             type="acquire-spectrum"
-            fetchURL={BACKGROUND}
+            fetchURL={ACQUIRE_SPECTRUM}
             buttonText={"Acquire Spectrum"}
           />
         ),
       },
       {
         label: "Stop Aquisition",
-        component: <CancelScan buttonText="Stop Acquisition" animationToggle={pauseMirrorMovement} />,
+        component: <CancelScan buttonText="Stop Acquisition" animationToggle={pauseMirrorMovement} errorText="Scan Paused" />,
       },
       {
         label: "Cancel Acquisition",
-        component: <CancelScan buttonText="Cancel Acquisition" animationToggle={cancelMirrorMovement} />,
+        component: <CancelScan buttonText="Cancel Acquisition" animationToggle={cancelMirrorMovement} errorText="Scan Cancelled" />,
       },
     ],
   },

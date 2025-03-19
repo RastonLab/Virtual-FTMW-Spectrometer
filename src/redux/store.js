@@ -12,6 +12,7 @@ import progressReducer from "../redux/progressSlice";
 import sampleDataReducer from "../redux/sampleDataSlice";
 import timerReducer from "../redux/timerSlice";
 import experimentalSetupReducer from "../redux/experimentalSetupSlice";
+import acquireSpectrumReducer from "../redux/acquireSpectrumSlice";
 
 /**
  * Function that sets the reducers called upon to update state
@@ -29,5 +30,6 @@ export const store = configureStore({
     timer: timerReducer, // For keeping track of how long the instrument window spiner has been running
     devMode: devModeReducer,
     experimentalSetup: experimentalSetupReducer,
+    acquireSpectrum: acquireSpectrumReducer
   },
 });

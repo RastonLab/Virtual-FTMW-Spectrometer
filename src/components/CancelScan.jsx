@@ -9,6 +9,7 @@ import { setError } from "../redux/errorSlice";
  */
 export default function CancelScan({
   buttonText,
+  errorText,
   animationToggle
 }) {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export default function CancelScan({
     animationToggle();
     dispatch(setProgress(false, false, false));
     dispatch(setTimer(0));
-    dispatch(setError([true, "Scan canceled"]));
+    dispatch(setError([true, errorText]));
   };
 
   return (
