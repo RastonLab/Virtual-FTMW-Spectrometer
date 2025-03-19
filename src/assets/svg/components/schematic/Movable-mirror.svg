@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="0.55058532"
-     inkscape:cx="60.84434"
-     inkscape:cy="381.41228"
+     inkscape:zoom="0.77864523"
+     inkscape:cx="161.17738"
+     inkscape:cy="368.58892"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -36,6 +36,22 @@
      inkscape:current-layer="g2" />
   <defs
      id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:1;"
+         offset="0.5"
+         id="stop14" />
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:1;"
+         offset="1"
+         id="stop8" />
+    </linearGradient>
     <linearGradient
        id="linearGradient9"
        inkscape:collect="always">
@@ -155,6 +171,16 @@
        x2="596.38702"
        y2="425.99261"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient8"
+       x1="574.46753"
+       y1="426.67352"
+       x2="583.80347"
+       y2="426.67352"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.67230091,0,0,0.65313335,189.7587,148.07597)" />
   </defs>
   <g
      inkscape:label="图层 1"
@@ -177,6 +203,13 @@
          cy="425.99261"
          rx="17.529602"
          ry="17.742289" />
+      <ellipse
+         style="fill:url(#linearGradient8);fill-rule:evenodd;stroke:none;stroke-width:0.205127;stroke-linejoin:bevel"
+         id="path1"
+         cx="579.11206"
+         cy="426.75064"
+         rx="3.1382818"
+         ry="2.9027443" />
     </g>
     <g
        id="g313"

@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.38932261"
-     inkscape:cx="404.54881"
-     inkscape:cy="241.44501"
+     inkscape:zoom="1.1011706"
+     inkscape:cx="524.44188"
+     inkscape:cy="291.50796"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g29"
      showgrid="false" />
   <defs
      id="defs1">
@@ -74,8 +74,8 @@
        xlink:href="#linearGradient43"
        id="linearGradient31-9"
        gradientUnits="userSpaceOnUse"
-       x1="494.88516"
-       y1="397.84579"
+       x1="493.81235"
+       y1="397.63821"
        x2="541.34613"
        y2="396.16071"
        gradientTransform="matrix(1.0017381,0.0625512,0.00584848,1.2104819,-238.53019,-282.35336)" />
@@ -83,32 +83,32 @@
        id="linearGradient43"
        inkscape:collect="always">
       <stop
-         style="stop-color:#515151;stop-opacity:1;"
+         style="stop-color:#646464;stop-opacity:1;"
          offset="0"
          id="stop39" />
       <stop
-         style="stop-color:#939393;stop-opacity:0.94594592;"
+         style="stop-color:#858585;stop-opacity:1;"
+         offset="0.25"
+         id="stop8" />
+      <stop
+         style="stop-color:#929292;stop-opacity:1;"
          offset="0.5"
          id="stop40" />
       <stop
-         style="stop-color:#757171;stop-opacity:1;"
+         style="stop-color:#888585;stop-opacity:1;"
          offset="0.75"
          id="stop41" />
       <stop
-         style="stop-color:#6a6363;stop-opacity:0.97542995;"
+         style="stop-color:#858080;stop-opacity:1;"
          offset="0.875"
          id="stop42" />
-      <stop
-         style="stop-color:#6f6c6c;stop-opacity:0.96068794;"
-         offset="0.90625"
-         id="stop44" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient14"
        id="linearGradient3-3"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.99386497,1.139816e-8,0,0.86981451,-2476.0884,1398.2549)"
+       gradientTransform="matrix(0.98603858,0,0,0.86379921,-2455.3011,1386.0106)"
        x1="498.58884"
        y1="621.24884"
        x2="534.59454"
@@ -209,6 +209,14 @@
          offset="1"
          id="stop13" />
     </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath9">
+      <path
+         id="path10"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.971332"
+         d="M 291.95344,188.44603 52.39896,425.87154 295.40982,735.64518 312.83371,718.37614 c -0.47101,0.20806 -0.83733,-0.28402 -0.39252,-1.09795 0.21946,-0.40158 0.45447,-0.79447 0.69557,-1.18341 4.3e-4,-0.0862 0.009,-0.18026 0.0265,-0.28315 0.0478,-0.28063 0.0214,-0.13632 0.0783,-0.42838 0.0799,-0.35106 0.15947,-0.74232 0.43302,-1.00964 l -10e-4,-10e-4 c 0.0945,-0.0924 0.16901,-0.0945 0.25705,-0.15107 0.239,-0.40542 0.60343,-0.49638 0.80665,-0.26594 0.0851,0.0966 0.14274,0.24923 0.15014,0.45882 0.0348,6.3e-4 0.075,-0.007 0.0967,0.0177 0.15789,0.17964 0.1621,0.5568 -0.13431,1.03717 -0.055,0.0891 -0.11885,0.17167 -0.17931,0.25676 -0.0117,0.0555 -0.0238,0.11061 -0.0355,0.16607 -0.062,0.30265 -0.13141,0.60341 -0.20731,0.90449 L 534.96422,498.21959 Z" />
+    </clipPath>
   </defs>
   <g
      inkscape:label="图层 1"
@@ -258,13 +266,13 @@
         </g>
       </g>
       <ellipse
-         style="fill:url(#linearGradient3-3);fill-opacity:1;fill-rule:evenodd;stroke:#b9b5ac;stroke-width:1.22013;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:url(#linearGradient3-3);fill-opacity:1;fill-rule:evenodd;stroke:#b9b5ac;stroke-width:1.21111;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
          id="path299-2"
-         ry="7.9044642"
-         rx="14.686116"
-         cy="1938.6256"
-         cx="-1965.22"
-         transform="matrix(0.39822089,-0.91728955,0.8036278,-0.59513222,0,0)" />
+         ry="7.8498001"
+         rx="14.570467"
+         cy="1922.6444"
+         cx="-1948.4554"
+         transform="matrix(0.39742037,-0.91763667,0.80563561,-0.5924114,0,0)" />
       <g
          id="g3"
          transform="matrix(1.5710723,0,0,1.5201387,633.10597,122.50546)" />
