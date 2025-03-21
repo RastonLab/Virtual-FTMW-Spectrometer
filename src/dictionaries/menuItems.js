@@ -89,7 +89,7 @@ export const menuItems = [
         ),
       },
       {
-        label: "Stop Aquisition",
+        label: "Stop Acquisition",
         component: <CancelScan buttonText="Stop Acquisition" animationToggle={pauseMirrorMovement} errorText="Scan Paused" />,
       },
       {

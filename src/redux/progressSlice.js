@@ -4,6 +4,7 @@ const initialState = {
   fetching: false,
   prefetch: false,
   postfetch: false,
+  cancelFetch: false,
 };
 
 /**
@@ -24,9 +25,15 @@ const progressSlice = createSlice({
       state.prefetch = payload[1];
       state.postfetch = payload[2];
     },
+    /**
+     * payload is a boolean to set or unset cancelFetch
+     */
+    setCancelFetch: (state, { payload }) => {
+      state.cancelFetch = payload;
+    }
   },
 });
 
-export const { setProgress } = progressSlice.actions;
+export const { setProgress, setCancelFetch } = progressSlice.actions;
 
 export default progressSlice.reducer;

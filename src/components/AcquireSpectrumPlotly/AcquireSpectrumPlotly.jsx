@@ -24,15 +24,14 @@ function downsample(data, threshold = 400000, factor = 10) {
  */
 export default function AcquireSpectrumPlotly() {
   const { params, data, frequencyMin, frequencyMax } = useSelector((store) => store.acquireSpectrum);
-  const { vres, acquisitionType } = useSelector((store) => store.experimentalSetup);
   const { prefetch } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
 
   // Set the x-axis range based on the acquisition type
   const xRange =
-    acquisitionType === "range"
+    params?.acquisitionType === "range"
       ? [frequencyMin - 25, frequencyMax + 25]
-      : [vres - 25, vres + 25];
+      : [params?.vres - 25, params?.vres + 25];
 
   // Memoize the processed data so it only recalculates when data changes
   const optimizedData = React.useMemo(() => {

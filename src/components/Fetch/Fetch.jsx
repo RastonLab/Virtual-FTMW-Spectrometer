@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { moveMirror } from "../InstrumentWindow/animations/mirrorAnimation";
 import { useDispatch, useSelector } from "react-redux";
-import { setProgress } from "../../redux/progressSlice";
+import { setCancelFetch, setProgress } from "../../redux/progressSlice";
 import { setError } from "../../redux/errorSlice";
 import { setSpectrumData, setSpectrumParameters } from "../../redux/acquireSpectrumSlice";
 
@@ -18,7 +18,7 @@ export default function Fetch({
   buttonStyle}) {
 
   const dispatch = useDispatch();
-  const { fetching, postfetch } = useSelector((store) => store.progress);
+  const { fetching, postfetch, cancelFetch } = useSelector((store) => store.progress);
   const { devMode } = useSelector((store) => store.devMode);
   const { 
     molecule, 
@@ -36,7 +36,7 @@ export default function Fetch({
 
   // cancel fetch
   // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#aborting_a_fetch
-  const controller = new AbortController();
+  const [controller, setController] = useState(new AbortController());
   const signal = controller.signal;
 
   // waiting for entire page to render to fix issue where first cancel on load did not work
@@ -53,6 +53,16 @@ export default function Fetch({
       moveMirror();
     }
   });
+
+  // cancel fetch
+  useEffect(() => {
+    if (cancelFetch && document.querySelector("#cancel-scan-button")) {
+      controller.abort();
+      // Reset the controller for future fetches
+      setController(new AbortController());
+      dispatch(setCancelFetch(false));
+    }
+  }, [cancelFetch, controller, dispatch]);
 
   /**
    * Fetches the server with user entered parameters and sets the X and Y coordinates
