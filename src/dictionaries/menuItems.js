@@ -11,7 +11,7 @@ import { ACQUIRE_SPECTRUM } from "../dictionaries/constants";
 
 // router
 import { Link } from "react-router-dom";
-import { cancelMirrorMovement, pauseMirrorMovement } from "../components/InstrumentWindow/animations/mirrorAnimation";
+import { cancelMirrorMovement } from "../components/InstrumentWindow/animations/mirrorAnimation";
 
 /**
  * Controls what appears in the MenuBar. To remove something, either remove the code or comment it out
@@ -87,10 +87,6 @@ export const menuItems = [
             buttonText={"Acquire Spectrum"}
           />
         ),
-      },
-      {
-        label: "Stop Acquisition",
-        component: <CancelScan buttonText="Stop Acquisition" animationToggle={pauseMirrorMovement} errorText="Scan Paused" />,
       },
       {
         label: "Cancel Acquisition",

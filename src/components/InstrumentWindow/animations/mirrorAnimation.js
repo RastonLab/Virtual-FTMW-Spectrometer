@@ -77,16 +77,3 @@ export function cancelMirrorMovement() {
         }
     });
 }
-
-/**
- * Function that pauses the current animation of the mirror
- */
-export function pauseMirrorMovement() {
-    const components = getComponents();
-
-    Object.values(components).forEach((component) => {
-        if (component) {
-            component.getAnimations().forEach((animation) => animation.pause());
-        }
-    });
-}
