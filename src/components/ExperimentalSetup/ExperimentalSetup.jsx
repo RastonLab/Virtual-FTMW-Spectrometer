@@ -37,7 +37,7 @@ const ExperimentalSetup = () => {
       dispatch(experimentalSetupReducer.setFrequencyMax(frequencyRange.max));
       dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
     }
-  }, [frequencyRange, frequencyMin, frequencyMax, dispatch]);
+  }, [frequencyRange, dispatch]);
 
   /**
    * Returns the min and max frequency range depending on the microwave band
