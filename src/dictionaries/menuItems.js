@@ -7,11 +7,11 @@ import Save from "../components/Save";
 import Tutorial from "../components/Tutorial";
 
 // constants
-import { BACKGROUND } from "../dictionaries/constants";
+import { ACQUIRE_SPECTRUM } from "../dictionaries/constants";
 
 // router
 import { Link } from "react-router-dom";
-import { cancelMirrorMovement, pauseMirrorMovement } from "../components/InstrumentWindow/animations/mirrorAnimation";
+import { cancelMirrorMovement } from "../components/InstrumentWindow/animations/mirrorAnimation";
 
 /**
  * Controls what appears in the MenuBar. To remove something, either remove the code or comment it out
@@ -83,18 +83,14 @@ export const menuItems = [
         component: (
           <Fetch
             type="acquire-spectrum"
-            fetchURL={BACKGROUND}
+            fetchURL={ACQUIRE_SPECTRUM}
             buttonText={"Acquire Spectrum"}
           />
         ),
       },
       {
-        label: "Stop Aquisition",
-        component: <CancelScan buttonText="Stop Acquisition" animationToggle={pauseMirrorMovement} />,
-      },
-      {
         label: "Cancel Acquisition",
-        component: <CancelScan buttonText="Cancel Acquisition" animationToggle={cancelMirrorMovement} />,
+        component: <CancelScan buttonText="Cancel Acquisition" animationToggle={cancelMirrorMovement} errorText="Scan Cancelled" />,
       },
     ],
   },

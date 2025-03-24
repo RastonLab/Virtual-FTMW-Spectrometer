@@ -1,7 +1,6 @@
 import { sleepID } from "./Fetch";
 import { useDispatch, useSelector } from "react-redux";
-import { setProgress } from "../redux/progressSlice";
-import { setTimer } from "../redux/timerSlice";
+import { setCancelFetch, setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
 
 /**
@@ -9,6 +8,7 @@ import { setError } from "../redux/errorSlice";
  */
 export default function CancelScan({
   buttonText,
+  errorText,
   animationToggle
 }) {
   const dispatch = useDispatch();
@@ -19,8 +19,8 @@ export default function CancelScan({
     clearTimeout(sleepID);
     animationToggle();
     dispatch(setProgress(false, false, false));
-    dispatch(setTimer(0));
-    dispatch(setError([true, "Scan canceled"]));
+    dispatch(setError([true, errorText]));
+    dispatch(setCancelFetch(true));
   };
 
   return (

@@ -8,13 +8,7 @@ export const FIND_PEAKS = "https://cloud.rastonlab.org/ftir/find_peaks"; // main
 // export const FIND_PEAKS = "https://cloud.rastonlab.org/dev/ftir/find_peaks"; // dev
 // export const FIND_PEAKS = "http://localhost:5000/find_peaks"; // local
 
-export const BACKGROUND = "https://cloud.rastonlab.org/ftir/background"; // main
-// export const BACKGROUND = "https://cloud.rastonlab.org/dev/ftir/background"; // dev
-// export const BACKGROUND = "http://localhost:5000/background"; // local
-
-export const SAMPLE = "https://cloud.rastonlab.org/ftir/sample"; // main
-// export const SAMPLE = "https://cloud.rastonlab.org/dev/ftir/sample"; // dev
-// export const SAMPLE = "http://localhost:5000/sample"; // local
+export const ACQUIRE_SPECTRUM = "http://localhost:5001/acquire_spectrum"; // local
 
 // svg ids that are not associated with tooltips but can be selected
 export const BAD_ID = [

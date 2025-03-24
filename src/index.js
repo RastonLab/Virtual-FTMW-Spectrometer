@@ -7,8 +7,8 @@ import ExperimentalSetup from './components/ExperimentalSetup/ExperimentalSetup'
 import FindPeaks from "./routes/FindPeaks";
 import InstrumentWindow from './components/InstrumentWindow/InstrumentWindow';
 import NotFound from "./components/NotFound";
-import SpectraWindow from "./routes/SpectraWindow";
 import SchematicWindow from "./components/SchematicWindow/SchematicWindow";
+import AcquireSpectrumPlotly from "./components/AcquireSpectrumPlotly/AcquireSpectrumPlotly";
 
 // redux
 import { Provider } from "react-redux";
@@ -31,7 +31,7 @@ root.render(
             <Route path="instrument" element={<InstrumentWindow />} />
             <Route path="experimental-setup" element={<ExperimentalSetup />} />
             <Route path="schematic" element={<SchematicWindow />} />
-            <Route path="spectra" element={<SpectraWindow />} />
+            <Route path="spectra" element={<AcquireSpectrumPlotly />} />
             <Route path="peaks" element={<FindPeaks />} />
             <Route path="*" element={<NotFound />} />
           </Route>

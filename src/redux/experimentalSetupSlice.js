@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  molecule: "HCN",
+  molecule: "C7H5N",
   stepSize: 1,
   frequencyMin: 2000,
   frequencyMax: 4000,
@@ -12,7 +12,7 @@ const initialState = {
   repetitionRate: 1,
   molecularPulseWidth: 500,
   acquisitionType: 'single',
-  vres: 0
+  vres: 2000
 };
 
 /**

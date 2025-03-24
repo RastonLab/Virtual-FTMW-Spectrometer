@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import Molecule from './inputs/MoleculeField.js';
 import Spinner from '../Spinner';
-import BackgroundPlotly from '../BackgroundPlotly';
-import { SamplePlotly } from '../SamplePlotly';
 import { useDispatch, useSelector } from 'react-redux';
 import "../../style/routes/ExperimentalSetup.css";
 import FrequencyRange from './inputs/FrequencyRange.js';
@@ -18,10 +16,9 @@ import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js
 /* eslint-disable react-hooks/exhaustive-deps */
 const ExperimentalSetup = () => {
   const dispatch = useDispatch();
-  const { fetching, prefetch } = useSelector((store) => store.progress);
+  const { prefetch } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
-  const { devMode } = useSelector((store) => store.devMode);
-  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres } = useSelector((store) => store.experimentalSetup);
+  const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres, frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
 
   /**
    * Calls the helper method to get frequency range value depending on the mw band
@@ -35,10 +32,12 @@ const ExperimentalSetup = () => {
    * Sets the min and max frequency values depending on the frequency range
    */
   useEffect(() => {
-    dispatch(experimentalSetupReducer.setFrequencyMin(frequencyRange.min));
-    dispatch(experimentalSetupReducer.setFrequencyMax(frequencyRange.max));
-    dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
-  },[frequencyRange, dispatch]);
+    if (frequencyMin < frequencyRange.min || frequencyMax > frequencyRange.max) {
+      dispatch(experimentalSetupReducer.setFrequencyMin(frequencyRange.min));
+      dispatch(experimentalSetupReducer.setFrequencyMax(frequencyRange.max));
+      dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
+    }
+  }, [frequencyRange, frequencyMin, frequencyMax, dispatch]);
 
   /**
    * Returns the min and max frequency range depending on the microwave band
@@ -167,16 +166,16 @@ const ExperimentalSetup = () => {
         </div>
       </div>
 
-      {/* error message, spinner, and graphs */}
       <div id="graph-and-error" className="exp-col">
-      {prefetch && <Spinner variant="indeterminate" size={200}/>}
-        {error && devMode && (
-          <div id="error">
-            <p style={{ fontSize: 30 }}>{errorText}</p>
-          </div>
+        {prefetch ? (
+          <Spinner variant="indeterminate" size={200} />
+        ) : (
+          error && (
+            <div id="error">
+              <p style={{ fontSize: 30 }}>{errorText}</p>
+            </div>
+          )
         )}
-        {!fetching && !error && devMode && <BackgroundPlotly/>}
-        {!fetching && !error && devMode && <SamplePlotly/>}
       </div>
     </div>
   );
