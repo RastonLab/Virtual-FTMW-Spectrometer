@@ -22,6 +22,7 @@ const SchematicWindow = () => {
     const singleSidebandMixerImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/Single-sideband-mixer.svg";
     const powerAmplifierImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/Power-amplifier.svg";
     const switchAttenuatorImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/General-Microwave-F9114.svg";
+    const circulatorImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/Circulator.svg";
 
     const handleComponentClick = (componentId) => {
         if (componentId === 'microwave-synthesizer') {
@@ -77,6 +78,15 @@ const SchematicWindow = () => {
             });
             setDialogOpen(true);
             console.log("MW Switch clicked, showing dialog with image:", switchAttenuatorImage);
+        }
+        else if (componentId === 'circulator') {
+            setDialogContent({
+                title: 'Circulator',
+                content: 'Directs microwave signals either toward the antenna for transmission or to the receiving arm for detection.',
+                image: circulatorImage
+            });
+            setDialogOpen(true);
+            console.log("Circulator clicked, showing dialog with image:", circulatorImage);
         }
     };
 

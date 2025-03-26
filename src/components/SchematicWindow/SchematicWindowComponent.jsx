@@ -30,8 +30,12 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         left: '1137px',
       },
       switchAttenuator: {
-        top: '575px',
-        left: '1137px',
+        top: '700px',
+        left: '969px',
+      },
+      circulator: {
+        top: '504px',
+        left: '777px',
       }
     };
   };
@@ -158,6 +162,25 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         }}
         onClick={() => onComponentClick('switch-attenuator')}
         title="MW Switch"
+      />
+
+      {/* Clickable area for component #7 (Circulator) - circular shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.circulator.top,
+          left: positions.circulator.left,
+          width: '85px',
+          height: '85px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          borderRadius: '50%', // Makes it a circle
+          // Debugging border to make it visible during development
+          border: '2px solid green'
+        }}
+        onClick={() => onComponentClick('circulator')}
+        title="Circulator"
       />
     </div>
   );
