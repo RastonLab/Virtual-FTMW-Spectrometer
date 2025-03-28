@@ -11,15 +11,12 @@ const InfoDialog = ({ open, onClose, title, content, image }) => {
         <h2 className="dialog-title">{title}</h2>
         {image && (
           <div className="dialog-image-container">
-            <object 
-              data={image} 
-              type="image/svg+xml" 
-              className="dialog-image"
-              aria-label={title}
-              style={{ width: '100%' }}
-            >
-              <img src={image} alt={title} className="dialog-image" />
-            </object>
+            <img 
+              src={image} 
+              alt={title} 
+              className="dialog-image" 
+              style={{ maxWidth: '100%', maxHeight: '380px', display: 'block', margin: '0 auto' }}
+            />
           </div>
         )}
         <p className="dialog-description">{content}</p>

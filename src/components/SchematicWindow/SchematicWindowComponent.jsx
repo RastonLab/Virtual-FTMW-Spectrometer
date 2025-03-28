@@ -36,6 +36,54 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
       circulator: {
         top: '504px',
         left: '777px',
+      },
+      wireHookAntenna1: {
+        top: '545px',
+        left: '629px',
+      },
+      wireHookAntenna2: {
+        top: '545px',
+        left: '629px',
+      },
+      solenoidValve1: {
+        top: '527px',
+        left: '162px',
+      },
+      solenoidValve2: {
+        top: '508px',
+        left: '232px',
+      },
+      nozzleDriver: {
+        top: '50px',
+        left: '768px',
+      },
+      mwSwitch: {
+        top: '330px',
+        left: '975px',
+      },
+      lowNoiseAmplifier: {
+        top: '330px',
+        left: '1130px',
+      },
+      imageRejectionMixer: {
+        top: '330px',
+        left: '1325px',
+      },
+      rfAmplifier: {
+        top: '330px',
+        left: '1493px',
+      },
+      oscilloscope: {
+        top: '90px',
+        left: '1523px',
+      },
+      frequencyReference: {
+        top: '548px',
+        left: '1655px',
+      },
+      pulseGenerator: {
+        top: '50px',
+        left: '1030px',
       }
     };
   };
@@ -181,6 +229,227 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         }}
         onClick={() => onComponentClick('circulator')}
         title="Circulator"
+      />
+
+      {/* First clickable area for component #8 (Wire Hook Antenna) - horizontal shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.wireHookAntenna1.top,
+          left: positions.wireHookAntenna1.left,
+          width: '148px',
+          height: '13px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid blue'
+        }}
+        onClick={() => onComponentClick('wire-hook-antenna')}
+        title="Wire Hook Antenna"
+      />
+
+      {/* Second clickable area for component #8 (Wire Hook Antenna) - horizontal shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.wireHookAntenna2.top,
+          left: positions.wireHookAntenna2.left,
+          width: '10px',
+          height: '27px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid cyan'
+        }}
+        onClick={() => onComponentClick('wire-hook-antenna')}
+        title="Wire Hook Antenna"
+      />
+
+      {/* First clickable area for component #10 (Solenoid valve/nozzle) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.solenoidValve1.top,
+          left: positions.solenoidValve1.left,
+          width: '70px',
+          height: '50px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid purple'
+        }}
+        onClick={() => onComponentClick('solenoid-valve')}
+        title="Solenoid Valve (Nozzle)"
+      />
+
+      {/* Second clickable area for component #10 (Solenoid valve/nozzle) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.solenoidValve2.top,
+          left: positions.solenoidValve2.left,
+          width: '28px',
+          height: '89px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid magenta'
+        }}
+        onClick={() => onComponentClick('solenoid-valve')}
+        title="Solenoid Valve (Nozzle)"
+      />
+
+      {/* Clickable area for component #11 (Nozzle Driver) - square shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.nozzleDriver.top,
+          left: positions.nozzleDriver.left,
+          width: '170px',
+          height: '175px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid darkgreen'
+        }}
+        onClick={() => onComponentClick('nozzle-driver')}
+        title="Nozzle Driver"
+      />
+
+      {/* Clickable area for component #12 (MW Switch) - square shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.mwSwitch.top,
+          left: positions.mwSwitch.left,
+          width: '70px',
+          height: '70px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid blue'
+        }}
+        onClick={() => onComponentClick('mw-switch')}
+        title="MW Switch"
+      />
+
+      {/* Clickable area for component #13 (Low-noise amplifier) - triangular shape pointing right */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.lowNoiseAmplifier.top,
+          left: positions.lowNoiseAmplifier.left,
+          width: '85px',
+          height: '70px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Custom shape for triangle using clip-path - pointing right
+          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)',
+          // Debugging border to make it visible during development
+          border: '2px solid purple'
+        }}
+        onClick={() => onComponentClick('low-noise-amplifier')}
+        title="Low-noise Amplifier"
+      />
+
+      {/* Clickable area for component #14 (Image rejection mixer) - circular shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.imageRejectionMixer.top,
+          left: positions.imageRejectionMixer.left,
+          width: '73px',
+          height: '72px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          borderRadius: '50%', // Makes it a circle
+          // Debugging border to make it visible during development
+          border: '2px solid purple'
+        }}
+        onClick={() => onComponentClick('image-rejection-mixer')}
+        title="Image Rejection Mixer"
+      />
+
+      {/* Clickable area for component #15 (RF amplifier) - triangular shape pointing right */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.rfAmplifier.top,
+          left: positions.rfAmplifier.left,
+          width: '85px',
+          height: '73px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Custom shape for triangle using clip-path - pointing right
+          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)',
+          // Debugging border to make it visible during development
+          border: '2px solid purple'
+        }}
+        onClick={() => onComponentClick('rf-amplifier')}
+        title="RF Amplifier"
+      />
+
+      {/* Clickable area for component #16 (Oscilloscope) - square shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.oscilloscope.top,
+          left: positions.oscilloscope.left,
+          width: '170px',
+          height: '175px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid darkgreen'
+        }}
+        onClick={() => onComponentClick('oscilloscope')}
+        title="Oscilloscope"
+      />
+
+      {/* Clickable area for component #17 (Frequency reference) - square shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.frequencyReference.top,
+          left: positions.frequencyReference.left,
+          width: '170px',
+          height: '175px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid darkgreen'
+        }}
+        onClick={() => onComponentClick('frequency-reference')}
+        title="Frequency Reference"
+      />
+
+      {/* Clickable area for component #18 (Pulse generator) - large rectangular shape */}
+      <div
+        style={{
+          position: 'absolute',
+          top: positions.pulseGenerator.top,
+          left: positions.pulseGenerator.left,
+          width: '425px',
+          height: '220px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid darkblue'
+        }}
+        onClick={() => onComponentClick('pulse-generator')}
+        title="Pulse Generator"
       />
     </div>
   );
