@@ -1,25 +1,62 @@
 import React from 'react';
 import '../style/InfoDialog.css';
 
-const InfoDialog = ({ open, onClose, title, content, image }) => {
+const InfoDialog = ({ open, onClose, title, content, image, customComponent }) => {
   if (!open) return null;
+
+  // Check if the image is a GIF animation
+  const isAnimation = image && image.toLowerCase().endsWith('.gif');
+  
+  // Check if there's only an animation (no text content)
+  const isAnimationOnly = isAnimation && !content;
+  
+  // Check if we're using a custom component
+  const isCustomComponent = customComponent !== null && customComponent !== undefined;
+  
+  // If it's a custom component, make it full-width with no title
+  const isFullWidthComponent = isCustomComponent && !content;
 
   return (
     <div className="dialog-overlay" onClick={onClose}>
-      <div className="dialog-content" onClick={(e) => e.stopPropagation()}>
+      <div className={`dialog-content ${isAnimationOnly || isCustomComponent ? 'animation-only' : ''} ${isFullWidthComponent ? 'full-width-component' : ''}`} onClick={(e) => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>×</button>
-        <h2 className="dialog-title">{title}</h2>
-        {image && (
-          <div className="dialog-image-container">
+        
+        {/* Only show title if not a full-width component */}
+        {!isFullWidthComponent && <h2 className="dialog-title">{title}</h2>}
+        
+        {/* Custom component takes precedence over images */}
+        {isCustomComponent ? (
+          <div className={`custom-component-container ${isFullWidthComponent ? 'full-width' : ''}`}>
+            {customComponent}
+          </div>
+        ) : image ? (
+          <div className={`dialog-image-container ${isAnimationOnly ? 'animation-only-container' : ''}`}>
             <img 
               src={image} 
               alt={title} 
-              className="dialog-image" 
-              style={{ maxWidth: '100%', maxHeight: '380px', display: 'block', margin: '0 auto' }}
+              className={isAnimation ? "dialog-animation" : "dialog-image"}
+              style={{ 
+                maxWidth: '100%', 
+                maxHeight: isAnimationOnly ? '550px' : isAnimation ? '450px' : '380px', 
+                display: 'block', 
+                margin: '0 auto',
+                // Center the animation and make it more prominent
+                ...(isAnimation && { 
+                  objectFit: 'contain',
+                  border: '1px solid #eee',
+                  borderRadius: '4px',
+                  padding: '5px'
+                }),
+                ...(isAnimationOnly && {
+                  padding: '10px',
+                  boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)',
+                })
+              }}
             />
           </div>
-        )}
-        <p className="dialog-description">{content}</p>
+        ) : null}
+        
+        {content && <p className="dialog-description">{content}</p>}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SchematicWindowComponent from './SchematicWindowComponent'; 
 import SchematicDescription from './SchematicDescription';
 import InfoDialog from '../InfoDialog';
+import FabryPerotAnimation from '../FabryPerotAnimation';
 import '../../style/InfoDialog.css';
 
 /**
@@ -12,7 +13,8 @@ const SchematicWindow = () => {
     const [dialogContent, setDialogContent] = useState({
         title: '',
         content: '',
-        image: ''
+        image: '',
+        customComponent: null
     });
 
     // Use the SVG files from the public directory
@@ -32,6 +34,7 @@ const SchematicWindow = () => {
     const oscilloscopeImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/computer-ad-converters.svg";
     const frequencyReferenceImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/Standford-Research-Systems-10 MHz.svg";
     const pulseGeneratorImage = process.env.PUBLIC_URL + "/assets/svg/components/schematic/Pulse-Generators.svg";
+    const fabryPerotAnimationGif = process.env.PUBLIC_URL + "/assets/animations/FTMW_2025.gif";
 
     const handleComponentClick = (componentId) => {
         if (componentId === 'microwave-synthesizer') {
@@ -105,6 +108,16 @@ const SchematicWindow = () => {
             });
             setDialogOpen(true);
             console.log("Wire Hook Antenna clicked, showing dialog with image:", wireHookAntennaImage);
+        }
+        else if (componentId === 'fabry-perot-cavity') {
+            setDialogContent({
+                title: '',
+                content: '',
+                image: '',
+                customComponent: <FabryPerotAnimation />
+            });
+            setDialogOpen(true);
+            console.log("Fabry-Perot Cavity clicked, showing custom animation component");
         }
         else if (componentId === 'solenoid-valve') {
             setDialogContent({
@@ -203,6 +216,7 @@ const SchematicWindow = () => {
                 title={dialogContent.title}
                 content={dialogContent.content}
                 image={dialogContent.image}
+                customComponent={dialogContent.customComponent}
             />
         </div>
     );

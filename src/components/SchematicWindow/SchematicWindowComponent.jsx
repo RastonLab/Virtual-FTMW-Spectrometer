@@ -53,6 +53,10 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         top: '508px',
         left: '232px',
       },
+      fabryPerotCavity: {
+        top: '380px',
+        left: '330px',
+      },
       nozzleDriver: {
         top: '50px',
         left: '768px',
@@ -100,12 +104,12 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         style={{ width: '100%', height: 'auto' }}
         draggable="false"
         onDragStart={(e) => e.preventDefault()}
-        {...props}
+    {...props}
       />
       
       {/* Clickable area for component #1 (MW Synthesizer with sine wave) */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.mwSynthesizer.top,
           left: positions.mwSynthesizer.left,
@@ -121,7 +125,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #2 (Power Divider) */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.powerDivider.top,
           left: positions.powerDivider.left,
@@ -139,7 +143,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #3 (Radio Frequency Reference) */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.radioFrequencyReference.top,
           left: positions.radioFrequencyReference.left,
@@ -157,7 +161,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #4 (Single Sideband Mixer) - circular shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.singleSidebandMixer.top,
           left: positions.singleSidebandMixer.left,
@@ -176,7 +180,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #5 (Power Amplifier) - triangular shape pointing right */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.powerAmplifier.top,
           left: positions.powerAmplifier.left,
@@ -196,7 +200,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #6 (Switch Attenuator) */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.switchAttenuator.top,
           left: positions.switchAttenuator.left,
@@ -214,7 +218,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #7 (Circulator) - circular shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.circulator.top,
           left: positions.circulator.left,
@@ -233,7 +237,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* First clickable area for component #8 (Wire Hook Antenna) - horizontal shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.wireHookAntenna1.top,
           left: positions.wireHookAntenna1.left,
@@ -251,7 +255,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Second clickable area for component #8 (Wire Hook Antenna) - horizontal shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.wireHookAntenna2.top,
           left: positions.wireHookAntenna2.left,
@@ -269,7 +273,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* First clickable area for component #10 (Solenoid valve/nozzle) */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.solenoidValve1.top,
           left: positions.solenoidValve1.left,
@@ -287,7 +291,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Second clickable area for component #10 (Solenoid valve/nozzle) */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.solenoidValve2.top,
           left: positions.solenoidValve2.left,
@@ -303,9 +307,27 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         title="Solenoid Valve (Nozzle)"
       />
 
+      {/* Clickable area for component #9 (Fabry-Perot cavity) - large square shape */}
+      <div
+          style={{
+          position: 'absolute',
+          top: positions.fabryPerotCavity.top,
+          left: positions.fabryPerotCavity.left,
+          width: '260px',
+          height: '240px',
+          cursor: 'pointer',
+          background: 'transparent',
+          zIndex: 10,
+          // Debugging border to make it visible during development
+          border: '2px solid teal'
+        }}
+        onClick={() => onComponentClick('fabry-perot-cavity')}
+        title="Fabry-Perot Cavity"
+      />
+
       {/* Clickable area for component #11 (Nozzle Driver) - square shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.nozzleDriver.top,
           left: positions.nozzleDriver.left,
@@ -323,7 +345,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #12 (MW Switch) - square shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.mwSwitch.top,
           left: positions.mwSwitch.left,
@@ -341,7 +363,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #13 (Low-noise amplifier) - triangular shape pointing right */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.lowNoiseAmplifier.top,
           left: positions.lowNoiseAmplifier.left,
@@ -361,7 +383,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #14 (Image rejection mixer) - circular shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.imageRejectionMixer.top,
           left: positions.imageRejectionMixer.left,
@@ -380,7 +402,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #15 (RF amplifier) - triangular shape pointing right */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.rfAmplifier.top,
           left: positions.rfAmplifier.left,
@@ -400,7 +422,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #16 (Oscilloscope) - square shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.oscilloscope.top,
           left: positions.oscilloscope.left,
@@ -418,7 +440,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #17 (Frequency reference) - square shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.frequencyReference.top,
           left: positions.frequencyReference.left,
@@ -436,7 +458,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
 
       {/* Clickable area for component #18 (Pulse generator) - large rectangular shape */}
       <div
-        style={{
+          style={{
           position: 'absolute',
           top: positions.pulseGenerator.top,
           left: positions.pulseGenerator.left,
