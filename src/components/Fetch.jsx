@@ -5,7 +5,6 @@ import { OPD } from "../dictionaries/constants";
 
 // functions
 import checkParams from "../functions/checkParams";
-import { moveMirror } from "./InstrumentWindow/animations/mirrorAnimation";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +46,7 @@ export default function Fetch({
 }) {
   const dispatch = useDispatch();
 
-  const { fetching, postfetch } = useSelector((store) => store.progress);
+  const { fetching } = useSelector((store) => store.progress);
   const { devMode } = useSelector((store) => store.devMode);
   let {
     beamsplitter,
@@ -82,10 +81,6 @@ export default function Fetch({
         .addEventListener("click", () => {
           controller.abort();
         });
-    }
-
-    if (document.getElementById("instrument-window") !== null && postfetch && !devMode) {
-      moveMirror();
     }
   });
 

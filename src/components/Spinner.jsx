@@ -1,61 +1,41 @@
-import React, { useState } from "react";
-
-// mui
-import { Box, CircularProgress } from "@mui/material";
-import Typography from "@mui/material/Typography";
-
-// redux
-import { useSelector, useDispatch } from "react-redux";
-
-// redux slice
-import { setProgress } from "../redux/progressSlice";
-import { setTimer } from "../redux/timerSlice";
+import React, { useState, useEffect } from 'react';
+import { Box, CircularProgress, Typography } from '@mui/material';
 
 /**
  * A component that contains an MUI Progress (spinner) to display loading/waiting to the user
  */
 export default function Spinner(props) {
-  const dispatch = useDispatch();
+  // Access props
+  const frequencyMin = props.frequencyMin;
+  const frequencyMax = props.frequencyMax;
+  const stepSize = props.stepSize;
+  const numCyclesPerStep = props.numCyclesPerStep;
 
-  const { timer } = useSelector((store) => store.timer);
-  const [delay, setDelay] = React.useState(timer);
-  const [scansDone, setScansDone] = useState(0);
+  // Calculate total scans as number of keyframes
+  const totalScans = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1;
+  // Calculate total animation time (ms): each scan is 1000ms plus an extra 1200ms delay
+  const totalTime = totalScans + 1200;
 
-  // Updates the value of the
-  React.useEffect(() => {
-    if (props.timer) {
-      const timer_interval = setInterval(() => {
-        // If the scans are complete, turn off spinner
-        if (delay >= 100) {
-          dispatch(setProgress(false, false, false));
+  const [elapsed, setElapsed] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setElapsed((prev) => {
+        const next = prev + 100;
+        if (next >= totalTime) {
+          clearInterval(interval);
+          return totalTime;
         }
+        return next;
+      });
+    }, 100);
 
-        // Increment Spinner/timer
-        setDelay((prevProgress) =>
-          prevProgress >= 100 ? 0 : prevProgress + 1
-        );
-      }, props.timer / 100);
+    return () => clearInterval(interval);
+  }, [totalTime]);
 
-      dispatch(setTimer(delay));
-
-      // Keeps track of the number of scans done
-      if (delay >= (props.oneScan * scansDone * 100) / (props.oneScan * props.scans)) {
-        setScansDone(scansDone + 1);
-      }
-
-      return () => {
-        clearInterval(timer_interval);
-      };
-    }
-  }, [
-    props.timer,
-    delay,
-    dispatch,
-    scansDone,
-    setScansDone,
-    props.scans,
-    props.oneScan,
-  ]);
+  // Calculate progress percentage and scan count
+  const progress = Math.min((elapsed / totalTime) * 100, 100);
+  const scansDone = Math.floor((elapsed / totalTime) * totalScans);
 
   return (
     <Box
@@ -66,12 +46,8 @@ export default function Spinner(props) {
         padding: 15,
       }}
     >
-      <CircularProgress
-        {...props}
-        value={delay}
-        sx={{ "svg circle": { stroke: "url(#my_gradient)" } }}
-      />
-      {props.timer && (
+      <CircularProgress {...props} value={progress} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
+      {(props.acquisitionType === "range") && (
         <Typography
           variant="caption"
           component="div"
@@ -81,8 +57,8 @@ export default function Spinner(props) {
           fontWeight={650}
           sx={{ textAlign: "center" }}
         >
-          {Math.round(delay)}% <br />
-          Scans Complete: {scansDone - 1}
+          {Math.round(progress)}%<br />
+          Scans Complete: {scansDone} / {totalScans}
         </Typography>
       )}
 

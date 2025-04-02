@@ -1,7 +1,7 @@
-import { sleepID } from "./Fetch";
 import { useDispatch, useSelector } from "react-redux";
-import { setCancelFetch, setProgress } from "../redux/progressSlice";
+import { setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
+import { sleepID } from "./Fetch/Fetch";
 
 /**
  * A component used in the MenuBar to stop the current scan's timer, spinner, and animation
@@ -20,7 +20,7 @@ export default function CancelScan({
     animationToggle();
     dispatch(setProgress(false, false, false));
     dispatch(setError([true, errorText]));
-    dispatch(setCancelFetch(true));
+    dispatch(setError([true, "Scan canceled"]));
   };
 
   return (
