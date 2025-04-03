@@ -4,111 +4,56 @@
   height: 100%;
   min-height: 450px;
   margin: 0;
-  padding: 0;
-  background-color: white;
-  border-radius: 0;
+  padding: 30px 0 0 0; /* Add padding to the top to move GIF down */
+  background-color: transparent; /* 透明背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
-/* Mirror SVGs positioned at edges of container */
-.left-mirror-svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  z-index: 3;
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  background-color: transparent; /* 透明背景 */
+  padding: 10px 0;
 }
 
-.right-mirror-svg {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  z-index: 3;
-}
-
-.antenna {
-  position: absolute;
-  left: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-  height: 15px;
-  background-color: #f9a51d; /* Match the orange color in GIF */
-  z-index: 4;
-}
-
-.marker {
-  position: absolute;
-  right: 31px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 2px;
-  background-color: #888;
-  z-index: 4;
-}
-
-.wave-image {
-  position: absolute;
-  left: 5%;
-  top: 15%;
-  width: 90%;
-  height: 70%;
-  transition: none; /* No transition for immediate appearance */
+.animation-gif {
+  display: block;
+  width: 95%; /* Slightly reduced width for better proportion */
+  height: auto;
   object-fit: contain;
+  margin: 0;
+  border: none; /* 无边框 */
+  background-color: transparent; /* 透明背景 */
+  box-shadow: none; /* 移除阴影 */
 }
 
-.arrow-image {
-  position: absolute;
-  width: 35px; /* Adjusted size */
-  height: 35px;
-  z-index: 2;
-  transform-origin: center;
-  backface-visibility: hidden; /* Prevent flickering during animation */
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.2)); /* Better visibility during spinning */
-  will-change: transform, left, top; /* Optimize for animation performance */
-  image-rendering: -webkit-optimize-contrast; /* Improve image quality */
-  image-rendering: crisp-edges;
+/* 说明文本样式 */
+.description-text {
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  color: #333;
 }
 
-/* Arrow in motion - smooth animation controlled by JS */
-.arrow-in-motion {
-  transition: none;
+.description-text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-/* Arrow in final position - still rotating but position fixed */
-.arrow-positioned {
-  transition: left 0.5s ease-out, top 0.5s ease-out; /* Smooth transition to final position */
-  will-change: transform; /* Only transform (rotation) will change */
+.bottom-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
 }
 
 /* Hide any titles or captions */
 .animation-title, .animation-caption {
   display: none;
-}
-
-/* Add shine effect to arrows while in motion - more subtle */
-.arrow-in-motion {
-  animation: shine 5s infinite;
-}
-
-/* Positioned arrows still have a subtle highlight */
-.arrow-positioned {
-  animation: gentleShine 6s infinite;
-}
-
-@keyframes shine {
-  0% { filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1)); }
-  50% { filter: drop-shadow(0px 0px 2px rgba(77,166,255,0.3)); }
-  100% { filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1)); }
-}
-
-@keyframes gentleShine {
-  0% { filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1)); }
-  50% { filter: drop-shadow(0px 0px 2px rgba(77,166,255,0.2)); }
-  100% { filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1)); }
 } 

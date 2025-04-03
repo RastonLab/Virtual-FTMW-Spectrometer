@@ -54,8 +54,8 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
         left: '232px',
       },
       fabryPerotCavity: {
-        top: '380px',
-        left: '330px',
+        top: '260px',
+        left: '260px',
       },
       nozzleDriver: {
         top: '50px',
@@ -133,9 +133,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '70px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Temporarily add border for debugging
-          border: '1px solid blue'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('power-divider')}
         title="Power Divider"
@@ -151,9 +149,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '100px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '1px solid green'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('radio-frequency-reference')}
         title="Radio Frequency Reference"
@@ -170,9 +166,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           cursor: 'pointer',
           background: 'transparent',
           zIndex: 10,
-          borderRadius: '50%', // Makes it a circle
-          // Debugging border to make it visible during development
-          border: '2px solid purple'
+          borderRadius: '50%' // Makes it a circle
         }}
         onClick={() => onComponentClick('single-sideband-mixer')}
         title="Single Sideband Mixer"
@@ -189,10 +183,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           cursor: 'pointer',
           background: 'transparent',
           zIndex: 10,
-          // Custom shape for triangle using clip-path - pointing right
-          clipPath: 'polygon(0% 50%, 100% 0%, 100% 100%)',
-          // Debugging border to make it visible during development
-          border: '2px solid orange'
+          clipPath: 'polygon(0% 50%, 100% 0%, 100% 100%)' // Custom shape for triangle using clip-path - pointing right
         }}
         onClick={() => onComponentClick('power-amplifier')}
         title="Power Amplifier"
@@ -208,9 +199,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '70px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid red'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('switch-attenuator')}
         title="MW Switch"
@@ -227,9 +216,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           cursor: 'pointer',
           background: 'transparent',
           zIndex: 10,
-          borderRadius: '50%', // Makes it a circle
-          // Debugging border to make it visible during development
-          border: '2px solid green'
+          borderRadius: '50%' // Makes it a circle
         }}
         onClick={() => onComponentClick('circulator')}
         title="Circulator"
@@ -245,9 +232,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '13px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid blue'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('wire-hook-antenna')}
         title="Wire Hook Antenna"
@@ -263,9 +248,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '27px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid cyan'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('wire-hook-antenna')}
         title="Wire Hook Antenna"
@@ -281,9 +264,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '50px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid purple'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('solenoid-valve')}
         title="Solenoid Valve (Nozzle)"
@@ -299,9 +280,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '89px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid magenta'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('solenoid-valve')}
         title="Solenoid Valve (Nozzle)"
@@ -313,13 +292,11 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           position: 'absolute',
           top: positions.fabryPerotCavity.top,
           left: positions.fabryPerotCavity.left,
-          width: '260px',
-          height: '240px',
+          width: '370px',
+          height: '585px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid teal'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('fabry-perot-cavity')}
         title="Fabry-Perot Cavity"
@@ -335,9 +312,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '175px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid darkgreen'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('nozzle-driver')}
         title="Nozzle Driver"
@@ -353,9 +328,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '70px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid blue'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('mw-switch')}
         title="MW Switch"
@@ -372,10 +345,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           cursor: 'pointer',
           background: 'transparent',
           zIndex: 10,
-          // Custom shape for triangle using clip-path - pointing right
-          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)',
-          // Debugging border to make it visible during development
-          border: '2px solid purple'
+          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)' // Custom shape for triangle using clip-path - pointing right
         }}
         onClick={() => onComponentClick('low-noise-amplifier')}
         title="Low-noise Amplifier"
@@ -392,9 +362,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           cursor: 'pointer',
           background: 'transparent',
           zIndex: 10,
-          borderRadius: '50%', // Makes it a circle
-          // Debugging border to make it visible during development
-          border: '2px solid purple'
+          borderRadius: '50%' // Makes it a circle
         }}
         onClick={() => onComponentClick('image-rejection-mixer')}
         title="Image Rejection Mixer"
@@ -411,10 +379,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           cursor: 'pointer',
           background: 'transparent',
           zIndex: 10,
-          // Custom shape for triangle using clip-path - pointing right
-          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)',
-          // Debugging border to make it visible during development
-          border: '2px solid purple'
+          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)' // Custom shape for triangle using clip-path - pointing right
         }}
         onClick={() => onComponentClick('rf-amplifier')}
         title="RF Amplifier"
@@ -430,9 +395,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '175px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid darkgreen'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('oscilloscope')}
         title="Oscilloscope"
@@ -448,9 +411,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '175px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid darkgreen'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('frequency-reference')}
         title="Frequency Reference"
@@ -466,9 +427,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
           height: '220px',
           cursor: 'pointer',
           background: 'transparent',
-          zIndex: 10,
-          // Debugging border to make it visible during development
-          border: '2px solid darkblue'
+          zIndex: 10
         }}
         onClick={() => onComponentClick('pulse-generator')}
         title="Pulse Generator"

@@ -2,6 +2,7 @@ import React from 'react';
 import '../style/InfoDialog.css';
 
 const InfoDialog = ({ open, onClose, title, content, image, customComponent }) => {
+  // If dialog is not open, don't render anything
   if (!open) return null;
 
   // Check if the image is a GIF animation
@@ -18,7 +19,16 @@ const InfoDialog = ({ open, onClose, title, content, image, customComponent }) =
 
   return (
     <div className="dialog-overlay" onClick={onClose}>
-      <div className={`dialog-content ${isAnimationOnly || isCustomComponent ? 'animation-only' : ''} ${isFullWidthComponent ? 'full-width-component' : ''}`} onClick={(e) => e.stopPropagation()}>
+      <div 
+        className={`dialog-content ${isAnimationOnly || isCustomComponent ? 'animation-only' : ''} ${isFullWidthComponent ? 'full-width-component' : ''}`} 
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          maxHeight: isFullWidthComponent ? '85vh' : 'auto',
+          backgroundColor: '#fff',
+          borderRadius: '10px',
+          boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)'
+        }}
+      >
         <button className="close-button" onClick={onClose}>×</button>
         
         {/* Only show title if not a full-width component */}
@@ -26,7 +36,13 @@ const InfoDialog = ({ open, onClose, title, content, image, customComponent }) =
         
         {/* Custom component takes precedence over images */}
         {isCustomComponent ? (
-          <div className={`custom-component-container ${isFullWidthComponent ? 'full-width' : ''}`}>
+          <div 
+            className={`custom-component-container ${isFullWidthComponent ? 'full-width' : ''}`}
+            style={{
+              padding: isFullWidthComponent ? '0' : '15px',
+              backgroundColor: 'transparent'
+            }}
+          >
             {customComponent}
           </div>
         ) : image ? (

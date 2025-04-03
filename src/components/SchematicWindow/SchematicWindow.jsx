@@ -57,12 +57,12 @@ const SchematicWindow = () => {
         }
         else if (componentId === 'radio-frequency-reference') {
             setDialogContent({
-                title: 'Radio Frequency Reference',
-                content: 'Typically a 10 MHz rubidium frequency standard, ensuring phase stability and synchronization across the spectrometer components.',
+                title: 'RF Signal Generator',
+                content: 'Generates a stable 30 MHz reference signal that is mixed with the microwave signal to produce the tuning frequency used in the excitation pulse.',
                 image: rfSignalGeneratorImage
             });
             setDialogOpen(true);
-            console.log("Radio Frequency Reference clicked, showing dialog with image:", rfSignalGeneratorImage);
+            console.log("RF Signal Generator clicked, showing dialog with image:", rfSignalGeneratorImage);
         }
         else if (componentId === 'single-sideband-mixer') {
             setDialogContent({
@@ -114,7 +114,8 @@ const SchematicWindow = () => {
                 title: '',
                 content: '',
                 image: '',
-                customComponent: <FabryPerotAnimation />
+                // Create a new instance of the component each time to ensure GIF resets
+                customComponent: <FabryPerotAnimation key={Date.now()} />
             });
             setDialogOpen(true);
             console.log("Fabry-Perot Cavity clicked, showing custom animation component");
