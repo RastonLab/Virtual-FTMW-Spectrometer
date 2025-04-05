@@ -8,3 +8,45 @@
 #mw-pulse-width-value tspan{
     dominant-baseline: middle;
 }
+
+#instrument-window {
+    display: flex;
+}
+  
+#instrument {
+    height: 90vh;
+    flex-grow: 1;
+}
+
+#instrument-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 36%;
+    padding-bottom: 25px;
+}
+
+#instrument-error p {
+    font-size: 30px;
+    width: 50%;
+    justify-self: center;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    #instrument-window {
+        flex-direction: column;
+    }
+
+    #instrument {
+        width: 100%;
+    }
+
+    #instrument-spinner {
+        width: auto;
+    }
+
+    #instrument-error p {
+        font-size: 20px;
+    }
+}

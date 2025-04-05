@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { moveMirror } from "../InstrumentWindow/animations/mirrorAnimation";
+import React, { useEffect } from "react";
+import { animateToBand, cancelAnimation } from "../InstrumentWindow/animations/instrumentWindowAnimations";
 import { useDispatch, useSelector } from "react-redux";
-import { setCancelFetch, setProgress } from "../../redux/progressSlice";
+import { setProgress } from "../../redux/progressSlice";
 import { setError } from "../../redux/errorSlice";
 import { setSpectrumData, setSpectrumParameters } from "../../redux/acquireSpectrumSlice";
+import { useNavigate } from "react-router-dom";
+
+export let sleepID = 0;
 
 /**
  * A component that reaches out to the Flask server with user entered parameters and received X and Y coordinates.
@@ -18,8 +21,7 @@ export default function Fetch({
   buttonStyle}) {
 
   const dispatch = useDispatch();
-  const { fetching, postfetch, cancelFetch } = useSelector((store) => store.progress);
-  const { devMode } = useSelector((store) => store.devMode);
+  const { fetching, postfetch } = useSelector((store) => store.progress);
   const { 
     molecule, 
     stepSize,
@@ -34,35 +36,30 @@ export default function Fetch({
     vres,
   } = useSelector((store) => store.experimentalSetup);
 
+  let nav = useNavigate();
+
   // cancel fetch
   // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#aborting_a_fetch
-  const [controller, setController] = useState(new AbortController());
+  const controller = new AbortController();
   const signal = controller.signal;
 
-  // waiting for entire page to render to fix issue where first cancel on load did not work
+  // move mirror
   useEffect(() => {
     if (document.querySelector("#cancel-scan-button")) {
       document
         .querySelector("#cancel-scan-button")
         .addEventListener("click", () => {
           controller.abort();
+          if (document.querySelector("instrument-window") !== null) {
+            cancelAnimation();
+          }
         });
     }
 
-    if (document.getElementById("instrument-window") !== null && postfetch && !devMode) {
-      moveMirror();
+    if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
+      animateToBand(mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep);
     }
   });
-
-  // cancel fetch
-  useEffect(() => {
-    if (cancelFetch && document.querySelector("#cancel-scan-button")) {
-      controller.abort();
-      // Reset the controller for future fetches
-      setController(new AbortController());
-      dispatch(setCancelFetch(false));
-    }
-  }, [cancelFetch, controller, dispatch]);
 
   /**
    * Fetches the server with user entered parameters and sets the X and Y coordinates
@@ -73,6 +70,7 @@ export default function Fetch({
     dispatch(setProgress([true, true, false]));
     
     let body = "";
+    let delay = 0;
 
     body = JSON.stringify({
       molecule: molecule,
@@ -99,29 +97,42 @@ export default function Fetch({
       });
 
       const data = await response.json();
+      delay = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1000 + 1;
+      // No delay for single frequency
+      delay = acquisitionType === "range" ? delay + 1200 : 0;
       dispatch(setProgress([true, false, true]));
+
       if (response.ok) {
         if (data.success) {
-          dispatch(setProgress(false, false, false));
-          dispatch(setSpectrumData([data, frequencyMin, frequencyMax]));
-          dispatch(
-            setSpectrumParameters({
-              molecule: molecule,
-              stepSize: stepSize,
-              frequencyMin: frequencyMin,
-              frequencyMax: frequencyMax,
-              numCyclesPerStep: numCyclesPerStep,
-              microwavePulseWidth: microwavePulseWidth,
-              mwBand: mwBand,
-              repetitionRate: repetitionRate,
-              molecularPulseWidth: molecularPulseWidth,
-              acquisitionType: acquisitionType,
-              vres: vres,
-              spectrumTitle: acquisitionType === "range" ? "Frequency Range" : "Single Frequency",
-            })
-          );
+
+          // if the acquisition type is range, navigate to instrument page
+          if (acquisitionType === "range") {
+            nav("/instrument", -1);
+          }
+
+          sleepID = setTimeout(() => {
+            dispatch(setProgress(false, false, false));
+            dispatch(setSpectrumData([data, frequencyMin, frequencyMax]));
+            dispatch(
+              setSpectrumParameters({
+                molecule: molecule,
+                stepSize: stepSize,
+                frequencyMin: frequencyMin,
+                frequencyMax: frequencyMax,
+                numCyclesPerStep: numCyclesPerStep,
+                microwavePulseWidth: microwavePulseWidth,
+                mwBand: mwBand,
+                repetitionRate: repetitionRate,
+                molecularPulseWidth: molecularPulseWidth,
+                acquisitionType: acquisitionType,
+                vres: vres,
+                spectrumTitle: acquisitionType === "range" ? "Frequency Range" : "Single Frequency",
+              })
+            );
+          }, delay); 
         }
         else {
+          dispatch(setProgress(false, false, false));
           dispatch(setError([true, data.text]));
         }
       }
@@ -132,13 +143,7 @@ export default function Fetch({
             dispatch(setError([true, "Scan canceled"]));
             break;
           default:
-            console.error(`Fetch error: ${error.message}`);
-            dispatch(
-              setError([
-                true,
-                "We could not collect your data at this time. Please wait a few moments and try again.",
-              ])
-            );
+            dispatch(setError([true, "We could not collect your data at this time. Please wait a few moments and try again."]));
         }
       }
   };

@@ -24,7 +24,7 @@ function downsample(data, threshold = 400000, factor = 10) {
  */
 export default function AcquireSpectrumPlotly() {
   const { params, data, frequencyMin, frequencyMax } = useSelector((store) => store.acquireSpectrum);
-  const { prefetch } = useSelector((store) => store.progress);
+  const { fetching } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
 
   // Set the x-axis range based on the acquisition type
@@ -40,7 +40,7 @@ export default function AcquireSpectrumPlotly() {
 
   return (
     <div id="spectrum">
-      {prefetch ? (
+      {fetching ? (
         <Spinner variant="indeterminate" size={200} />
       ) : optimizedData ? (
         <Plot

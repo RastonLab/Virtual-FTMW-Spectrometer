@@ -31,5 +31,13 @@ export const store = configureStore({
     devMode: devModeReducer,
     experimentalSetup: experimentalSetupReducer,
     acquireSpectrum: acquireSpectrumReducer
-  },
+  },  
+  // Middleware configuration
+  // This is to disable the serializable check and immutable check
+  // that is causing issues storing data points
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+      immutableCheck: false,
+    }),
 });
