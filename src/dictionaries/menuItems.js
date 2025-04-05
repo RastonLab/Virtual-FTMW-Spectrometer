@@ -11,7 +11,6 @@ import { ACQUIRE_SPECTRUM } from "../dictionaries/constants";
 
 // router
 import { Link } from "react-router-dom";
-import { cancelAnimation } from "../components/InstrumentWindow/animations/instrumentWindowAnimations";
 
 /**
  * Controls what appears in the MenuBar. To remove something, either remove the code or comment it out
@@ -90,7 +89,7 @@ export const menuItems = [
       },
       {
         label: "Cancel Acquisition",
-        component: <CancelScan buttonText="Cancel Acquisition" animationToggle={cancelAnimation} errorText="Scan Cancelled" />,
+        component: <CancelScan buttonText="Cancel Acquisition" errorText="Scan Cancelled" />,
       },
     ],
   },

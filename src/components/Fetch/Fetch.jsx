@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { animateToBand } from "../InstrumentWindow/animations/instrumentWindowAnimations";
+import { animateToBand, cancelAnimation } from "../InstrumentWindow/animations/instrumentWindowAnimations";
 import { useDispatch, useSelector } from "react-redux";
 import { setProgress } from "../../redux/progressSlice";
 import { setError } from "../../redux/errorSlice";
@@ -50,6 +50,9 @@ export default function Fetch({
         .querySelector("#cancel-scan-button")
         .addEventListener("click", () => {
           controller.abort();
+          if (document.querySelector("instrument-window") !== null) {
+            cancelAnimation();
+          }
         });
     }
 
@@ -94,7 +97,9 @@ export default function Fetch({
       });
 
       const data = await response.json();
-      delay = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1;
+      delay = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1000 + 1;
+      // No delay for single frequency
+      delay = acquisitionType === "range" ? delay + 1200 : 0;
       dispatch(setProgress([true, false, true]));
 
       if (response.ok) {
@@ -124,7 +129,7 @@ export default function Fetch({
                 spectrumTitle: acquisitionType === "range" ? "Frequency Range" : "Single Frequency",
               })
             );
-          }, delay + 1200); // Add 1200ms to account for the total extra time for the animation to run
+          }, delay); 
         }
         else {
           dispatch(setProgress(false, false, false));

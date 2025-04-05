@@ -9,7 +9,6 @@ import { sleepID } from "./Fetch/Fetch";
 export default function CancelScan({
   buttonText,
   errorText,
-  animationToggle
 }) {
   const dispatch = useDispatch();
 
@@ -17,7 +16,6 @@ export default function CancelScan({
 
   const handleClick = () => {
     clearTimeout(sleepID);
-    animationToggle();
     dispatch(setProgress(false, false, false));
     dispatch(setError([true, errorText]));
     dispatch(setError([true, "Scan canceled"]));

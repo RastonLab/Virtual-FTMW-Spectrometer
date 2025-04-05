@@ -78,9 +78,9 @@ export function animateToBand(
   
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   
-  const totalScanTime = ((frequencyMax - frequencyMin) / stepSize) * cyclesPerStep * 1;
-  const adjustedMin = Math.floor(frequencyMin / 100) * 100;
-  const adjustedMax = Math.floor(frequencyMax / 100) * 100;
+  const totalScanTime = ((frequencyMax - frequencyMin) / stepSize) * cyclesPerStep * 1000 + 1;
+  const adjustedMin = Math.ceil(frequencyMin / 100) * 100;
+  const adjustedMax = Math.ceil(frequencyMax / 100) * 100;
   
   // Object that maps the mw band to its keyframes
   // The keyframes are generated in the mwBandKeyframes.js file

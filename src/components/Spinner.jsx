@@ -12,7 +12,7 @@ export default function Spinner(props) {
   const numCyclesPerStep = props.numCyclesPerStep;
 
   // Calculate total scans as number of keyframes
-  const totalScans = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1;
+  const totalScans = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1000 + 1;
   // Calculate total animation time (ms): each scan is 1000ms plus an extra 1200ms delay
   const totalTime = totalScans + 1200;
 
@@ -58,7 +58,7 @@ export default function Spinner(props) {
           sx={{ textAlign: "center" }}
         >
           {Math.round(progress)}%<br />
-          Scans Complete: {scansDone} / {totalScans}
+          Steps Complete: {scansDone} / {totalScans}
         </Typography>
       )}
 
