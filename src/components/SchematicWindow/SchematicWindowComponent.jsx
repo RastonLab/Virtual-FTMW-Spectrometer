@@ -1,101 +1,168 @@
 import * as React from "react";
+import { useState, useEffect, useRef } from "react";
 import "../../style/SchematicWindow.css"; // Make sure this CSS file exists
 
 const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
-  // Use the original SVG file directly as an image source
+  // Use the SVG file directly as an image source from public folder
   const schematicImageUrl = process.env.PUBLIC_URL + "/assets/svg/components/schematic/schematic-window-component.svg";
   
-  // Function to handle window resizing and calculate responsive coordinates
-  const calculatePosition = () => {
-    // Default coordinates assuming a standard viewport width
-    return {
-      mwSynthesizer: {
-        top: '487px',
-        left: '1474px',
-      },
-      powerDivider: {
-        top: '500px',
-        left: '1328px',
-      },
-      radioFrequencyReference: {
-        top: '680px',
-        left: '1474px',
-      },
-      singleSidebandMixer: {
-        top: '696px', 
-        left: '1326px',
-      },
-      powerAmplifier: {
-        top: '685px',
-        left: '1137px',
-      },
-      switchAttenuator: {
-        top: '700px',
-        left: '969px',
-      },
-      circulator: {
-        top: '504px',
-        left: '777px',
-      },
-      wireHookAntenna1: {
-        top: '545px',
-        left: '629px',
-      },
-      wireHookAntenna2: {
-        top: '545px',
-        left: '629px',
-      },
-      solenoidValve1: {
-        top: '527px',
-        left: '162px',
-      },
-      solenoidValve2: {
-        top: '508px',
-        left: '232px',
-      },
-      fabryPerotCavity: {
-        top: '260px',
-        left: '260px',
-      },
-      nozzleDriver: {
-        top: '50px',
-        left: '768px',
-      },
-      mwSwitch: {
-        top: '330px',
-        left: '975px',
-      },
-      lowNoiseAmplifier: {
-        top: '330px',
-        left: '1130px',
-      },
-      imageRejectionMixer: {
-        top: '330px',
-        left: '1325px',
-      },
-      rfAmplifier: {
-        top: '330px',
-        left: '1493px',
-      },
-      oscilloscope: {
-        top: '90px',
-        left: '1523px',
-      },
-      frequencyReference: {
-        top: '548px',
-        left: '1655px',
-      },
-      pulseGenerator: {
-        top: '50px',
-        left: '1030px',
-      }
-    };
+  // Reference to the container
+  const containerRef = useRef(null);
+  
+  // State to store the current scale factor
+  const [scaleFactor, setScaleFactor] = useState(1);
+  
+  // Use relative positions (percentages) instead of fixed pixel positions
+  const relativePositions = {
+    mwSynthesizer: {
+      top: '56.5%',
+      left: '77.3%',
+      width: '5.1%',
+      height: '11.3%'
+    },
+    powerDivider: {
+      top: '58%',
+      left: '69.6%',
+      width: '3.8%',
+      height: '8%'
+    },
+    radioFrequencyReference: {
+      top: '79.5%',
+      left: '77.3%',
+      width: '5.1%',
+      height: '10.9%'
+    },
+    singleSidebandMixer: {
+      top: '81%', 
+      left: '69.7%',
+      width: '3.7%',
+      height: '8%'
+    },
+    powerAmplifier: {
+      top: '80.5%',
+      left: '59%',
+      width: '4.4%',
+      height: '10%'
+    },
+    switchAttenuator: {
+      top: '81.7%',
+      left: '50.8%',
+      width: '3.8%',
+      height: '7.5%'
+    },
+    circulator: {
+      top: '59%',
+      left: '40.7%',
+      width: '4.4%',
+      height: '9.5%'
+    },
+    wireHookAntenna1: {
+      top: '63.5%',
+      left: '33%',
+      width: '7.8%',
+      height: '1.2%'
+    },
+    wireHookAntenna2: {
+      top: '63.5%',
+      left: '33%',
+      width: '0.5%',
+      height: '3%'
+    },
+    solenoidValve1: {
+      top: '61.3%',
+      left: '8.5%',
+      width: '3.8%',
+      height: '6%'
+    },
+    solenoidValve2: {
+      top: '59%',
+      left: '12.2%',
+      width: '1.5%',
+      height: '10.5%'
+    },
+    fabryPerotCavity: {
+      top: '30%',
+      left: '13.7%',
+      width: '19.3%',
+      height: '68.5%'
+    },
+    nozzleDriver: {
+      top: '6%',
+      left: '40.5%',
+      width: '8.8%',
+      height: '20%'
+    },
+    mwSwitch: {
+      top: '38.6%',
+      left: '51.2%',
+      width: '3.8%',
+      height: '7.7%'
+    },
+    lowNoiseAmplifier: {
+      top: '37.6%',
+      left: '59.4%',
+      width: '3.8%',
+      height: '10.4%'
+    },
+    imageRejectionMixer: {
+      top: '38.1%',
+      left: '69.7%',
+      width: '3.7%',
+      height: '8.3%'
+    },
+    rfAmplifier: {
+      top: '38.1%',
+      left: '78.5%',
+      width: '4%',
+      height: '9.5%'
+    },
+    oscilloscope: {
+      top: '10.8%',
+      left: '80%',
+      width: '8.9%',
+      height: '20%'
+    },
+    frequencyReference: {
+      top: '63.5%',
+      left: '87%',
+      width: '8.9%',
+      height: '20%'
+    },
+    pulseGenerator: {
+      top: '6%',
+      left: '54.3%',
+      width: '22%',
+      height: '25%'
+    }
   };
 
-  const positions = calculatePosition();
+  // Function to handle window resizing and apply zoom adjustments
+  useEffect(() => {
+    // Function to update the container dimensions on resize or zoom
+    const handleResize = () => {
+      if (containerRef.current) {
+        // Update scale factor based on current container width
+        const containerWidth = containerRef.current.offsetWidth;
+        const baseWidth = 1850; // This should be the base width at 100% zoom
+        const newScaleFactor = containerWidth / baseWidth;
+        setScaleFactor(newScaleFactor);
+      }
+    };
+
+    // Call once on mount to set initial scale
+    handleResize();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
-    <div className="schematic-container" style={{ position: 'relative' }}>
+    <div className="schematic-container" style={{ position: 'relative' }} ref={containerRef}>
       {/* Use the SVG as a regular image with non-draggable class */}
       <img 
         className="non-draggable-image"
@@ -107,331 +174,83 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
     {...props}
       />
       
-      {/* Clickable area for component #1 (MW Synthesizer with sine wave) */}
-      <div
+      {/* Map through all positions and create clickable areas */}
+      {Object.entries(relativePositions).map(([key, position]) => {
+        // Extract component ID from the key
+        let componentId;
+        if (key.includes('wireHookAntenna')) {
+          componentId = 'wire-hook-antenna';
+        } else if (key.includes('solenoidValve')) {
+          componentId = 'solenoid-valve';
+        } else if (key === 'mwSynthesizer') {
+          componentId = 'microwave-synthesizer';
+        } else if (key === 'powerDivider') {
+          componentId = 'power-divider';
+        } else if (key === 'radioFrequencyReference') {
+          componentId = 'radio-frequency-reference';
+        } else if (key === 'singleSidebandMixer') {
+          componentId = 'single-sideband-mixer';
+        } else if (key === 'powerAmplifier') {
+          componentId = 'power-amplifier';
+        } else if (key === 'switchAttenuator') {
+          componentId = 'switch-attenuator';
+        } else if (key === 'circulator') {
+          componentId = 'circulator';
+        } else if (key === 'fabryPerotCavity') {
+          componentId = 'fabry-perot-cavity';
+        } else if (key === 'nozzleDriver') {
+          componentId = 'nozzle-driver';
+        } else if (key === 'mwSwitch') {
+          componentId = 'mw-switch';
+        } else if (key === 'lowNoiseAmplifier') {
+          componentId = 'low-noise-amplifier';
+        } else if (key === 'imageRejectionMixer') {
+          componentId = 'image-rejection-mixer';
+        } else if (key === 'rfAmplifier') {
+          componentId = 'rf-amplifier';
+        } else if (key === 'oscilloscope') {
+          componentId = 'oscilloscope';
+        } else if (key === 'frequencyReference') {
+          componentId = 'frequency-reference';
+        } else if (key === 'pulseGenerator') {
+          componentId = 'pulse-generator';
+        }
+        
+        // Only render if we have a valid component ID
+        if (!componentId || (key.includes('wireHookAntenna') && key !== 'wireHookAntenna1' && key !== 'wireHookAntenna2') || 
+            (key.includes('solenoidValve') && key !== 'solenoidValve1' && key !== 'solenoidValve2')) {
+          return null;
+        }
+        
+        // Set special styling for certain components
+        let additionalStyle = {};
+        if (key === 'singleSidebandMixer' || key === 'circulator' || key === 'imageRejectionMixer') {
+          additionalStyle.borderRadius = '50%'; // Makes it a circle
+        } else if (key === 'powerAmplifier') {
+          additionalStyle.clipPath = 'polygon(0% 50%, 100% 0%, 100% 100%)'; // Triangle pointing right
+        } else if (key === 'lowNoiseAmplifier' || key === 'rfAmplifier') {
+          additionalStyle.clipPath = 'polygon(0% 0%, 0% 100%, 100% 50%)'; // Triangle pointing right
+        }
+        
+        return (
+          <div
+            key={key}
           style={{
-          position: 'absolute',
-          top: positions.mwSynthesizer.top,
-          left: positions.mwSynthesizer.left,
-          width: '96px',
-          height: '98px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('microwave-synthesizer')}
-        title="Microwave Synthesizer"
-      />
-
-      {/* Clickable area for component #2 (Power Divider) */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.powerDivider.top,
-          left: positions.powerDivider.left,
-          width: '70px',
-          height: '70px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('power-divider')}
-        title="Power Divider"
-      />
-
-      {/* Clickable area for component #3 (Radio Frequency Reference) */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.radioFrequencyReference.top,
-          left: positions.radioFrequencyReference.left,
-          width: '95px',
-          height: '100px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('radio-frequency-reference')}
-        title="Radio Frequency Reference"
-      />
-
-      {/* Clickable area for component #4 (Single Sideband Mixer) - circular shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.singleSidebandMixer.top,
-          left: positions.singleSidebandMixer.left,
-          width: '73px',
-          height: '72px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10,
-          borderRadius: '50%' // Makes it a circle
-        }}
-        onClick={() => onComponentClick('single-sideband-mixer')}
-        title="Single Sideband Mixer"
-      />
-
-      {/* Clickable area for component #5 (Power Amplifier) - triangular shape pointing right */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.powerAmplifier.top,
-          left: positions.powerAmplifier.left,
-          width: '70px',
-          height: '90px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10,
-          clipPath: 'polygon(0% 50%, 100% 0%, 100% 100%)' // Custom shape for triangle using clip-path - pointing right
-        }}
-        onClick={() => onComponentClick('power-amplifier')}
-        title="Power Amplifier"
-      />
-
-      {/* Clickable area for component #6 (Switch Attenuator) */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.switchAttenuator.top,
-          left: positions.switchAttenuator.left,
-          width: '70px',
-          height: '70px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('switch-attenuator')}
-        title="MW Switch"
-      />
-
-      {/* Clickable area for component #7 (Circulator) - circular shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.circulator.top,
-          left: positions.circulator.left,
-          width: '85px',
-          height: '85px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10,
-          borderRadius: '50%' // Makes it a circle
-        }}
-        onClick={() => onComponentClick('circulator')}
-        title="Circulator"
-      />
-
-      {/* First clickable area for component #8 (Wire Hook Antenna) - horizontal shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.wireHookAntenna1.top,
-          left: positions.wireHookAntenna1.left,
-          width: '148px',
-          height: '13px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('wire-hook-antenna')}
-        title="Wire Hook Antenna"
-      />
-
-      {/* Second clickable area for component #8 (Wire Hook Antenna) - horizontal shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.wireHookAntenna2.top,
-          left: positions.wireHookAntenna2.left,
-          width: '10px',
-          height: '27px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('wire-hook-antenna')}
-        title="Wire Hook Antenna"
-      />
-
-      {/* First clickable area for component #10 (Solenoid valve/nozzle) */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.solenoidValve1.top,
-          left: positions.solenoidValve1.left,
-          width: '70px',
-          height: '50px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('solenoid-valve')}
-        title="Solenoid Valve (Nozzle)"
-      />
-
-      {/* Second clickable area for component #10 (Solenoid valve/nozzle) */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.solenoidValve2.top,
-          left: positions.solenoidValve2.left,
-          width: '28px',
-          height: '89px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('solenoid-valve')}
-        title="Solenoid Valve (Nozzle)"
-      />
-
-      {/* Clickable area for component #9 (Fabry-Perot cavity) - large square shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.fabryPerotCavity.top,
-          left: positions.fabryPerotCavity.left,
-          width: '370px',
-          height: '585px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('fabry-perot-cavity')}
-        title="Fabry-Perot Cavity"
-      />
-
-      {/* Clickable area for component #11 (Nozzle Driver) - square shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.nozzleDriver.top,
-          left: positions.nozzleDriver.left,
-          width: '170px',
-          height: '175px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('nozzle-driver')}
-        title="Nozzle Driver"
-      />
-
-      {/* Clickable area for component #12 (MW Switch) - square shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.mwSwitch.top,
-          left: positions.mwSwitch.left,
-          width: '70px',
-          height: '70px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('mw-switch')}
-        title="MW Switch"
-      />
-
-      {/* Clickable area for component #13 (Low-noise amplifier) - triangular shape pointing right */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.lowNoiseAmplifier.top,
-          left: positions.lowNoiseAmplifier.left,
-          width: '85px',
-          height: '70px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10,
-          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)' // Custom shape for triangle using clip-path - pointing right
-        }}
-        onClick={() => onComponentClick('low-noise-amplifier')}
-        title="Low-noise Amplifier"
-      />
-
-      {/* Clickable area for component #14 (Image rejection mixer) - circular shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.imageRejectionMixer.top,
-          left: positions.imageRejectionMixer.left,
-          width: '73px',
-          height: '72px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10,
-          borderRadius: '50%' // Makes it a circle
-        }}
-        onClick={() => onComponentClick('image-rejection-mixer')}
-        title="Image Rejection Mixer"
-      />
-
-      {/* Clickable area for component #15 (RF amplifier) - triangular shape pointing right */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.rfAmplifier.top,
-          left: positions.rfAmplifier.left,
-          width: '85px',
-          height: '73px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10,
-          clipPath: 'polygon(0% 0%, 0% 100%, 100% 50%)' // Custom shape for triangle using clip-path - pointing right
-        }}
-        onClick={() => onComponentClick('rf-amplifier')}
-        title="RF Amplifier"
-      />
-
-      {/* Clickable area for component #16 (Oscilloscope) - square shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.oscilloscope.top,
-          left: positions.oscilloscope.left,
-          width: '170px',
-          height: '175px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('oscilloscope')}
-        title="Oscilloscope"
-      />
-
-      {/* Clickable area for component #17 (Frequency reference) - square shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.frequencyReference.top,
-          left: positions.frequencyReference.left,
-          width: '170px',
-          height: '175px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('frequency-reference')}
-        title="Frequency Reference"
-      />
-
-      {/* Clickable area for component #18 (Pulse generator) - large rectangular shape */}
-      <div
-          style={{
-          position: 'absolute',
-          top: positions.pulseGenerator.top,
-          left: positions.pulseGenerator.left,
-          width: '425px',
-          height: '220px',
-          cursor: 'pointer',
-          background: 'transparent',
-          zIndex: 10
-        }}
-        onClick={() => onComponentClick('pulse-generator')}
-        title="Pulse Generator"
-      />
+              position: 'absolute',
+              top: position.top,
+              left: position.left,
+              width: position.width,
+              height: position.height,
+              cursor: 'pointer',
+              background: 'transparent',
+              zIndex: 10,
+              ...additionalStyle
+            }}
+            onClick={() => onComponentClick(componentId)}
+            title={key.replace(/([A-Z])/g, ' $1').trim()}
+          />
+        );
+      })}
     </div>
   );
 };
