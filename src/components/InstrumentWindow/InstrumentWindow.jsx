@@ -15,6 +15,7 @@ const InstrumentWindow = () => {
   const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, microwavePulseWidth, mwBand, acquisitionType } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
+  const delay = (((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1000 + 1) + 1200; 
 
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null) {
@@ -39,7 +40,7 @@ const InstrumentWindow = () => {
         molecule={molecule} 
         range={`${frequencyMin} - ${frequencyMax}`} 
         frequency={stepSize} 
-        cyclePerStep={`${numCyclesPerStep} / ${stepSize}`} 
+        cyclePerStep={numCyclesPerStep} 
         microwavePulseWidth={microwavePulseWidth}
         mwBand={mwBand}
         pressure={'1.3 x 10⁻⁶ Torr'} />
@@ -58,6 +59,7 @@ const InstrumentWindow = () => {
               frequencyMax={frequencyMax} 
               stepSize={stepSize}
               numCyclesPerStep={numCyclesPerStep}
+              timer={delay}
             />
           </>
         )}

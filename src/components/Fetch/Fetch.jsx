@@ -5,6 +5,7 @@ import { setProgress } from "../../redux/progressSlice";
 import { setError } from "../../redux/errorSlice";
 import { setSpectrumData, setSpectrumParameters } from "../../redux/acquireSpectrumSlice";
 import { useNavigate } from "react-router-dom";
+import { setTimer } from "../../redux/timerSlice";
 
 export let sleepID = 0;
 
@@ -68,6 +69,8 @@ export default function Fetch({
     // remove any errors (if existing) and start a progress spinner
     dispatch(setError([false, null]));
     dispatch(setProgress([true, true, false]));
+
+    dispatch(setTimer(0));
     
     let body = "";
     let delay = 0;
