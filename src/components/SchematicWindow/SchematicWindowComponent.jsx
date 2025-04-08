@@ -9,9 +9,6 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
   // Reference to the container
   const containerRef = useRef(null);
   
-  // State to store the current scale factor
-  const [scaleFactor, setScaleFactor] = useState(1);
-  
   // Use relative positions (percentages) instead of fixed pixel positions
   const relativePositions = {
     mwSynthesizer: {
@@ -133,7 +130,7 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
       left: '54.3%',
       width: '22%',
       height: '25%'
-    }
+    } 
   };
 
   // Function to handle window resizing and apply zoom adjustments
@@ -141,11 +138,9 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
     // Function to update the container dimensions on resize or zoom
     const handleResize = () => {
       if (containerRef.current) {
-        // Update scale factor based on current container width
+        // Calculate container dimensions without storing the scale factor
         const containerWidth = containerRef.current.offsetWidth;
         const baseWidth = 1850; // This should be the base width at 100% zoom
-        const newScaleFactor = containerWidth / baseWidth;
-        setScaleFactor(newScaleFactor);
       }
     };
 

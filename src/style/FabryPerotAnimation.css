@@ -5,7 +5,7 @@
   min-height: 450px;
   margin: 0;
   padding: 30px 0 0 0; /* Add padding to the top to move GIF down */
-  background-color: transparent; /* 透明背景 */
+  background-color: transparent; /* Transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
   align-items: center;
   width: 100%;
   flex-grow: 1;
-  background-color: transparent; /* 透明背景 */
+  background-color: transparent; /* Transparent background */
   padding: 10px 0;
 }
 
@@ -28,12 +28,12 @@
   height: auto;
   object-fit: contain;
   margin: 0;
-  border: none; /* 无边框 */
-  background-color: transparent; /* 透明背景 */
-  box-shadow: none; /* 移除阴影 */
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  box-shadow: none; /* Remove shadow */
 }
 
-/* 说明文本样式 */
+/* Description text style */
 .description-text {
   width: 100%;
   text-align: center;
