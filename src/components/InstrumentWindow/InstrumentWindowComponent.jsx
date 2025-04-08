@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgInstrumentWindowComponent = (props) => (
+const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep, microwavePulseWidth, pressure, mwBand, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -2033,14 +2033,12 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={9.643}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={27.429}
           style={{
             fontSize: "43.8186px",
             lineHeight: 0,
-            display: "none",
             paintOrder: "fill markers stroke",
           }}
           textAnchor="middle"
@@ -2054,7 +2052,7 @@ const SvgInstrumentWindowComponent = (props) => (
             fontSize={27.429}
             style={{ fontSize: "43.8186px" }}
           >
-            {"pressure"}
+            {pressure}
           </tspan>
         </text>
       </g>
@@ -3612,7 +3610,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={16.227}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={46.157}
@@ -3632,7 +3629,7 @@ const SvgInstrumentWindowComponent = (props) => (
             fontSize={46.157}
             style={{ fontSize: "73.2903px" }}
           >
-            {"molecule"}
+            {molecule}
           </tspan>
         </text>
       </g>
@@ -3685,7 +3682,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={15}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={85.333}
@@ -3699,7 +3695,7 @@ const SvgInstrumentWindowComponent = (props) => (
           textAnchor="middle"
         >
           <tspan id="tspan2-0" x={651.388} y={104.668}>
-            {"gas"}
+            {molecule}
           </tspan>
         </text>
         <text
@@ -3747,7 +3743,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={15}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={85.333}
@@ -3761,7 +3756,7 @@ const SvgInstrumentWindowComponent = (props) => (
           textAnchor="middle"
         >
           <tspan id="tspan4-2" x={-98.612} y={104.668}>
-            {"cycle"}
+            {cyclePerStep}
           </tspan>
         </text>
         <text
@@ -3802,7 +3797,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={15}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={85.333}
@@ -3816,7 +3810,7 @@ const SvgInstrumentWindowComponent = (props) => (
           textAnchor="middle"
         >
           <tspan id="tspan6-3" x={651.388} y={-129.906}>
-            {"frequency"}
+            {frequency}
           </tspan>
         </text>
         <text
@@ -3869,7 +3863,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={15}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={85.333}
@@ -3883,7 +3876,7 @@ const SvgInstrumentWindowComponent = (props) => (
           textAnchor="middle"
         >
           <tspan id="tspan8-8" x={-98.612} y={-129.906}>
-            {"range"}
+            {range}
           </tspan>
         </text>
         <text
@@ -3924,7 +3917,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={15}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={85.333}
@@ -3939,7 +3931,7 @@ const SvgInstrumentWindowComponent = (props) => (
         >
           <tspan id="tspan6" x={0} y={0}>
             <tspan id="tspan2" x={651.388} y={348.914}>
-              {"mw-pulse-width"}
+              {microwavePulseWidth}
             </tspan>
           </tspan>
         </text>
@@ -3988,7 +3980,6 @@ const SvgInstrumentWindowComponent = (props) => (
           strokeLinecap="square"
           strokeLinejoin="round"
           strokeWidth={15}
-          display="none"
           dominantBaseline="central"
           fontFamily="sans-serif"
           fontSize={85.333}
@@ -4002,7 +3993,7 @@ const SvgInstrumentWindowComponent = (props) => (
           textAnchor="middle"
         >
           <tspan id="tspan4" x={-98.612} y={348.914}>
-            {"mw-band"}
+            {mwBand}
           </tspan>
         </text>
       </g>

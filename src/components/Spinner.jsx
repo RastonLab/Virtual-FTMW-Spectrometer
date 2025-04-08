@@ -1,67 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import { Box, CircularProgress, Typography } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProgress } from '../redux/progressSlice';
+import { setTimer } from '../redux/timerSlice';
 
-/**
- * A component that contains an MUI Progress (spinner) to display loading/waiting to the user
- */
-export default function Spinner(props) {
-  // Access props
-  const frequencyMin = props.frequencyMin;
-  const frequencyMax = props.frequencyMax;
-  const stepSize = props.stepSize;
-  const numCyclesPerStep = props.numCyclesPerStep;
-
-  // Calculate total scans as number of keyframes
-  const totalScans = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1000 + 1;
-  // Calculate total animation time (ms): each scan is 1000ms plus an extra 1200ms delay
-  const totalTime = totalScans + 1200;
-
-  const [elapsed, setElapsed] = useState(0);
+export default function Spinner({ frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType, timer: timerProp, ...otherProps }) {
+  const totalSteps = ((frequencyMax - frequencyMin) / stepSize) + 1;
+  const totalTime = totalSteps * numCyclesPerStep * 1000;
+  const { timer } = useSelector((store) => store.timer);
+  const [elapsed, setElapsed] = useState(timer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setElapsed((prev) => {
-        const next = prev + 100;
-        if (next >= totalTime) {
-          clearInterval(interval);
-          return totalTime;
+    if (timerProp) {
+      const interval = setInterval(() => {
+        if (elapsed >= totalTime) {
+          dispatch(setProgress(false, false, false));
         }
-        return next;
-      });
-    }, 100);
+        setElapsed((prev) => {
+          const next = prev + 100;
+          if (next >= totalTime) {
+            clearInterval(interval);
+            return totalTime;
+          }
+          return next;
+        });
+      }, 100);
+      dispatch(setTimer(elapsed));
+      return () => clearInterval(interval);
+    }
+  }, [totalTime, timerProp, dispatch, elapsed]);
 
-    return () => clearInterval(interval);
-  }, [totalTime]);
-
-  // Calculate progress percentage and scan count
   const progress = Math.min((elapsed / totalTime) * 100, 100);
-  const scansDone = Math.floor((elapsed / totalTime) * totalScans);
+  const stepsDone = Math.floor((elapsed / totalTime) * totalSteps);
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: 15,
-      }}
-    >
-      <CircularProgress {...props} value={progress} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
-      {(props.acquisitionType === "range") && (
-        <Typography
-          variant="caption"
-          component="div"
-          color="inherit"
-          fontFamily="inherit"
-          fontSize={20}
-          fontWeight={650}
-          sx={{ textAlign: "center" }}
-        >
-          {Math.round(progress)}%<br />
-          Steps Complete: {scansDone} / {totalScans}
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>
+      <CircularProgress {...otherProps} value={progress} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
+      {acquisitionType === "range" && (
+        <Typography variant="caption" component="div" color="inherit" fontFamily="inherit" fontSize={20} fontWeight={650} sx={{ textAlign: "center" }}>
+          {Math.round(progress)}%<br />Steps Complete: {stepsDone} / {totalSteps}
         </Typography>
       )}
-
       <svg>
         <defs>
           <linearGradient id="my_gradient" x1="80%" y1="0%" x2="0%" y2="50%">
