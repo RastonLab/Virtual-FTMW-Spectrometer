@@ -174,7 +174,7 @@ const SchematicWindow = () => {
         else if (componentId === 'oscilloscope') {
             setDialogContent({
                 title: 'Oscilloscope',
-                content: 'Digitizes the detected free induction decay (FID) signal and Fourier transforms it to a frequency domain signal for analysis.',
+                content: 'Digitizes the detected free induction decay (FID) signal and Fourier transforms it into the frequency domain. This Fourier transformed spectrum is then recorded by a computer (see Instrument window).',
                 image: oscilloscopeImage,
                 customComponent: null
             });
