@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "../../style/SchematicWindow.css"; // Make sure this CSS file exists
 
 const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
@@ -133,18 +133,14 @@ const SvgSchematicWindowComponent = ({ onComponentClick, ...props }) => {
     } 
   };
 
-  // Function to handle window resizing and apply zoom adjustments
+  // Function to handle window resizing
   useEffect(() => {
-    // Function to update the container dimensions on resize or zoom
     const handleResize = () => {
-      if (containerRef.current) {
-        // Calculate container dimensions without storing the scale factor
-        const containerWidth = containerRef.current.offsetWidth;
-        const baseWidth = 1850; // This should be the base width at 100% zoom
-      }
+      // Empty function just to handle resize events
+      // No need to calculate dimensions since we're using percentages
     };
 
-    // Call once on mount to set initial scale
+    // Call once on mount
     handleResize();
     
     // Add event listener for window resize
