@@ -83,7 +83,7 @@ export default function AcquireSpectrumPlotly() {
         </div>
       ) : (
         <div id="graph-and-error" className="exp-col">
-          <p>Please generate a Background Spectrum and return here</p>
+          <h2>Please generate a Spectrum and return here</h2>
         </div>
       )}
     </div>

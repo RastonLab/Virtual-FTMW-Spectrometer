@@ -4,42 +4,41 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
 import { setTimer } from '../redux/timerSlice';
 
-export default function Spinner({ frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType, timer: timerProp, ...otherProps }) {
-  const totalSteps = ((frequencyMax - frequencyMin) / stepSize) + 1;
-  const totalTime = totalSteps * numCyclesPerStep * 1000;
+export default function Spinner({ frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType, delay, ...otherProps }) {
+  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
   const { timer } = useSelector((store) => store.timer);
   const [elapsed, setElapsed] = useState(timer);
+  const [stepsDone, setStepsDone] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (timerProp) {
+    if (delay) {
       const interval = setInterval(() => {
-        if (elapsed >= totalTime) {
+        if (elapsed >= 100) {
           dispatch(setProgress(false, false, false));
         }
-        setElapsed((prev) => {
-          const next = prev + 100;
-          if (next >= totalTime) {
-            clearInterval(interval);
-            return totalTime;
-          }
-          return next;
-        });
-      }, 100);
+
+        setElapsed((prev) => 
+          prev >= 100 ? 0 : prev + 1
+        );
+      }, delay / 100);
+
       dispatch(setTimer(elapsed));
+
+      if (elapsed >= (stepsDone * 100) / totalSteps) {
+        setStepsDone(stepsDone + 1);
+      }
+
       return () => clearInterval(interval);
     }
-  }, [totalTime, timerProp, dispatch, elapsed]);
-
-  const progress = Math.min((elapsed / totalTime) * 100, 100);
-  const stepsDone = Math.floor((elapsed / totalTime) * totalSteps);
+  }, [delay, dispatch, elapsed, stepsDone, totalSteps]);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>
-      <CircularProgress {...otherProps} value={progress} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
+      <CircularProgress {...otherProps} value={elapsed} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
       {acquisitionType === "range" && (
         <Typography variant="caption" component="div" color="inherit" fontFamily="inherit" fontSize={20} fontWeight={650} sx={{ textAlign: "center" }}>
-          {Math.round(progress)}%<br />Steps Complete: {stepsDone} / {totalSteps}
+          {Math.round(elapsed)}%<br />Steps Complete: {stepsDone - 1} / {totalSteps}
         </Typography>
       )}
       <svg>

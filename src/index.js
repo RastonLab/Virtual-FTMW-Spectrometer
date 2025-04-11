@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 // components
 import App from "./App";
 import ExperimentalSetup from './components/ExperimentalSetup/ExperimentalSetup';
-import FindPeaks from "./routes/FindPeaks";
+import FindPeaks from "./components/FindPeaks/FindPeaks";
 import InstrumentWindow from './components/InstrumentWindow/InstrumentWindow';
 import NotFound from "./components/NotFound";
 import SchematicWindow from "./components/SchematicWindow/SchematicWindow";

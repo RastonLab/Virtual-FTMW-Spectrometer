@@ -1,7 +1,7 @@
 // components
 import { Open } from "../components/Open";
 import CancelScan from "../components/CancelScan";
-import Fetch from "../components/Fetch/Fetch";
+import AcquireSpectrumFetch from "../components/AcquireSpectrumFetch";
 import LandingPage from "../components/LandingPage";
 import Save from "../components/Save";
 import Tutorial from "../components/Tutorial";
@@ -80,7 +80,7 @@ export const menuItems = [
       {
         label: "Acquire Spectrum",
         component: (
-          <Fetch
+          <AcquireSpectrumFetch
             type="acquire-spectrum"
             fetchURL={ACQUIRE_SPECTRUM}
             buttonText={"Acquire Spectrum"}

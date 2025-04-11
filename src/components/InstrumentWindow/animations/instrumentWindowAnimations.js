@@ -113,7 +113,6 @@ export function animateToBand(
                               .sort((a, b) => a - b)
                               .map(freq => freq.toString());
   
-  // Stores the first segment duration
   const firstKey = availableKeys[0];
   // Grabs the initial state of the instrument window
   const initialSState = sBandState();

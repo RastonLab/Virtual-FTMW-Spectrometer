@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
-import { sleepID } from "./Fetch/Fetch";
+import { sleepID } from "./AcquireSpectrumFetch";
 import { setTimer } from "../redux/timerSlice";
 
 /**

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { animateToBand, cancelAnimation } from "../InstrumentWindow/animations/instrumentWindowAnimations";
+import { animateToBand, cancelAnimation } from "./InstrumentWindow/animations/instrumentWindowAnimations";
 import { useDispatch, useSelector } from "react-redux";
-import { setProgress } from "../../redux/progressSlice";
-import { setError } from "../../redux/errorSlice";
-import { setSpectrumData, setSpectrumParameters } from "../../redux/acquireSpectrumSlice";
+import { setProgress } from "../redux/progressSlice";
+import { setError } from "../redux/errorSlice";
+import { setSpectrumData, setSpectrumParameters } from "../redux/acquireSpectrumSlice";
 import { useNavigate } from "react-router-dom";
-import { setTimer } from "../../redux/timerSlice";
+import { setTimer } from "../redux/timerSlice";
 
 export let sleepID = 0;
 
@@ -16,7 +16,7 @@ export let sleepID = 0;
  * @param {string} buttonText - The text on the button.
  * @param {string} buttonStyle - The class ID set on the button to determine style.
  */
-export default function Fetch({
+export default function AcquireSpectrumFetch({
   fetchURL,
   buttonText,
   buttonStyle}) {
@@ -57,7 +57,7 @@ export default function Fetch({
         });
     }
 
-    if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
+    if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range" && document.getElementById("instrument-spinner") !== null ) {
       animateToBand(mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep);
     }
   });
@@ -102,7 +102,7 @@ export default function Fetch({
       const data = await response.json();
       delay = ((frequencyMax - frequencyMin) / stepSize) * numCyclesPerStep * 1000 + 1;
       // No delay for single frequency
-      delay = acquisitionType === "range" ? delay + 1200 : 0;
+      delay = 0;
       dispatch(setProgress([true, false, true]));
 
       if (response.ok) {
@@ -112,9 +112,7 @@ export default function Fetch({
           if (acquisitionType === "range") {
             nav("/instrument", -1);
           }
-
           sleepID = setTimeout(() => {
-            dispatch(setProgress(false, false, false));
             dispatch(setSpectrumData([data, frequencyMin, frequencyMax]));
             dispatch(
               setSpectrumParameters({
@@ -132,6 +130,13 @@ export default function Fetch({
                 spectrumTitle: acquisitionType === "range" ? "Frequency Range" : "Single Frequency",
               })
             );
+
+            // Set progress to false if acquisition type is single
+            // As for rage, it will be set to false in the when the spinner is done
+            if (acquisitionType === "single") {
+              dispatch(setProgress(false, false, false));
+            }
+
           }, delay); 
         }
         else {
