@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep, microwavePulseWidth, pressure, mwBand, ...props }) => (
+const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep, pressure, mwBand, onDisplayCLick, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -1506,6 +1506,66 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         gradientTransform="matrix(-.40475 .12435 .10845 .46408 521.049 4.494)"
         gradientUnits="userSpaceOnUse"
         spreadMethod="repeat"
+      />
+      <linearGradient id="linearGradient5555">
+        <stop
+          id="stop5553"
+          offset={0}
+          style={{ stopColor: "#000", stopOpacity: 1 }}
+        />
+      </linearGradient>
+      <linearGradient id="linearGradient15256-3">
+        <stop
+          id="stop38889"
+          offset={0.05}
+          style={{ stopColor: "#a2a08c", stopOpacity: 1 }}
+        />
+        <stop
+          id="stop38887"
+          offset={0.245}
+          style={{ stopColor: "#bfb575", stopOpacity: 1 }}
+        />
+        <stop
+          id="stop38885"
+          offset={0.498}
+          style={{ stopColor: "#ff0", stopOpacity: 1 }}
+        />
+        <stop
+          id="stop38883"
+          offset={0.75}
+          style={{ stopColor: "#bfb575", stopOpacity: 1 }}
+        />
+        <stop
+          id="stop38881"
+          offset={0.95}
+          style={{ stopColor: "#a2a08c", stopOpacity: 1 }}
+        />
+      </linearGradient>
+      <linearGradient id="linearGradient894-4">
+        <stop
+          id="stop890-1"
+          offset={0}
+          style={{ stopColor: "#00c8ff", stopOpacity: 1 }}
+        />
+        <stop
+          id="stop945-3"
+          offset={0.5}
+          style={{ stopColor: "#00f", stopOpacity: 1 }}
+        />
+        <stop
+          id="stop892-7"
+          offset={1}
+          style={{ stopColor: "#00007f", stopOpacity: 1 }}
+        />
+      </linearGradient>
+      <linearGradient
+        xlinkHref="#linearGradient894-4"
+        id="linearGradient896-8"
+        x1={54.221}
+        x2={282.78}
+        y1={35.206}
+        y2={206.206}
+        gradientUnits="userSpaceOnUse"
       />
       <clipPath id="clipPath228">
         <path
@@ -3633,71 +3693,17 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           </tspan>
         </text>
       </g>
-      <g id="readout" transform="translate(140.99 261.89)scale(.12099)">
+      <g id="readout" transform="translate(233.072 252.998)scale(.08926)">
         <path
           id="background-1"
           fill="#1d2022"
           stroke="#daa520"
           strokeLinecap="square"
           strokeLinejoin="round"
-          strokeWidth={18.634}
-          d="M-476.71-332.09v765.9h1511.36v-765.9H278.97Z"
+          strokeWidth={15.793}
+          d="M-478.13-333.51V746.9h769.558V-333.51H-93.35Z"
           style={{ paintOrder: "fill markers stroke" }}
         />
-        <text
-          xmlSpace="preserve"
-          id="gas-text"
-          x={573.354}
-          y={21.437}
-          fill="#fff"
-          strokeLinecap="square"
-          strokeLinejoin="round"
-          strokeWidth={15}
-          fontFamily="sans-serif"
-          fontSize={74.667}
-          style={{
-            fontVariantLigatures: "normal",
-            fontVariantCaps: "normal",
-            fontVariantNumeric: "normal",
-            fontVariantEastAsian: "normal",
-            paintOrder: "fill markers stroke",
-          }}
-        >
-          <tspan id="tspan1-8" x={573.354} y={21.437} fontSize={74.667}>
-            {"Gas"}
-          </tspan>
-        </text>
-        <path
-          id="gas-text-box"
-          fill="#fff"
-          d="M303.97 48.166h700v100h-700z"
-          style={{ paintOrder: "fill markers stroke" }}
-        />
-        <text
-          xmlSpace="preserve"
-          id="gas-value"
-          x={651.388}
-          y={104.668}
-          fill="#000"
-          strokeLinecap="square"
-          strokeLinejoin="round"
-          strokeWidth={15}
-          dominantBaseline="central"
-          fontFamily="sans-serif"
-          fontSize={85.333}
-          style={{
-            fontVariantLigatures: "normal",
-            fontVariantCaps: "normal",
-            fontVariantNumeric: "normal",
-            fontVariantEastAsian: "normal",
-            paintOrder: "fill markers stroke",
-          }}
-          textAnchor="middle"
-        >
-          <tspan id="tspan2-0" x={651.388} y={104.668}>
-            {molecule}
-          </tspan>
-        </text>
         <text
           xmlSpace="preserve"
           id="cycle-title"
@@ -3762,8 +3768,8 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         <text
           xmlSpace="preserve"
           id="frequency-title"
-          x={336.798}
-          y={-219.678}
+          x={-407.844}
+          y={281.104}
           fill="#fff"
           strokeLinecap="square"
           strokeLinejoin="round"
@@ -3778,21 +3784,21 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             paintOrder: "fill markers stroke",
           }}
         >
-          <tspan id="tspan5-9" x={336.798} y={-219.678} fontSize={74.667}>
+          <tspan id="tspan5-9" x={-407.844} y={281.104} fontSize={74.667}>
             {"Frequency (MHz)"}
           </tspan>
         </text>
         <path
           id="frequency-text-box"
           fill="#fff"
-          d="M303.97-186.41h700v100h-700z"
+          d="M-440.672 314.372h700v100h-700z"
           style={{ paintOrder: "fill markers stroke" }}
         />
         <text
           xmlSpace="preserve"
           id="frequency-value"
-          x={651.388}
-          y={-129.906}
+          x={-93.254}
+          y={370.877}
           fill="#000"
           strokeLinecap="square"
           strokeLinejoin="round"
@@ -3809,7 +3815,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
           textAnchor="middle"
         >
-          <tspan id="tspan6-3" x={651.388} y={-129.906}>
+          <tspan id="tspan6-3" x={-93.254} y={370.877}>
             {frequency}
           </tspan>
         </text>
@@ -3879,67 +3885,17 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             {range}
           </tspan>
         </text>
-        <text
-          xmlSpace="preserve"
-          id="mw-pulse-width-tile"
-          x={359.96}
-          y={265.683}
-          fill="#fff"
-          strokeLinecap="square"
-          strokeLinejoin="round"
-          strokeWidth={15}
-          fontFamily="sans-serif"
-          fontSize={74.667}
-          style={{
-            fontVariantLigatures: "normal",
-            fontVariantCaps: "normal",
-            fontVariantNumeric: "normal",
-            fontVariantEastAsian: "normal",
-            paintOrder: "fill markers stroke",
-          }}
-        >
-          <tspan id="tspan1" x={359.96} y={265.683} fontSize={74.667}>
-            {"MW Pulse Width"}
-          </tspan>
-        </text>
         <path
-          id="mw-pulse-width-text-box"
+          id="gas-text-box"
           fill="#fff"
-          d="M303.97 292.412h700v100h-700z"
+          d="M-445.026 579.431h700v100h-700z"
           style={{ paintOrder: "fill markers stroke" }}
         />
         <text
           xmlSpace="preserve"
-          id="mw-pulse-width-value"
-          x={651.388}
-          y={348.914}
-          fill="#000"
-          strokeLinecap="square"
-          strokeLinejoin="round"
-          strokeWidth={15}
-          dominantBaseline="central"
-          fontFamily="sans-serif"
-          fontSize={85.333}
-          style={{
-            fontVariantLigatures: "normal",
-            fontVariantCaps: "normal",
-            fontVariantNumeric: "normal",
-            fontVariantEastAsian: "normal",
-            paintOrder: "fill markers stroke",
-          }}
-          textAnchor="middle"
-        >
-          <tspan id="tspan6" x={0} y={0}>
-            <tspan id="tspan2" x={651.388} y={348.914}>
-              {microwavePulseWidth}
-            </tspan>
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
           id="mw-band-tile"
-          x={-265.812}
-          y={267.142}
+          x={-280.344}
+          y={551.161}
           fill="#fff"
           strokeLinecap="square"
           strokeLinejoin="round"
@@ -3957,25 +3913,19 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         >
           <tspan
             id="tspan3"
-            x={-265.812}
-            y={267.142}
+            x={-280.344}
+            y={551.161}
             fontSize={74.667}
             style={{ lineHeight: 0 }}
           >
             {"MW Band"}
           </tspan>
         </text>
-        <path
-          id="mw-band-text-box"
-          fill="#fff"
-          d="M-446.03 292.412h700v100h-700z"
-          style={{ paintOrder: "fill markers stroke" }}
-        />
         <text
           xmlSpace="preserve"
           id="mw-band-value"
           x={-98.612}
-          y={348.914}
+          y={631.965}
           fill="#000"
           strokeLinecap="square"
           strokeLinejoin="round"
@@ -3992,12 +3942,128 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
           textAnchor="middle"
         >
-          <tspan id="tspan4" x={-98.612} y={348.914}>
+          <tspan id="tspan4" x={-98.612} y={631.965}>
             {mwBand}
           </tspan>
         </text>
+      </g>
+      <g
+        id="g9"
+        style={{ display: "inline", cursor: "pointer" }}
+        onClick={onDisplayCLick}
+        transform="translate(46.907 223.632)scale(.37439)"
+      >
+        <path
+          id="rect2"
+          d="M54.679 259.208h226.996v10.266H54.679z"
+          style={{
+            fill: "#afafaf",
+            fillOpacity: 1,
+            stroke: "#000",
+            strokeWidth: 1.14064,
+            strokeLinecap: "square",
+            strokeLinejoin: "miter",
+            strokeDasharray: "none",
+            strokeOpacity: 1,
+            paintOrder: "normal",
+          }}
+        />
+        <path
+          id="path3"
+          d="M111.271 225.078h113.812l55.35 33.062H55.921Z"
+          style={{
+            fill: "#afafaf",
+            fillOpacity: 1,
+            stroke: "#000",
+            strokeWidth: 0.999991,
+            strokeLinecap: "square",
+            strokeDasharray: "none",
+          }}
+        />
+        <path
+          id="path5"
+          d="M247.517 225.079a79.278 27.374 0 0 1-39.639 23.706 79.278 27.374 0 0 1-79.277 0 79.278 27.374 0 0 1-39.64-23.706h79.278z"
+          style={{
+            fill: "#afafaf",
+            fillOpacity: 1,
+            stroke: "#000",
+            strokeWidth: 1.14058,
+            strokeLinecap: "square",
+            strokeLinejoin: "miter",
+            strokeDasharray: "none",
+            strokeOpacity: 1,
+            paintOrder: "normal",
+          }}
+        />
+        <rect
+          id="rect6"
+          width={296.578}
+          height={222.433}
+          x={20.211}
+          y={9.489}
+          rx={28.517}
+          ry={28.517}
+          style={{
+            fill: "#bec3c9",
+            fillOpacity: 1,
+            stroke: "#000",
+            strokeWidth: 3.42205,
+            strokeLinecap: "butt",
+            strokeLinejoin: "miter",
+            strokeDasharray: "none",
+            strokeOpacity: 1,
+            paintOrder: "normal",
+          }}
+        />
+        <rect
+          id="rect8"
+          width={228.137}
+          height={171.103}
+          x={54.432}
+          y={35.155}
+          rx={28.517}
+          ry={28.517}
+          style={{
+            fill: "url(#linearGradient896-8)",
+            fillOpacity: 1,
+            stroke: "#000",
+            strokeWidth: 3.42205,
+            strokeLinecap: "square",
+            strokeDasharray: "none",
+            strokeOpacity: 1,
+          }}
+        />
+        <path
+          id="spectrum-ready"
+          d="M96.043 93.957q-1.51.377-1.886 1.885l3.017 1.133h9.77l3.018-1.133q-.377-1.508-1.886-1.885zm16.937 0v1.885l3.017 1.133h9.053l1.51-1.51-1.51-1.508zm20.784 0q-1.508.377-1.886 1.885l3.018 1.133h10.147l1.132-3.018zm18.861 0q-1.508.377-1.886 1.885l3.018 1.133h10.147l1.132-3.018zm18.861 0q-1.508.377-1.886 1.885l3.018 1.133h9.77l3.017-1.133q-.377-1.508-1.886-1.885zm18.861 0q-1.508.377-1.886 1.885l3.017 1.133h9.016l1.132-3.018zm12.033 0-1.13 3.018v7.92l2.262 2.264.754-.754V95.842q-.377-1.508-1.886-1.885m18.861 0-1.132 3.018v7.92l2.264 2.264.754-.754V95.842q-.377-1.508-1.886-1.885m6.828 0q-1.509.377-1.887 1.885l3.018 1.133h9.017l1.13-3.018zm12.033 0-1.132 3.018v7.92l2.264 2.264.754-.754V95.842q-.377-1.508-1.886-1.885m-30.932.377q-1.508.377-1.886 1.886v10.562l.755.754 2.263-2.263v-7.921zm-82.233 1.508-1.132 1.133v7.92l2.263 2.264.755-.754v-8.677zm-32.818.755v9.808l.754.754 2.264-2.263v-7.168zm18.86 0v9.808l.755.754 2.263-2.263v-7.168zm18.862 0v9.808l.754.754 2.263-2.263v-7.168zm18.86 0v9.808l.755.754 2.263-2.263v-7.168zm37.722 0v9.808l.755.754 2.263-2.263v-7.168zm37.722 0v9.808l.754.754 2.263-2.263v-7.168zm-50.17 1.131v7.922l1.51 1.509 1.508-1.509v-7.922zm56.583 0v8.677l1.508 1.509 1.51-1.509v-8.677zm-135.421 8.3-1.51 1.508 1.51 1.51h9.807l1.51-1.51-1.51-1.508zm18.86 0-1.509 1.508 1.509 1.51h9.808l1.508-1.51-1.508-1.508zm18.861 0-1.509 1.508 1.51 1.51h9.807l1.509-1.51-1.51-1.508zm56.583 0-1.51 1.508 1.51 1.51h9.808l1.509-1.51-1.509-1.508zm-82.234 1.886-2.263 2.263v7.922l1.132 3.017q1.508-.377 1.886-1.886v-10.562zm4.527 0-.754.754v10.562q.377 1.51 1.886 1.886l1.131-3.017v-7.922zm18.86 0-.753.754v9.807l3.017-1.13v-7.168zm18.862 0-.755.754v9.807l3.018-1.13v-7.168zm26.028 0-1.51 1.508v8.677l1.133 3.017q1.508-.377 1.886-1.886v-9.808zm11.694 0-.755.754v10.562q.377 1.51 1.886 1.886l1.132-3.017v-7.922zm18.861 0-.755.754v9.807l3.018-1.13v-7.168zm14.334 0-2.264 2.263v7.922l1.132 3.017q1.51-.377 1.886-1.886v-10.562zm4.526 0-.754.754v10.562q.377 1.51 1.886 1.886l1.132-3.017v-7.922zm14.335 0-2.264 2.263v7.922l1.132 3.017q1.51-.377 1.886-1.886v-10.562zm-49.039 1.886v2.263l9.054 9.053q2.263 0 3.017-1.508l-9.808-9.808zm-95.058 8.299-3.018 1.131q.377 1.51 1.886 1.886h11.316l-1.131-3.017zm37.721 0-3.017 1.131q.377 1.51 1.886 1.886h12.448l-1.132-3.017zm18.861 0-3.018 1.131q.378 1.51 1.887 1.886h12.448l-1.132-3.017zm56.583 0-3.018 1.131q.377 1.51 1.886 1.886h11.317l-1.132-3.017zm-89.134 7.34q-1.508.376-1.886 1.886l3.019 1.131h9.015l1.13-3.018zm12.034 0-1.132 3.017v7.922l2.264 2.264.754-.755v-10.562q-.378-1.509-1.886-1.887m6.827 0q-1.508.376-1.885 1.886l3.017 1.131h10.147l1.132-3.018zm18.862 0q-1.51.376-1.886 1.886l3.017 1.131h9.016l1.131-3.018zm12.033 0-1.132 3.017v7.922l2.263 2.264.755-.755v-10.562q-.377-1.509-1.886-1.887m4.904 0v1.886l3.017 1.131h9.053l1.51-1.508-1.51-1.51zm32.817 0-1.131 3.017v7.922l2.263 2.264.755-.755v-10.562q-.378-1.509-1.887-1.887m-13.956 1.509v10.939l.754.755 2.263-2.264v-8.299zm-4.904.377-1.132 1.131v7.922l2.263 2.264.755-.755v-8.676zm-70.54.754v9.808l.754.755 2.264-2.264v-7.167zm18.86 0v9.808l.755.755 2.264-2.264v-7.167zm18.862 0v9.808l.754.755 2.264-2.264v-7.167zm18.86 0v9.808l.755.755 2.263-2.264v-7.167zm-53.564 9.43-1.51 1.51 1.51 1.509h9.807l1.509-1.51-1.509-1.508zm18.86 0-1.509 1.51 1.51 1.509h9.807l1.509-1.51-1.51-1.508zm18.862 0-1.51 1.51 1.51 1.509h9.807l1.51-1.51-1.51-1.508zm37.72 0-1.508 1.51 1.509 1.509h9.808l1.508-1.51-1.508-1.508zM120 139.396l-.754.755v10.562q.377 1.509 1.885 1.887l1.133-3.018v-7.922zm18.861 0-.754.755v9.808l3.018-1.132v-7.167zm18.861 0-.754.755v10.562q.377 1.509 1.886 1.887l1.132-3.018v-7.922zm14.334 0-2.263 2.264v7.922l1.132 3.018q1.508-.378 1.886-1.887V140.15zm4.527 0-.754.755v9.808l3.017-1.132v-7.167zm14.334 0-2.263 2.264v7.922l1.132 1.131 1.886-1.886v-8.676zm18.861 0-2.263 2.264v7.922l1.131 3.018q1.509-.378 1.887-1.887V140.15zm-86.76 1.886v2.265l9.053 9.053q2.264 0 3.018-1.51l-9.807-9.808zm18.107 8.3-3.018 1.131q.377 1.509 1.885 1.887h12.449l-1.132-3.018zm37.72 0-3.016 1.131v1.887h12.033l1.508-1.51-1.508-1.508zm18.862 0-3.017 1.131q.377 1.509 1.886 1.887h11.316l-1.132-3.018z"
+          style={{
+            fontStyle: "normal",
+            fontVariant: "normal",
+            fontWeight: 400,
+            fontStretch: "normal",
+            fontSize: "28.8px",
+            lineHeight: 0,
+            fontFamily: "&quot",
+            InkscapeFontSpecification: "&quot",
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal",
+            textAlign: "start",
+            letterSpacing: 0,
+            writingMode: "lr-tb",
+            direction: "rtl",
+            textAnchor: "start",
+            fill: "#0f0",
+            fillOpacity: 1,
+            stroke: "none",
+            strokeWidth: 2.16115,
+            strokeLinecap: "square",
+          }}
+        />
       </g>
     </g>
   </svg>
 );
 export default SvgInstrumentWindowComponent;
+
