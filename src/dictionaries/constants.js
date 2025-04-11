@@ -4,9 +4,9 @@ export const SHOW_DEVMODE = false;
 
 // URLs used to react the API either running locally or hosted online
 
-export const FIND_PEAKS = "https://cloud.rastonlab.org/ftir/find_peaks"; // main
+// export const FIND_PEAKS = "https://cloud.rastonlab.org/ftir/find_peaks"; // main
 // export const FIND_PEAKS = "https://cloud.rastonlab.org/dev/ftir/find_peaks"; // dev
-// export const FIND_PEAKS = "http://localhost:5000/find_peaks"; // local
+export const FIND_PEAKS = "http://localhost:5001/find_peaks"; // local
 
 export const ACQUIRE_SPECTRUM = "http://localhost:5001/acquire_spectrum"; // local
 

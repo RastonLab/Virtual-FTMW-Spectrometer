@@ -81,11 +81,10 @@
 #find-peaks-results {
   max-height: 80vh;
 
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-wrap: normal;
 
   background-color: rgb(232, 232, 232);
-  border-radius: 1.5em;
 }
 
 #find-peaks-text {

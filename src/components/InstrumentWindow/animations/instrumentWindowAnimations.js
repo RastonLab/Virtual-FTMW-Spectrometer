@@ -18,6 +18,7 @@ const getComponents = () => ({
   kuBand: document.getElementById("ku-band"),
   kBand: document.getElementById("k-band"),
   kaBand: document.getElementById("ka-band"),
+  spectrumReady: document.getElementById("spectrum-ready"),
 });
 
 /**
@@ -43,6 +44,7 @@ export function setSBandState() {
   let state = sBandState();
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
+  components.spectrumReady.style.display = "none";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -113,7 +115,6 @@ export function animateToBand(
                               .sort((a, b) => a - b)
                               .map(freq => freq.toString());
   
-  // Stores the first segment duration
   const firstKey = availableKeys[0];
   // Grabs the initial state of the instrument window
   const initialSState = sBandState();
@@ -154,6 +155,7 @@ export function animateToBand(
       });
       setTimeout(() => {
         radiationGraphics[mwBand].style.display = "none";
+        components.spectrumReady.style.display = "";
       }, totalScanTime);
     }, extraPause);
   }, firstSegmentDuration);
