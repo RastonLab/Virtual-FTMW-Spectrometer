@@ -3,13 +3,18 @@ import { Box, CircularProgress, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
 import { setTimer } from '../redux/timerSlice';
+import { setCurrenFrequency } from '../redux/experimentalSetupSlice';
 
-export default function Spinner({ frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType, delay, ...otherProps }) {
-  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
+export default function Spinner({ delay, ...otherProps }) {
   const { timer } = useSelector((store) => store.timer);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType, currentFrequency } = useSelector((store) => store.experimentalSetup);
+
   const [elapsed, setElapsed] = useState(timer);
   const [stepsDone, setStepsDone] = useState(0);
+
   const dispatch = useDispatch();
+
+  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
 
   useEffect(() => {
     if (delay) {
@@ -32,6 +37,13 @@ export default function Spinner({ frequencyMin, frequencyMax, stepSize, numCycle
       return () => clearInterval(interval);
     }
   }, [delay, dispatch, elapsed, stepsDone, totalSteps]);
+
+  useEffect(() => {
+    if (acquisitionType === "range" && stepsDone > 0 && currentFrequency < frequencyMax) {
+      const STEPS_DONE = stepsDone - 1;
+      dispatch(setCurrenFrequency({ stepsDone: STEPS_DONE }));
+    }
+  }, [dispatch, stepsDone, acquisitionType, currentFrequency, frequencyMax]);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>

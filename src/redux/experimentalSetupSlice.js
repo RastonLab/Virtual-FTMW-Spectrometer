@@ -12,7 +12,8 @@ const initialState = {
   repetitionRate: 1,
   molecularPulseWidth: 500,
   acquisitionType: 'single',
-  vres: 2000
+  vres: 2000,
+  currentFrequency: 0
 };
 
 /**
@@ -93,6 +94,13 @@ const experimentalSetupSlice = createSlice({
      */
     setVres: (state, { payload }) => {
       state.vres = payload;
+    },
+    /**
+     * Sets the current frequency
+     */
+    setCurrenFrequency: (state, { payload }) => {
+      const { stepsDone = 0 } = payload;
+      state.currentFrequency = state.frequencyMin + stepsDone * state.stepSize;
     }
   },
 });
@@ -109,7 +117,8 @@ export const {
   setRepetitionRate,
   setMolecularPulseWidth,
   setAcquisitionType,
-  setVres
+  setVres,
+  setCurrenFrequency
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;
