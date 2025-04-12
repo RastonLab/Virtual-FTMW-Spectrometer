@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import '../../style/InstrumentWindow.css';
 import { getMWBand } from '../../functions/getMWBand';
-import { setsMWBand } from '../../redux/experimentalSetupSlice';
-import { setSBandState } from './animations/instrumentWindowAnimations';
+import { setCurrenFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
+import { animateToBand, setSBandState } from './animations/instrumentWindowAnimations';
 import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
@@ -15,19 +15,38 @@ import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotl
  */
 const InstrumentWindow = () => {
   const dispatch = useDispatch();
-  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, acquisitionType } = useSelector((store) => store.experimentalSetup);
+  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
 
+  const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
+
   const [toggled, setToggled] = useState(false);
 
-  const delay =  (((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000; // 1000 is to convert to milliseconds
-
+  /**
+   * Sets the begining state of the instrument window
+   */
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null) {
       setSBandState();
     }
   }, []);
+
+  /**
+   * Animates the instrument window
+   */
+  useEffect(() => {
+    if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
+      animateToBand(mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep);
+    }
+  }, [postfetch, mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType]);
+
+  /**
+   * Sets the frequency value depending on the frequency range
+   */
+  useEffect(() => {
+    dispatch(setCurrenFrequency(frequencyMin));
+  }, [frequencyMin, dispatch]);
 
   /**
    * Calls the helper method to get mw band value depending on the frequency range on mount
@@ -57,7 +76,7 @@ const InstrumentWindow = () => {
         id='instrument'
         molecule={molecule} 
         range={`${frequencyMin} - ${frequencyMax}`} 
-        frequency={stepSize} 
+        frequency={currentFrequency} 
         cyclePerStep={numCyclesPerStep} 
         mwBand={mwBand}
         pressure={'1.3 x 10⁻⁶ Torr'}
@@ -72,11 +91,6 @@ const InstrumentWindow = () => {
             <Spinner
               variant="determinate"
               size={100}
-              acquisitionType={acquisitionType}
-              frequencyMin={frequencyMin}
-              frequencyMax={frequencyMax} 
-              stepSize={stepSize}
-              numCyclesPerStep={numCyclesPerStep}
               delay={delay}
             />
           </>

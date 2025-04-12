@@ -80,7 +80,7 @@ export function animateToBand(
   
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   
-  const totalScanTime = ((frequencyMax - frequencyMin) / stepSize) * cyclesPerStep * 1000 + 1;
+  const totalScanTime = ((frequencyMax - frequencyMin) / stepSize + 1) * cyclesPerStep * 1000;
   const adjustedMin = Math.ceil(frequencyMin / 100) * 100;
   const adjustedMax = Math.ceil(frequencyMax / 100) * 100;
   

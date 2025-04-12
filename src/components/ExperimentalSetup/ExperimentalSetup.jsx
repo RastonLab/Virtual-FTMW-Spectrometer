@@ -36,6 +36,7 @@ const ExperimentalSetup = () => {
       dispatch(experimentalSetupReducer.setFrequencyMin(frequencyRange.min));
       dispatch(experimentalSetupReducer.setFrequencyMax(frequencyRange.max));
       dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
+      dispatch(experimentalSetupReducer.setCurrenFrequency(frequencyRange.min));
     }
   }, [frequencyRange, dispatch]);
 

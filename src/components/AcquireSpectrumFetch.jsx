@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { animateToBand, cancelAnimation } from "./InstrumentWindow/animations/instrumentWindowAnimations";
+import { cancelAnimation } from "./InstrumentWindow/animations/instrumentWindowAnimations";
 import { useDispatch, useSelector } from "react-redux";
 import { setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
 import { setSpectrumData, setSpectrumParameters } from "../redux/acquireSpectrumSlice";
 import { useNavigate } from "react-router-dom";
 import { setTimer } from "../redux/timerSlice";
+import { setCurrenFrequency } from "../redux/experimentalSetupSlice";
 
 export let sleepID = 0;
 
@@ -22,7 +23,7 @@ export default function AcquireSpectrumFetch({
   buttonStyle}) {
 
   const dispatch = useDispatch();
-  const { fetching, postfetch } = useSelector((store) => store.progress);
+  const { fetching } = useSelector((store) => store.progress);
   const { 
     molecule, 
     stepSize,
@@ -44,7 +45,7 @@ export default function AcquireSpectrumFetch({
   const controller = new AbortController();
   const signal = controller.signal;
 
-  // move mirror
+  // Allows the user to cancel the fetch request and cancel the animation
   useEffect(() => {
     if (document.querySelector("#cancel-scan-button")) {
       document
@@ -56,10 +57,6 @@ export default function AcquireSpectrumFetch({
           }
         });
     }
-
-    if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range" && document.getElementById("instrument-spinner") !== null ) {
-      animateToBand(mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep);
-    }
   });
 
   /**
@@ -69,6 +66,7 @@ export default function AcquireSpectrumFetch({
     // remove any errors (if existing) and start a progress spinner
     dispatch(setError([false, null]));
     dispatch(setProgress([true, true, false]));
+    dispatch(setCurrenFrequency(frequencyMin));
 
     dispatch(setTimer(0));
     
