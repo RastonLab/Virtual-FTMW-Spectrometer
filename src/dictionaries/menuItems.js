@@ -1,16 +1,11 @@
-// components
-import { Open } from "../components/Open";
 import CancelScan from "../components/CancelScan";
 import AcquireSpectrumFetch from "../components/AcquireSpectrumFetch";
 import LandingPage from "../components/LandingPage";
-import Save from "../components/Save";
 import Tutorial from "../components/Tutorial";
-
-// constants
 import { ACQUIRE_SPECTRUM } from "../dictionaries/constants";
-
-// router
 import { Link } from "react-router-dom";
+import SaveSpectra from "../components/SaveSpectra";
+import { UploadSpectra } from "../components/UploadSpectra";
 
 /**
  * Controls what appears in the MenuBar. To remove something, either remove the code or comment it out
@@ -20,12 +15,12 @@ export const menuItems = [
     label: "File",
     submenu: [
       {
-        label: "Open",
-        component: <Open />,
+        label: "Upload",
+        component: <UploadSpectra />,
       },
       {
         label: "Save",
-        component: <Save />,
+        component: <SaveSpectra />,
       },
     ],
   },
