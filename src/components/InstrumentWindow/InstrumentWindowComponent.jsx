@@ -4059,6 +4059,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             stroke: "none",
             strokeWidth: 2.16115,
             strokeLinecap: "square",
+            display: "none"
           }}
         />
       </g>
