@@ -16,7 +16,7 @@ const instrumentClickables = [
     description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
       top: '22%',
-      left: '70%',
+      left: '69.9%',
       width: '2.3%',
       height: '9.3%'
     },
@@ -31,7 +31,7 @@ const instrumentClickables = [
     description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
       top: '52%',
-      left: '70%',
+      left: '69.9%',
       width: '2.3%',
       height: '9.3%'
     },
@@ -46,7 +46,7 @@ const instrumentClickables = [
     description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
       top: '22%',
-      left: '72.3%', 
+      left: '72%', 
       width: '2.7%',
       height: '39.5%'
     },
@@ -102,7 +102,7 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '77%',
-      left: '42.5%',
+      left: '42%',
       width: '7.5%',
       height: '22.5%'
     },
@@ -115,7 +115,7 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '69%',
-      left: '41%',
+      left: '40.6%',
       width: '10.6%',
       height: '18%'
     },
@@ -129,7 +129,7 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '68%',
-      left: '41.6%',
+      left: '41.2%',
       width: '9.3%',
       height: '2.1%'
     },
@@ -142,7 +142,7 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '78.5%',
-      left: '49%',
+      left: '48.5%',
       width: '4.2%',
       height: '8.5%'
     },
@@ -168,8 +168,8 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '82.5%',
-      left: '55.3%',
-      width: '2.5%',
+      left: '55%',
+      width: '2.2%',
       height: '9.7%'
     },
     borderColor: 'green',
@@ -195,7 +195,7 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '86%',
-      left: '51.6%',
+      left: '51.2%',
       width: '0.9%',
       height: '4.8%'
     },
@@ -208,7 +208,7 @@ const instrumentClickables = [
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
       top: '95.5%',
-      left: '49%',
+      left: '48.8%',
       width: '2%',
       height: '4%'
     },
@@ -222,10 +222,75 @@ const instrumentClickables = [
     name: 'Rotary pump',
     description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
     position: {
-      top: '93.1%',
-      left: '57%',
-      width: '5.3%',
+      top: '88%',
+      left: '67.5%',
+      width: '8%',
       height: '10%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/rotary-pump.svg'
+  },
+  {
+    id: 'rotary-pump-long',
+    name: 'Rotary pump',
+    description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
+    position: {
+      top: '98.5%',
+      left: '67.3%',
+      width: '9%',
+      height: '1%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/rotary-pump.svg'
+  },
+  {
+    id: 'rotary-pump-small-long',
+    name: 'Rotary pump',
+    description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
+    position: {
+      top: '90.5%',
+      left: '72%',
+      width: '5%',
+      height: '7%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/rotary-pump.svg'
+  },
+  {
+    id: 'rotary-pump-small-rect',
+    name: 'Rotary pump',
+    description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
+    position: {
+      top: '91%',
+      left: '77%',
+      width: '3.9%',
+      height: '5.4%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/rotary-pump.svg'
+  },
+  {
+    id: 'rotary-pump-thin-rect',
+    name: 'Rotary pump',
+    description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
+    position: {
+      top: '87.5%',
+      left: '72.5%',
+      width: '2%',
+      height: '0.8%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/rotary-pump.svg'
+  },
+  {
+    id: 'rotary-pump-thin-rect-2',
+    name: 'Rotary pump',
+    description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
+    position: {
+      top: '88.2%',
+      left: '75%',
+      width: '1%',
+      height: '1.9%'
     },
     borderColor: 'purple',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
@@ -235,13 +300,66 @@ const instrumentClickables = [
     name: 'Lecture bottle',
     description: 'Gas cylinder containing a prepared mixture of a target molecule (often around 1% concentration) diluted in an inert carrier gas like helium. The gas is pulsed into the spectrometer through a nozzle to create a cold supersonic expansion.',
     position: {
-      top: '31.3%',
-      left: '4.3%',
-      width: '6.7%',
-      height: '12.5%'
+      top: '23%',
+      left: '1.1%',
+      width: '4.7%',
+      height: '14.5%'
     },
     borderColor: 'purple',
     svg: '/assets/svg/components/schematic/lecture-bottle.svg'
+  },
+  {
+    id: 'lecture-bottle-oval',
+    name: 'Lecture bottle',
+    description: 'Gas cylinder containing a prepared mixture of a target molecule (often around 1% concentration) diluted in an inert carrier gas like helium. The gas is pulsed into the spectrometer through a nozzle to create a cold supersonic expansion.',
+    position: {
+      top: '20%',
+      left: '1.1%',
+      width: '4.7%',
+      height: '5%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/lecture-bottle.svg',
+    shape: 'oval'
+  },
+  {
+    id: 'lecture-bottle-long-rect',
+    name: 'Lecture bottle',
+    description: 'Gas cylinder containing a prepared mixture of a target molecule (often around 1% concentration) diluted in an inert carrier gas like helium. The gas is pulsed into the spectrometer through a nozzle to create a cold supersonic expansion.',
+    position: {
+      top: '16%',
+      left: '2.7%',
+      width: '1.3%',
+      height: '20%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/lecture-bottle.svg'
+  },
+  {
+    id: 'ion-gauge',
+    name: 'Ion gauge',
+    description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
+    position: {
+      top: '5%',
+      left: '54%',
+      width: '6.8%',
+      height: '6%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/ion-gauge.svg'
+  },
+  {
+    id: 'ion-gauge-long',
+    name: 'Ion gauge',
+    description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
+    position: {
+      top: '5%',
+      left: '58.2%',
+      width: '1.5%',
+      height: '10.5%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/ion-gauge.svg'
   }
 ];
 
