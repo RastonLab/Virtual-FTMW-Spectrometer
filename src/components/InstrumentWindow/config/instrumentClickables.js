@@ -3,7 +3,7 @@
  * - id: Unique identifier for the component
  * - name: Display name for the component
  * - description: Description text shown in the dialog
- * - position: Position object with top, left, width, height
+ * - position: Position object with top, left, width, height as percentages
  * - borderColor: Border color for the clickable area
  * - svg: Path to the SVG image shown in the dialog
  * - shape: Shape of the clickable ('rectangle', 'oval', or 'triangle')
@@ -15,10 +15,10 @@ const instrumentClickables = [
     name: 'Fixed mirror',
     description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
-      top: 200,
-      left: 1020,
-      width: 35,
-      height: 70
+      top: '22%',
+      left: '70%',
+      width: '2.3%',
+      height: '9.3%'
     },
     borderColor: 'red',
     svg: '/assets/svg/components/schematic/Fixed-mirror.svg',
@@ -30,10 +30,10 @@ const instrumentClickables = [
     name: 'Fixed mirror',
     description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
-      top: 480,
-      left: 1020,
-      width: 35,
-      height: 70
+      top: '52%',
+      left: '70%',
+      width: '2.3%',
+      height: '9.3%'
     },
     borderColor: 'red',
     svg: '/assets/svg/components/schematic/Fixed-mirror.svg',
@@ -45,10 +45,10 @@ const instrumentClickables = [
     name: 'Fixed mirror',
     description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
-      top: 197,
-      left: 1050,
-      width: 40,
-      height: 355
+      top: '22%',
+      left: '72.3%', 
+      width: '2.7%',
+      height: '39.5%'
     },
     borderColor: 'red',
     svg: '/assets/svg/components/schematic/Fixed-mirror.svg'
@@ -58,10 +58,10 @@ const instrumentClickables = [
     name: 'Movable mirror',
     description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
     position: {
-      top: 200,
-      left: 130,
-      width: 35,
-      height: 70
+      top: '22%',
+      left: '26.5%',
+      width: '2.5%',
+      height: '11.9%'
     },
     borderColor: 'blue',
     svg: '/assets/svg/components/schematic/Movable-mirror.svg',
@@ -69,29 +69,27 @@ const instrumentClickables = [
     orientation: 'top-left'
   },
   {
-    id: 'movable-mirror-tri-2',
+    id: 'movable-mirror-long',
     name: 'Movable mirror',
     description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
     position: {
-      top: 330,
-      left: 130,
-      width: 35,
-      height: 70
+      top: '22%',
+      left: '24.3%',
+      width: '2.3%',
+      height: '39.5%'
     },
     borderColor: 'blue',
-    svg: '/assets/svg/components/schematic/Movable-mirror.svg',
-    shape: 'triangle',
-    orientation: 'bottom-left'
+    svg: '/assets/svg/components/schematic/Movable-mirror.svg'
   },
   {
     id: 'movable-mirror-tri-3',
     name: 'Movable mirror',
     description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
     position: {
-      top: 480,
-      left: 130,
-      width: 35,
-      height: 70
+      top: '49.5%',
+      left: '26.5%',
+      width: '2.8%',
+      height: '11.9%'
     },
     borderColor: 'blue',
     svg: '/assets/svg/components/schematic/Movable-mirror.svg',
@@ -103,10 +101,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 710,
-      left: 630,
-      width: 108,
-      height: 180
+      top: '77%',
+      left: '42.5%',
+      width: '7.5%',
+      height: '22.5%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
@@ -116,10 +114,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 620,
-      left: 608,
-      width: 151,
-      height: 165
+      top: '69%',
+      left: '41%',
+      width: '10.6%',
+      height: '18%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg',
@@ -130,10 +128,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 610,
-      left: 615,
-      width: 134,
-      height: 17    
+      top: '68%',
+      left: '41.6%',
+      width: '9.3%',
+      height: '2.1%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
@@ -143,10 +141,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 704,
-      left: 700,
-      width: 80,
-      height: 73
+      top: '78.5%',
+      left: '49%',
+      width: '4.2%',
+      height: '8.5%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
@@ -156,10 +154,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 811,
-      left: 700,
-      width: 123,
-      height: 35
+      top: '90.5%',
+      left: '47.6%',
+      width: '8.2%',
+      height: '4%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
@@ -169,10 +167,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 740,
-      left: 812,
-      width: 30,
-      height: 90
+      top: '82.5%',
+      left: '55.3%',
+      width: '2.5%',
+      height: '9.7%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
@@ -180,12 +178,12 @@ const instrumentClickables = [
   {
     id: 'diffusion-pump-tube',
     name: 'Diffusion pump flexible tube',
-    description: 'Flexible connection tube that connects the diffusion pump to the main vacuum chamber. This allows for the efficient removal of gas molecules from the chamber while providing some vibration isolation between the pump and the chamber.',
+    description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 560,
-      left: 650,
-      width: 120,
-      height: 80
+      top: '60%',
+      left: '80%',
+      width: '8%',
+      height: '10%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg',
@@ -196,10 +194,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 776,
-      left: 758,
-      width: 13,
-      height: 38
+      top: '86%',
+      left: '51.6%',
+      width: '0.9%',
+      height: '4.8%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
@@ -209,10 +207,10 @@ const instrumentClickables = [
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
     position: {
-      top: 858,
-      left: 718,
-      width: 35,
-      height: 32
+      top: '95.5%',
+      left: '49%',
+      width: '2%',
+      height: '4%'
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg',
@@ -220,14 +218,27 @@ const instrumentClickables = [
     orientation: 'bottom-right'
   },
   {
+    id: 'rotary-pump',
+    name: 'Rotary pump',
+    description: 'Mechanical vacuum pump that provides the initial evacuation of the sample chamber. It is used in combination with the diffusion pump to reach low pressures for spectroscopic measurements. The exhaust gas flows into the fume hood exhaust system.',
+    position: {
+      top: '93.1%',
+      left: '57%',
+      width: '5.3%',
+      height: '10%'
+    },
+    borderColor: 'purple',
+    svg: '/assets/svg/components/schematic/rotary-pump.svg'
+  },
+  {
     id: 'lecture-bottle',
     name: 'Lecture bottle',
     description: 'Gas cylinder containing a prepared mixture of a target molecule (often around 1% concentration) diluted in an inert carrier gas like helium. The gas is pulsed into the spectrometer through a nozzle to create a cold supersonic expansion.',
     position: {
-      top: 250,
-      left: 65,
-      width: 100,
-      height: 100
+      top: '31.3%',
+      left: '4.3%',
+      width: '6.7%',
+      height: '12.5%'
     },
     borderColor: 'purple',
     svg: '/assets/svg/components/schematic/lecture-bottle.svg'

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import InstrumentClickable from './InstrumentClickable';
 import '../../style/InstrumentWindow.css';
+import '../../style/InfoDialog.css';
 import { getMWBand } from '../../functions/getMWBand';
 import { setCurrenFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
 import { animateToBand, setSBandState, setSpectrumReady } from './animations/instrumentWindowAnimations';
@@ -10,7 +11,6 @@ import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
 import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotly";
-import InfoDialog from '../InfoDialog';
 import instrumentClickables from './config/instrumentClickables';
 
 /**
@@ -26,13 +26,6 @@ const InstrumentWindow = () => {
   const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
 
   const [toggled, setToggled] = useState(false);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogContent, setDialogContent] = useState({
-    title: '',
-    content: '',
-    image: '',
-    customComponent: null
-  });
 
   /**
    * Sets the begining state of the instrument window
@@ -41,6 +34,36 @@ const InstrumentWindow = () => {
     if (document.getElementById("instrument-window") !== null) {
       setSBandState();
     }
+    
+    // Add CSS to handle zoom properly
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @media (min-resolution: 1dppx) {
+        .instrument-clickable-container {
+          transform: scale(1);
+        }
+      }
+      @media (min-resolution: 1.25dppx) {
+        .instrument-clickable-container {
+          transform: scale(0.8);
+        }
+      }
+      @media (min-resolution: 1.5dppx) {
+        .instrument-clickable-container {
+          transform: scale(0.67);
+        }
+      }
+      @media (min-resolution: 2dppx) {
+        .instrument-clickable-container {
+          transform: scale(0.5);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   useEffect(() => {
@@ -87,58 +110,46 @@ const InstrumentWindow = () => {
     setToggled(false);
   };
 
-  // Generic handler for instrument clickables
-  const handleInstrumentClick = (clickable) => {
-    setDialogContent({
-      title: clickable.name,
-      content: clickable.description,
-      image: process.env.PUBLIC_URL + clickable.svg,
-      customComponent: null
-    });
-    setDialogOpen(true);
-  };
-
-  // Handler for closing the component dialog
-  const handleCloseDialog = () => {
-    setDialogOpen(false);
-  };
-
   return (
     <div id='instrument-window'>
-      <SvgInstrumentWindowComponent
-        id='instrument'
-        molecule={molecule} 
-        range={`${frequencyMin} - ${frequencyMax}`} 
-        frequency={currentFrequency} 
-        cyclePerStep={numCyclesPerStep} 
-        mwBand={mwBand}
-        pressure={'1.3 x 10⁻⁶ Torr'}
-        onDisplayCLick={handlePartClick} />
+      <div className="instrument-container">
+        <SvgInstrumentWindowComponent
+          id='instrument'
+          molecule={molecule} 
+          range={`${frequencyMin} - ${frequencyMax}`} 
+          frequency={currentFrequency} 
+          cyclePerStep={numCyclesPerStep} 
+          mwBand={mwBand}
+          pressure={'1.3 x 10⁻⁶ Torr'}
+          onDisplayCLick={handlePartClick} />
 
-      {/* Render all clickable components from configuration */}
-      {instrumentClickables.map((clickable) => (
-        <div 
-          key={clickable.id}
-          className="instrument-clickable-container" 
-          style={{ 
-            position: 'absolute',
-            top: clickable.position.top + 'px', 
-            left: clickable.position.left + 'px',
-            width: clickable.position.width + 'px', 
-            height: clickable.position.height + 'px',
-            zIndex: 10
-          }}
-        >
-          <InstrumentClickable 
+        {/* Render all clickable components from configuration */}
+        {instrumentClickables.map((clickable) => (
+          <InstrumentClickable
+            key={clickable.id}
             id={clickable.id}
-            borderColor={clickable.borderColor}
-            onClick={() => handleInstrumentClick(clickable)}
-            shape={clickable.shape || 'rectangle'}
-            orientation={clickable.orientation || 'top-right'}
-            customClass={clickable.customClass || ''}
+            name={clickable.name}
+            description={clickable.description}
+            style={{
+              position: 'absolute',
+              top: clickable.position.top,
+              left: clickable.position.left,
+              width: clickable.position.width,
+              height: clickable.position.height,
+              border: '2px solid',
+              boxSizing: 'border-box',
+              cursor: 'pointer',
+              zIndex: 10,
+              opacity: 0.5
+            }}
+            shape={clickable.shape}
+            orientation={clickable.orientation}
+            customClass={clickable.customClass}
+            borderColor={clickable.borderColor || 'red'}
+            svg={process.env.PUBLIC_URL + clickable.svg}
           />
-        </div>
-      ))}
+        ))}
+      </div>
 
       <div id="instrument-spinner">
         <h1>Scan Progress</h1>
@@ -172,16 +183,6 @@ const InstrumentWindow = () => {
             </div>
           </CloseButton>
         </Dialog>
-
-        {/* Info Dialog for instrument components */}
-        <InfoDialog
-          open={dialogOpen}
-          onClose={handleCloseDialog}
-          title={dialogContent.title}
-          content={dialogContent.content}
-          image={dialogContent.image}
-          customComponent={dialogContent.customComponent}
-        />
       </div>
     </div>
   );
