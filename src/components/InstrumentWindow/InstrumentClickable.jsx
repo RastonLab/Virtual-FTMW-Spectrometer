@@ -8,13 +8,15 @@ import React from 'react';
  * @param {string} props.id - Unique identifier for the component
  * @param {string} props.shape - Shape of the clickable area ('rectangle', 'oval', or 'triangle')
  * @param {string} props.orientation - For triangles: 'top-right', 'bottom-right', etc.
+ * @param {string} props.customClass - Optional custom CSS class for special shapes
  */
 const InstrumentClickable = ({ 
   onClick, 
   borderColor = 'red', 
   id,
   shape = 'rectangle',
-  orientation = 'top-right'
+  orientation = 'top-right',
+  customClass = ''
 }) => {
   // For triangle shape, use clip-path to create the triangle
   const getClipPath = () => {
@@ -35,9 +37,22 @@ const InstrumentClickable = ({
     return 'none';
   };
 
+  // Determine which classes to apply
+  const componentClasses = [
+    'instrument-clickable-component',
+    shape === 'oval' ? 'oval-shape' : '',
+    customClass
+  ].filter(Boolean).join(' ');
+
+  const overlayClasses = [
+    'clickable-overlay',
+    shape === 'oval' ? 'oval-shape' : '',
+    customClass
+  ].filter(Boolean).join(' ');
+
   return (
     <div 
-      className={`instrument-clickable-component ${shape === 'oval' ? 'oval-shape' : ''}`} 
+      className={componentClasses}
       onClick={onClick} 
       id={id}
       style={{
@@ -45,7 +60,7 @@ const InstrumentClickable = ({
       }}
     >
       <div 
-        className={`clickable-overlay ${shape === 'oval' ? 'oval-shape' : ''}`} 
+        className={overlayClasses}
         style={{ 
           borderColor,
           clipPath: shape === 'triangle' ? getClipPath() : 'none'

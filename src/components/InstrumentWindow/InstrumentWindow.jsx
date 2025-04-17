@@ -135,6 +135,7 @@ const InstrumentWindow = () => {
             onClick={() => handleInstrumentClick(clickable)}
             shape={clickable.shape || 'rectangle'}
             orientation={clickable.orientation || 'top-right'}
+            customClass={clickable.customClass || ''}
           />
         </div>
       ))}

@@ -66,6 +66,24 @@
     border-radius: 50%;
 }
 
+/* Curved tube shape for diffusion pump tube */
+.tube-shape {
+    clip-path: path('M 0,40 Q 30,0 60,5 Q 90,10 100,40');
+    border: none !important;
+}
+
+.tube-shape::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid green;
+    clip-path: path('M 0,40 Q 30,0 60,5 Q 90,10 100,40');
+    pointer-events: none;
+}
+
 /* Styles for triangle shapes */
 .instrument-clickable-component[style*="clip-path"] .clickable-overlay {
     border-width: 2px;

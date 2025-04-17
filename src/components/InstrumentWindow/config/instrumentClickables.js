@@ -54,6 +54,51 @@ const instrumentClickables = [
     svg: '/assets/svg/components/schematic/Movable-mirror.svg'
   },
   {
+    id: 'movable-mirror-tri-1',
+    name: 'Movable mirror',
+    description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
+    position: {
+      top: 200,
+      left: 130,
+      width: 35,
+      height: 70
+    },
+    borderColor: 'blue',
+    svg: '/assets/svg/components/schematic/Movable-mirror.svg',
+    shape: 'triangle',
+    orientation: 'top-left'
+  },
+  {
+    id: 'movable-mirror-tri-2',
+    name: 'Movable mirror',
+    description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
+    position: {
+      top: 330,
+      left: 130,
+      width: 35,
+      height: 70
+    },
+    borderColor: 'blue',
+    svg: '/assets/svg/components/schematic/Movable-mirror.svg',
+    shape: 'triangle',
+    orientation: 'bottom-left'
+  },
+  {
+    id: 'movable-mirror-tri-3',
+    name: 'Movable mirror',
+    description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
+    position: {
+      top: 480,
+      left: 130,
+      width: 35,
+      height: 70
+    },
+    borderColor: 'blue',
+    svg: '/assets/svg/components/schematic/Movable-mirror.svg',
+    shape: 'triangle',
+    orientation: 'bottom-left'
+  },
+  {
     id: 'diffusion-pump',
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
@@ -131,6 +176,48 @@ const instrumentClickables = [
     },
     borderColor: 'green',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
+  },
+  {
+    id: 'diffusion-pump-tube',
+    name: 'Diffusion pump flexible tube',
+    description: 'Flexible connection tube that connects the diffusion pump to the main vacuum chamber. This allows for the efficient removal of gas molecules from the chamber while providing some vibration isolation between the pump and the chamber.',
+    position: {
+      top: 560,
+      left: 650,
+      width: 120,
+      height: 80
+    },
+    borderColor: 'green',
+    svg: '/assets/svg/components/schematic/diffusion-pump.svg',
+    customClass: 'tube-shape'
+  },
+  {
+    id: 'diffusion-pump-extra-long',
+    name: 'Diffusion pump',
+    description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
+    position: {
+      top: 776,
+      left: 758,
+      width: 13,
+      height: 38
+    },
+    borderColor: 'green',
+    svg: '/assets/svg/components/schematic/diffusion-pump.svg'
+  },
+  {
+    id: 'diffusion-pump-triangle',
+    name: 'Diffusion pump',
+    description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
+    position: {
+      top: 858,
+      left: 718,
+      width: 35,
+      height: 32
+    },
+    borderColor: 'green',
+    svg: '/assets/svg/components/schematic/diffusion-pump.svg',
+    shape: 'triangle',
+    orientation: 'bottom-right'
   },
   {
     id: 'lecture-bottle',
