@@ -42,16 +42,16 @@ const instrumentClickables = [
   },
   {
     id: 'movable-mirror',
-    name: 'Movable mirror',
-    description: 'Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length, ensuring that it remains resonant with the microwave frequency. A stepper motor controls its alignment, and the nozzle is mounted onto this mirror. Note that this collinear arrangement of the molecular beam and microwave radiation leads to a Doppler splitting of lines.',
+    name: 'Fixed mirror',
+    description: 'Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity. It reflects microwaves back into the cavity which enhances the interaction between the molecular sample and the microwave field. The wire hook antenna is positioned at its center.',
     position: {
       top: 197,
       left: 1050,
       width: 40,
       height: 355
     },
-    borderColor: 'blue',
-    svg: '/assets/svg/components/schematic/Movable-mirror.svg'
+    borderColor: 'red',
+    svg: '/assets/svg/components/schematic/Fixed-mirror.svg'
   },
   {
     id: 'movable-mirror-tri-1',
