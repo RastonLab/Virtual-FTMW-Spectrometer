@@ -33,7 +33,7 @@ const ExperimentalSetup = () => {
   useEffect(() => {
     if (frequencyMin < frequencyRange.min || frequencyMax > frequencyRange.max) {
       dispatch(experimentalSetupReducer.setFrequencyMin(frequencyRange.min));
-      dispatch(experimentalSetupReducer.setFrequencyMax(frequencyRange.max));
+      dispatch(experimentalSetupReducer.setFrequencyMax(acquisitionType === 'range' ? frequencyRange.max : frequencyRange.min));
       dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
       dispatch(experimentalSetupReducer.setCurrenFrequency(frequencyRange.min));
     }

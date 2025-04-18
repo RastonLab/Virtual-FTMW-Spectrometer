@@ -9,9 +9,8 @@ import "../../style/routes/FindPeaks.css";
 import PeakList from "./PeakList";
 
 export default function FindPeaks() {
-  // Redux state selections (frequencyMin and frequencyMax removed)
   const { peaksData } = useSelector((store) => store.peaksData);
-  const { data } = useSelector((store) => store.acquireSpectrum);
+  const { data, frequencyMin, frequencyMax } = useSelector((store) => store.acquireSpectrum);
   const { fetching } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
 
@@ -23,21 +22,21 @@ export default function FindPeaks() {
   // Use computed values if available, otherwise default to empty string.
   const [threshold, setThreshold] = useState(0.01);
   const [lowerBound, setLowerBound] = useState(
-    data && data.x ? data.x[0] : ""
+    data ? (frequencyMin ? frequencyMin : data.x[0]) : ""
   );
   const [upperBound, setUpperBound] = useState(
-    data && data.x ? data.x[data.x.length - 1] : ""
+    data ? (frequencyMax ? frequencyMax : data.x[data.x.length - 1]) : ""
   );
   const [dataPoints, setDataPoints] = useState(0);
   const [emptyInput, setEmptyInput] = useState(true);
 
   // When data becomes available, initialize lower and upper bounds if not already set.
   useEffect(() => {
-    if (data && data.x && (lowerBound === "" || upperBound === "")) {
-      setLowerBound(data.x[0]);
-      setUpperBound(data.x[data.x.length - 1]);
+    if (data && data.x && frequencyMin && frequencyMax && (lowerBound === "" || upperBound === "")) {
+      setLowerBound(frequencyMin || data.x[0]);
+      setUpperBound(frequencyMax || data.x[data.x.length - 1]);
     }
-  }, [data, lowerBound, upperBound]);
+  }, [data, lowerBound, frequencyMin, frequencyMax, upperBound]);
 
   // Ensure the threshold value stays within [0.01, 5]
   const validateThreshold = () => {

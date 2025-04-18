@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Box, CircularProgress, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
-import { setTimer } from '../redux/timerSlice';
 import { setCurrenFrequency } from '../redux/experimentalSetupSlice';
 
 export default function Spinner({ delay, ...otherProps }) {
+  const { variant } = otherProps;
   const { timer } = useSelector((store) => store.timer);
-  const { frequencyMin, frequencyMax, stepSize, acquisitionType, currentFrequency } = useSelector((store) => store.experimentalSetup);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType } = useSelector((store) => store.experimentalSetup);
 
   const [elapsed, setElapsed] = useState(timer);
   const [stepsDone, setStepsDone] = useState(0);
@@ -15,42 +15,40 @@ export default function Spinner({ delay, ...otherProps }) {
   const dispatch = useDispatch();
 
   const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
-
+  // drive the clock by steps
   useEffect(() => {
-    if (delay) {
-      const interval = setInterval(() => {
-        if (elapsed >= 100) {
-          dispatch(setProgress(false, false, false));
+    if (!delay) return
+    const interval = setInterval(() => {
+      setStepsDone(prev => {
+        // stop at the end
+        if (prev >= totalSteps) {
+          clearInterval(interval)
+          dispatch(setProgress(false, false, false))
+          return prev
         }
+        return prev + 1
+      })
+    }, delay / totalSteps)
 
-        setElapsed((prev) => 
-          prev >= 100 ? 0 : prev + 1
-        );
-      }, delay / 100);
+    return () => clearInterval(interval)
+  }, [delay, totalSteps, dispatch])
 
-      dispatch(setTimer(elapsed));
-
-      if (elapsed >= (stepsDone * 100) / totalSteps) {
-        setStepsDone(stepsDone + 1);
-      }
-
-      return () => clearInterval(interval);
-    }
-  }, [delay, dispatch, elapsed, stepsDone, totalSteps]);
-
+  // derive percent from steps
   useEffect(() => {
-    if (acquisitionType === "range" && stepsDone > 0 && currentFrequency < frequencyMax) {
-      const STEPS_DONE = stepsDone - 1;
-      dispatch(setCurrenFrequency({ stepsDone: STEPS_DONE }));
+    const pct = (stepsDone / totalSteps) * 100
+    setElapsed(pct)
+
+    if (acquisitionType === 'range') {
+      dispatch(setCurrenFrequency({ stepsDone }))
     }
-  }, [dispatch, stepsDone, acquisitionType, currentFrequency, frequencyMax]);
+  }, [stepsDone, totalSteps, acquisitionType, dispatch])
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>
       <CircularProgress {...otherProps} value={elapsed} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
-      {acquisitionType === "range" && (
+      {acquisitionType === "range" && variant !== "indeterminate" && (
         <Typography variant="caption" component="div" color="inherit" fontFamily="inherit" fontSize={20} fontWeight={650} sx={{ textAlign: "center" }}>
-          {Math.round(elapsed)}%<br />Steps Complete: {stepsDone - 1} / {totalSteps}
+          {Math.round(elapsed)}%<br />Steps Complete: {stepsDone} / {totalSteps}
         </Typography>
       )}
       <svg>

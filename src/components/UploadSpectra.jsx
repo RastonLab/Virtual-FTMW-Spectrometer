@@ -72,6 +72,13 @@ export const UploadSpectra = () => {
       return;
     }
 
+    // reject any file whose first line isn’t exactly your Spectrum header
+    const firstToken = lines[0].split("|")[0].trim().toLowerCase();
+    if (firstToken !== "spectrum details") {
+      setBadFile(true);
+      return;
+    }
+
     // Parse the parameter header
     // Expected format (all values are separated by "|"):
     // "Spectrum details | Min Frequency: 2000 | Max Frequency: 4000 | Molecule: C7H5N | Step Size: 1 | Cycles per Step: 1 | Microwave Pulse Width: 1 | MW Band: S | Repetition Rate: 1 | Molecular Pulse Width: 500 | Acquisition Type: single | Resolution: 2000"
