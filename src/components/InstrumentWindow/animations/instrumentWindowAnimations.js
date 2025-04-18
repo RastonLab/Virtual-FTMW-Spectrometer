@@ -44,7 +44,6 @@ export function setSBandState() {
   let state = sBandState();
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
-  components.spectrumReady.style.display = "none";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -79,6 +78,7 @@ export function animateToBand(
   ];
   
   components.wireAndBellows.style.transformOrigin = "160px 80px";
+  components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - frequencyMin) / stepSize + 1) * cyclesPerStep * 1000;
   const adjustedMin = Math.ceil(frequencyMin / 100) * 100;
@@ -159,6 +159,14 @@ export function animateToBand(
       }, totalScanTime);
     }, extraPause);
   }, firstSegmentDuration);
+}
+
+/**
+ * Function that sets the display of the spectrum ready message
+ */
+export const setSpectrumReady = () => {
+  const components = getComponents();
+  components.spectrumReady.style.display = "";
 }
 
 /**

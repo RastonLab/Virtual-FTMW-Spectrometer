@@ -4,7 +4,7 @@ import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import '../../style/InstrumentWindow.css';
 import { getMWBand } from '../../functions/getMWBand';
 import { setCurrenFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
-import { animateToBand, setSBandState } from './animations/instrumentWindowAnimations';
+import { animateToBand, setSBandState, setSpectrumReady } from './animations/instrumentWindowAnimations';
 import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
@@ -18,6 +18,7 @@ const InstrumentWindow = () => {
   const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
+  const { data } = useSelector((store) => store.acquireSpectrum);
 
   const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
 
@@ -31,6 +32,12 @@ const InstrumentWindow = () => {
       setSBandState();
     }
   }, []);
+
+  useEffect(() => {
+    if (data) {
+      setSpectrumReady();
+    }
+  }, [data]);
 
   /**
    * Animates the instrument window
