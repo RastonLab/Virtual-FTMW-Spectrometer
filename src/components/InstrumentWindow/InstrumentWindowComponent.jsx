@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep, pressure, mwBand, onDisplayCLick, onNavigateClick, ...props }) => (
+const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep, pressure, mwBand, onDisplayCLick, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -3540,7 +3540,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
         />
       </g>
-      <g id="electric" transform="translate(-2.369 -2.535)" onClick={() => onNavigateClick('/schematic')} style={{ cursor: "pointer" }}>
+      <g id="electric" transform="translate(-2.369 -2.535)">
         <path
           id="rect330"
           d="M468.609 111.15h26.69v.757h-26.69z"

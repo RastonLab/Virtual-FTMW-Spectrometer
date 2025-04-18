@@ -9,15 +9,12 @@ import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
 import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotly";
-import { useNavigate } from "react-router-dom";
 
 /**
  * A component that contains the instrument window
  */
 const InstrumentWindow = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
@@ -73,13 +70,6 @@ const InstrumentWindow = () => {
     setToggled(false);
   };
 
-  /**
-   * Handler invoked when clicking a svg componenent to navigate to a different page
-   */
-  const handlePartClickNavigate = (url) => {
-    navigate(url, -1);
-  }
-
   return (
     <div id='instrument-window'>
       <SvgInstrumentWindowComponent
@@ -90,8 +80,7 @@ const InstrumentWindow = () => {
         cyclePerStep={numCyclesPerStep} 
         mwBand={mwBand}
         pressure={'1.3 x 10⁻⁶ Torr'}
-        onDisplayCLick={handlePartClick}
-        onNavigateClick={handlePartClickNavigate} />
+        onDisplayCLick={handlePartClick} />
 
       <div id="instrument-spinner">
         <h1>Scan Progress</h1>
