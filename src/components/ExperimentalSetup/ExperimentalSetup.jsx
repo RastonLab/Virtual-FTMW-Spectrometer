@@ -19,6 +19,7 @@ const ExperimentalSetup = () => {
   const { prefetch } = useSelector((store) => store.progress);
   const { error, errorText } = useSelector((store) => store.error);
   const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres, frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
+
   /**
    * Calls the helper method to get frequency range value depending on the mw band
    */
