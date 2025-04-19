@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import InfoDialog from '../InfoDialog';
+import { DialogTitle, DialogContent } from '@mui/material';
+import CloseButton from '@mui/icons-material/Close';
 
 /**
  * Reusable clickable component for instrument window
@@ -30,6 +32,13 @@ const InstrumentClickable = ({
   onDialogClose
 }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+
+  // Display placeholder image if SVG fails to load
+  const [imgError, setImgError] = useState(false);
+  const handleImgError = () => {
+    console.error(`Failed to load image: ${svg}`);
+    setImgError(true);
+  };
 
   // For triangle shape, use clip-path to create the triangle
   const getClipPath = () => {
@@ -88,6 +97,13 @@ const InstrumentClickable = ({
         title={name}
         content={description}
         image={svg}
+        imageFallback={
+          imgError ? 
+          <div style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f5', color: '#666' }}>
+            Image not available
+          </div> : null
+        }
+        onImageError={handleImgError}
         customComponent={null}
       />
     </>

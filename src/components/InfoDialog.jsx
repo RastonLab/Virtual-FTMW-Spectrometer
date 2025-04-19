@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/InfoDialog.css';
 
-const InfoDialog = ({ open, onClose, title, content, image, customComponent }) => {
+const InfoDialog = ({ open, onClose, title, content, image, customComponent, imageFallback, onImageError }) => {
   // If dialog is not open, don't render anything
   if (!open) return null;
 
@@ -47,28 +47,31 @@ const InfoDialog = ({ open, onClose, title, content, image, customComponent }) =
           </div>
         ) : image ? (
           <div className={`dialog-image-container ${isAnimationOnly ? 'animation-only-container' : ''}`}>
-            <img 
-              src={image} 
-              alt={title} 
-              className={isAnimation ? "dialog-animation" : "dialog-image"}
-              style={{ 
-                maxWidth: '100%', 
-                maxHeight: isAnimationOnly ? '550px' : isAnimation ? '450px' : '380px', 
-                display: 'block', 
-                margin: '0 auto',
-                // Center the animation and make it more prominent
-                ...(isAnimation && { 
-                  objectFit: 'contain',
-                  border: '1px solid #eee',
-                  borderRadius: '4px',
-                  padding: '5px'
-                }),
-                ...(isAnimationOnly && {
-                  padding: '10px',
-                  boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)',
-                })
-              }}
-            />
+            {imageFallback || (
+              <img 
+                src={image} 
+                alt={title} 
+                className={isAnimation ? "dialog-animation" : "dialog-image"}
+                onError={onImageError}
+                style={{ 
+                  maxWidth: '100%', 
+                  maxHeight: isAnimationOnly ? '550px' : isAnimation ? '450px' : '380px', 
+                  display: 'block', 
+                  margin: '0 auto',
+                  // Center the animation and make it more prominent
+                  ...(isAnimation && { 
+                    objectFit: 'contain',
+                    border: '1px solid #eee',
+                    borderRadius: '4px',
+                    padding: '5px'
+                  }),
+                  ...(isAnimationOnly && {
+                    padding: '10px',
+                    boxShadow: '0 0 15px rgba(0, 0, 0, 0.15)',
+                  })
+                }}
+              />
+            )}
           </div>
         ) : null}
         

@@ -394,14 +394,144 @@ const instrumentClickables = [
     name: 'Ion gauge',
     description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
     position: {
-      top: '6.5%',
-      left: '53.5%',
-      width: '7.8%',
-      height: '4.2%'
+      top: '5%',
+      left: '57%',
+      width: '5.3%',
+      height: '6%'
     },
     borderColor: 'orange',
     svg: '/assets/svg/components/schematic/ion-gauge.svg',
     shape: 'oval'
+  },
+  {
+    id: 'pressure-controller',
+    name: 'Pressure controller',
+    description: 'Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ – 10⁻¹¹ bar) inside the chamber.',
+    position: {
+      top: '5.5%',
+      left: '33%',
+      width: '9.3%',
+      height: '8.5%'
+    },
+    borderColor: 'yellow',
+    svg: '/assets/svg/components/instruments/pressure-controller.svg'
+  },
+  {
+    id: 'pressure-controller-small-1',
+    name: 'Pressure controller',
+    description: 'Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ – 10⁻¹¹ bar) inside the chamber.',
+    position: {
+      top: '14%',
+      left: '34%',
+      width: '1.6%',
+      height: '1.6%'
+    },
+    borderColor: 'yellow',
+    svg: '/assets/svg/components/instruments/pressure-controller.svg'
+  },
+  {
+    id: 'pressure-controller-small-2',
+    name: 'Pressure controller',
+    description: 'Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ – 10⁻¹¹ bar) inside the chamber.',
+    position: {
+      top: '14%',
+      left: '39.8%',
+      width: '1.6%',
+      height: '1.6%'
+    },
+    borderColor: 'yellow',
+    svg: '/assets/svg/components/instruments/pressure-controller.svg'
+  },
+  {
+    id: 'tuning-rod-motor',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '51.5%',
+      left: '0.6%',
+      width: '17%',
+      height: '1.5%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-thin-1',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '49%',
+      left: '3%',
+      width: '0.6%',
+      height: '16.8%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-thin-2',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '49%',
+      left: '16.9%',
+      width: '0.8%',
+      height: '16.8%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-thin-3',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '50.7%',
+      left: '3.6%',
+      width: '13.3%',
+      height: '3%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-square-1',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '49.8%',
+      left: '0.8%',
+      width: '1.5%',
+      height: '15.5%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-square-2',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '63%',
+      left: '0.4%',
+      width: '17%',
+      height: '1%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-small-thin',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '50%',
+      left: '6%',
+      width: '2%',
+      height: '0.8%'
+    },
+    borderColor: 'red',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   }
 ];
 
