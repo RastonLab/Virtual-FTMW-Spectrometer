@@ -360,6 +360,48 @@ const instrumentClickables = [
     },
     borderColor: 'orange',
     svg: '/assets/svg/components/schematic/ion-gauge.svg'
+  },
+  {
+    id: 'ion-gauge-triangle',
+    name: 'Ion gauge',
+    description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
+    position: {
+      top: '5.7%',
+      left: '51%',
+      width: '2.1%',
+      height: '3.4%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/ion-gauge.svg',
+    shape: 'triangle',
+    orientation: 'bottom-right'
+  },
+  {
+    id: 'ion-gauge-long-2',
+    name: 'Ion gauge',
+    description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
+    position: {
+      top: '5.7%',
+      left: '52.7%',
+      width: '0.9%',
+      height: '5%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/ion-gauge.svg'
+  },
+  {
+    id: 'ion-gauge-oval',
+    name: 'Ion gauge',
+    description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
+    position: {
+      top: '6.5%',
+      left: '53.5%',
+      width: '7.8%',
+      height: '4.2%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/ion-gauge.svg',
+    shape: 'oval'
   }
 ];
 
