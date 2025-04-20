@@ -176,20 +176,6 @@ const instrumentClickables = [
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
-    id: 'diffusion-pump-tube',
-    name: 'Diffusion pump flexible tube',
-    description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
-    position: {
-      top: '60%',
-      left: '80%',
-      width: '8%',
-      height: '10%'
-    },
-    borderColor: 'green',
-    svg: '/assets/svg/components/schematic/diffusion-pump.svg',
-    customClass: 'tube-shape'
-  },
-  {
     id: 'diffusion-pump-extra-long',
     name: 'Diffusion pump',
     description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
@@ -532,6 +518,84 @@ const instrumentClickables = [
     },
     borderColor: 'red',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'metal-hose-long',
+    name: 'Bellows',
+    description: 'Flexible metal conduit that remains hermetically sealed while the movable mirror is translated.',
+    position: {
+      top: '63%',
+      left: '29.2%',
+      width: '45%',
+      height: '1%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/Metal-Hose.svg'
+  },
+  {
+    id: 'metal-hose-extra-thin',
+    name: 'Bellows',
+    description: 'Flexible metal conduit that remains hermetically sealed while the movable mirror is translated.',
+    position: {
+      top: '63%',
+      left: '18%',
+      width: '6%',
+      height: '1%'
+    },
+    borderColor: 'orange',
+    svg: '/assets/svg/components/schematic/Metal-Hose.svg'
+  },
+  {
+    id: 'support-rod-vertical',
+    name: 'Support rod',
+    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
+    position: {
+      top: '61.2%',
+      left: '26%',
+      width: '1%',
+      height: '3%'
+    },
+    borderColor: 'gray',
+    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
+  },
+  {
+    id: 'support-rod-horizontal',
+    name: 'Support rod',
+    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
+    position: {
+      top: '62.8%',
+      left: '24%',
+      width: '5.5%',
+      height: '1.5%'
+    },
+    borderColor: 'gray',
+    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
+  },
+  {
+    id: 'support-rod-vertical-2',
+    name: 'Support rod',
+    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
+    position: {
+      top: '20.5%',
+      left: '26%',
+      width: '1%',
+      height: '1.5%'
+    },
+    borderColor: 'gray',
+    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
+  },
+  {
+    id: 'support-rod-horizontal-2',
+    name: 'Support rod',
+    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
+    position: {
+      top: '19%',
+      left: '24%',
+      width: '5.5%',
+      height: '1.5%'
+    },
+    borderColor: 'gray',
+    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
   }
 ];
 
