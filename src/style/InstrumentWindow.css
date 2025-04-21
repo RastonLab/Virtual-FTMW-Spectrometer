@@ -73,6 +73,21 @@
     opacity: 0.8;
 }
 
+/* Special style for the spectrum graph clickable */
+#spectrum-graph {
+    border-width: 3px !important;
+    opacity: 0.7 !important;
+    background-color: rgba(255, 182, 193, 0.4); /* Light pink semi-transparent background */
+    transition: all 0.3s ease;
+    border-radius: 35px; /* Rounded corners to match the cavity shape */
+}
+
+#spectrum-graph:hover {
+    opacity: 0.9 !important;
+    box-shadow: 0 0 20px rgba(245, 0, 87, 0.7);
+    background-color: rgba(255, 182, 193, 0.6); /* Slightly more opaque on hover */
+}
+
 /* Dialog styling to match the schematic dialog */
 .MuiDialog-paper {
     border-radius: 0 !important;

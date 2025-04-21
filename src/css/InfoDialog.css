@@ -1,0 +1,15 @@
+.cavity-table-section {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.cavity-description {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.cavity-description p {
+  margin: 0;
+  line-height: 1.5;
+} 
