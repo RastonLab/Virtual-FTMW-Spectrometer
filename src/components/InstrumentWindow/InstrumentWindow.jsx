@@ -23,7 +23,7 @@ const InstrumentWindow = () => {
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
   const { data } = useSelector((store) => store.acquireSpectrum);
 
-  const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
+  const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 50) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
 
   const [toggled, setToggled] = useState(false);
 

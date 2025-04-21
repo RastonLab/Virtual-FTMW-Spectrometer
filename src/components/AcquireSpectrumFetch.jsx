@@ -98,7 +98,7 @@ export default function AcquireSpectrumFetch({
       });
 
       const data = await response.json();
-      delay = ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200;
+      delay = ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 50) + 1200;
       // No delay for single frequency
       delay = acquisitionType === "single" ? 0 : delay;
       dispatch(setProgress([true, false, true]));
