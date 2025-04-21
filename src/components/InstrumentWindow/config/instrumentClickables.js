@@ -73,7 +73,7 @@ const instrumentClickables = [
     position: {
       top: '22%',
       left: '26.5%',
-      width: '2.5%',
+      width: '2%',
       height: '11.9%'
     },
     borderColor: 'transparent',
@@ -101,7 +101,7 @@ const instrumentClickables = [
     position: {
       top: '49.5%',
       left: '26.5%',
-      width: '2.8%',
+      width: '2%',
       height: '11.9%'
     },
     borderColor: 'transparent',
