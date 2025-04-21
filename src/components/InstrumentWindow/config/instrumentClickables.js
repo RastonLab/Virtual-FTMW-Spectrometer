@@ -20,7 +20,7 @@ const instrumentClickables = [
       width: '45%',
       height: '40%'
     },
-    borderColor: '#f50057',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/graph.png'
   },
   {
@@ -33,7 +33,7 @@ const instrumentClickables = [
       width: '2.3%',
       height: '9.3%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Fixed-mirror.svg',
     shape: 'triangle',
     orientation: 'top-right'
@@ -48,7 +48,7 @@ const instrumentClickables = [
       width: '2.3%',
       height: '9.3%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Fixed-mirror.svg',
     shape: 'triangle',
     orientation: 'bottom-right'
@@ -63,7 +63,7 @@ const instrumentClickables = [
       width: '2.7%',
       height: '39.5%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Fixed-mirror.svg'
   },
   {
@@ -76,7 +76,7 @@ const instrumentClickables = [
       width: '2.5%',
       height: '11.9%'
     },
-    borderColor: 'blue',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Movable-mirror.svg',
     shape: 'triangle',
     orientation: 'top-left'
@@ -91,7 +91,7 @@ const instrumentClickables = [
       width: '2.3%',
       height: '39.5%'
     },
-    borderColor: 'blue',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Movable-mirror.svg'
   },
   {
@@ -104,7 +104,7 @@ const instrumentClickables = [
       width: '2.8%',
       height: '11.9%'
     },
-    borderColor: 'blue',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Movable-mirror.svg',
     shape: 'triangle',
     orientation: 'bottom-left'
@@ -119,7 +119,7 @@ const instrumentClickables = [
       width: '7.5%',
       height: '22.5%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
@@ -132,7 +132,7 @@ const instrumentClickables = [
       width: '10.6%',
       height: '18%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg',
     shape: 'oval'
   },
@@ -146,7 +146,7 @@ const instrumentClickables = [
       width: '9.3%',
       height: '2.1%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
@@ -159,7 +159,7 @@ const instrumentClickables = [
       width: '4.2%',
       height: '8.5%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
@@ -172,7 +172,7 @@ const instrumentClickables = [
       width: '8.2%',
       height: '4%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
@@ -185,7 +185,7 @@ const instrumentClickables = [
       width: '2.2%',
       height: '9.7%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
@@ -198,7 +198,7 @@ const instrumentClickables = [
       width: '0.9%',
       height: '4.8%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
@@ -211,10 +211,23 @@ const instrumentClickables = [
       width: '2%',
       height: '4%'
     },
-    borderColor: 'green',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/diffusion-pump.svg',
     shape: 'triangle',
     orientation: 'bottom-right'
+  },
+  {
+    id: 'diffusion-pump-thin-rect',
+    name: 'Diffusion pump',
+    description: 'High-vacuum pump that removes gas phase molecules from the chamber. It operates by directing a stream of hot oil vapor downward, which entrains gas molecules and carries them toward the backing (rotary) pump.',
+    position: {
+      top: '87%',
+      left: '49.7%',
+      width: '0.5%',
+      height: '4%'
+    },
+    borderColor: 'transparent',
+    svg: '/assets/svg/components/schematic/diffusion-pump.svg'
   },
   {
     id: 'rotary-pump',
@@ -226,7 +239,7 @@ const instrumentClickables = [
       width: '8%',
       height: '10%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
   },
   {
@@ -239,7 +252,7 @@ const instrumentClickables = [
       width: '9%',
       height: '1%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
   },
   {
@@ -252,7 +265,7 @@ const instrumentClickables = [
       width: '5%',
       height: '7%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
   },
   {
@@ -265,7 +278,7 @@ const instrumentClickables = [
       width: '3.9%',
       height: '5.4%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
   },
   {
@@ -278,7 +291,7 @@ const instrumentClickables = [
       width: '2%',
       height: '0.8%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
   },
   {
@@ -291,7 +304,7 @@ const instrumentClickables = [
       width: '1%',
       height: '1.9%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/rotary-pump.svg'
   },
   {
@@ -304,7 +317,7 @@ const instrumentClickables = [
       width: '4.7%',
       height: '14.5%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/lecture-bottle.svg'
   },
   {
@@ -317,7 +330,7 @@ const instrumentClickables = [
       width: '4.7%',
       height: '5%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/lecture-bottle.svg',
     shape: 'oval'
   },
@@ -331,7 +344,7 @@ const instrumentClickables = [
       width: '1.3%',
       height: '20%'
     },
-    borderColor: 'purple',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/lecture-bottle.svg'
   },
   {
@@ -344,7 +357,7 @@ const instrumentClickables = [
       width: '6.8%',
       height: '6%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/ion-gauge.svg'
   },
   {
@@ -357,7 +370,7 @@ const instrumentClickables = [
       width: '1.5%',
       height: '10.5%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/ion-gauge.svg'
   },
   {
@@ -370,7 +383,7 @@ const instrumentClickables = [
       width: '2.1%',
       height: '3.4%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/ion-gauge.svg',
     shape: 'triangle',
     orientation: 'bottom-right'
@@ -385,7 +398,7 @@ const instrumentClickables = [
       width: '0.9%',
       height: '5%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/ion-gauge.svg'
   },
   {
@@ -398,7 +411,7 @@ const instrumentClickables = [
       width: '5.3%',
       height: '6%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/ion-gauge.svg',
     shape: 'oval'
   },
@@ -412,7 +425,7 @@ const instrumentClickables = [
       width: '9.3%',
       height: '8.5%'
     },
-    borderColor: 'yellow',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/pressure-controller.svg'
   },
   {
@@ -425,7 +438,7 @@ const instrumentClickables = [
       width: '1.6%',
       height: '1.6%'
     },
-    borderColor: 'yellow',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/pressure-controller.svg'
   },
   {
@@ -438,7 +451,7 @@ const instrumentClickables = [
       width: '1.6%',
       height: '1.6%'
     },
-    borderColor: 'yellow',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/pressure-controller.svg'
   },
   {
@@ -451,7 +464,7 @@ const instrumentClickables = [
       width: '17%',
       height: '1.5%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -464,7 +477,7 @@ const instrumentClickables = [
       width: '0.6%',
       height: '16.8%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -477,7 +490,7 @@ const instrumentClickables = [
       width: '0.8%',
       height: '16.8%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -490,7 +503,7 @@ const instrumentClickables = [
       width: '13.3%',
       height: '3%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -503,7 +516,7 @@ const instrumentClickables = [
       width: '1.5%',
       height: '15.5%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -516,7 +529,7 @@ const instrumentClickables = [
       width: '17%',
       height: '1%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -529,7 +542,7 @@ const instrumentClickables = [
       width: '2%',
       height: '0.8%'
     },
-    borderColor: 'red',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
@@ -542,7 +555,7 @@ const instrumentClickables = [
       width: '45%',
       height: '1%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Hose.svg'
   },
   {
@@ -555,7 +568,7 @@ const instrumentClickables = [
       width: '6%',
       height: '1%'
     },
-    borderColor: 'orange',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Hose.svg'
   },
   {
@@ -568,7 +581,7 @@ const instrumentClickables = [
       width: '1%',
       height: '3%'
     },
-    borderColor: 'gray',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Rod.svg'
   },
   {
@@ -581,7 +594,7 @@ const instrumentClickables = [
       width: '5.5%',
       height: '1.5%'
     },
-    borderColor: 'gray',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Rod.svg'
   },
   {
@@ -594,7 +607,7 @@ const instrumentClickables = [
       width: '1%',
       height: '1.5%'
     },
-    borderColor: 'gray',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Rod.svg'
   },
   {
@@ -607,7 +620,7 @@ const instrumentClickables = [
       width: '5.5%',
       height: '1.5%'
     },
-    borderColor: 'gray',
+    borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Rod.svg'
   }
 ];
