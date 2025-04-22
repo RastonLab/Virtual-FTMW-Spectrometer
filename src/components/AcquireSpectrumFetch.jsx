@@ -7,6 +7,7 @@ import { setSpectrumData, setSpectrumParameters } from "../redux/acquireSpectrum
 import { useNavigate } from "react-router-dom";
 import { setTimer } from "../redux/timerSlice";
 import { setCurrenFrequency } from "../redux/experimentalSetupSlice";
+import { setPeaksData } from "../redux/peaksDataSlice";
 
 export let sleepID = 0;
 
@@ -67,6 +68,7 @@ export default function AcquireSpectrumFetch({
     dispatch(setError([false, null]));
     dispatch(setProgress([true, true, false]));
     dispatch(setCurrenFrequency(frequencyMin));
+    dispatch(setPeaksData(null))
 
     dispatch(setTimer(0));
     
