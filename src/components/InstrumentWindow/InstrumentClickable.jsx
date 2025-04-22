@@ -75,6 +75,8 @@ const InstrumentClickable = ({
   const componentClasses = [
     'instrument-clickable',
     shape === 'oval' ? 'oval-shape' : '',
+    shape === 'triangle' ? 'triangle-shape' : '',
+    shape === 'triangle' ? `triangle-${orientation}` : '',
     customClass
   ].filter(Boolean).join(' ');
 
@@ -87,6 +89,7 @@ const InstrumentClickable = ({
         style={{
           ...style,
           borderColor: borderColor,
+          backgroundColor: shape === 'rectangle' ? `${borderColor}10` : undefined,
           clipPath: shape === 'triangle' ? getClipPath() : 'none'
         }}
       />

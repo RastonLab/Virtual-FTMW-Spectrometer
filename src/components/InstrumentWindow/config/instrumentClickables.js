@@ -526,8 +526,21 @@ const instrumentClickables = [
     position: {
       top: '63%',
       left: '0.4%',
-      width: '17%',
+      width: '74%',
       height: '1%'
+    },
+    borderColor: 'transparent',
+    svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
+  },
+  {
+    id: 'tuning-rod-motor-square-2',
+    name: 'Tuning rod & motor',
+    description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
+    position: {
+      top: '62.8%',
+      left: '24%',
+      width: '5.5%',
+      height: '1.6%'
     },
     borderColor: 'transparent',
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
@@ -546,78 +559,26 @@ const instrumentClickables = [
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
-    id: 'metal-hose-long',
+    id: 'bellows-middle',
     name: 'Bellows',
     description: 'Flexible metal conduit that remains hermetically sealed while the movable mirror is translated.',
     position: {
-      top: '63%',
-      left: '29.2%',
-      width: '45%',
-      height: '1%'
-    },
-    borderColor: 'transparent',
-    svg: '/assets/svg/components/schematic/Metal-Hose.svg'
-  },
-  {
-    id: 'metal-hose-extra-thin',
-    name: 'Bellows',
-    description: 'Flexible metal conduit that remains hermetically sealed while the movable mirror is translated.',
-    position: {
-      top: '63%',
+      top: '39.7%',
       left: '18%',
       width: '6%',
-      height: '1%'
+      height: '3.3%'
     },
     borderColor: 'transparent',
     svg: '/assets/svg/components/schematic/Metal-Hose.svg'
-  },
-  {
-    id: 'support-rod-vertical',
-    name: 'Support rod',
-    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
-    position: {
-      top: '61.2%',
-      left: '26%',
-      width: '1%',
-      height: '3%'
-    },
-    borderColor: 'transparent',
-    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
-  },
-  {
-    id: 'support-rod-horizontal',
-    name: 'Support rod',
-    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
-    position: {
-      top: '62.8%',
-      left: '24%',
-      width: '5.5%',
-      height: '1.5%'
-    },
-    borderColor: 'transparent',
-    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
   },
   {
     id: 'support-rod-vertical-2',
     name: 'Support rod',
     description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
     position: {
-      top: '20.5%',
-      left: '26%',
-      width: '1%',
-      height: '1.5%'
-    },
-    borderColor: 'transparent',
-    svg: '/assets/svg/components/schematic/Metal-Rod.svg'
-  },
-  {
-    id: 'support-rod-horizontal-2',
-    name: 'Support rod',
-    description: 'Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.',
-    position: {
       top: '19%',
-      left: '24%',
-      width: '5.5%',
+      left: '18%',
+      width: '57%',
       height: '1.5%'
     },
     borderColor: 'transparent',
