@@ -11,11 +11,25 @@
 
 #instrument-window {
     display: flex;
+    position: relative;
+}
+
+.instrument-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
   
 #instrument {
     height: 90vh;
     flex-grow: 1;
+    position: relative; /* Ensure this is a positioning context */
+}
+
+/* Ensure the SVG maintains aspect ratio */
+#instrument svg {
+    width: 100%;
+    height: auto;
 }
 
 #instrument-spinner {
@@ -31,6 +45,184 @@
     width: 50%;
     justify-self: center;
     text-align: center;
+}
+
+/* Instrument clickable components */
+.instrument-clickable-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none; /* Allow clicks to pass through to elements below */
+}
+
+.instrument-clickable {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0; /* Completely invisible */
+    transition: opacity 0.3s;
+    box-sizing: border-box;
+    border: 0px solid transparent; /* No visible border */
+    pointer-events: auto;
+    transform-origin: top left;
+    background-color: transparent !important;
+}
+
+.instrument-clickable:hover {
+    opacity: 0; /* Still invisible on hover */
+    box-shadow: none; /* No glow effect */
+}
+
+/* Special style for the spectrum graph clickable */
+#spectrum-graph {
+    border-width: 0 !important;
+    opacity: 0 !important;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    border-radius: 35px;
+}
+
+#spectrum-graph:hover {
+    opacity: 0 !important;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+/* Dialog styling to match the schematic dialog */
+.MuiDialog-paper {
+    border-radius: 0 !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.MuiDialogTitle-root {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+    font-weight: normal;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #999;
+}
+
+/* Dialog styling */
+.dialog-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.dialog-image {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Oval shape */
+.oval-shape {
+    border-radius: 50%;
+}
+
+/* Curved tube shape for diffusion pump tube */
+.tube-shape {
+    clip-path: path('M 0,40 Q 30,0 60,5 Q 90,10 100,40');
+    border: none !important;
+}
+
+.tube-shape::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid green;
+    clip-path: path('M 0,40 Q 30,0 60,5 Q 90,10 100,40');
+    pointer-events: none;
+}
+
+/* Styles for triangle shapes */
+.instrument-clickable-component[style*="clip-path"] .clickable-overlay {
+    border-width: 2px;
+    border-style: solid;
+}
+
+/* Maintain backward compatibility */
+.fixed-mirror-container,
+.movable-mirror-container {
+    position: absolute;
+    z-index: 10;
+}
+
+.fixed-mirror-component,
+.movable-mirror-component {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Add a wrapper to maintain aspect ratio and position during zoom */
+.clickable-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make movable mirror clickable areas invisible */
+#movable-mirror-tri-1,
+#movable-mirror-long,
+#movable-mirror-tri-3 {
+    border-width: 0 !important;
+    opacity: 0 !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
+
+#movable-mirror-tri-1:hover,
+#movable-mirror-long:hover,
+#movable-mirror-tri-3:hover {
+    opacity: 0 !important;
+    box-shadow: none;
+}
+
+/* Ensure triangle shapes are invisible */
+.triangle-shape {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    border: none !important;
+}
+
+.triangle-shape::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0px solid transparent;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    pointer-events: none;
+}
+
+/* Add specific orientation styles for triangles */
+.triangle-top-left {
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+
+.triangle-top-right {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+.triangle-bottom-left {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
+}
+
+.triangle-bottom-right {
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
 }
 
 @media only screen and (max-width: 1200px) {
