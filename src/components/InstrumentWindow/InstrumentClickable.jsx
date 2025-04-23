@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import InfoDialog from '../InfoDialog';
-import { DialogTitle, DialogContent } from '@mui/material';
-import CloseButton from '@mui/icons-material/Close';
 
 /**
  * Reusable clickable component for instrument window
