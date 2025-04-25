@@ -2,46 +2,78 @@ import React, { useState, useEffect } from 'react';
 import { Box, CircularProgress, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
-import { setCurrenFrequency } from '../redux/experimentalSetupSlice';
+import { setCurrentFrequency, setCurrentCycle } from '../redux/experimentalSetupSlice';
 
+/**
+ * The spinner component that shows the progress of the experiment
+ */
 export default function Spinner({ delay, ...otherProps }) {
   const { variant } = otherProps;
   const { timer } = useSelector((store) => store.timer);
-  const { frequencyMin, frequencyMax, stepSize, acquisitionType } = useSelector((store) => store.experimentalSetup);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
 
   const [elapsed, setElapsed] = useState(timer);
   const [stepsDone, setStepsDone] = useState(0);
+  const [cycleCount, setCycleCount] = useState(0);
 
   const dispatch = useDispatch();
 
-  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
-  // drive the clock by steps
+  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1; 
+  const totalTicks = totalSteps * numCyclesPerStep;
+  const tickInterval = delay / totalTicks;
+  
+  // Updates the steps and cycles done
   useEffect(() => {
-    if (!delay) return
+    if (!delay || totalSteps <= 0 || numCyclesPerStep <= 0) return;
+  
     const interval = setInterval(() => {
-      setStepsDone(prev => {
-        // stop at the end
-        if (prev >= totalSteps) {
-          clearInterval(interval)
-          dispatch(setProgress(false, false, false))
-          return prev
-        }
-        return prev + 1
-      })
-    }, delay / totalSteps)
 
-    return () => clearInterval(interval)
-  }, [delay, totalSteps, dispatch])
+      // Updates the cycle count used to update redux variable for current cycle
+      setCycleCount(prev => {
+        const nextCycle = prev + 1;
+  
+        if (nextCycle < numCyclesPerStep) {
+          return nextCycle;
+        }
+        return 0;
+      });
+  
+      // Uses cycle count to update redux variable for current cycle
+      setCycleCount(current => {
+        // If current is 0, set current cycle to 1, else increment by 1
+        dispatch(setCurrentCycle(current === 0 ? 1 : current + 1)); 
+        return current;
+      });
+  
+      // Updates the steps done
+      setCycleCount(current => {
+        if (current === 0) {
+          setStepsDone(step => {
+            const nextStep = step + 1;
+            if (nextStep >= totalSteps) {
+              clearInterval(interval);
+              dispatch(setProgress(false, false, false));
+              return step;
+            }
+            return nextStep;
+          });
+        }
+        return current;
+      });
+    }, tickInterval);
+  
+    return () => clearInterval(interval);
+  }, [delay, totalSteps, numCyclesPerStep, cycleCount, tickInterval, dispatch]);
 
   // derive percent from steps
   useEffect(() => {
-    const pct = (stepsDone / totalSteps) * 100
-    setElapsed(pct)
+    const pct = (stepsDone / totalSteps) * 100;
+    setElapsed(pct);
 
     if (acquisitionType === 'range') {
-      dispatch(setCurrenFrequency({ stepsDone }))
+      dispatch(setCurrentFrequency({ stepsDone }));
     }
-  }, [stepsDone, totalSteps, acquisitionType, dispatch])
+  }, [stepsDone, totalSteps, acquisitionType, dispatch]);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>

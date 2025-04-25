@@ -5,7 +5,7 @@ import InstrumentClickable from './InstrumentClickable';
 import '../../style/InstrumentWindow.css';
 import '../../style/InfoDialog.css';
 import { getMWBand } from '../../functions/getMWBand';
-import { setCurrenFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
+import { setCurrentFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
 import { animateToBand, setSBandState, setSpectrumReady } from './animations/instrumentWindowAnimations';
 import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
@@ -21,7 +21,7 @@ const InstrumentWindow = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType } = useSelector((store) => store.experimentalSetup);
+  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType, currentCycle } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
   const { data } = useSelector((store) => store.acquireSpectrum);
@@ -88,7 +88,7 @@ const InstrumentWindow = () => {
    * Sets the frequency value depending on the frequency range
    */
   useEffect(() => {
-    dispatch(setCurrenFrequency(frequencyMin));
+    dispatch(setCurrentFrequency(frequencyMin));
   }, [frequencyMin, dispatch]);
 
   /**
@@ -128,7 +128,7 @@ const InstrumentWindow = () => {
           molecule={molecule} 
           range={`${frequencyMin} - ${frequencyMax}`} 
           frequency={currentFrequency} 
-          cyclePerStep={numCyclesPerStep} 
+          cyclePerStep={`${currentCycle} / ${numCyclesPerStep}`} 
           mwBand={mwBand}
           pressure={'1.3 x 10⁻⁶ Torr'}
           onDisplayCLick={handlePartClick} 
