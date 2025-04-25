@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
+import InstrumentClickable from './InstrumentClickable';
 import '../../style/InstrumentWindow.css';
+import '../../style/InfoDialog.css';
 import { getMWBand } from '../../functions/getMWBand';
-import { setCurrenFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
+import { setCurrentFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
 import { animateToBand, setSBandState, setSpectrumReady } from './animations/instrumentWindowAnimations';
 import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
 import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotly";
+import instrumentClickables from './config/instrumentClickables';
 import { useNavigate } from "react-router-dom";
 
 /**
@@ -18,7 +21,7 @@ const InstrumentWindow = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType } = useSelector((store) => store.experimentalSetup);
+  const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType, currentCycle } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
   const { data } = useSelector((store) => store.acquireSpectrum);
@@ -34,6 +37,36 @@ const InstrumentWindow = () => {
     if (document.getElementById("instrument-window") !== null) {
       setSBandState();
     }
+    
+    // Add CSS to handle zoom properly
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @media (min-resolution: 1dppx) {
+        .instrument-clickable-container {
+          transform: scale(1);
+        }
+      }
+      @media (min-resolution: 1.25dppx) {
+        .instrument-clickable-container {
+          transform: scale(0.8);
+        }
+      }
+      @media (min-resolution: 1.5dppx) {
+        .instrument-clickable-container {
+          transform: scale(0.67);
+        }
+      }
+      @media (min-resolution: 2dppx) {
+        .instrument-clickable-container {
+          transform: scale(0.5);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   useEffect(() => {
@@ -55,7 +88,7 @@ const InstrumentWindow = () => {
    * Sets the frequency value depending on the frequency range
    */
   useEffect(() => {
-    dispatch(setCurrenFrequency(frequencyMin));
+    dispatch(setCurrentFrequency(frequencyMin));
   }, [frequencyMin, dispatch]);
 
   /**
@@ -89,16 +122,44 @@ const InstrumentWindow = () => {
 
   return (
     <div id='instrument-window'>
-      <SvgInstrumentWindowComponent
-        id='instrument'
-        molecule={molecule} 
-        range={`${frequencyMin} - ${frequencyMax}`} 
-        frequency={currentFrequency} 
-        cyclePerStep={numCyclesPerStep} 
-        mwBand={mwBand}
-        pressure={'1.3 x 10⁻⁶ Torr'}
-        onDisplayCLick={handlePartClick}
-        onNavigateClick={handlePartClickNavigate} />
+      <div className="instrument-container">
+        <SvgInstrumentWindowComponent
+          id='instrument'
+          molecule={molecule} 
+          range={`${frequencyMin} - ${frequencyMax}`} 
+          frequency={currentFrequency} 
+          cyclePerStep={`${currentCycle} / ${numCyclesPerStep}`} 
+          mwBand={mwBand}
+          pressure={'1.3 x 10⁻⁶ Torr'}
+          onDisplayCLick={handlePartClick} 
+          onNavigateClick={handlePartClickNavigate} />
+        {/* Render all clickable components from configuration */}
+        {instrumentClickables.map((clickable) => (
+          <InstrumentClickable
+            key={clickable.id}
+            id={clickable.id}
+            name={clickable.name}
+            description={clickable.description}
+            style={{
+              position: 'absolute',
+              top: clickable.position.top,
+              left: clickable.position.left,
+              width: clickable.position.width,
+              height: clickable.position.height,
+              border: '2px solid',
+              boxSizing: 'border-box',
+              cursor: 'pointer',
+              zIndex: 10,
+              opacity: 0.5
+            }}
+            shape={clickable.shape}
+            orientation={clickable.orientation}
+            customClass={clickable.customClass}
+            borderColor={clickable.borderColor || 'red'}
+            svg={process.env.PUBLIC_URL + clickable.svg}
+          />
+        ))}
+      </div>
 
       <div id="instrument-spinner">
         <h1>Scan Progress</h1>

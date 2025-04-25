@@ -3540,10 +3540,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
         />
       </g>
-      <g id="electric" 
-        transform="translate(-2.369 -2.535)" 
-        style={{ cursor: "pointer" }}
-        onClick={() => onNavigateClick('/schematic')}>
+      <g id="electric" transform="translate(-2.369 -2.535)" style={{ cursor: "pointer" }} onClick={() => onNavigateClick('/schematic')}>
         <path
           id="rect330"
           d="M468.609 111.15h26.69v.757h-26.69z"
@@ -3572,7 +3569,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         <g id="g335">
           <path
             id="path332"
-            d="m511.63 96.179-14.164 14.164 10.849.829-6.155 14.922 18.148-19.203-10.561-.904z"
+            d="m511.008 98.979-14.164 14.164 10.565.806-1.856 9.665 14.164-14.164-10.565-.807z"
             style={{ paintOrder: "fill markers stroke" }}
           />
           <path
@@ -3952,7 +3949,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
       </g>
       <g
         id="g9"
-        style={{ display: "inline", cursor: "pointer" }}
+        style={{ display: "inline" }}
         onClick={onDisplayCLick}
         transform="translate(46.907 223.632)scale(.37439)"
       >
@@ -4070,4 +4067,3 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
   </svg>
 );
 export default SvgInstrumentWindowComponent;
-

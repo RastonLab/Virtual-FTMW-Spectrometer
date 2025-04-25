@@ -35,7 +35,7 @@ const ExperimentalSetup = () => {
       dispatch(experimentalSetupReducer.setFrequencyMin(frequencyRange.min));
       dispatch(experimentalSetupReducer.setFrequencyMax(acquisitionType === 'range' ? frequencyRange.max : frequencyRange.min));
       dispatch(experimentalSetupReducer.setVres(frequencyRange.min));
-      dispatch(experimentalSetupReducer.setCurrenFrequency(frequencyRange.min));
+      dispatch(experimentalSetupReducer.setCurrentFrequency(frequencyRange.min));
     }
   }, [frequencyRange, dispatch]);
 
