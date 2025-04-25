@@ -533,7 +533,7 @@ const instrumentClickables = [
     svg: '/assets/svg/components/instruments/tuning-rod-motor.svg'
   },
   {
-    id: 'tuning-rod-motor-square-2',
+    id: 'tuning-rod-motor-square-3',
     name: 'Tuning rod & motor',
     description: 'Mechanical system used to adjust the cavity resonance frequency by fine-tuning the mirror separation.',
     position: {

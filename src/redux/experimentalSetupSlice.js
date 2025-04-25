@@ -13,7 +13,8 @@ const initialState = {
   molecularPulseWidth: 500,
   acquisitionType: 'single',
   vres: 2000,
-  currentFrequency: 0
+  currentFrequency: 0,
+  currentCycle: 0
 };
 
 /**
@@ -98,9 +99,15 @@ const experimentalSetupSlice = createSlice({
     /**
      * Sets the current frequency
      */
-    setCurrenFrequency: (state, { payload }) => {
+    setCurrentFrequency: (state, { payload }) => {
       const { stepsDone = 0 } = payload;
       state.currentFrequency = state.frequencyMin + stepsDone * state.stepSize;
+    },
+    /**
+     * Sets the current cycle iteration
+     */
+    setCurrentCycle: (state, { payload }) => {
+      state.currentCycle = payload;
     }
   },
 });
@@ -118,7 +125,8 @@ export const {
   setMolecularPulseWidth,
   setAcquisitionType,
   setVres,
-  setCurrenFrequency
+  setCurrentFrequency,
+  setCurrentCycle,
 } = experimentalSetupSlice.actions;
 
 export default experimentalSetupSlice.reducer;
