@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import InstrumentClickable from './InstrumentClickable';
@@ -20,7 +20,6 @@ import { useNavigate } from "react-router-dom";
 const InstrumentWindow = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const containerRef = useRef(null);
 
   const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType, currentCycle } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
@@ -103,7 +102,7 @@ const InstrumentWindow = () => {
 
   return (
     <div id='instrument-window'>
-      <div className="instrument-container" ref={containerRef}>
+      <div className="instrument-container">
         <SvgInstrumentWindowComponent
           id='instrument'
           molecule={molecule} 
@@ -124,17 +123,10 @@ const InstrumentWindow = () => {
             name={clickable.name}
             description={clickable.description}
             style={{
-              position: 'absolute',
               top: clickable.position.top,
               left: clickable.position.left,
               width: clickable.position.width,
-              height: clickable.position.height,
-              border: '2px solid',
-              boxSizing: 'border-box',
-              cursor: 'pointer',
-              zIndex: 10,
-              opacity: 0.5,
-              backgroundColor: clickable.shape === 'rectangle' ? `${clickable.borderColor}10` : undefined,
+              height: clickable.position.height
             }}
             shape={clickable.shape}
             orientation={clickable.orientation}

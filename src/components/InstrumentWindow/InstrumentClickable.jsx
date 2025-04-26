@@ -30,9 +30,9 @@ const InstrumentClickable = ({
   onDialogClose
 }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   // Display placeholder image if SVG fails to load
-  const [imgError, setImgError] = useState(false);
   const handleImgError = () => {
     console.error(`Failed to load image: ${svg}`);
     setImgError(true);
@@ -86,27 +86,21 @@ const InstrumentClickable = ({
         onClick={handleOpenDialog} 
         id={id}
         style={{
-          ...style,
-          borderColor: borderColor,
-          backgroundColor: shape === 'rectangle' ? `${borderColor}10` : undefined,
-          clipPath: shape === 'triangle' ? getClipPath() : 'none',
-          // Standardize positioning across browsers
           position: 'absolute',
-          // Ensure exact pixel positioning
-          left: `calc(${style.left})`,
-          top: `calc(${style.top})`,
-          width: `calc(${style.width})`,
-          height: `calc(${style.height})`,
-          // Force hardware acceleration
-          transform: 'translateZ(0)',
-          backfaceVisibility: 'hidden',
-          WebkitFontSmoothing: 'antialiased',
-          // Prevent sub-pixel rendering
-          WebkitBackfaceVisibility: 'hidden',
-          MozOsxFontSmoothing: 'grayscale',
-          // Ensure clickable even on touch devices
-          touchAction: 'manipulation',
-          willChange: 'transform, opacity'
+          top: style.top,
+          left: style.left,
+          width: style.width,
+          height: style.height,
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: borderColor,
+          backgroundColor: shape === 'rectangle' ? `${borderColor}10` : 'transparent',
+          clipPath: shape === 'triangle' ? getClipPath() : 'none',
+          boxSizing: 'border-box',
+          cursor: 'pointer',
+          zIndex: 10,
+          opacity: 0.5,
+          transition: 'opacity 0.3s ease'
         }}
         title={name}
       />
