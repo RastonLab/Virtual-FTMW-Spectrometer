@@ -90,10 +90,23 @@ const InstrumentClickable = ({
           borderColor: borderColor,
           backgroundColor: shape === 'rectangle' ? `${borderColor}10` : undefined,
           clipPath: shape === 'triangle' ? getClipPath() : 'none',
-          // Force hardware acceleration for better positioning
+          // Standardize positioning across browsers
+          position: 'absolute',
+          // Ensure exact pixel positioning
+          left: `calc(${style.left})`,
+          top: `calc(${style.top})`,
+          width: `calc(${style.width})`,
+          height: `calc(${style.height})`,
+          // Force hardware acceleration
           transform: 'translateZ(0)',
           backfaceVisibility: 'hidden',
-          WebkitFontSmoothing: 'antialiased'
+          WebkitFontSmoothing: 'antialiased',
+          // Prevent sub-pixel rendering
+          WebkitBackfaceVisibility: 'hidden',
+          MozOsxFontSmoothing: 'grayscale',
+          // Ensure clickable even on touch devices
+          touchAction: 'manipulation',
+          willChange: 'transform, opacity'
         }}
         title={name}
       />

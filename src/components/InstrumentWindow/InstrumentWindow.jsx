@@ -38,6 +38,16 @@ const InstrumentWindow = () => {
     if (document.getElementById("instrument-window") !== null) {
       setSBandState();
     }
+    
+    // Add instrument-page class to html and body for consistent positioning
+    document.documentElement.classList.add('instrument-page');
+    document.body.classList.add('instrument-page');
+    
+    // Clean up function
+    return () => {
+      document.documentElement.classList.remove('instrument-page');
+      document.body.classList.remove('instrument-page');
+    };
   }, []);
 
   useEffect(() => {
