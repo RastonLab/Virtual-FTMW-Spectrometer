@@ -142,3 +142,17 @@ body.instrument-page {
         font-size: 20px;
     }
 }
+
+/* Additional responsive adjustments for very small screens */
+@media only screen and (max-width: 768px) {
+    #instrument {
+        width: 95%; /* Almost full width on mobile */
+    }
+}
+
+/* Fix for higher density displays */
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .instrument-clickable {
+        border-width: 3px;
+    }
+}
