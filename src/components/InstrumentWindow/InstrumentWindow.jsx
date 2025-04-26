@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
-import InstrumentClickable from './InstrumentClickable';
 import '../../style/InstrumentWindow.css';
 import '../../style/InfoDialog.css';
 import { getMWBand } from '../../functions/getMWBand';
@@ -11,11 +10,16 @@ import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
 import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotly";
-import instrumentClickables from './config/instrumentClickables';
+import InfoDialog from '../InfoDialog';
 import { useNavigate } from "react-router-dom";
+import clickableComponents from './config/clickableComponents';
 
 /**
  * A component that contains the instrument window
+ * 
+ * Note on clickable elements:
+ * This component uses SVG elements with event handlers to create interactive areas
+ * for users to click and learn about different parts of the instrument.
  */
 const InstrumentWindow = () => {
   const dispatch = useDispatch();
@@ -29,6 +33,13 @@ const InstrumentWindow = () => {
   const delay = ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on animation
 
   const [toggled, setToggled] = useState(false);
+  const [infoDialogOpen, setInfoDialogOpen] = useState(false);
+  const [infoDialogContent, setInfoDialogContent] = useState({
+    title: '',
+    content: '',
+    image: '',
+    customComponent: null
+  });
 
   /**
    * Sets the beginning state of the instrument window
@@ -82,7 +93,111 @@ const InstrumentWindow = () => {
   });
 
   /**
-   * Handler invoked when clicking the PC
+   * Add click handlers to SVG elements
+   */
+  useEffect(() => {
+    // Get the SVG document
+    const svgElement = document.getElementById('instrument');
+    if (!svgElement) return;
+
+    // Function to handle component clicks
+    const handleComponentClick = (component) => {
+      if (component.navigateTo) {
+        navigate(component.navigateTo);
+      } else {
+        setInfoDialogContent({
+          title: component.title,
+          content: component.description,
+          image: component.image,
+          customComponent: null
+        });
+        setInfoDialogOpen(true);
+      }
+    };
+
+    // Store handlers for cleanup
+    const clickHandlers = [];
+
+    // Add click handlers to all clickable components
+    clickableComponents.forEach(component => {
+      // Skip computer display as it has its own handler
+      if (component.id === 'readout') return;
+      
+      // Find the element in the SVG
+      const element = svgElement.querySelector(`#${component.id}`);
+      
+      if (element) {
+        // Set cursor style
+        element.style.cursor = 'pointer';
+        
+        // Create and add click handler
+        const clickHandler = () => handleComponentClick(component);
+        element.addEventListener('click', clickHandler);
+        
+        // Store for cleanup
+        clickHandlers.push({ element, handler: clickHandler });
+      }
+    });
+    
+    // Additional handling for group elements (cavity, mirrors, etc.)
+    const groupElements = [
+      { 
+        id: 'cavity', 
+        component: {
+          title: 'Fabry-Pérot Cavity',
+          description: 'The heart of the FTMW spectrometer where molecules interact with the microwave field.',
+          image: '/assets/svg/components/schematic/Fixed-mirror.svg'
+        }
+      },
+      { 
+        id: 'mirrors', 
+        component: {
+          title: 'Cavity Mirrors',
+          description: 'Concave aluminum mirrors that form the resonant cavity.',
+          image: '/assets/svg/components/schematic/Fixed-mirror.svg'
+        }
+      },
+      { 
+        id: 'chamber-frame', 
+        component: {
+          title: 'Chamber Framework',
+          description: 'The structural framework that supports the vacuum chamber.',
+          image: '/assets/svg/components/schematic/Fixed-mirror.svg'
+        }
+      },
+      { 
+        id: 'main-chamber', 
+        component: {
+          title: 'Main Chamber',
+          description: 'The vacuum chamber that houses the Fabry-Pérot cavity and maintains the high-vacuum environment necessary for spectroscopy.',
+          image: '/assets/svg/components/schematic/Fixed-mirror.svg'
+        }
+      }
+    ];
+
+    // Add handlers for group elements
+    groupElements.forEach(({ id, component }) => {
+      const element = svgElement.querySelector(`#${id}`);
+      if (element) {
+        element.style.cursor = 'pointer';
+        const clickHandler = () => handleComponentClick(component);
+        element.addEventListener('click', clickHandler);
+        clickHandlers.push({ element, handler: clickHandler });
+      }
+    });
+    
+    // Cleanup function
+    return () => {
+      clickHandlers.forEach(({ element, handler }) => {
+        if (element) {
+          element.removeEventListener('click', handler);
+        }
+      });
+    };
+  }, [navigate, setInfoDialogContent, setInfoDialogOpen]);
+
+  /**
+   * Handler invoked when clicking the PC display
    */
   const handlePartClick = () => {
     setToggled(true);
@@ -94,47 +209,37 @@ const InstrumentWindow = () => {
   };
 
   /**
-   * Handler invoked when clicking a svg component to navigate to a different page
+   * Handler for component descriptions in info dialog
+   * Used for components that need dynamic content or are triggered outside the SVG
    */
-  const handlePartClickNavigate = (url) => {
-    navigate(url, -1);
-  }
+  const handleComponentInfoDialog = (componentId, title, content, image, customComponent = null) => {
+    setInfoDialogContent({
+      title,
+      content,
+      image,
+      customComponent
+    });
+    setInfoDialogOpen(true);
+  };
+
+  // Handler for closing the info dialog
+  const handleCloseInfoDialog = () => {
+    setInfoDialogOpen(false);
+  };
 
   return (
     <div id='instrument-window'>
-      <div className="instrument-container">
+      <div id="instrument">
         <SvgInstrumentWindowComponent
-          id='instrument'
-          molecule={molecule} 
-          range={`${frequencyMin} - ${frequencyMax}`} 
-          frequency={currentFrequency} 
-          cyclePerStep={`${currentCycle} / ${numCyclesPerStep}`} 
+          molecule={molecule}
+          range={`${frequencyMin} - ${frequencyMax}`}
+          frequency={currentFrequency}
+          cyclePerStep={`${currentCycle} / ${numCyclesPerStep}`}
           mwBand={mwBand}
           pressure={'1.3 x 10⁻⁶ Torr'}
-          onDisplayCLick={handlePartClick} 
-          onNavigateClick={handlePartClickNavigate}
+          onDisplayCLick={handlePartClick}
+          onComponentInfoClick={handleComponentInfoDialog}
         />
-        
-        {/* Render all clickable components from configuration */}
-        {instrumentClickables.map((clickable) => (
-          <InstrumentClickable
-            key={clickable.id}
-            id={clickable.id}
-            name={clickable.name}
-            description={clickable.description}
-            style={{
-              top: clickable.position.top,
-              left: clickable.position.left,
-              width: clickable.position.width,
-              height: clickable.position.height
-            }}
-            shape={clickable.shape}
-            orientation={clickable.orientation}
-            customClass={clickable.customClass}
-            borderColor={clickable.borderColor || 'red'}
-            svg={process.env.PUBLIC_URL + clickable.svg}
-          />
-        ))}
       </div>
 
       <div id="instrument-spinner">
@@ -170,6 +275,16 @@ const InstrumentWindow = () => {
             </div>
           </CloseButton>
         </Dialog>
+
+        {/* Info dialog for component descriptions */}
+        <InfoDialog
+          open={infoDialogOpen}
+          onClose={handleCloseInfoDialog}
+          title={infoDialogContent.title}
+          content={infoDialogContent.content}
+          image={infoDialogContent.image}
+          customComponent={infoDialogContent.customComponent}
+        />
       </div>
     </div>
   );

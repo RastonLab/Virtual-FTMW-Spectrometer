@@ -22,8 +22,10 @@ const InfoDialog = ({ open, onClose, title, content, image, customComponent, ima
 
   // Process the content to preserve special characters and formatting
   let formattedContent = content
-    .replace(/νres/g, '<span class="subscript">ν<sub>res</sub></span>')
-    .replace(/Γ/g, '<span class="variable">Γ</span>');
+    ? content
+        .replace(/νres/g, '<span class="subscript">ν<sub>res</sub></span>')
+        .replace(/Γ/g, '<span class="variable">Γ</span>')
+    : '';
 
   // Create the table HTML for Fabry-Pérot Cavity dialog
   let tableHtml = '';

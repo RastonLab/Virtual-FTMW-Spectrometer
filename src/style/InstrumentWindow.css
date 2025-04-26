@@ -32,6 +32,94 @@
     pointer-events: auto;
 }
 
+/* Add specific styling for SVG elements that should be clickable */
+#electric:hover, 
+#lecture:hover,
+#movable-mirror:hover,
+#diffusion-pump:hover,
+#rotary-pump:hover,
+#radiation:hover,
+#inside-smooth-spacer:hover,
+#inside-threaded-spacer:hover,
+#wire-and-bellows:hover,
+#fixed-mirror:hover,
+#attachment-and-smooth-spacer:hover,
+#spectrum-ready:hover,
+#gas-value:hover,
+#chamber:hover,
+#mirrors:hover,
+#chamber-frame:hover,
+#main-chamber:hover,
+#path4:hover,
+#ion-gauge:hover,
+#pressure-controller:hover,
+#waveguide:hover,
+#pressure-controller-and-ion-gauge:hover,
+#tuning-rod-motor:hover,
+#motor-and-rod:hover,
+#smooth-rod:hover,
+#rod-with-smooth-spacer:hover,
+#rod-with-threaded-spacer:hover,
+#threaded-spacer:hover,
+#attachment-and-threaded-spacer:hover {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7));
+    cursor: pointer;
+}
+
+/* Individual hover styles for specific components */
+#electric:hover {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.9));
+}
+
+#lecture:hover {
+    filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.8));
+}
+
+#movable-mirror:hover,
+#fixed-mirror:hover,
+#path4:hover {
+    filter: drop-shadow(0 0 5px rgba(0, 128, 255, 0.8));
+}
+
+#gas-value:hover,
+#ion-gauge:hover,
+#waveguide:hover,
+#pressure-controller:hover,
+#pressure-controller-and-ion-gauge:hover {
+    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8));
+}
+
+#diffusion-pump:hover,
+#rotary-pump:hover {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.8));
+}
+
+#radiation:hover,
+#wire-and-bellows:hover {
+    filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.8));
+}
+
+#inside-smooth-spacer:hover,
+#inside-threaded-spacer:hover,
+#attachment-and-smooth-spacer:hover,
+#tuning-rod-motor:hover,
+#motor-and-rod:hover,
+#smooth-rod:hover,
+#rod-with-smooth-spacer:hover,
+#rod-with-threaded-spacer:hover,
+#threaded-spacer:hover,
+#attachment-and-threaded-spacer:hover {
+    filter: drop-shadow(0 0 5px rgba(128, 128, 0, 0.8));
+}
+
+#chamber:hover, 
+#mirrors:hover,
+#chamber-frame:hover, 
+#main-chamber:hover {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.8));
+}
+
 #instrument-spinner {
     display: flex;
     flex-direction: column;
