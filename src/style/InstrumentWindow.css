@@ -9,12 +9,27 @@
     dominant-baseline: middle;
 }
 
-/* Specific rule to ensure the lightning bolt is not clickable */
-#electric {
+/* Specific rule to ensure the lightning bolt is not clickable and has no hover effects */
+#electric, #electric * {
     cursor: default !important;
     pointer-events: none !important;
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    filter: none !important;
+    opacity: 1 !important;
 }
 
+/* Hide scrollbar while preserving scroll functionality */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Control instrument window layout */
 #instrument-window {
     display: flex;
     position: relative;
@@ -155,6 +170,7 @@ body.instrument-page {
     overflow-x: hidden;
     width: 100%;
     height: 100%;
+    scrollbar-width: none; /* Firefox */
 }
 
 /* Style for clickable areas */

@@ -1,0 +1,52 @@
+/* 
+ * This file contains specific overrides for icons in the app 
+ * to prevent any hover effects or transformations
+ */
+
+/* Target the GitHub and Info icons specifically */
+.icon, 
+a:hover .icon,
+a .icon:hover,
+a:hover,
+.MuiSvgIcon-root.icon {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    will-change: unset !important;
+    transform-origin: unset !important;
+    scale: 1 !important;
+}
+
+/* Force all parent elements to also not have hover effects */
+.left-cluster a,
+.left-cluster a:hover,
+.left-cluster a:active,
+.left-cluster a:focus {
+    transform: none !important;
+    transition: none !important;
+    scale: 1 !important;
+    box-shadow: none !important;
+}
+
+/* Force Material-UI specific overrides */
+.MuiSvgIcon-root.icon:hover,
+.MuiSvgIcon-root.icon:active,
+.MuiSvgIcon-root.icon:focus {
+    transform: none !important;
+    scale: 1 !important;
+}
+
+/* Target the lightning bolt in all contexts */
+#electric,
+#electric *,
+#electric path,
+#electric g {
+    cursor: default !important;
+    pointer-events: none !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+    scale: 1 !important;
+    opacity: 1 !important;
+} 

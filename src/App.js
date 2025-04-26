@@ -32,6 +32,7 @@ import { Outlet, Link } from "react-router-dom";
 
 // style
 import "./style/App.css";
+import "./style/IconOverrides.css";
 import { SHOW_DEVMODE } from "./dictionaries/constants";
 
 /**
@@ -69,6 +70,24 @@ export default function App() {
 
   const closeInfoPopover = () => {
     setInfoPopover(null);
+  };
+
+  // Static styles with no hover effects or transitions
+  const iconStyle = {
+    fontSize: '35px', 
+    transition: 'none', 
+    transform: 'none'
+  };
+
+  const infoIconStyle = {
+    fontSize: '38px', 
+    transition: 'none', 
+    transform: 'none'
+  };
+
+  const anchorStyle = {
+    transition: 'none',
+    transform: 'none'
   };
 
   return (
@@ -193,10 +212,12 @@ export default function App() {
                 href="https://github.com/FTMW-Scientific-Simulator/Virtual-FTMW-Spectrometer#readme"
                 target="_blank"
                 rel="noreferrer"
+                style={anchorStyle}
+                className="no-hover"
               >
                 <GitHub
-                  className="icon"
-                  sx={{ fontSize: "35px" }}
+                  className="icon no-hover"
+                  sx={iconStyle}
                   onMouseEnter={openGitHubPopover}
                   onMouseLeave={closeGitHubPopover}
                 />
@@ -206,10 +227,12 @@ export default function App() {
                 href="https://github.com/radis/radis#readme"
                 target="_blank"
                 rel="noreferrer"
+                style={anchorStyle}
+                className="no-hover"
               >
                 <InfoIcon
-                  className="icon"
-                  sx={{ fontSize: "38px" }}
+                  className="icon no-hover"
+                  sx={infoIconStyle}
                   onMouseEnter={openInfoPopover}
                   onMouseLeave={closeInfoPopover}
                 />
