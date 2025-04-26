@@ -186,6 +186,13 @@ const InstrumentWindow = () => {
       }
     });
     
+    // Set the electric/lightning bolt element to not be clickable
+    const electricElement = svgElement.querySelector('#electric');
+    if (electricElement) {
+      electricElement.style.cursor = 'default';
+      electricElement.style.pointerEvents = 'none';
+    }
+    
     // Cleanup function
     return () => {
       clickHandlers.forEach(({ element, handler }) => {

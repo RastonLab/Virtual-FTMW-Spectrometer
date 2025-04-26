@@ -10,13 +10,6 @@
 
 const clickableComponents = [
   {
-    id: 'electric',
-    title: 'Lightning Bolt',
-    description: 'The electronics component that controls the electrical aspects of the FTMW spectrometer.',
-    image: '/assets/svg/components/schematic/RF-amplifier.svg',
-    navigateTo: '/schematic'
-  },
-  {
     id: 'lecture',
     title: 'Lecture bottle',
     description: 'Gas cylinder containing a prepared mixture of a target molecule (often around 1% concentration) diluted in an inert carrier gas like helium. The gas is pulsed into the spectrometer through a nozzle to create a cold supersonic expansion.',

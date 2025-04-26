@@ -9,6 +9,12 @@
     dominant-baseline: middle;
 }
 
+/* Specific rule to ensure the lightning bolt is not clickable */
+#electric {
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
 #instrument-window {
     display: flex;
     position: relative;
@@ -33,7 +39,6 @@
 }
 
 /* Add specific styling for SVG elements that should be clickable */
-#electric:hover, 
 #lecture:hover,
 #movable-mirror:hover,
 #diffusion-pump:hover,
@@ -68,9 +73,7 @@
 }
 
 /* Individual hover styles for specific components */
-#electric:hover {
-    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.9));
-}
+/* Electric (lightning bolt) hover style removed */
 
 #lecture:hover {
     filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.8));
