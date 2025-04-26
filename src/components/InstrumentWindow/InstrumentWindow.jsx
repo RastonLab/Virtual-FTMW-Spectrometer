@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import InstrumentClickable from './InstrumentClickable';
@@ -20,53 +20,24 @@ import { useNavigate } from "react-router-dom";
 const InstrumentWindow = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const containerRef = useRef(null);
 
   const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType, currentCycle } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
   const { data } = useSelector((store) => store.acquireSpectrum);
 
-  const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
+  const delay = ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on animation
 
   const [toggled, setToggled] = useState(false);
 
   /**
-   * Sets the begining state of the instrument window
+   * Sets the beginning state of the instrument window
    */
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null) {
       setSBandState();
     }
-    
-    // Add CSS to handle zoom properly
-    const style = document.createElement('style');
-    style.innerHTML = `
-      @media (min-resolution: 1dppx) {
-        .instrument-clickable-container {
-          transform: scale(1);
-        }
-      }
-      @media (min-resolution: 1.25dppx) {
-        .instrument-clickable-container {
-          transform: scale(0.8);
-        }
-      }
-      @media (min-resolution: 1.5dppx) {
-        .instrument-clickable-container {
-          transform: scale(0.67);
-        }
-      }
-      @media (min-resolution: 2dppx) {
-        .instrument-clickable-container {
-          transform: scale(0.5);
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
   }, []);
 
   useEffect(() => {
@@ -114,7 +85,7 @@ const InstrumentWindow = () => {
   };
 
   /**
-   * Handler invoked when clicking a svg componenent to navigate to a different page
+   * Handler invoked when clicking a svg component to navigate to a different page
    */
   const handlePartClickNavigate = (url) => {
     navigate(url, -1);
@@ -122,7 +93,7 @@ const InstrumentWindow = () => {
 
   return (
     <div id='instrument-window'>
-      <div className="instrument-container">
+      <div className="instrument-container" ref={containerRef}>
         <SvgInstrumentWindowComponent
           id='instrument'
           molecule={molecule} 
@@ -132,7 +103,9 @@ const InstrumentWindow = () => {
           mwBand={mwBand}
           pressure={'1.3 x 10⁻⁶ Torr'}
           onDisplayCLick={handlePartClick} 
-          onNavigateClick={handlePartClickNavigate} />
+          onNavigateClick={handlePartClickNavigate}
+        />
+        
         {/* Render all clickable components from configuration */}
         {instrumentClickables.map((clickable) => (
           <InstrumentClickable
@@ -150,7 +123,8 @@ const InstrumentWindow = () => {
               boxSizing: 'border-box',
               cursor: 'pointer',
               zIndex: 10,
-              opacity: 0.5
+              opacity: 0.5,
+              backgroundColor: clickable.shape === 'rectangle' ? `${clickable.borderColor}10` : undefined,
             }}
             shape={clickable.shape}
             orientation={clickable.orientation}
@@ -185,6 +159,7 @@ const InstrumentWindow = () => {
           onClose={handleClick}
           open={toggled}
           fullScreen={true}
+          className="spectrum-dialog"
         >
           <CloseButton id="customized-dialog-title" onClose={handleClick}>
             <div className="popup-tooltip popup-spectra">

@@ -58,7 +58,8 @@ const InstrumentClickable = ({
   };
 
   // Handle opening the dialog
-  const handleOpenDialog = () => {
+  const handleOpenDialog = (e) => {
+    e.stopPropagation(); // Prevent event bubbling
     setDialogOpen(true);
     if (onDialogOpen) onDialogOpen(id);
   };
@@ -88,8 +89,13 @@ const InstrumentClickable = ({
           ...style,
           borderColor: borderColor,
           backgroundColor: shape === 'rectangle' ? `${borderColor}10` : undefined,
-          clipPath: shape === 'triangle' ? getClipPath() : 'none'
+          clipPath: shape === 'triangle' ? getClipPath() : 'none',
+          // Force hardware acceleration for better positioning
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          WebkitFontSmoothing: 'antialiased'
         }}
+        title={name}
       />
       
       <InfoDialog
