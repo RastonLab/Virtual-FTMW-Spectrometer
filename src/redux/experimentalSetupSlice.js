@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  molecule: "C7H5N",
+  molecule: "C6H5CN",
   stepSize: 1,
   frequencyMin: 2000,
   frequencyMax: 4000,
