@@ -13,6 +13,8 @@ import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotl
 import InfoDialog from '../InfoDialog';
 import { useNavigate } from "react-router-dom";
 import clickableComponents from './config/clickableComponents';
+import instrumentClickables from './config/instrumentClickables';
+import InstrumentClickable from './InstrumentClickable';
 
 /**
  * A component that contains the instrument window
@@ -246,6 +248,59 @@ const InstrumentWindow = () => {
           pressure={'1.3 x 10⁻⁶ Torr'}
           onDisplayCLick={handlePartClick}
           onComponentInfoClick={handleComponentInfoDialog}
+        />
+        
+        {/* Fabry-Pérot cavity clickable */}
+        <InstrumentClickable
+          key="fabry-perot-cavity"
+          id="fabry-perot-cavity"
+          name="Fabry-Pérot Cavity"
+          description="This is where molecules are polarized by the microwave field, leading to the coherent emission that is detected in FTMW spectroscopy. The Fabry-Pérot cavity is a high-Q resonator consisting of two concave mirrors (one fixed and one movable) that confines the microwave radiation, which enhances field strength and spectral resolution. The bandwidth, Γ, in FTMW spectroscopy is typically around 1 MHz at a resonance frequency, νres, of 10 GHz; this can be determined from the equation, Γ = νres/Q, where Q = 10,000."
+          style={{
+            top: '23.5%',
+            left: '34%',
+            width: '52.5%',
+            height: '42%'
+          }}
+          svg="/assets/svg/components/instruments/graph.png"
+          borderColor="red"
+          onDialogClose={handleCloseInfoDialog}
+        />
+        
+        {/* Pressure Controller Label clickable - no visible border */}
+        <InstrumentClickable
+          key="pressure-controller-label"
+          id="pressure-controller-label"
+          name="Pressure Controller"
+          description="Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ - 10⁻¹¹ bar) inside the chamber."
+          style={{
+            top: '3.5%',
+            left: '33%',
+            width: '9.3%',
+            height: '2.5%'
+          }}
+          svg="/assets/svg/components/instruments/pressure-controller.svg"
+          borderColor="transparent"
+          customClass="pressure-controller-label"
+          onDialogClose={handleCloseInfoDialog}
+        />
+        
+        {/* Pressure Display clickable - no visible border */}
+        <InstrumentClickable
+          key="pressure-display"
+          id="pressure-display"
+          name="Pressure Display"
+          description="Digital display showing the current pressure reading in Torr (1 Torr ≈ 1.33 mbar). This low pressure (10⁻⁶ Torr range) is essential for FTMW spectroscopy to minimize collisions between the molecules and background gas."
+          style={{
+            top: '5.5%',
+            left: '33%',
+            width: '9.3%',
+            height: '6%'
+          }}
+          svg="/assets/svg/components/instruments/pressure-display.svg"
+          borderColor="transparent"
+          customClass="pressure-display"
+          onDialogClose={handleCloseInfoDialog}
         />
       </div>
 
