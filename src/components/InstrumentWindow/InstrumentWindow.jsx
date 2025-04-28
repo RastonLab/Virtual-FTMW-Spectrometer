@@ -279,8 +279,8 @@ const InstrumentWindow = () => {
           description="This is where molecules are polarized by the microwave field, leading to the coherent emission that is detected in FTMW spectroscopy. The Fabry-Pérot cavity is a high-Q resonator consisting of two concave mirrors (one fixed and one movable) that confines the microwave radiation, which enhances field strength and spectral resolution. The bandwidth, Γ, in FTMW spectroscopy is typically around 1 MHz at a resonance frequency, νres, of 10 GHz; this can be determined from the equation, Γ = νres/Q, where Q = 10,000."
           style={{
             top: '23.5%',
-            left: '34%',
-            width: '52.5%',
+            left: '35%',
+            width: '50%',
             height: '42%',
             zIndex: 5,
             opacity: 0,
