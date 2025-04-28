@@ -15,6 +15,7 @@ import InfoDialog from '../InfoDialog';
  * @param {string} props.customClass - Optional custom CSS class for special shapes
  * @param {Function} props.onDialogOpen - Optional callback for when dialog opens
  * @param {Function} props.onDialogClose - Optional callback for when dialog closes
+ * @param {string} props.title - Title to be displayed on the clickable area
  */
 const InstrumentClickable = ({ 
   id,
@@ -27,7 +28,8 @@ const InstrumentClickable = ({
   orientation = 'top-right',
   customClass = '',
   onDialogOpen,
-  onDialogClose
+  onDialogClose,
+  title
 }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
@@ -102,7 +104,7 @@ const InstrumentClickable = ({
           opacity: 0.5,
           transition: 'opacity 0.3s ease'
         }}
-        title={name}
+        title={title}
       />
       
       <InfoDialog

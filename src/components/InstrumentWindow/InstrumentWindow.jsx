@@ -195,6 +195,27 @@ const InstrumentWindow = () => {
       electricElement.style.pointerEvents = 'none';
     }
     
+    // Make pressure controller elements not clickable
+    const pressureElements = [
+      'pressure-controller-and-ion-gauge',
+      'pressure-controller'
+    ];
+    
+    pressureElements.forEach(id => {
+      const element = svgElement.querySelector(`#${id}`);
+      if (element) {
+        element.style.cursor = 'default';
+        element.style.pointerEvents = 'none';
+      }
+    });
+    
+    // Specifically ensure ion gauge is clickable
+    const ionGaugeElement = svgElement.querySelector('#ion-gauge');
+    if (ionGaugeElement) {
+      ionGaugeElement.style.cursor = 'pointer';
+      ionGaugeElement.style.pointerEvents = 'auto';
+    }
+    
     // Cleanup function
     return () => {
       clickHandlers.forEach(({ element, handler }) => {
@@ -260,47 +281,94 @@ const InstrumentWindow = () => {
             top: '23.5%',
             left: '34%',
             width: '52.5%',
-            height: '42%'
+            height: '42%',
+            zIndex: 5,
+            opacity: 0,
+            border: 'none',
+            background: 'transparent',
+            outline: 'none',
+            boxShadow: 'none'
           }}
+          className="invisible-clickable"
           svg="/assets/svg/components/instruments/graph.png"
-          borderColor="red"
+          borderColor="transparent"
           onDialogClose={handleCloseInfoDialog}
+          title={null}
         />
         
-        {/* Pressure Controller Label clickable - no visible border */}
+        {/* Pressure Controller clickable */}
         <InstrumentClickable
-          key="pressure-controller-label"
-          id="pressure-controller-label"
+          key="pressure-controller-clickable"
+          id="pressure-controller-clickable"
           name="Pressure Controller"
           description="Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ - 10⁻¹¹ bar) inside the chamber."
           style={{
-            top: '3.5%',
-            left: '33%',
-            width: '9.3%',
-            height: '2.5%'
+            top: '6.2%',
+            left: '40.5%',
+            width: '11%',
+            height: '8.5%',
+            zIndex: 5,
+            opacity: 0,
+            border: 'none',
+            background: 'transparent',
+            outline: 'none',
+            boxShadow: 'none'
           }}
+          className="invisible-clickable"
           svg="/assets/svg/components/instruments/pressure-controller.svg"
           borderColor="transparent"
-          customClass="pressure-controller-label"
           onDialogClose={handleCloseInfoDialog}
+          title={null}
         />
         
-        {/* Pressure Display clickable - no visible border */}
+        {/* Pressure Controller small clickable 1 */}
         <InstrumentClickable
-          key="pressure-display"
-          id="pressure-display"
-          name="Pressure Display"
-          description="Digital display showing the current pressure reading in Torr (1 Torr ≈ 1.33 mbar). This low pressure (10⁻⁶ Torr range) is essential for FTMW spectroscopy to minimize collisions between the molecules and background gas."
+          key="pressure-controller-small-1"
+          id="pressure-controller-small-1"
+          name="Pressure Controller"
+          description="Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ - 10⁻¹¹ bar) inside the chamber."
           style={{
-            top: '5.5%',
-            left: '33%',
-            width: '9.3%',
-            height: '6%'
+            top: '14.6%',
+            left: '41.7%',
+            width: '1.9%',
+            height: '1.9%',
+            zIndex: 5,
+            opacity: 0,
+            border: 'none',
+            background: 'transparent',
+            outline: 'none',
+            boxShadow: 'none'
           }}
-          svg="/assets/svg/components/instruments/pressure-display.svg"
+          className="invisible-clickable"
+          svg="/assets/svg/components/instruments/pressure-controller.svg"
           borderColor="transparent"
-          customClass="pressure-display"
           onDialogClose={handleCloseInfoDialog}
+          title={null}
+        />
+        
+        {/* Pressure Controller small clickable 2 */}
+        <InstrumentClickable
+          key="pressure-controller-small-2"
+          id="pressure-controller-small-2"
+          name="Pressure Controller"
+          description="Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ - 10⁻¹¹ bar) inside the chamber."
+          style={{
+            top: '14.6%',
+            left: '48.6%',
+            width: '1.9%',
+            height: '1.9%',
+            zIndex: 5,
+            opacity: 0,
+            border: 'none',
+            background: 'transparent',
+            outline: 'none',
+            boxShadow: 'none'
+          }}
+          className="invisible-clickable"
+          svg="/assets/svg/components/instruments/pressure-controller.svg"
+          borderColor="transparent"
+          onDialogClose={handleCloseInfoDialog}
+          title={null}
         />
       </div>
 

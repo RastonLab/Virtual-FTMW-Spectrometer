@@ -54,42 +54,40 @@ html, body {
 }
 
 /* Add specific styling for SVG elements that should be clickable */
-#lecture:hover,
-#movable-mirror:hover,
-#diffusion-pump:hover,
-#rotary-pump:hover,
-#radiation:hover,
-#inside-smooth-spacer:hover,
-#inside-threaded-spacer:hover,
-#wire-and-bellows:hover,
-#fixed-mirror:hover,
-#attachment-and-smooth-spacer:hover,
-#spectrum-ready:hover,
-#gas-value:hover,
-#chamber:hover,
-#mirrors:hover,
-#chamber-frame:hover,
-#main-chamber:hover,
-#path4:hover,
-#ion-gauge:hover,
-#pressure-controller:hover,
-#waveguide:hover,
-#pressure-controller-and-ion-gauge:hover,
-#tuning-rod-motor:hover,
-#motor-and-rod:hover,
-#smooth-rod:hover,
-#rod-with-smooth-spacer:hover,
-#rod-with-threaded-spacer:hover,
-#threaded-spacer:hover,
-#attachment-and-threaded-spacer:hover {
-    opacity: 0.7;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7));
+/* Hover effects for SVG elements removed as requested */
+#lecture,
+#movable-mirror,
+#diffusion-pump,
+#rotary-pump,
+#radiation,
+#inside-smooth-spacer,
+#inside-threaded-spacer,
+#wire-and-bellows,
+#fixed-mirror,
+#attachment-and-smooth-spacer,
+#spectrum-ready,
+#gas-value,
+#chamber,
+#mirrors,
+#chamber-frame,
+#main-chamber,
+#path4,
+#ion-gauge,
+#pressure-controller,
+#waveguide,
+#pressure-controller-and-ion-gauge,
+#tuning-rod-motor,
+#motor-and-rod,
+#smooth-rod,
+#rod-with-smooth-spacer,
+#rod-with-threaded-spacer,
+#threaded-spacer,
+#attachment-and-threaded-spacer {
     cursor: pointer;
 }
 
-/* Individual hover styles for specific components */
-/* Electric (lightning bolt) hover style removed */
-
+/* Individual hover styles for specific components - REMOVED */
+/* 
 #lecture:hover {
     filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.8));
 }
@@ -137,6 +135,7 @@ html, body {
 #main-chamber:hover {
     filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.8));
 }
+*/
 
 #instrument-spinner {
     display: flex;
@@ -186,8 +185,25 @@ body.instrument-page {
 }
 
 .instrument-clickable:hover {
-    opacity: 0.7;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    /* Removed visible hover effects */
+    cursor: pointer;
+}
+
+/* Special style for completely invisible clickable areas */
+.invisible-clickable {
+    opacity: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.invisible-clickable:hover {
+    opacity: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Special style for the spectrum graph clickable */

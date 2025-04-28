@@ -64,34 +64,16 @@ const clickableComponents = [
     image: '/assets/svg/components/schematic/Fixed-mirror.svg'
   },
   {
-    id: 'pressure-controller-and-ion-gauge',
-    title: 'Pressure Controller',
-    description: 'Analog or digital device that is connected to the ion gauge for monitoring the vacuum level (10⁻³ - 10⁻¹¹ bar) inside the chamber.',
-    image: '/assets/svg/components/schematic/ion-gauge.svg'
-  },
-  {
     id: 'ion-gauge',
     title: 'Ion Gauge',
     description: 'Vacuum gauge that measures very low pressures in the spectrometer chamber (down to 10⁻¹¹ bar). It works by ionizing residual gas molecules and detecting the resulting ion current.',
     image: '/assets/svg/components/schematic/ion-gauge.svg'
   },
   {
-    id: 'pressure-controller',
-    title: 'Pressure Controller',
-    description: 'Digital display device that shows the current pressure readings from the ion gauge, allowing monitoring of the vacuum level (10⁻³ - 10⁻¹¹ bar) inside the chamber.',
-    image: '/assets/svg/components/schematic/pressure-controller.svg'
-  },
-  {
     id: 'waveguide',
     title: 'Waveguide',
     description: 'Metal tube or channel that guides electromagnetic waves (microwaves) with minimal loss of energy. It connects the microwave source to the cavity.',
     image: '/assets/svg/components/schematic/waveguide.svg'
-  },
-  {
-    id: 'pressure-value',
-    title: 'Pressure Display',
-    description: 'Analog or digital display showing the current pressure (in Torr) within the vacuum chamber. The pressure is a critical parameter for successful spectroscopy experiments.',
-    image: '/assets/svg/components/instruments/pressure-controller.svg'
   },
   {
     id: 'tuning-rod-motor',
