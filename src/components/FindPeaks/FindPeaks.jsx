@@ -8,6 +8,9 @@ import { FIND_PEAKS } from "../../dictionaries/constants";
 import "../../style/routes/FindPeaks.css";
 import PeakList from "./PeakList";
 
+/**
+ * A component to find the peaks of a spectrum components
+ */
 export default function FindPeaks() {
   const { peaksData } = useSelector((store) => store.peaksData);
   const { data, frequencyMin, frequencyMax } = useSelector((store) => store.acquireSpectrum);
@@ -20,7 +23,7 @@ export default function FindPeaks() {
 
   // Component state
   // Use computed values if available, otherwise default to empty string.
-  const [threshold, setThreshold] = useState(0.01);
+  const [threshold, setThreshold] = useState(0.5);
   const [lowerBound, setLowerBound] = useState(
     data ? (frequencyMin ? frequencyMin : data.x[0]) : ""
   );
@@ -38,14 +41,37 @@ export default function FindPeaks() {
     }
   }, [data, lowerBound, frequencyMin, frequencyMax, upperBound]);
 
-  // Ensure the threshold value stays within [0.01, 5]
-  const validateThreshold = () => {
-    if (threshold < 0.01) {
-      setThreshold(0.01);
-    } else if (threshold > 5) {
-      setThreshold(5);
+  // Update the number of data points in the selected range.
+  useEffect(() => {
+    if (data && data.x) {
+      const xData = data.x;
+      // Find first index with x >= lowerBound.
+      let startIndex = xData.findIndex((element) => element >= lowerBound);
+      startIndex = startIndex === -1 ? 0 : startIndex;
+
+      // Find first index with x >= upperBound.
+      let endIndex = xData.findIndex((element) => element >= upperBound);
+      endIndex = endIndex === -1 ? xData.length - 1 : endIndex;
+
+      const currentDataPoints = xData.slice(startIndex, endIndex + 1).length;
+      setDataPoints(currentDataPoints);
+      setEmptyInput(lowerBound === "" || upperBound === "");
     }
+  }, [data, lowerBound, upperBound]);
+
+  // Ensure the threshold value stays within [0.5]
+  const validateThreshold = () => {
+    if (threshold < 0.5 || threshold === '') {
+      setThreshold(0.5);
+    } 
   };
+
+    // On change, set the threshold value and allow user to erase to blank
+  const handleThresholdChange = (event) => {
+      const value = event.target.value
+      // let user erase to blank
+      setThreshold(value === "" ? "" : Number(value))
+  }
 
   // Ensure that the frequency bounds are within allowed limits and swap if needed.
   const validateBounds = () => {
@@ -70,24 +96,6 @@ export default function FindPeaks() {
     setLowerBound(newValue[0]);
     setUpperBound(newValue[1]);
   };
-
-  // Update the number of data points in the selected range.
-  useEffect(() => {
-    if (data && data.x) {
-      const xData = data.x;
-      // Find first index with x >= lowerBound.
-      let startIndex = xData.findIndex((element) => element >= lowerBound);
-      startIndex = startIndex === -1 ? 0 : startIndex;
-
-      // Find first index with x >= upperBound.
-      let endIndex = xData.findIndex((element) => element >= upperBound);
-      endIndex = endIndex === -1 ? xData.length - 1 : endIndex;
-
-      const currentDataPoints = xData.slice(startIndex, endIndex + 1).length;
-      setDataPoints(currentDataPoints);
-      setEmptyInput(lowerBound === "" || upperBound === "");
-    }
-  }, [data, lowerBound, upperBound]);
 
   // Render the lower/upper bounds inputs and slider.
   const renderBoundsInput = () => (
@@ -161,7 +169,14 @@ export default function FindPeaks() {
 
   // Render the threshold input field.
   const renderThresholdInput = () => (
-    <form id="find-peaks-threshold" name="threshold">
+    <form 
+      id="find-peaks-threshold" 
+      name="threshold"
+      onSubmit={e => {
+        // stop the browser from submitting and reloading
+        e.preventDefault()
+      }}
+      >
       <Box
         sx={{ "& .MuiTextField-root": { m: 1, width: "15ch" } }}
         noValidate
@@ -174,11 +189,8 @@ export default function FindPeaks() {
           placeholder="Enter threshold"
           type="number"
           value={threshold}
-          onChange={(e) => setThreshold(Number(e.target.value))}
+          onChange={(e) => handleThresholdChange(e)}
           onBlur={validateThreshold}
-          InputProps={{
-            inputProps: { min: 0.01, max: 5 },
-          }}
         />
       </Box>
     </form>

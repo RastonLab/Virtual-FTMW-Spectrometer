@@ -188,7 +188,7 @@ const InstrumentWindow = () => {
         >
           <CloseButton id="customized-dialog-title" onClose={handleClick}>
             <div className="popup-tooltip popup-spectra">
-              <h1>Spectra Display</h1>
+              <h1>Spectrum Display</h1>
               <AcquireSpectrumPlotly />
             </div>
           </CloseButton>
