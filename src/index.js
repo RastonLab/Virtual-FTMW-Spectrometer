@@ -31,7 +31,7 @@ root.render(
             <Route path="instrument" element={<InstrumentWindow />} />
             <Route path="experimental-setup" element={<ExperimentalSetup />} />
             <Route path="schematic" element={<SchematicWindow />} />
-            <Route path="spectra" element={<AcquireSpectrumPlotly />} />
+            <Route path="spectrum" element={<AcquireSpectrumPlotly />} />
             <Route path="peaks" element={<FindPeaks />} />
             <Route path="*" element={<NotFound />} />
           </Route>

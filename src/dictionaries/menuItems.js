@@ -52,10 +52,10 @@ export const menuItems = [
         ),
       },
       {
-        label: "Spectra",
+        label: "Spectrum",
         component: (
-          <Link to="/spectra">
-            <div>Spectra</div>
+          <Link to="/spectrum">
+            <div>Spectrum</div>
           </Link>
         ),
       },
