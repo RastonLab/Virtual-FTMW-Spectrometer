@@ -3,69 +3,89 @@ import { Box, CircularProgress, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
 import { setCurrentFrequency, setCurrentCycle } from '../redux/experimentalSetupSlice';
+import { scanEnded } from '../redux/scanSlice';
 
 /**
- * The spinner component that shows the progress of the experiment
+ * Spinner that tracks a running FTMW scan.
  */
 export default function Spinner({ delay, ...otherProps }) {
   const { variant } = otherProps;
-  const { timer } = useSelector((store) => store.timer);
-  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
 
-  const [elapsed, setElapsed] = useState(timer);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
+  const { scanActive, startTime, durationMs } = useSelector((store) => store.scan);
+
+  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
+  const totalTicks = totalSteps * numCyclesPerStep;
+  const guardDuration = durationMs || delay || 1;
+  const tickInterval = guardDuration / totalTicks;
+
   const [stepsDone, setStepsDone] = useState(0);
-  const [cycleCount, setCycleCount] = useState(0);
+  const [elapsed, setElapsed] = useState(0);
 
   const dispatch = useDispatch();
 
-  const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1; 
-  const totalTicks = totalSteps * numCyclesPerStep;
-  const tickInterval = delay / totalTicks;
-  
-  // Updates the steps and cycles done
+  // Set the initial state for the spinner
   useEffect(() => {
-    if (!delay || totalSteps <= 0 || numCyclesPerStep <= 0) return;
-  
+    if (!scanActive) return;
+
+    // Calculate how much time has already passed since scan started
+    const elapsedMs = Date.now() - startTime;
+
+    // Estimate how many ticks have occurred based on elapsed time
+    const ticksSoFar = Math.min(
+      Math.floor(elapsedMs / tickInterval),
+      totalTicks - 1
+    );
+
+    // Break the total ticks into step and cycle positions
+    const initSteps = Math.floor(ticksSoFar / numCyclesPerStep);
+    const initCycles = ticksSoFar % numCyclesPerStep;
+    const initPct = (initSteps / totalSteps) * 100;
+
+    // Set internal state for resuming progress
+    setStepsDone(initSteps);
+    setElapsed(initPct);
+
+    // Push cycle and frequency state into Redux
+    dispatch(setCurrentCycle(initCycles === 0 ? 1 : initCycles + 1));
+    if (acquisitionType === 'range') {
+      dispatch(setCurrentFrequency({ stepsDone: initSteps }));
+    }
+  }, [scanActive, startTime, tickInterval, totalTicks, numCyclesPerStep, totalSteps, dispatch, acquisitionType]);
+
+  // Set up the interval to update the spinner
+  useEffect(() => {
+    if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
+
+    let cycleCount = 0;
+
     const interval = setInterval(() => {
+      cycleCount++;
 
-      // Updates the cycle count used to update redux variable for current cycle
-      setCycleCount(prev => {
-        const nextCycle = prev + 1;
-  
-        if (nextCycle < numCyclesPerStep) {
-          return nextCycle;
-        }
-        return 0;
-      });
-  
-      // Uses cycle count to update redux variable for current cycle
-      setCycleCount(current => {
-        // If current is 0, set current cycle to 1, else increment by 1
-        dispatch(setCurrentCycle(current === 0 ? 1 : current + 1)); 
-        return current;
-      });
-  
-      // Updates the steps done
-      setCycleCount(current => {
-        if (current === 0) {
-          setStepsDone(step => {
-            const nextStep = step + 1;
-            if (nextStep >= totalSteps) {
-              clearInterval(interval);
-              dispatch(setProgress(false, false, false));
-              return step;
-            }
-            return nextStep;
-          });
-        }
-        return current;
-      });
+      // If a full cycle set is complete, increment the step
+      if (cycleCount >= numCyclesPerStep) {
+        cycleCount = 0;
+
+        setStepsDone((step) => {
+          const nextStep = step + 1;
+          if (nextStep >= totalSteps) {
+            clearInterval(interval);
+            dispatch(setProgress(false, false, false));
+            dispatch(scanEnded());
+            return step;
+          }
+          return nextStep;
+        });
+      }
+
+      // Update cycle count in Redux
+      dispatch(setCurrentCycle(cycleCount + 1));
     }, tickInterval);
-  
-    return () => clearInterval(interval);
-  }, [delay, totalSteps, numCyclesPerStep, cycleCount, tickInterval, dispatch]);
 
-  // derive percent from steps
+    return () => clearInterval(interval);
+  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch]);
+
+  // Recalculate percent complete and update Redux frequency
   useEffect(() => {
     const pct = (stepsDone / totalSteps) * 100;
     setElapsed(pct);
@@ -74,6 +94,8 @@ export default function Spinner({ delay, ...otherProps }) {
       dispatch(setCurrentFrequency({ stepsDone }));
     }
   }, [stepsDone, totalSteps, acquisitionType, dispatch]);
+
+  if (!scanActive) return null;
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>
