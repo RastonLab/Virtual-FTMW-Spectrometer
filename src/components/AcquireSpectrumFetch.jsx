@@ -5,7 +5,6 @@ import { setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
 import { setSpectrumData, setSpectrumParameters } from "../redux/acquireSpectrumSlice";
 import { useNavigate } from "react-router-dom";
-import { setTimer } from "../redux/timerSlice";
 import { setCurrentFrequency } from "../redux/experimentalSetupSlice";
 import { setPeaksData } from "../redux/peaksDataSlice";
 import { scanStarted } from "../redux/scanSlice";
@@ -70,8 +69,6 @@ export default function AcquireSpectrumFetch({
     dispatch(setProgress([true, true, false]));
     dispatch(setCurrentFrequency(frequencyMin));
     dispatch(setPeaksData(null))
-
-    dispatch(setTimer(0));
     
     let body = "";
     let delay = 0;
