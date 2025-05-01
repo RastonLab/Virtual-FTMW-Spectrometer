@@ -166,7 +166,7 @@ const InstrumentWindow = () => {
         {prefetch && <Spinner variant="indeterminate" size={100} />}
         {postfetch && (
           <>
-            <h2>Processing Sample...</h2>
+            <h2>Acquiring Spectrum...</h2>
             <Spinner
               variant="determinate"
               size={100}
