@@ -70,8 +70,10 @@ export default function Spinner({ delay, ...otherProps }) {
           const nextStep = step + 1;
           if (nextStep >= totalSteps) {
             clearInterval(interval);
-            dispatch(setProgress(false, false, false));
-            dispatch(scanEnded());
+            setTimeout(() => {
+              dispatch(setProgress(false, false, false));
+              dispatch(scanEnded());
+            }, 0);
             return step;
           }
           return nextStep;

@@ -3,7 +3,6 @@ import { cancelAnimation } from "./InstrumentWindow/animations/instrumentWindowA
 import { useDispatch, useSelector } from "react-redux";
 import { setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
-import { setTimer } from "../redux/timerSlice";
 import { setPeaksData } from "../redux/peaksDataSlice";
 
 export let sleepID = 0;
@@ -52,8 +51,6 @@ export default function FindPeaksFetch({
     // remove any errors (if existing) and start a progress spinner
     dispatch(setError([false, null]));
     dispatch(setProgress([true, true, false]));
-
-    dispatch(setTimer(0));
     
     let body = "";
 
