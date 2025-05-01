@@ -11,8 +11,7 @@ import { scanEnded } from '../redux/scanSlice';
 export default function Spinner({ delay, ...otherProps }) {
   const { variant } = otherProps;
 
-  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } =
-    useSelector((store) => store.experimentalSetup);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
   const { scanActive, startTime, durationMs } = useSelector((store) => store.scan);
 
   const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
@@ -25,6 +24,7 @@ export default function Spinner({ delay, ...otherProps }) {
 
   const dispatch = useDispatch();
 
+  // Set the initial state for the spinner
   useEffect(() => {
     if (!scanActive) return;
 
@@ -53,6 +53,7 @@ export default function Spinner({ delay, ...otherProps }) {
     }
   }, [scanActive, startTime, tickInterval, totalTicks, numCyclesPerStep, totalSteps, dispatch, acquisitionType]);
 
+  // Set up the interval to update the spinner
   useEffect(() => {
     if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
 
