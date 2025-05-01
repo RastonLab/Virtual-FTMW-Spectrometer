@@ -80,8 +80,9 @@ const InstrumentWindow = () => {
    */
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
-      animateToBand(mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep);
+      animateToBand(mwBand, currentFrequency, frequencyMax, stepSize, numCyclesPerStep);
     }
+  // eslint-disable-next-line 
   }, [postfetch, mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType]);
 
   /**
@@ -166,7 +167,7 @@ const InstrumentWindow = () => {
         {prefetch && <Spinner variant="indeterminate" size={100} />}
         {postfetch && (
           <>
-            <h2>Processing Sample...</h2>
+            <h2>Acquiring Spectrum...</h2>
             <Spinner
               variant="determinate"
               size={100}
@@ -188,7 +189,7 @@ const InstrumentWindow = () => {
         >
           <CloseButton id="customized-dialog-title" onClose={handleClick}>
             <div className="popup-tooltip popup-spectra">
-              <h1>Spectra Display</h1>
+              <h1>Spectrum Display</h1>
               <AcquireSpectrumPlotly />
             </div>
           </CloseButton>

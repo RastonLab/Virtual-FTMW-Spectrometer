@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  molecule: "C6H5CN",
+  molecule: "OCS",
   stepSize: 1,
-  frequencyMin: 2000,
-  frequencyMax: 4000,
+  frequencyMin: 12100,
+  frequencyMax: 12200,
   numCyclesPerStep: 1,
   microwavePulseWidth: 1,
-  mwBand: "S",
-  frequencyRange: { min: 2, max: 40 },
+  mwBand: "Ku",
+  frequencyRange: { min: 12000, max: 18000 },
   repetitionRate: 1,
   molecularPulseWidth: 500,
-  acquisitionType: 'single',
+  acquisitionType: 'range',
   vres: 2000,
   currentFrequency: 0,
-  currentCycle: 0
+  currentCycle: 1
 };
 
 /**

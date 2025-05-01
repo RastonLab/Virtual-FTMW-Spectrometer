@@ -24,7 +24,6 @@ import {
 
 // mui icons
 import { GitHub } from "@mui/icons-material";
-import InfoIcon from "@mui/icons-material/Info";
 import MenuIcon from "@mui/icons-material/Menu";
 
 // router
@@ -41,7 +40,6 @@ export default function App() {
   const [expanded, setExpanded] = useState("");
   const [drawer, setDrawer] = useState(false);
   const [gitHubPopover, setGutHubPopover] = useState(false);
-  const [infoPopover, setInfoPopover] = useState(false);
 
   const handleChange = (panel) => (newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -61,14 +59,6 @@ export default function App() {
 
   const closeGitHubPopover = () => {
     setGutHubPopover(null);
-  };
-
-  const openInfoPopover = (event) => {
-    setInfoPopover(event.currentTarget);
-  };
-
-  const closeInfoPopover = () => {
-    setInfoPopover(null);
   };
 
   return (
@@ -202,19 +192,6 @@ export default function App() {
                 />
               </a>
 
-              <a
-                href="https://github.com/radis/radis#readme"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <InfoIcon
-                  className="icon"
-                  sx={{ fontSize: "38px" }}
-                  onMouseEnter={openInfoPopover}
-                  onMouseLeave={closeInfoPopover}
-                />
-              </a>
-
               {/* Icon Popovers */}
               <Popover
                 sx={{ pointerEvents: "none" }}
@@ -231,23 +208,6 @@ export default function App() {
               >
                 If you are interested in the code and tools
                 <br /> behind this project check out our GitHub!
-              </Popover>
-
-              <Popover
-                sx={{ pointerEvents: "none" }}
-                open={Boolean(infoPopover)}
-                anchorEl={infoPopover}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-              >
-                A core part of this project is RADIS. <br /> Find out more about
-                RADIS here!
               </Popover>
             </div>
           </Toolbar>

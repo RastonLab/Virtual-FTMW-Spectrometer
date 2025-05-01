@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { setTimer } from "../redux/timerSlice";
 import { setCurrentFrequency } from "../redux/experimentalSetupSlice";
 import { setPeaksData } from "../redux/peaksDataSlice";
+import { scanStarted } from "../redux/scanSlice";
 
 export let sleepID = 0;
 
@@ -53,7 +54,7 @@ export default function AcquireSpectrumFetch({
         .querySelector("#cancel-scan-button")
         .addEventListener("click", () => {
           controller.abort();
-          if (document.querySelector("instrument-window") !== null) {
+          if (document.getElementById("instrument-window") !== null) {
             cancelAnimation();
           }
         });
@@ -110,6 +111,7 @@ export default function AcquireSpectrumFetch({
 
           // if the acquisition type is range, navigate to instrument page
           if (acquisitionType === "range") {
+            dispatch(scanStarted({ startTime: Date.now(), durationMs: delay }));
             nav("/instrument", -1);
           }
           sleepID = setTimeout(() => {

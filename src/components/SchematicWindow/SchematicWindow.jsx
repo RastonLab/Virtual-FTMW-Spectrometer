@@ -56,8 +56,8 @@ const SchematicWindow = () => {
         }
         else if (componentId === 'radio-frequency-reference') {
             setDialogContent({
-                title: 'Radio Frequency Reference',
-                content: 'Typically a 10 MHz rubidium frequency standard, ensuring phase stability and synchronization across the spectrometer components.',
+                title: 'RF signal generator',
+                content: 'RF signal generator: Generates a 30 MHz reference signal that is mixed with the microwave signal to produce the tuning frequency used in the excitation pulse.',
                 image: rfSignalGeneratorImage,
                 customComponent: null
             });

@@ -20,8 +20,8 @@ const SchematicDescription = () => (
             into the wire hook antenna <b>(8)</b> that couples the radiation into the Fabry-Pérot 
             cavity <b>(9)</b>. Inside the cavity, the MW field interacts with a molecular pulse 
             introduced via a solenoid valve <b>(10)</b> that is controlled by a power supply 
-            driver <b>(11)</b>. The free induction decay (FID) signal is received by the antenna 
-            <b>(8)</b> and directed via the circulator <b>(7)</b> to the receiving arm: Here, the signal 
+            driver <b>(11)</b>. The free induction decay (FID) signal is received by the antenna <b>(8)</b> and
+            directed via the circulator <b>(7)</b> to the receiving arm: Here, the signal 
             is gated <b>(12)</b> to a low-noise amplifier <b>(13)</b> and then heterodyned through an 
             image rejection mixer <b>(14)</b>. This results in a signal that is the sum of the 
             reference signal (30 MHz) and the difference frequency between the molecular 
