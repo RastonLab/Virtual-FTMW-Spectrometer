@@ -70,17 +70,17 @@ const InstrumentWindow = () => {
   }, []);
 
   useEffect(() => {
-    if (data) {
+    if (data && !postfetch) {
       setSpectrumReady();
     }
-  }, [data]);
+  }, [data, postfetch]);
 
   /**
    * Animates the instrument window
    */
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
-      animateToBand(mwBand, currentFrequency, frequencyMax, stepSize, numCyclesPerStep);
+      animateToBand(mwBand, currentFrequency, frequencyMax, stepSize, numCyclesPerStep, frequencyMin);
     }
   // eslint-disable-next-line 
   }, [postfetch, mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType]);
