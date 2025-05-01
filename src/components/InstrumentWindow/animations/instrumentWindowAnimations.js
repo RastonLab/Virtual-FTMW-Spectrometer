@@ -1,5 +1,8 @@
 import { C_BAND_KEYFRAMES, K_BAND_KEYFRAMES, KA_BAND_KEYFRAMES, Ku_BAND_KEYFRAMES, S_BAND_KEYFRAMES, X_BAND_KEYFRAMES } from "./mwBandKeyframes";
 
+// Global timeout tracker used to cancel all timeouts when the animation is cancelled
+let animationTimeouts = [];
+
 /**
  * Function that returns the components that are necessary for the mirror animation.
  */
@@ -146,26 +149,30 @@ export function animateToBand(
     availableKeys = availableKeys.slice(currentKeyIndex);
     const currentKey = availableKeys[currentKeyIndex];
 
-    if (currentKey) {
-      componentNames.forEach(name => {
-        components[name].style.transform = bandKeyframes[currentKey][name].transform;
-      });
-    }
+    const jumpTimeout = setTimeout(() => {
+      if (currentKey) {
+        componentNames.forEach(name => {
+          components[name].style.transform = bandKeyframes[currentKey][name].transform;
+        });
+      }
+    }, firstSegmentDuration);
+    animationTimeouts.push(jumpTimeout);
   }
 
   // If the current frequency is not the minimum frequency, then we dont need to have the 1200ms pauses
   const firstPause = currentFrequency !== frequencyMin ? 0 : firstSegmentDuration;
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
   
-  setTimeout(() => {  
-    // Shows the radiation graphics for the selected mw band
+  const radiationTimeout = setTimeout(() => {
     radiationGraphics[mwBand].style.display = "";
-    setTimeout(() => {
+
+    const animateTimeout = setTimeout(() => {
       const secondTiming = {
         duration: totalScanTime,
         easing: "linear",
         fill: "forwards"
       };
+
       componentNames.forEach(name => {
         components[name].animate(
           availableKeys.map(key => ({
@@ -174,12 +181,16 @@ export function animateToBand(
           secondTiming
         );
       });
-      setTimeout(() => {
+
+      const endTimeout = setTimeout(() => {
         radiationGraphics[mwBand].style.display = "none";
         components.spectrumReady.style.display = "";
       }, totalScanTime);
+      animationTimeouts.push(endTimeout);
     }, secondPause);
+    animationTimeouts.push(animateTimeout);
   }, firstPause);
+  animationTimeouts.push(radiationTimeout);
 }
 
 /**
@@ -201,6 +212,10 @@ export function cancelAnimation() {
           component.getAnimations().forEach((animation) => animation.cancel());
       }
   });
+
+  // Cancel all timeouts
+  animationTimeouts.forEach(clearTimeout);
+  animationTimeouts = [];
 
   setSBandState();
   components.sBand.style.display = "none";
