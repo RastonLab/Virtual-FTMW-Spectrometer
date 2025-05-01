@@ -80,8 +80,9 @@ const InstrumentWindow = () => {
    */
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
-      animateToBand(mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep);
+      animateToBand(mwBand, currentFrequency, frequencyMax, stepSize, numCyclesPerStep);
     }
+  // eslint-disable-next-line 
   }, [postfetch, mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType]);
 
   /**
