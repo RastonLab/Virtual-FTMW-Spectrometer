@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/InfoDialog.css';
+import '../style//InfoDialog.css';
 
 const InfoDialog = ({ open, onClose, title, content, image, customComponent, imageFallback, onImageError }) => {
   // If dialog is not open, don't render anything

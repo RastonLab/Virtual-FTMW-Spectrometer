@@ -5,7 +5,7 @@ import Spinner from "../Spinner";
 import FindPeaksFetch from "../FindPeaksFetch";
 import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotly";
 import { FIND_PEAKS } from "../../dictionaries/constants";
-import "../../style/routes/FindPeaks.css";
+import "../../style/FindPeaks.css";
 import PeakList from "./PeakList";
 
 /**

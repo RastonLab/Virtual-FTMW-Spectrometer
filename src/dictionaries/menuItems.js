@@ -99,29 +99,6 @@ export const menuItems = [
         label: "Landing Page",
         component: <LandingPage isMenu={true} />,
       },
-      // {
-      //   label: "Usage",
-      //   button: true,
-      //   title: "Components of the FITR-SIS",
-      //   text: "",
-      // },
-      // {
-      //   label: "About",
-      //   button: true,
-      //   title: "About The Raston Lab: FTIR-SIS",
-      //   text: (
-      //     <p>
-      //       This Virtual Instrument is one of four in development by Raston Lab.
-      //       The goal of these Virtual Instruments is to provide students who do
-      //       not have access to these tools with experience they will need after
-      //       graduation. The FTIR-SIS allows students to generate spectra similar
-      //       to those you would get from the physical instrument. This is achived
-      //       through mathmatical computations combined with data pulled from
-      //       RADIS, a spectrum generation tool that uses data from the latest
-      //       HITRAN database.
-      //     </p>
-      //   ),
-      // },
     ],
   },
 ];

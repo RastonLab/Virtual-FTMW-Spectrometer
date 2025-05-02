@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Molecule from './inputs/MoleculeField.js';
 import Spinner from '../Spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import "../../style/routes/ExperimentalSetup.css";
+import "../../style/ExperimentalSetup.css";
 import FrequencyRange from './inputs/FrequencyRange.js';
 import MicrowaveBand from './inputs/MicrowaveBand.js';
 import SliderComponent from '../SliderComponent.jsx';

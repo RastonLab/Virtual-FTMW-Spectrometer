@@ -4,7 +4,7 @@ import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
 import InstrumentClickable from './InstrumentClickable';
 import '../../style/InstrumentWindow.css';
 import '../../style/InfoDialog.css';
-import { getMWBand } from '../../functions/getMWBand';
+import { getMWBand } from './functions/getMWBand';
 import { setCurrentFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
 import { animateToBand, setSBandState, setSpectrumReady } from './animations/instrumentWindowAnimations';
 import Spinner from '../Spinner';

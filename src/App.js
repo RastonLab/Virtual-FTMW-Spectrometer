@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 // components
 import { ReactComponent as RLLogo } from "./images/RastonLabLogo.svg";
-import DevMode from "./components/DevMode";
 import LandingPage from "./components/LandingPage";
 
 // dictionary
@@ -31,7 +30,6 @@ import { Outlet, Link } from "react-router-dom";
 
 // style
 import "./style/App.css";
-import { SHOW_DEVMODE } from "./dictionaries/constants";
 
 /**
  * "Base" of this project. Contains the MenuBar with room for other "routes" to exist on the rest of the page
@@ -177,7 +175,6 @@ export default function App() {
             ))}
             {/* End Full Sized Menu */}
             <div className="left-cluster">
-              {SHOW_DEVMODE && <DevMode />}
               {/* Icons */}
               <a
                 href="https://github.com/FTMW-Scientific-Simulator/Virtual-FTMW-Spectrometer#readme"

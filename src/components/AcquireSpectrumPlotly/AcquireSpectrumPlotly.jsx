@@ -2,7 +2,7 @@ import React from "react";
 import Plot from "react-plotly.js";
 import { useSelector } from "react-redux";
 import "../../style/components/Plotly.css";
-import "../../style/routes/SpectraWindow.css";
+import "../../style/SpectraWindow.css";
 import Spinner from '../Spinner';
 
 /**
