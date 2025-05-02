@@ -61,8 +61,8 @@ export default function FindPeaks() {
 
   // Ensure the threshold value stays within [0.5]
   const validateThreshold = () => {
-    if (threshold < 0.5 || threshold === '') {
-      setThreshold(0.5);
+    if (threshold < 0.01 || threshold === '') {
+      setThreshold(0.01);
     } 
   };
 
