@@ -1,3 +1,5 @@
+# Virtual-FTMW-Spectrometer
+
 The Virtual FTMW Spectrometer (FTMW-SIS) is a web-based educational tool designed to simulate the operation of a Fourier Transform Microwave (FTMW) spectrometer. Developed for academic use, this simulator enables students to explore rotational spectroscopy principles, generate molecular spectra, and interact with a virtual FTMW instrument, providing hands-on learning without physical hardware.
 
 This project uses [React](https://github.com/facebook/react) for the frontend and [Flask](https://github.com/pallets/flask/) for the backend. The backend is located in a separate [repository](https://github.com/RastonLab/Virtual-FTMW-Functions).
