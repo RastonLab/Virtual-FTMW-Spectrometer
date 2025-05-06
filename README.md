@@ -1,8 +1,8 @@
-# Virtual-FTIR-Spectrometer
+# Virtual-FTMW-Spectrometer
 
-The Raston Lab's **Fourier Transform InfraRed - Scientific Instrument Simulator** (FTIR-SIS) was designed to emulate a student's classroom experience with an FTIR spectrometer. The web application focuses on both spectra generation and a simplified top-down view of the components that make up the spectrometer.
+The Raston Lab's **Fourier Transform Microwave - Scientific Instrument Simulator** (FTMW-SIS) was designed to emulate a student's classroom experience with an FTMW spectrometer. The web application focuses on both spectra generation and a simplified top-down view of the components that make up the spectrometer.
 
-This project uses [React](https://github.com/facebook/react) for the frontend and [Flask](https://github.com/pallets/flask/) for the backend. The backend is located in a separate [repository](https://github.com/RastonLab/Virtual-FTIR-Functions).
+This project uses [React](https://github.com/facebook/react) for the frontend and [Flask](https://github.com/pallets/flask/) for the backend. The backend is located in a separate [repository](https://github.com/RastonLab/Virtual-FTMW-Functions).
 
 ## Installation
 
@@ -14,19 +14,19 @@ The intended audience for this application is undergraduate chemistry students s
 
 - Experimental Setup (spectrometer parameters)
 
-![experimental-setup](https://github.com/RastonLab/Virtual-FTIR-Spectrometer/assets/35882058/03a18ff2-2c05-4ad2-bcc5-eafc54a8e592)
+![experimental-setup](https://github.com/RastonLab/Virtual-FTMW-Spectrometer/assets/35882058/03a18ff2-2c05-4ad2-bcc5-eafc54a8e592)
 
 - Instrument Window (top-down view of simplified spectrometer)
 
-![instrument-window](https://github.com/RastonLab/Virtual-FTIR-Spectrometer/assets/35882058/a060c1ed-db58-451b-b765-01b75f541aec)
+![instrument-window](https://github.com/RastonLab/Virtual-FTMW-Spectrometer/assets/35882058/a060c1ed-db58-451b-b765-01b75f541aec)
 
 - Spectra Window (plotted spectra)
 
-![spectra-window](https://github.com/RastonLab/Virtual-FTIR-Spectrometer/assets/35882058/4d63ea6a-48df-45ef-8c64-c74da499badc)
+![spectra-window](https://github.com/RastonLab/Virtual-FTMW-Spectrometer/assets/35882058/4d63ea6a-48df-45ef-8c64-c74da499badc)
 
 ## Additional Information
 
-Additional information regarding the FTIR-SIS can be found in the repository's [wiki page](../../wiki). This information includes Redix Toolkit, SVG diagrams, SVG optimization, SVG interactivity, and SVG animation.
+Additional information regarding the FTMW-SIS can be found in the repository's [wiki page](../../wiki). This information includes Redux Toolkit, SVG diagrams, SVG optimization, SVG interactivity, and SVG animation.
 
 ## Contributing
 
