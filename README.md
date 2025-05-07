@@ -12,17 +12,26 @@ Information on how to run the front-end can be found in the repository's [wiki p
 
 The intended audience for this application is undergraduate chemistry students studying spectroscopy. The following screenshots are not exhaustive but acknowledge most of the main features:
 
-- Experimental Setup (spectrometer parameters)
+- Experimental Setup (Shows the spectrometer’s physical setup, including the vacuum chamber, molecular beam source, and microwave source )
 
-![experimental-setup](https://github.com/RastonLab/Virtual-FTMW-Spectrometer/assets/35882058/03a18ff2-2c05-4ad2-bcc5-eafc54a8e592)
+![92f8e6051a238581799aaa5401ed3d2](https://github.com/user-attachments/assets/d977d334-f508-45af-9965-a1cad6ec2320)
 
 - Instrument Window (top-down view of simplified spectrometer)
 
-![instrument-window](https://github.com/RastonLab/Virtual-FTMW-Spectrometer/assets/35882058/a060c1ed-db58-451b-b765-01b75f541aec)
+![89359ed31104801a0a964bf63a59ac4](https://github.com/user-attachments/assets/ad4e1413-cc19-47a6-a296-640854873c43)
 
-- Spectra Window (plotted spectra)
+- Schematic Window (Displays a block diagram of the FTMW spectrometer with clickable components to learn their functions.)
+  
+![a9e31cbf3f1a5e8f9c79c907bdd8e85](https://github.com/user-attachments/assets/e4f36e7d-f878-4c9a-9a82-8c213d6fb477)
+  
+- Spectrum Window (plotted Spectrum)
 
-![spectra-window](https://github.com/RastonLab/Virtual-FTMW-Spectrometer/assets/35882058/4d63ea6a-48df-45ef-8c64-c74da499badc)
+![e360da974fe071992d28449ad85a1aa](https://github.com/user-attachments/assets/19376c36-2857-46d9-8e0c-b0235498905c)
+
+- Find Peaks (Highlights spectral peaks in a table or plot, allowing analysis of rotational transitions)
+
+![00ab5a06228b7083301decd80201d9d](https://github.com/user-attachments/assets/a9b4cfeb-487a-4b0c-abfe-5867c68a02b5)
+
 
 ## Additional Information
 
