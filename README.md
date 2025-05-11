@@ -1,6 +1,6 @@
 # Virtual-FTMW-Spectrometer
 
-The Virtual FTMW Spectrometer (FTMW-SIS) is a web-based educational tool designed to simulate the operation of a Fourier Transform Microwave (FTMW) spectrometer. Developed for academic use, this simulator enables students to explore rotational spectroscopy principles, generate molecular spectra, and interact with a virtual FTMW instrument, providing hands-on learning without physical hardware.
+The Virtual FTMW Spectrometer (FTMW-SIS) is a web-based educational tool designed to simulate the operation of a Fourier Transform Microwave (FTMW) spectrometer. Developed for academic use, this simulator enables students to explore rotational spectroscopy principles, generate molecular spectra, and interact with a virtual FTMW instrument, providing hands-on learning without physical hardware. The code base is based off of The Virtual FTIR web application found here (https://ftir.rastonlab.org/).
 
 This project uses [React](https://github.com/facebook/react) for the frontend and [Flask](https://github.com/pallets/flask/) for the backend. The backend is located in a separate [repository](https://github.com/RastonLab/Virtual-FTMW-Functions).
 
@@ -32,15 +32,6 @@ The intended audience for this application is undergraduate chemistry students s
 
 ![00ab5a06228b7083301decd80201d9d](https://github.com/user-attachments/assets/a9b4cfeb-487a-4b0c-abfe-5867c68a02b5)
 
-
-## Additional Information
-
-Additional information regarding the FTMW-SIS can be found in the repository's [wiki page](../../wiki). This information includes Redux Toolkit, SVG diagrams, SVG optimization, SVG interactivity, and SVG animation.
-
-## Contributing
-
-Upkeep of this project is intended for recruited undergraduate students, but pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
 ## License
 
 See [LICENSE](LICENSE)
@@ -52,8 +43,6 @@ See [LICENSE](LICENSE)
 - [MUI](https://mui.com/): React user interface component library (Licensed [MIT](https://github.com/mui/material-ui/blob/master/LICENSE))
 
 - [Plotly.js](https://github.com/plotly/plotly.js): JavaScript data visualization library (Licensed [MIT](https://github.com/plotly/plotly.js/blob/master/LICENSE))
-
-- [Radis](https://radis.github.io/): Spectra generation (Licensed [LGPL-3.0](https://github.com/radis/radis/blob/develop/LICENSE))
 
 - [React](https://react.dev/): JavaScript library for building user interfaces (Licensed [MIT](https://github.com/facebook/react/blob/main/LICENSE))
 
@@ -71,8 +60,9 @@ See [LICENSE](LICENSE)
 
 - [SVGR](https://github.com/gregberge/svgr): Tool for transforming SVGs into React components (Licensed [MIT](https://github.com/gregberge/svgr/blob/main/LICENSE))
 
+- [React-Window](https://github.com/bvaughn/react-window): Lightweight and efficient windowing library for rendering large lists and tabular data (Licensed [MIT](https://github.com/gregberge/svgr/blob/main/LICENSE))
+
 **Inspiration from:**
 
-- [Make a README](https://www.makeareadme.com/): Inspiration for README.md template (Licensed [MIT](https://github.com/dguo/make-a-readme/blob/main/LICENSE))
+- [Raston Lab's FTIR](https://www.makeareadme.com/): Used as a base for FTMW simulator (Licensed [MIT](https://github.com/RastonLab/Virtual-FTIR-Spectrometer?tab=readme-ov-file#virtual-ftir-spectrometer))
 
-- [Radis app](https://www.radis.app/): Inspiration for user interface components like the dual slider for the wavenumber range (Licensed [LGPL-3.0](https://github.com/suzil/radis-app/blob/main/LICENSE))
