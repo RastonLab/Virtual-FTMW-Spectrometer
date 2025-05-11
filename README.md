@@ -2,7 +2,7 @@
 
 The Virtual FTMW Spectrometer (FTMW-SIS) is a web-based educational tool designed to simulate the operation of a Fourier Transform Microwave (FTMW) spectrometer. Developed for academic use, this simulator enables students to explore rotational spectroscopy principles, generate molecular spectra, and interact with a virtual FTMW instrument, providing hands-on learning without physical hardware. The code base is based off of The Virtual FTIR web application found here (https://ftir.rastonlab.org/).
 
-This project uses [React](https://github.com/facebook/react) for the frontend and [Flask](https://github.com/pallets/flask/) for the backend. The backend is located in a separate [repository](https://github.com/RastonLab/Virtual-FTMW-Functions).
+This project uses [React](https://github.com/facebook/react) for the frontend and [Flask](https://github.com/pallets/flask/) for the backend. The backend is located in a separate [repository](https://github.com/FTMW-Scientific-Simulator/Virtual-FTMW-Functions).
 
 ## Installation
 
@@ -12,25 +12,33 @@ Information on how to run the front-end can be found in the repository's [wiki p
 
 The intended audience for this application is undergraduate chemistry students studying spectroscopy. The following screenshots are not exhaustive but acknowledge most of the main features:
 
-- Experimental Setup (Shows the spectrometer’s physical setup, including the vacuum chamber, molecular beam source, and microwave source )
+- Experimental Setup (Shows the spectrometer’s physical setup, including the vacuum chamber, molecular beam source, and microwave source)
 
-![92f8e6051a238581799aaa5401ed3d2](https://github.com/user-attachments/assets/d977d334-f508-45af-9965-a1cad6ec2320)
+![b5b5a7d39cf8baabf826305b9ebbe46](https://github.com/user-attachments/assets/86f1338e-348a-4118-aabc-3de21bca0a98)
 
 - Instrument Window (top-down view of simplified spectrometer)
 
-![89359ed31104801a0a964bf63a59ac4](https://github.com/user-attachments/assets/ad4e1413-cc19-47a6-a296-640854873c43)
+![9c5e7909104abfec865c14087eeaeb8](https://github.com/user-attachments/assets/ae25f062-d52f-4c31-90f3-0e4267b13e5c)
 
-- Schematic Window (Displays a block diagram of the FTMW spectrometer with clickable components to learn their functions.)
+- Schematic Window (Displays a block diagram of the FTMW spectrometer with clickable components to learn their functions)
   
-![a9e31cbf3f1a5e8f9c79c907bdd8e85](https://github.com/user-attachments/assets/e4f36e7d-f878-4c9a-9a82-8c213d6fb477)
+![e02d57f7019f924f4c6c1924f600dcc](https://github.com/user-attachments/assets/1fc76b9f-3087-4721-b73c-28ff68d5c8d5)
   
-- Spectrum Window (plotted Spectrum)
+- Spectrum Window (Plots the generated rotational spectrum)
 
-![e360da974fe071992d28449ad85a1aa](https://github.com/user-attachments/assets/19376c36-2857-46d9-8e0c-b0235498905c)
+![05729f9fa95a2dab146420dc589b5b8](https://github.com/user-attachments/assets/96acd1ee-9cf0-4335-a65e-e5d63bb96877)
 
 - Find Peaks (Highlights spectral peaks in a table or plot, allowing analysis of rotational transitions)
 
-![00ab5a06228b7083301decd80201d9d](https://github.com/user-attachments/assets/a9b4cfeb-487a-4b0c-abfe-5867c68a02b5)
+![92838fee0b449c43e083169d054fc96](https://github.com/user-attachments/assets/f160f9ad-ef8e-4108-be88-dbdc40139d2c)
+
+To use the simulator:
+
+1. Access the interface at `http://localhost:3000`.
+2. Set parameters (e.g., molecule, frequency range, pulse widths) in the Experiment Setup tab.
+3. Explore the Schematic tab to learn about the spectrometer’s components.
+4. Generate a spectrum in the Spectrum tab and analyze results in the Find Peaks tab.
+
 
 ## License
 
