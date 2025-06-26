@@ -122,7 +122,7 @@ const ExperimentalSetup = () => {
 
           <div className="parameter">
             <SliderComponent
-              min={0}
+              min={1}
               max={100}
               value={numCyclesPerStep}
               setValueAction={experimentalSetupReducer.setNumCyclesPerStep}
