@@ -31,7 +31,7 @@ const InstrumentWindow = () => {
   const [toggled, setToggled] = useState(false);
 
   /**
-   * Sets the begining state of the instrument window
+   * Sets the beginning state of the instrument window
    */
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null) {
@@ -124,6 +124,8 @@ const InstrumentWindow = () => {
   return (
     <div id='instrument-window'>
       <div className="instrument-container">
+
+        {/* the main svg instrument window*/}
         <SvgInstrumentWindowComponent
           id='instrument'
           molecule={molecule} 
@@ -134,6 +136,8 @@ const InstrumentWindow = () => {
           pressure={'1.3 x 10⁻⁶ Torr'}
           onDisplayCLick={handlePartClick} 
           onNavigateClick={handlePartClickNavigate} />
+
+
         {/* Render all clickable components from configuration */}
         {instrumentClickables.map((clickable) => (
           <InstrumentClickable
@@ -160,6 +164,8 @@ const InstrumentWindow = () => {
             svg={process.env.PUBLIC_URL + clickable.svg}
           />
         ))}
+
+
       </div>
 
       <div id="instrument-spinner">
