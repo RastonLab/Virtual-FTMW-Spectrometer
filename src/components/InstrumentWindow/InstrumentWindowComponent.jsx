@@ -1732,7 +1732,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
         />
         <path
-          id="pressure-ontroller-to-gauge"
+          id="pressure-controller-to-gauge"
           fill="url(#radialGradient162)"
           d="M384.6 72.472h368.43v21.742H384.6z"
           style={{
@@ -2513,7 +2513,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           </g>
         </g>
         <path
-          id="path4"
+          id="fixed-mirror"
           fill="url(#linearGradient31)"
           strokeWidth={1.048}
           d="M484.449 40.139h-29.381s5.892 1.796 11.454 21.74c6.718 24.091 5.072 73.352.478 100.592-2.974 17.635-11.932 22.193-11.932 22.193h29.38z"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SvgInstrumentWindowComponent from './InstrumentWindowComponent';
-import InstrumentClickable from './InstrumentClickable';
+//import InstrumentClickable from './InstrumentClickable';
 import '../../style/InstrumentWindow.css';
 import '../../style/InfoDialog.css';
 import { getMWBand } from './functions/getMWBand';
@@ -11,7 +11,7 @@ import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
 import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotly";
-import instrumentClickables from './config/instrumentClickables';
+//import instrumentClickables from './config/instrumentClickables';
 import { useNavigate } from "react-router-dom";
 
 /**
@@ -37,7 +37,7 @@ const InstrumentWindow = () => {
     if (document.getElementById("instrument-window") !== null) {
       setSBandState();
     }
-    
+
     // Add CSS to handle zoom properly
     const style = document.createElement('style');
     style.innerHTML = `
@@ -63,7 +63,7 @@ const InstrumentWindow = () => {
       }
     `;
     document.head.appendChild(style);
-    
+
     return () => {
       document.head.removeChild(style);
     };
@@ -82,7 +82,7 @@ const InstrumentWindow = () => {
     if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
       animateToBand(mwBand, currentFrequency, frequencyMax, stepSize, numCyclesPerStep, frequencyMin);
     }
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
   }, [postfetch, mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType]);
 
   /**
@@ -124,46 +124,17 @@ const InstrumentWindow = () => {
   return (
     <div id='instrument-window'>
       <div className="instrument-container">
-
-        {/* the main svg instrument window*/}
         <SvgInstrumentWindowComponent
           id='instrument'
-          molecule={molecule} 
-          range={`${frequencyMin} - ${frequencyMax}`} 
-          frequency={currentFrequency} 
-          cyclePerStep={`${currentCycle} / ${numCyclesPerStep}`} 
+          molecule={molecule}
+          range={`${frequencyMin} - ${frequencyMax}`}
+          frequency={currentFrequency}
+          cyclePerStep={`${currentCycle} / ${numCyclesPerStep}`}
           mwBand={mwBand}
           pressure={'1.3 x 10⁻⁶ Torr'}
-          onDisplayCLick={handlePartClick} 
+          onDisplayCLick={handlePartClick}
           onNavigateClick={handlePartClickNavigate} />
-
-
         {/* Render all clickable components from configuration */}
-        {instrumentClickables.map((clickable) => (
-          <InstrumentClickable
-            key={clickable.id}
-            id={clickable.id}
-            name={clickable.name}
-            description={clickable.description}
-            style={{
-              position: 'absolute',
-              top: clickable.position.top,
-              left: clickable.position.left,
-              width: clickable.position.width,
-              height: clickable.position.height,
-              border: '2px solid',
-              boxSizing: 'border-box',
-              cursor: 'pointer',
-              zIndex: 10,
-              opacity: 0.5
-            }}
-            shape={clickable.shape}
-            orientation={clickable.orientation}
-            customClass={clickable.customClass}
-            borderColor={clickable.borderColor || 'red'}
-            svg={process.env.PUBLIC_URL + clickable.svg}
-          />
-        ))}
 
 
       </div>

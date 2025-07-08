@@ -1,7 +1,7 @@
 // components
 
 // graph import
-import spectrum_graph from "../assets/svg/components/instruments/graph.png";
+// import spectrum_graph from "../assets/svg/components/instruments/graph.png";
 
 // svg imports
 import fixMirror from "../assets/svg/components/schematic/Fixed-mirror.svg";
@@ -14,12 +14,24 @@ import presController from "../assets/svg/components/instruments/pressure-contro
 import tunRodMotor from "../assets/svg/components/instruments/tuning-rod-&-motor.svg";
 import bellows from "../assets/svg/components/schematic/Metal-Hose.svg";
 import suppRod from "../assets/svg/components/schematic/Metal-Rod.svg";
-import mwSynthesizer from "../assets/svg/components/schematic/Microwave-synthesizer.svg";
-import FabryPerotAnimation from "../components/SchematicWindow/FabryPerotAnimation";
+// import FabryPerotAnimation from "../components/SchematicWindow/FabryPerotAnimation";
 
+const supportRod = {
+    text: (
+        <div className="popup-instr-tip">
+            <h1>Support Rod</h1>
+
+            <img className="instr-tip-svg" src={suppRod} alt="Support Rod SVG" />
+
+            <p>
+                Stainless steel rod that supports and stabilizes the vertical position of the movable mirror.
+            </p>
+        </div>
+    ),
+};
 
 export const instrumentTips = {
-    fixedMirror: {
+    "fixed-mirror": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Fixed Mirror</h1>
@@ -36,7 +48,7 @@ export const instrumentTips = {
         ),
     },
 
-    movableMirror: {
+    "movable-mirror": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Fixed Mirror</h1>
@@ -54,7 +66,7 @@ export const instrumentTips = {
         ),
     },
 
-    diffusionPump: {
+    "diffusion-pump": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Diffusion Pump</h1>
@@ -70,7 +82,7 @@ export const instrumentTips = {
         ),
     },
 
-    rotaryPump: {
+    "rotary-pump": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Rotary Pump</h1>
@@ -86,7 +98,7 @@ export const instrumentTips = {
         ),
     },
 
-    lecture: {
+    "lecture": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Lecture Bottle</h1>
@@ -102,7 +114,7 @@ export const instrumentTips = {
         ),
     },
 
-    ionGauge: {
+    "ion-gauge": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Ion Gauge</h1>
@@ -118,7 +130,7 @@ export const instrumentTips = {
         ),
     },
 
-    pressureController: {
+    "pressure-controller-and-ion-gauge": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Pressure Controller</h1>
@@ -133,7 +145,7 @@ export const instrumentTips = {
         ),
     },
 
-    tuningRodMotor: {
+    "motor-and-rod": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Tuning Rod & Motor</h1>
@@ -148,7 +160,7 @@ export const instrumentTips = {
         ),
     },
 
-    bellows: {
+    "bellows": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Bellows</h1>
@@ -159,16 +171,6 @@ export const instrumentTips = {
                     Flexible metal conduit that remains hermetically sealed while the movable
                     mirror is translated.
                 </p>
-            </div>
-        ),
-    },
-
-    fabryPerotCavity: {
-        text: (
-            <div className="popup-instr-tip">
-                <h1>Fabry Pérot Cavity</h1>
-
-                <FabryPerotAnimation />
             </div>
         ),
     },
