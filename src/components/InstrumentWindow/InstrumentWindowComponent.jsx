@@ -3591,7 +3591,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         </g>
       </g>
       <g id="lecture" transform="translate(76.398 8.006)scale(.11552)">
-        <g id="g25-4">
+        <g id="lecture">
           <path
             id="rect19-5"
             fill="url(#linearGradient11661)"

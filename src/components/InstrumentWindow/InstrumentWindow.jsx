@@ -14,6 +14,9 @@ import AcquireSpectrumPlotly from "../AcquireSpectrumPlotly/AcquireSpectrumPlotl
 //import instrumentClickables from './config/instrumentClickables';
 import { useNavigate } from "react-router-dom";
 
+// import dictionary
+import { instrumentTips } from "../../dictionaries/instrumentTips";
+
 /**
  * A component that contains the instrument window
  */
@@ -29,6 +32,7 @@ const InstrumentWindow = () => {
   const delay =  ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200; // 1000 is to convert to milliseconds, 1200 for the extra 1.2 seconds delay on anaimation
 
   const [toggled, setToggled] = useState(false);
+  const [element, setElement] = useState();
 
   /**
    * Sets the beginning state of the instrument window
@@ -121,6 +125,19 @@ const InstrumentWindow = () => {
     navigate(url, -1);
   }
 
+  const handleInstrClick = (event) => {
+    console.log("event = " + event);
+    console.log("event id = " + event.target.parentElement.id);
+    setElement(event.target.parentElement.id);
+    console.log("the element = " + element);
+    setToggled(!toggled);
+
+    /*if (!BAD_ID.includes(event.target.parentElement.id)) {
+      setElement(event.target.parentElement.id);
+      setToggled(!toggled);
+    }*/
+  }
+
   return (
     <div id='instrument-window'>
       <div className="instrument-container">
@@ -133,10 +150,9 @@ const InstrumentWindow = () => {
           mwBand={mwBand}
           pressure={'1.3 x 10⁻⁶ Torr'}
           onDisplayCLick={handlePartClick}
-          onNavigateClick={handlePartClickNavigate} />
+          onNavigateClick={handlePartClickNavigate}
+          onClick={handleInstrClick}/>
         {/* Render all clickable components from configuration */}
-
-
       </div>
 
       <div id="instrument-spinner">
@@ -171,6 +187,19 @@ const InstrumentWindow = () => {
             </div>
           </CloseButton>
         </Dialog>
+
+        {/* MUI Dialog popup that holds tooltip information */}
+        {element && (
+            <Dialog
+                onClose={handleInstrClick}
+                open={toggled}
+                fullScreen={element === "display" ? true : false}
+            >
+              <CloseButton id="customized-dialog-title" onClose={handleInstrClick}>
+                {instrumentTips[element].text}
+              </CloseButton>
+            </Dialog>
+        )}
       </div>
     </div>
   );

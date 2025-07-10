@@ -4,16 +4,16 @@
 // import spectrum_graph from "../assets/svg/components/instruments/graph.png";
 
 // svg imports
-import fixMirror from "../assets/svg/components/schematic/Fixed-mirror.svg";
-import movMirror from "../assets/svg/components/schematic/Movable-mirror.svg";
-import diffPump from "../assets/svg/components/instruments/diffusion-pump.svg";
-import rotPump from "../assets/svg/components/instruments/rotary-pump.svg";
-import lecBottle from "../assets/svg/components/instruments/gas.svg";
-import ionGauge from "../assets/svg/components/instruments/ion-gauge.svg";
-import presController from "../assets/svg/components/instruments/pressure-controller.svg";
-import tunRodMotor from "../assets/svg/components/instruments/tuning-rod-&-motor.svg";
-import bellows from "../assets/svg/components/schematic/Metal-Hose.svg";
-import suppRod from "../assets/svg/components/schematic/Metal-Rod.svg";
+import fixMirror from "../assets/svg/components/instrument-cleanup/Fixed-mirror-cleanup.svg";
+import movMirror from "../assets/svg/components/instrument-cleanup/Movable-mirror-cleanup.svg";
+import diffPump from "../assets/svg/components/instrument-cleanup/diffusion-pump-cleanup.svg";
+import rotPump from "../assets/svg/components/instrument-cleanup/rotary-pump-cleanup.svg";
+import lecBottle from "../assets/svg/components/instrument-cleanup/gas-cleanup.svg";
+import ionGauge from "../assets/svg/components/instrument-cleanup/ion-gauge-cleanup.svg";
+import presController from "../assets/svg/components/instrument-cleanup/pressure-controller-cleanup.svg";
+import tunRodMotor from "../assets/svg/components/instrument-cleanup/tuning-rod-&-motor-cleanup.svg";
+import bellows from "../assets/svg/components/instrument-cleanup/Metal-Hose-cleanup.svg";
+import suppRod from "../assets/svg/components/instrument-cleanup/Metal-Rod-cleanup.svg";
 // import FabryPerotAnimation from "../components/SchematicWindow/FabryPerotAnimation";
 
 const supportRod = {
@@ -98,7 +98,7 @@ export const instrumentTips = {
         ),
     },
 
-    "lecture": {
+    lecture: {
         text: (
             <div className="popup-instr-tip">
                 <h1>Lecture Bottle</h1>

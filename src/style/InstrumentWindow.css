@@ -26,6 +26,37 @@
     position: relative; /* Ensure this is a positioning context */
 }
 
+.popup-instr-tip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instr-tip-svg {
+    height: auto;
+    width: auto;
+
+    max-width: 300px;
+    max-height: 300px;
+
+    padding: 10px;
+}
+
+.popup-instr-tip h1 {
+    font-size: 30px;
+    font-family: "Montserrat";
+    text-align: center;
+    text-decoration: underline;
+}
+
+.popup-instr-tip p {
+    font-size: large;
+    font-family: "Roboto";
+    text-align: center;
+    padding: 3% 3%;
+}
+
 /* Ensure the SVG maintains aspect ratio */
 #instrument svg {
     width: 100%;

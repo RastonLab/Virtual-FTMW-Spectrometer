@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260.96" height="300">
+    <defs>
+        <linearGradient id="b">
+            <stop offset="0" stop-color="#949494"/>
+            <stop offset=".198" stop-color="#5b5b5b"/>
+            <stop offset=".396" stop-color="#8d8d8d"/>
+            <stop offset=".6" stop-color="#848484"/>
+            <stop offset=".8" stop-color="#9c9c9c"/>
+            <stop offset="1" stop-color="#a0a0a0"/>
+        </linearGradient>
+        <linearGradient id="a">
+            <stop offset="0" stop-color="#8c8c8c"/>
+            <stop offset=".2" stop-color="gray"/>
+            <stop offset=".4" stop-color="#5a5a5a"/>
+            <stop offset=".6" stop-color="#a7a7a7"/>
+            <stop offset=".8" stop-color="#626262"/>
+            <stop offset="1" stop-color="#cdcdcd"/>
+        </linearGradient>
+        <linearGradient id="f" x1="29.185" x2="53.409" y1="38.913" y2="38.913"
+                        gradientTransform="matrix(6.3749 0 0 6.7676 -134.26 -142.51)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#676767"/>
+            <stop offset=".204" stop-color="#949494"/>
+            <stop offset=".403" stop-color="#737373"/>
+            <stop offset=".598" stop-color="#a7a7a7"/>
+            <stop offset=".796" stop-color="silver"/>
+            <stop offset="1" stop-color="#c8c8c8"/>
+        </linearGradient>
+        <linearGradient id="g" x1="30.45" x2="52.339" y1="25.877" y2="25.877"
+                        gradientTransform="matrix(6.3749 0 0 6.7676 -134.26 -142.51)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#5f5f5f"/>
+            <stop offset=".204" stop-color="gray"/>
+            <stop offset=".4" stop-color="#737373"/>
+            <stop offset=".598" stop-color="#787878"/>
+            <stop offset=".799" stop-color="#bdbdbd"/>
+            <stop offset="1" stop-color="#848484"/>
+        </linearGradient>
+        <linearGradient xlink:href="#a" id="i" x1="70.977" x2="70.977" y1="-30.953" y2="-49.775"
+                        gradientTransform="translate(-134.65 128.68) scale(6.3749)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient xlink:href="#b" id="j" x1="52.496" x2="52.269" y1="41.158" y2="53.063"
+                        gradientTransform="translate(-128.68 -134.65) scale(6.3749)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient xlink:href="#a" id="k" x1="70.977" x2="70.977" y1="-30.953" y2="-49.775"
+                        gradientTransform="matrix(6.3749 0 0 4.9931 -324.62 467.59)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient xlink:href="#b" id="l" x1="52.496" x2="52.269" y1="41.158" y2="53.063"
+                        gradientTransform="matrix(4.2205 0 0 3.4584 -92.453 103.97)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient xlink:href="#a" id="d" x1="70.977" x2="70.977" y1="-30.953" y2="-49.775"
+                        gradientTransform="matrix(6.3749 0 0 .69125 -247.41 -191.16)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient xlink:href="#a" id="e" x1="70.977" x2="70.977" y1="-30.953" y2="-49.775"
+                        gradientTransform="matrix(6.3749 0 0 .84487 -247.41 -154.62)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient xlink:href="#a" id="h" x1="70.977" x2="70.977" y1="-30.953" y2="-49.775"
+                        gradientTransform="matrix(6.3766 0 0 .68625 -610.04 -223.91)" gradientUnits="userSpaceOnUse"/>
+        <linearGradient id="c" x1="71.771" x2="93.541" y1="65.648" y2="48.301"
+                        gradientTransform="translate(-293.48 -140.43) scale(6.3749)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#8d8d8d"/>
+            <stop offset=".2" stop-color="#989898"/>
+            <stop offset=".4" stop-color="#4a4a4a"/>
+            <stop offset=".6" stop-color="#828282"/>
+            <stop offset=".8" stop-color="#4b4b4b"/>
+            <stop offset="1" stop-color="#cacaca"/>
+        </linearGradient>
+        <linearGradient xlink:href="#a" id="m" x1="70.977" x2="70.977" y1="-30.953" y2="-49.775"
+                        gradientTransform="matrix(6.3749 0 0 2.4206 -286.24 -182.71)" gradientUnits="userSpaceOnUse"/>
+    </defs>
+    <path fill="url(#c)"
+          d="m269.02 166.23-.08 59.159c-3.307 14.246-4.407 15.197-17.772 16.538h-87.836v36.142l104.84-2.102c17.219-7.612 21.275-12.32 28.34-23.933 0 0 4.439-7.824 5.46-20.662l.085-65.01z"
+          style="paint-order:markers stroke fill" transform="translate(-47.094 -25.052)"/>
+    <g fill="#ccc" stroke="#000" stroke-linecap="square">
+        <path stroke-width="1.136" d="M230.02-199.23h39.122v2.847H230.02z" style="paint-order:markers stroke fill"
+              transform="matrix(.00634 .99998 -.99835 -.05745 -47.094 -25.052)"/>
+        <path stroke-width="1.241" d="M217.33-191.81h48.363v2.749H217.33z" style="paint-order:markers stroke fill"
+              transform="matrix(.00495 .99999 -.99729 -.07356 -47.094 -25.052)"/>
+        <path stroke-width="1.082" d="M230.22-208.37h34.866v2.9H230.22z" style="paint-order:markers stroke fill"
+              transform="matrix(.00725 .99997 -.99874 -.05027 -47.094 -25.052)"/>
+        <path stroke-width="1.162" d="M226.63-219.65h41.255v2.824H226.63z" style="paint-order:markers stroke fill"
+              transform="matrix(.00596 .99998 -.99813 -.06108 -47.094 -25.052)"/>
+    </g>
+    <path fill="gray" stroke="#000" stroke-linecap="square" stroke-width="1.916"
+          d="m214.65 211.57-2.168 26.744-2.892 18.793-9.396 33.972-13.01 28.189-.723 4.337h13.01l12.288-35.417 7.951-27.467 3.614-50.596z"
+          style="paint-order:markers stroke fill" transform="translate(-47.094 -25.052)"/>
+    <path fill="url(#d)" d="M202.18-225.49h10.119v13.01H202.18z" style="paint-order:markers stroke fill"
+          transform="rotate(90 -11.021 -36.073)"/>
+    <path fill="url(#e)" d="M202.18-196.58h10.119v15.902H202.18z" style="paint-order:markers stroke fill"
+          transform="rotate(90 -11.021 -36.073)"/>
+    <path fill="url(#f)"
+          d="M72.393 32.054v20.462a23.888 72.244 0 0 0-20 71.242 23.888 72.244 0 0 0 20 71.242v128.98h113.33V194.73a23.888 72.244 0 0 0 19.443-70.963 23.888 72.244 0 0 0-19.443-70.977V32.062z"
+          style="paint-order:markers stroke fill" transform="translate(-47.094 -25.052)"/>
+    <path fill="url(#g)" stroke="#000" stroke-linecap="square" stroke-width="2.324"
+          d="M59.401 26.214h139.2v14.124h-139.2z" style="paint-order:markers stroke fill"
+          transform="translate(-47.094 -25.052)"/>
+    <path fill="gray" stroke="#000" stroke-linecap="square" stroke-width="1.916"
+          d="M156.1 260.72h15.179l15.179-6.505 7.228-13.733 1.446-14.456v-15.18h-6.506v15.18l-.722 12.288-4.337 9.396-11.565 6.505-16.624.723z"
+          style="paint-order:markers stroke fill" transform="translate(-47.094 -25.052)"/>
+    <path fill="url(#h)" d="M-160.34-257.99h10.122v12.916h-10.122z" style="paint-order:markers stroke fill"
+          transform="matrix(-.99943 -.03385 .01792 -.99984 -47.094 -25.052)"/>
+    <g fill="#ccc" stroke="#000" stroke-linecap="square">
+        <path stroke-width="1.506" d="M59.404 67.878h76.07v2.573h-76.07z" style="paint-order:markers stroke fill"
+              transform="matrix(.99262 -.12129 .03972 .99921 -47.094 -25.052)"/>
+        <path stroke-width="2.023" d="M49.739 75.839h143.71v2.458H49.739z" style="paint-order:markers stroke fill"
+              transform="matrix(.99813 -.06119 .07898 .99688 -47.094 -25.052)"/>
+        <path stroke-width="2.085" d="M43.847 89.001h153.53v2.444H43.847z" style="paint-order:markers stroke fill"
+              transform="matrix(.99838 -.05694 .08486 .99639 -47.094 -25.052)"/>
+        <path stroke-width="2.112" d="M39.804 104.28h157.83v2.439H39.804z" style="paint-order:markers stroke fill"
+              transform="matrix(.99847 -.05525 .08744 .99617 -47.094 -25.052)"/>
+        <path stroke-width="2.123" d="M37.813 118.47h159.67v2.436H37.813z" style="paint-order:markers stroke fill"
+              transform="matrix(.99851 -.05455 .08856 .99607 -47.094 -25.052)"/>
+        <path stroke-width="2.119" d="M36.541 133.35h159.05v2.437H36.541z" style="paint-order:markers stroke fill"
+              transform="matrix(.9985 -.05478 .08818 .9961 -47.094 -25.052)"/>
+        <path stroke-width="2.104" d="M36.621 148.94h156.6v2.44h-156.6z" style="paint-order:markers stroke fill"
+              transform="matrix(.99845 -.05572 .0867 .99623 -47.094 -25.052)"/>
+        <path stroke-width="2.062" d="M40.865 164.8h149.84v2.449H40.865z" style="paint-order:markers stroke fill"
+              transform="matrix(.99829 -.05846 .08265 .99658 -47.094 -25.052)"/>
+        <path stroke-width="1.983" d="M48.945 180.41h137.57v2.466H48.945z" style="paint-order:markers stroke fill"
+              transform="matrix(.99794 -.06416 .07533 .99716 -47.094 -25.052)"/>
+        <path stroke-width="1.9" d="M55.011 196.75h125.41v2.485H55.011z" style="paint-order:markers stroke fill"
+              transform="rotate(-4.068 -376.273 650.527) skewX(-.161)"/>
+        <path stroke-width="1.847" d="M57.153 210.71h117.95v2.496H57.153z" style="paint-order:markers stroke fill"
+              transform="matrix(.99712 -.0758 .06377 .99796 -47.094 -25.052)"/>
+        <path stroke-width="1.864" d="M54.609 225.98h120.41v2.492H54.609z" style="paint-order:markers stroke fill"
+              transform="matrix(.99725 -.07413 .0652 .99787 -47.094 -25.052)"/>
+    </g>
+    <path fill="url(#i)" d="M314.93-187.91h10.119v119.99H314.93z" style="paint-order:markers stroke fill"
+          transform="rotate(90 -11.021 -36.073)"/>
+    <path fill="url(#j)" stroke="#000" stroke-linecap="square" stroke-width="1.738"
+          d="M174.17 127h57.824v75.894H174.17z" style="paint-order:markers stroke fill"
+          transform="translate(-47.094 -25.052)"/>
+    <path stroke="#000" stroke-linecap="square" stroke-width="1.057" d="M203.38 126.57h1.581v77.476h-1.581z"
+          style="paint-order:markers stroke fill" transform="translate(-47.094 -25.052)"/>
+    <g fill="none" stroke="#000" stroke-linecap="square" transform="translate(-47.094 -25.052)">
+        <ellipse cx="188.99" cy="163.51" stroke-width="1.183" rx="11.57" ry="13.016"
+                 style="paint-order:markers stroke fill"/>
+        <circle cx="189.71" cy="136.76" r="6.867" stroke-width="1.916" style="paint-order:markers stroke fill"/>
+        <circle cx="189.71" cy="189.53" r="6.867" stroke-width="1.916" style="paint-order:markers stroke fill"/>
+    </g>
+    <path fill="url(#k)" d="M124.96 219.62h10.119v93.978H124.96z" style="paint-order:markers stroke fill"
+          transform="rotate(.256 5162.495 -9753.326) skewX(-.175)"/>
+    <g stroke="#000" stroke-linecap="square" transform="translate(-47.094 -25.052)">
+        <path fill="url(#l)" stroke-width="1.042" d="M108.05 245.92h38.282v41.173H108.05z"
+              style="paint-order:markers stroke fill"/>
+        <circle cx="127.55" cy="267.59" r="10.481" fill="none" stroke-width="1.916"
+                style="paint-order:markers stroke fill"/>
+        <path fill="gray" stroke-width=".301"
+              d="m18.255 65.875-3.728.335-2.155-3.061 1.574-3.397 3.729-.335 2.154 3.062z"
+              style="paint-order:markers stroke fill" transform="matrix(1.6543 .17176 -.16591 1.8887 91.316 192.83)"/>
+        <path fill="gray" stroke-width=".301"
+              d="m18.255 65.875-3.728.335-2.155-3.061 1.574-3.397 3.729-.335 2.154 3.062z"
+              style="paint-order:markers stroke fill" transform="matrix(1.6543 .17176 -.16591 1.8887 130.35 192.83)"/>
+        <ellipse cx="128.27" cy="232.53" fill="none" stroke-width="1.916" rx="3.253" ry="2.891"
+                 style="paint-order:markers stroke fill"/>
+        <ellipse cx="128.27" cy="301.92" fill="none" stroke-width="1.916" rx="3.253" ry="2.891"
+                 style="paint-order:markers stroke fill"/>
+    </g>
+    <g transform="translate(-47.094 -25.052)">
+        <path fill="gray" stroke="#000" stroke-linecap="square" stroke-width=".959"
+              d="M115.15 48.463h25.533v11.8H115.15z" style="paint-order:markers stroke fill"/>
+        <circle cx="127.55" cy="54.362" r="3.975" fill="gray" stroke="#000" stroke-linecap="square" stroke-width="1.916"
+                style="paint-order:markers stroke fill"/>
+        <path fill="url(#m)" d="M163.34-302.92h10.119v45.559H163.34z" style="paint-order:markers stroke fill"
+              transform="matrix(.02959 .99956 -1 -.00215 0 0)"/>
+    </g>
+    <g fill="#ccc" stroke="#000" stroke-linecap="square">
+        <path stroke-width="1.145" d="M227.36-228.25h39.834v2.84H227.36z" style="paint-order:markers stroke fill"
+              transform="matrix(.00621 .99998 -.99828 -.05864 -47.094 -25.052)"/>
+        <g stroke-width="1.238">
+            <path d="M-314.12-210.38h39.731v3.332h-39.731zM-314.49-202.43h39.731v3.332h-39.731zM-314.53-219.8h39.731v3.332h-39.731z"
+                  style="paint-order:markers stroke fill"
+                  transform="matrix(-.99978 .02081 .04367 -.99905 -47.094 -25.052)"/>
+        </g>
+        <path stroke-width=".897" d="M-288.35-199.18h19.217v3.612h-19.217z" style="paint-order:markers stroke fill"
+              transform="matrix(-.99891 .0467 .01946 -.99981 -47.094 -25.052)"/>
+    </g>
+    <path fill="gray" stroke="#000" stroke-linecap="square" stroke-width=".666" d="M277.63 179.87h17.152v8.478H277.63z"
+          style="paint-order:markers stroke fill" transform="translate(-47.094 -25.052)"/>
+</svg>
