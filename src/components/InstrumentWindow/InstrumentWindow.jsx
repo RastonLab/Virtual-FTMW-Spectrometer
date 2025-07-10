@@ -33,6 +33,7 @@ const InstrumentWindow = () => {
 
   const [toggled, setToggled] = useState(false);
   const [element, setElement] = useState();
+  const [displayToggle, setDisplayToggle] = useState(false);
 
   /**
    * Sets the beginning state of the instrument window
@@ -43,7 +44,7 @@ const InstrumentWindow = () => {
     }
 
     // Add CSS to handle zoom properly
-    const style = document.createElement('style');
+    /*const style = document.createElement('style');
     style.innerHTML = `
       @media (min-resolution: 1dppx) {
         .instrument-clickable-container {
@@ -70,7 +71,7 @@ const InstrumentWindow = () => {
 
     return () => {
       document.head.removeChild(style);
-    };
+    };*/
   }, []);
 
   useEffect(() => {
@@ -109,14 +110,17 @@ const InstrumentWindow = () => {
   /**
    * Handler invoked when clicking the PC
    */
-  const handlePartClick = () => {
-    setToggled(true);
+  const handlePartClick = (event) => {
+    console.log("handle part click");
+    console.log("event id = " + event.target.parentElement.id);
+    setDisplayToggle(!displayToggle);
   };
 
   // Handler for closing the dialog
-  const handleClick = () => {
-    setToggled(false);
-  };
+  /*const handleClick = () => {
+    console.log("handle click");
+    setDisplayToggle(!displayToggle);
+  };*/
 
   /**
    * Handler invoked when clicking a svg componenent to navigate to a different page
@@ -126,11 +130,12 @@ const InstrumentWindow = () => {
   }
 
   const handleInstrClick = (event) => {
-    console.log("event = " + event);
+    /*console.log("event = " + event);
     console.log("event id = " + event.target.parentElement.id);
     setElement(event.target.parentElement.id);
     console.log("the element = " + element);
     setToggled(!toggled);
+    */
 
     /*if (!BAD_ID.includes(event.target.parentElement.id)) {
       setElement(event.target.parentElement.id);
@@ -175,18 +180,18 @@ const InstrumentWindow = () => {
         )}
 
         {/* MUI Dialog popup that opens for the spectrum */}
-        <Dialog
-          onClose={handleClick}
-          open={toggled}
+        {displayToggle && (<Dialog
+          onClose={handlePartClick}
+          open={displayToggle}
           fullScreen={true}
         >
-          <CloseButton id="customized-dialog-title" onClose={handleClick}>
+          <CloseButton id="customized-dialog-title" onClose={handlePartClick}>
             <div className="popup-tooltip popup-spectra">
               <h1>Spectrum Display</h1>
               <AcquireSpectrumPlotly />
             </div>
           </CloseButton>
-        </Dialog>
+        </Dialog>)}
 
         {/* MUI Dialog popup that holds tooltip information */}
         {element && (

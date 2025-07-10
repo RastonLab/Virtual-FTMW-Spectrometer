@@ -3530,7 +3530,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
         />
         <path
-          id="path238"
+          id="fabry-perot-cavity"
           fill="url(#linearGradient32)"
           strokeWidth={0.703}
           d="M154.337 15.145v197.89H487.78V15.145Zm3.397 3.03h326.655v191.84H157.734Z"
@@ -3948,7 +3948,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         </text>
       </g>
       <g
-        id="g9"
+        id="display-screen"
         style={{ display: "inline" }}
         onClick={onDisplayCLick}
         transform="translate(46.907 223.632)scale(.37439)"
