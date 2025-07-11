@@ -15,4 +15,5 @@ export const BAD_ID = [
     "g293",
     "microwave-chamber",
     "g353",
+    "mirror-container",
 ];

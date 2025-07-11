@@ -90,7 +90,10 @@ export const instrumentTips = {
                     ensuring that it remains resonant with the microwave frequency. A stepper motor
                     controls its alignment, and the nozzle is mounted onto this mirror. Note that this
                     collinear arrangement of the molecular beam and microwave radiation leads to a Doppler
-                    splitting of lines, given by ______ v<sup>split</sup> =
+                    splitting of lines, given by <strong>Δν<sub>split</sub> = 2(ν₀/c)v<sub>rms</sub></strong>,
+                    where ν₀ is the transition frequency, <em>c</em> is the speed of light (299792458 m/s),
+                    and the root-mean-squared velocity, <strong>v<sub>rms</sub> = √(5RT₀/M) = 1760 m/s</strong>
+                    when helium is used as the inert carrier gas.
                 </p>
             </div>
         ),
