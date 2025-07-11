@@ -16,6 +16,36 @@ import bellows from "../assets/svg/components/instrument-cleanup/Metal-Hose-clea
 import suppRod from "../assets/svg/components/instrument-cleanup/Metal-Rod-cleanup.svg";
 // import FabryPerotAnimation from "../components/SchematicWindow/FabryPerotAnimation";
 
+const motorAndRod = {
+    text: (
+        <div className="popup-instr-tip">
+            <h1>Tuning Rod & Motor</h1>
+
+            <img className="instr-tip-svg" src={tunRodMotor} alt="Tuning Rod & Motor SVG" />
+
+            <p>
+                Mechanical system used to adjust the cavity resonance frequency by fine-tuning
+                the mirror separation.
+            </p>
+        </div>
+    ),
+};
+
+const pressureController = {
+    text: (
+        <div className="popup-instr-tip">
+            <h1>Pressure Controller</h1>
+
+            <img className="instr-tip-svg" src={presController} alt="Pressure Controller SVG" />
+
+            <p>
+                Analog or digital device that is connected to the ion gauge for monitoring the
+                vacuum level (10<sup>3</sup> – 10<sup>11</sup> bar) inside the chamber.
+            </p>
+        </div>
+    ),
+};
+
 const supportRod = {
     text: (
         <div className="popup-instr-tip">
@@ -48,10 +78,10 @@ export const instrumentTips = {
         ),
     },
 
-    "movable-mirror": {
+    "move-mirror": {
         text: (
             <div className="popup-instr-tip">
-                <h1>Fixed Mirror</h1>
+                <h1>Movable Mirror</h1>
 
                 <img className="instr-tip-svg" src={movMirror} alt="Movable Mirror SVG" />
 
@@ -130,37 +160,7 @@ export const instrumentTips = {
         ),
     },
 
-    "pressure-controller-and-ion-gauge": {
-        text: (
-            <div className="popup-instr-tip">
-                <h1>Pressure Controller</h1>
-
-                <img className="instr-tip-svg" src={presController} alt="Pressure Controller SVG" />
-
-                <p>
-                    Analog or digital device that is connected to the ion gauge for monitoring the
-                    vacuum level (10<sup>3</sup> – 10<sup>11</sup> bar) inside the chamber.
-                </p>
-            </div>
-        ),
-    },
-
-    "motor-and-rod": {
-        text: (
-            <div className="popup-instr-tip">
-                <h1>Tuning Rod & Motor</h1>
-
-                <img className="instr-tip-svg" src={tunRodMotor} alt="Tuning Rod & Motor SVG" />
-
-                <p>
-                    Mechanical system used to adjust the cavity resonance frequency by fine-tuning
-                    the mirror separation.
-                </p>
-            </div>
-        ),
-    },
-
-    "bellows": {
+    "wire-and-bellows": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Bellows</h1>
@@ -174,4 +174,17 @@ export const instrumentTips = {
             </div>
         ),
     },
+
+    // support rod
+    "attachment-and-smooth-spacer": supportRod,
+    "attachment-and-threaded-spacer": supportRod,
+
+    // tuning rod and motor
+    "motor-and-rod": motorAndRod,
+    "motor": motorAndRod,
+    "rod-with-threaded-spacer": motorAndRod,
+
+    // pressure controller
+    "pressure-value": pressureController,
+    "pressure-controller": pressureController,
 };

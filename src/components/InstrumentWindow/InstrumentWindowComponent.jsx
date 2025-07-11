@@ -1834,7 +1834,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             transform="scale(-.32064 .32064)rotate(-.956 -9580.9 78143.94)"
           />
           <g
-            id="g225"
+            id="ion-gauge"
             transform="matrix(-.3206 -.00535 -.00535 .3206 437.71 -38.955)"
           >
             <g id="g224" transform="rotate(1.387 -2.525 95.869)">
@@ -1932,189 +1932,191 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           />
         </g>
         <path
-          id="cork"
-          fill="url(#radialGradient158)"
-          strokeWidth={0.265}
-          d="M419.88-14.195c.552.363 7.933.202 8.204 0 .242-.18.178 4.002 0 3.913-.179-.09-7.647-.559-8.204 0-.141.14-.194-4.04 0-3.913"
-          style={{
-            fill: "url(#radialGradient158)",
-            paintOrder: "fill markers stroke",
-          }}
+            id="cork"
+            fill="url(#radialGradient158)"
+            strokeWidth={0.265}
+            d="M419.88-14.195c.552.363 7.933.202 8.204 0 .242-.18.178 4.002 0 3.913-.179-.09-7.647-.559-8.204 0-.141.14-.194-4.04 0-3.913"
+            style={{
+              fill: "url(#radialGradient158)",
+              paintOrder: "fill markers stroke",
+            }}
         />
-        <path
-          id="rect16"
-          fill="url(#linearGradient14)"
-          d="M67.618 224.5h44.944v11.236H67.618z"
-          style={{ display: "inline", fill: "url(#linearGradient14)" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <path
-          id="rect17"
-          fill="url(#linearGradient13)"
-          d="M62 234.7h56.18v35.674H62z"
-          style={{ display: "inline", fill: "url(#linearGradient13)" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <path
-          id="rect18"
-          fill="url(#linearGradient11)"
-          d="M297.12 224.5h44.944v11.236H297.12z"
-          style={{ display: "inline", fill: "url(#linearGradient11)" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <path
-          id="rect209"
-          fill="url(#linearGradient153)"
-          strokeWidth={1.035}
-          d="M-225.607-18.122h44.92v5.748h-44.92z"
-          style={{
-            display: "inline",
-            fill: "url(#linearGradient153)",
-            paintOrder: "markers stroke fill",
-          }}
-          transform="rotate(180 121.368 -11.45)scale(.14492)"
-        />
-        <path
-          id="rect206"
-          fill="url(#linearGradient152)"
-          strokeWidth={1.121}
-          d="M41.352-387.162h48.664v6.227H41.352z"
-          style={{
-            display: "inline",
-            fill: "url(#linearGradient152)",
-            paintOrder: "markers stroke fill",
-          }}
-          transform="rotate(90 133.469 113.584)scale(.13377)"
-        />
-        <path
-          id="rect19"
-          fill="url(#linearGradient12)"
-          d="M291.5 234.7h56.18v35.674H291.5z"
-          style={{ display: "inline", fill: "url(#linearGradient12)" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <path
-          id="rect20"
-          fill="url(#linearGradient2)"
-          strokeWidth={2.51}
-          d="M21 17h362v209.5H21z"
-          style={{
-            display: "inline",
-            fill: "url(#linearGradient2)",
-            paintOrder: "fill markers stroke",
-          }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <path
-          id="rect21"
-          fill="#fbe631"
-          strokeWidth={2.274}
-          d="M35.5 29h331.99v187.5H35.5z"
-          style={{ display: "inline", paintOrder: "fill markers stroke" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <rect
-          id="rect22"
-          width={283.89}
-          height={115.12}
-          x={58.765}
-          y={59.765}
-          fill="#8e9b81"
-          stroke="#000"
-          strokeWidth={4.531}
-          ry={0}
-          style={{ display: "inline" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        />
-        <g
-          id="g25"
-          fill="#fff"
-          stroke="#000"
-          strokeWidth={1.124}
-          style={{ display: "inline" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        >
-          <rect
-            id="rect23"
-            width={38.202}
-            height={22.472}
-            x={178.56}
-            y={-195.53}
-            ry={10.868}
-            transform="rotate(180 155.48 5.683)"
+        <g id="pressure-controller">
+          <path
+            id="rect16"
+            fill="url(#linearGradient14)"
+            d="M67.618 224.5h44.944v11.236H67.618z"
+            style={{ display: "inline", fill: "url(#linearGradient14)" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
+          />
+          <path
+            id="rect17"
+            fill="url(#linearGradient13)"
+            d="M62 234.7h56.18v35.674H62z"
+            style={{ display: "inline", fill: "url(#linearGradient13)" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
+          />
+          <path
+            id="rect18"
+            fill="url(#linearGradient11)"
+            d="M297.12 224.5h44.944v11.236H297.12z"
+            style={{ display: "inline", fill: "url(#linearGradient11)" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
+          />
+          <path
+            id="rect209"
+            fill="url(#linearGradient153)"
+            strokeWidth={1.035}
+            d="M-225.607-18.122h44.92v5.748h-44.92z"
+            style={{
+              display: "inline",
+              fill: "url(#linearGradient153)",
+              paintOrder: "markers stroke fill",
+            }}
+            transform="rotate(180 121.368 -11.45)scale(.14492)"
+          />
+          <path
+            id="rect206"
+            fill="url(#linearGradient152)"
+            strokeWidth={1.121}
+            d="M41.352-387.162h48.664v6.227H41.352z"
+            style={{
+              display: "inline",
+              fill: "url(#linearGradient152)",
+              paintOrder: "markers stroke fill",
+            }}
+            transform="rotate(90 133.469 113.584)scale(.13377)"
+          />
+          <path
+            id="rect19"
+            fill="url(#linearGradient12)"
+            d="M291.5 234.7h56.18v35.674H291.5z"
+            style={{ display: "inline", fill: "url(#linearGradient12)" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
+          />
+          <path
+            id="rect20"
+            fill="url(#linearGradient2)"
+            strokeWidth={2.51}
+            d="M21 17h362v209.5H21z"
+            style={{
+              display: "inline",
+              fill: "url(#linearGradient2)",
+              paintOrder: "fill markers stroke",
+            }}
+            transform="translate(242.735 -22.9)scale(.14492)"
+          />
+          <path
+            id="rect21"
+            fill="#fbe631"
+            strokeWidth={2.274}
+            d="M35.5 29h331.99v187.5H35.5z"
+            style={{ display: "inline", paintOrder: "fill markers stroke" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
           />
           <rect
-            id="rect24"
-            width={38.202}
-            height={22.472}
-            x={-223.9}
-            y={-206.9}
-            ry={10.868}
-            transform="scale(-1)"
+            id="rect22"
+            width={283.89}
+            height={115.12}
+            x={58.765}
+            y={59.765}
+            fill="#8e9b81"
+            stroke="#000"
+            strokeWidth={4.531}
+            ry={0}
+            style={{ display: "inline" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
           />
-          <rect
-            id="rect25"
-            width={38.202}
-            height={22.472}
-            x={178.56}
-            y={-195.53}
-            ry={10.868}
-            transform="rotate(180 245.98 5.683)"
-          />
-        </g>
-        <text
-          xmlSpace="preserve"
-          id="text25"
-          x={305.308}
-          y={53}
-          fill="#fbe631"
-          strokeWidth={2.51}
-          fontSize={21.333}
-          style={{ display: "inline", paintOrder: "fill markers stroke" }}
-          transform="translate(242.735 -22.9)scale(.14492)"
-        >
-          <tspan
-            id="tspan25"
-            x={203.788}
+          <g
+            id="g25"
+            fill="#fff"
+            stroke="#000"
+            strokeWidth={1.124}
+            style={{ display: "inline" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
+          >
+            <rect
+              id="rect23"
+              width={38.202}
+              height={22.472}
+              x={178.56}
+              y={-195.53}
+              ry={10.868}
+              transform="rotate(180 155.48 5.683)"
+            />
+            <rect
+              id="rect24"
+              width={38.202}
+              height={22.472}
+              x={-223.9}
+              y={-206.9}
+              ry={10.868}
+              transform="scale(-1)"
+            />
+            <rect
+              id="rect25"
+              width={38.202}
+              height={22.472}
+              x={178.56}
+              y={-195.53}
+              ry={10.868}
+              transform="rotate(180 245.98 5.683)"
+            />
+          </g>
+          <text
+            xmlSpace="preserve"
+            id="pressure-controller"
+            x={305.308}
             y={53}
-            fill="#1a1a1a"
+            fill="#fbe631"
+            strokeWidth={2.51}
             fontSize={21.333}
-            textAnchor="middle"
+            style={{ display: "inline", paintOrder: "fill markers stroke" }}
+            transform="translate(242.735 -22.9)scale(.14492)"
           >
-            {"Pressure Controller"}
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          id="pressure-value"
-          x={351.843}
-          y={125.938}
-          fill="#000"
-          strokeLinecap="square"
-          strokeLinejoin="round"
-          strokeWidth={9.643}
-          dominantBaseline="central"
-          fontFamily="sans-serif"
-          fontSize={27.429}
-          style={{
-            fontSize: "43.8186px",
-            lineHeight: 0,
-            paintOrder: "fill markers stroke",
-          }}
-          textAnchor="middle"
-          transform="translate(242.735 -22.9)scale(.14492)"
-        >
-          <tspan
-            id="tspan25-3"
-            x={198.786}
-            y={116.294}
+            <tspan
+              id="tspan25"
+              x={203.788}
+              y={53}
+              fill="#1a1a1a"
+              fontSize={21.333}
+              textAnchor="middle"
+            >
+              {"Pressure Controller"}
+            </tspan>
+          </text>
+          <text
+            xmlSpace="preserve"
+            id="pressure-value"
+            x={351.843}
+            y={125.938}
+            fill="#000"
+            strokeLinecap="square"
+            strokeLinejoin="round"
             strokeWidth={9.643}
+            dominantBaseline="central"
+            fontFamily="sans-serif"
             fontSize={27.429}
-            style={{ fontSize: "43.8186px" }}
+            style={{
+              fontSize: "43.8186px",
+              lineHeight: 0,
+              paintOrder: "fill markers stroke",
+            }}
+            textAnchor="middle"
+            transform="translate(242.735 -22.9)scale(.14492)"
           >
-            {pressure}
-          </tspan>
-        </text>
+            <tspan
+              id="tspan25-3"
+              x={198.786}
+              y={116.294}
+              strokeWidth={9.643}
+              fontSize={27.429}
+              style={{ fontSize: "43.8186px" }}
+            >
+              {pressure}
+            </tspan>
+          </text>
+        </g>
       </g>
       <g id="bellows-and-gas-hose">
         <g
@@ -2430,18 +2432,20 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             />
           </g>
         </g>
-        <path
-          id="movable-mirror"
-          fill="url(#linearGradient31)"
-          strokeWidth={1.048}
-          d="M324.162 40.139h29.381s-5.892 1.796-11.454 21.74c-6.718 24.091-5.072 73.352-.478 100.592 2.974 17.635 11.932 22.193 11.932 22.193h-29.38z"
-          style={{
-            fill: "url(#linearGradient18)",
-            strokeWidth: 0.900589,
-            strokeDasharray: "none",
-            paintOrder: "fill markers stroke",
-          }}
-        />
+        <g id="move-mirror">
+          <path
+              id="movable-mirror"
+              fill="url(#linearGradient31)"
+              strokeWidth={1.048}
+              d="M324.162 40.139h29.381s-5.892 1.796-11.454 21.74c-6.718 24.091-5.072 73.352-.478 100.592 2.974 17.635 11.932 22.193 11.932 22.193h-29.38z"
+              style={{
+                fill: "url(#linearGradient18)",
+                strokeWidth: 0.900589,
+                strokeDasharray: "none",
+                paintOrder: "fill markers stroke",
+              }}
+          />
+        </g>
         <path
           id="nozzle"
           fill="url(#radialGradient180)"
@@ -2512,18 +2516,20 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             />
           </g>
         </g>
-        <path
-          id="fixed-mirror"
-          fill="url(#linearGradient31)"
-          strokeWidth={1.048}
-          d="M484.449 40.139h-29.381s5.892 1.796 11.454 21.74c6.718 24.091 5.072 73.352.478 100.592-2.974 17.635-11.932 22.193-11.932 22.193h29.38z"
-          style={{
-            fill: "url(#linearGradient20)",
-            strokeWidth: 0.900589,
-            strokeDasharray: "none",
-            paintOrder: "fill markers stroke",
-          }}
-        />
+        <g id="fixed-mirror">
+          <path
+              id="fixed-mirror"
+              fill="url(#linearGradient31)"
+              strokeWidth={1.048}
+              d="M484.449 40.139h-29.381s5.892 1.796 11.454 21.74c6.718 24.091 5.072 73.352.478 100.592-2.974 17.635-11.932 22.193-11.932 22.193h29.38z"
+              style={{
+                fill: "url(#linearGradient20)",
+                strokeWidth: 0.900589,
+                strokeDasharray: "none",
+                paintOrder: "fill markers stroke",
+              }}
+          />
+        </g>
       </g>
       <g
         id="motor-and-rod"
@@ -2531,7 +2537,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         transform="rotate(180 100.056 109.95)scale(.4928)"
       >
         <g id="motor" transform="matrix(-.26648 0 0 -.21404 88.256 140.65)">
-          <g id="g308" strokeLinecap="square">
+          <g id="motor" strokeLinecap="square">
             <path
               id="rect294"
               fill="gray"
@@ -2551,7 +2557,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               transform="rotate(-90)"
             />
             <g
-              id="g307"
+              id="motor"
               strokeWidth={2.916}
               transform="matrix(.63872 0 0 .89231 -164.67 -26.761)"
             >
@@ -2565,7 +2571,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
                 }}
                 transform="scale(-1)"
               />
-              <g id="g306" fill="#1a1a1a">
+              <g id="motor" fill="#1a1a1a">
                 <path
                   id="rect297"
                   d="M824.83-82.59h97.754v1.776H824.83z"
@@ -2629,7 +2635,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               </g>
             </g>
           </g>
-          <g id="g311" transform="matrix(1.9717 0 0 .74829 601.06 3.395)">
+          <g id="motor-and-rod" transform="matrix(1.9717 0 0 .74829 601.06 3.395)">
             <path
               id="path308"
               fill="url(#linearGradient76316-0-8-4)"
@@ -2691,7 +2697,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             />
           </g>
         </g>
-        <g id="g326" transform="matrix(-.19382 0 0 -.08557 109.65 57.778)">
+        <g id="motor-and-rod" transform="matrix(-.19382 0 0 -.08557 109.65 57.778)">
           <rect
             id="rect238-7"
             width={21.511}

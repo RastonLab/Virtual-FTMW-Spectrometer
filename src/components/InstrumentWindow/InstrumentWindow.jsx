@@ -16,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 
 // import dictionary
 import { instrumentTips } from "../../dictionaries/instrumentTips";
+// constants
+import { BAD_ID } from "../../dictionaries/constants";
 
 /**
  * A component that contains the instrument window
@@ -129,18 +131,15 @@ const InstrumentWindow = () => {
     navigate(url, -1);
   }
 
+  // handler for dialog popups of clickable instruments
   const handleInstrClick = (event) => {
-    /*console.log("event = " + event);
-    console.log("event id = " + event.target.parentElement.id);
-    setElement(event.target.parentElement.id);
-    console.log("the element = " + element);
-    setToggled(!toggled);
-    */
-
-    /*if (!BAD_ID.includes(event.target.parentElement.id)) {
+    if (!BAD_ID.includes(event.target.parentElement.id)) {
+      console.log("event = " + event);
+      console.log("event id = " + event.target.parentElement.id);
       setElement(event.target.parentElement.id);
+      console.log("the element = " + element);
       setToggled(!toggled);
-    }*/
+    }
   }
 
   return (
