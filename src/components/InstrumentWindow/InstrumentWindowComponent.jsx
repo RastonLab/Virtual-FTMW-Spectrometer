@@ -2344,6 +2344,17 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         style={{ strokeWidth: 0.900589, strokeDasharray: "none" }}
         transform="matrix(1.00982 0 0 1 -4.765 0)"
       >
+        <g id="fabry-perot-cavity">
+          <rect
+              id="fabry-perot-cavity"
+              x={210}
+              y={40}
+              width={269.449}
+              height={145}
+              fill="transparent"
+              pointerEvents="all"
+          />
+        </g>
         <g
           id="rod-with-threaded-spacer"
           style={{ strokeWidth: 16.6195, strokeDasharray: "none" }}
@@ -3536,7 +3547,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
         />
         <path
-          id="fabry-perot-cavity"
+          id="path238"
           fill="url(#linearGradient32)"
           strokeWidth={0.703}
           d="M154.337 15.145v197.89H487.78V15.145Zm3.397 3.03h326.655v191.84H157.734Z"

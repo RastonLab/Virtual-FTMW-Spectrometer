@@ -1,7 +1,10 @@
 // components
 
 // graph import
-// import spectrum_graph from "../assets/svg/components/instruments/graph.png";
+import spectrum_graph from "../assets/svg/components/instruments/graph.png";
+
+// table import
+import cavity_table from "../assets/svg/components/instruments/cavity_table.png"
 
 // svg imports
 import fixMirror from "../assets/svg/components/instrument-cleanup/Fixed-mirror-cleanup.svg";
@@ -61,12 +64,41 @@ const supportRod = {
 };
 
 export const instrumentTips = {
+    "fabry-perot-cavity": {
+        text: (
+            <div className="popup-instr-tip">
+                <h1>Fabry-Pérot Cavity</h1>
+
+                <p>
+                    This is where molecules are polarized by the microwave field, leading to the
+                    coherent emission that is detected in FTMW spectroscopy. The Fabry-Pérot cavity
+                    is a high-Q resonator consisting of two concave mirrors (one fixed and one movable)
+                    that confines the microwave radiation, which enhances field strength and spectral
+                    resolution. The bandwidth, Γ, in FTMW spectroscopy is typically around 1 MHz at a
+                    resonance frequency, ν<sub>res</sub>, of 10 GHz; this can be determined from the equation,
+                    Γ = ν<sub>res</sub>/Q, where Q = 10,000.
+                </p>
+
+                <img className="spectrum-graph" src={spectrum_graph} alt="Spectrum Graph" />
+
+                <p>
+                    The distance between the mirrors is sensitive to the frequency range and the desired
+                    number of wavelengths between them. The following table outlines key cavity
+                    characteristics for different microwave bands. It assumes a radius of curvature of
+                    the mirrors equal to 38.4 cm.
+                </p>
+
+                <img className="cavity-table" src={cavity_table} alt={"Cavity Table"}/>
+            </div>
+        ),
+    },
+
     "fixed-mirror": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Fixed Mirror</h1>
 
-                <img className="instr-tip-svg" src={fixMirror} alt="Fixed Mirror SVG" />
+                <img className="instr-tip-svg" src={fixMirror} alt="Fixed Mirror SVG"/>
 
                 <p>
                     Stationary concave aluminum mirror forming one end of the Fabry-Pérot cavity.
@@ -83,7 +115,7 @@ export const instrumentTips = {
             <div className="popup-instr-tip">
                 <h1>Movable Mirror</h1>
 
-                <img className="instr-tip-svg" src={movMirror} alt="Movable Mirror SVG" />
+                <img className="instr-tip-svg" src={movMirror} alt="Movable Mirror SVG"/>
 
                 <p>
                     Concave aluminium mirror whose position can be adjusted to fine-tune the cavity length,

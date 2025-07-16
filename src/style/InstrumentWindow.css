@@ -26,6 +26,7 @@
     position: relative; /* Ensure this is a positioning context */
 }
 
+/* Instrument popup css */
 .popup-instr-tip {
     display: flex;
     flex-direction: column;
@@ -56,6 +57,23 @@
     text-align: center;
     padding: 3% 3%;
 }
+
+.spectrum-graph {
+    height: auto;
+    width: auto;
+
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.cavity-table {
+    height: auto;
+    width: auto;
+
+    max-width: 500px;
+    max-height: 500px;
+}
+/* Instrument popup css */
 
 /* Ensure the SVG maintains aspect ratio */
 #instrument svg {
