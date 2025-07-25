@@ -9,7 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
+  overflow-y: auto;
 }
 
 .gif-container {
@@ -23,14 +24,11 @@
 }
 
 .animation-gif {
-  display: block;
-  width: 95%; /* Slightly reduced width for better proportion */
+  max-width: 95vw;   /* Prevents it from getting too wide */
+  max-height: 70vh;  /* Resize with window height, keeping space for text */
+  width: auto;
   height: auto;
   object-fit: contain;
-  margin: 0;
-  border: none; /* No border */
-  background-color: transparent; /* Transparent background */
-  box-shadow: none; /* Remove shadow */
 }
 
 /* Description text style */
