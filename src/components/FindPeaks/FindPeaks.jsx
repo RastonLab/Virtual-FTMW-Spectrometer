@@ -93,6 +93,7 @@ export default function FindPeaks() {
    * Handles the slider change event.
    */
   const handleSliderChange = (event, newValue) => {
+      console.log("handle slider");
     setLowerBound(newValue[0]);
     setUpperBound(newValue[1]);
   };

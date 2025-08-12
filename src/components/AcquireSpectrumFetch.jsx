@@ -25,6 +25,7 @@ export default function AcquireSpectrumFetch({
 
   const dispatch = useDispatch();
   const { fetching } = useSelector((store) => store.progress);
+  console.log("fetching?", fetching);
   const { 
     molecule, 
     stepSize,
@@ -65,10 +66,12 @@ export default function AcquireSpectrumFetch({
    */
   const fetchServer = async () => {
     // remove any errors (if existing) and start a progress spinner
-    dispatch(setError([false, null]));
+    console.log("setting error and progress");
+    dispatch(setError([true, "Setting instrument parameters...<br/>" +
+    "If the instrument window doesn't open soon, please cancel the acquisition and try a smaller frequency range and/or larger step size."]));
     dispatch(setProgress([true, true, false]));
     dispatch(setCurrentFrequency(frequencyMin));
-    dispatch(setPeaksData(null))
+    dispatch(setPeaksData(null));
     
     let body = "";
     let delay = 0;
@@ -109,7 +112,11 @@ export default function AcquireSpectrumFetch({
           // if the acquisition type is range, navigate to instrument page
           if (acquisitionType === "range") {
             dispatch(scanStarted({ startTime: Date.now(), durationMs: delay }));
-            nav("/instrument", -1);
+
+            setTimeout(() => {
+              console.log("in timer before nav");
+              nav("/instrument", -1);
+              }, 100);
           }
           sleepID = setTimeout(() => {
             dispatch(setSpectrumData([data, frequencyMin, frequencyMax]));

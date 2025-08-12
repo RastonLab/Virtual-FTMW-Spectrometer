@@ -17,8 +17,10 @@ import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js
 const ExperimentalSetup = () => {
   const dispatch = useDispatch();
   const { prefetch } = useSelector((store) => store.progress);
+  console.log("Experimental Setup prefetch = " + prefetch);
   const { error, errorText } = useSelector((store) => store.error);
   const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres, frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
+  //const { wait, waitText } = useSelector((store) => store.wait);
   /**
    * Calls the helper method to get frequency range value depending on the mw band
    */
@@ -167,14 +169,14 @@ const ExperimentalSetup = () => {
       </div>
 
       <div id="graph-and-error" className="exp-col">
-        {prefetch ? (
-          <Spinner variant="indeterminate" size={200} />
-        ) : (
-          error && (
+
+        {prefetch && (
+            <Spinner variant="indeterminate" size={200} />
+        )}
+        {error && (
             <div id="error">
-              <p style={{ fontSize: 30 }}>{errorText}</p>
+              <p style={{ fontSize: 30 }} dangerouslySetInnerHTML={{ __html: errorText}} />
             </div>
-          )
         )}
       </div>
     </div>
