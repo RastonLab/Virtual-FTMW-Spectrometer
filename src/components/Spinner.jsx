@@ -24,9 +24,13 @@ export default function Spinner({ delay, ...otherProps }) {
 
   const dispatch = useDispatch();
 
+  const { prefetch } = useSelector((store) => store.progress);
+
+  //console.log("scan active = " + scanActive);
+
   // Set the initial state for the spinner
   useEffect(() => {
-    if (!scanActive) return;
+    //if (!scanActive) return;
 
     // Calculate how much time has already passed since scan started
     const elapsedMs = Date.now() - startTime;
@@ -55,7 +59,7 @@ export default function Spinner({ delay, ...otherProps }) {
 
   // Set up the interval to update the spinner
   useEffect(() => {
-    if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
+    //if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
 
     let cycleCount = 0;
 
@@ -68,10 +72,11 @@ export default function Spinner({ delay, ...otherProps }) {
 
         setStepsDone((step) => {
           const nextStep = step + 1;
-          if (nextStep >= totalSteps) {
+          if (!prefetch && nextStep >= totalSteps) {
             clearInterval(interval);
             setTimeout(() => {
-              dispatch(setProgress(false, false, false));
+              console.log("set progress spinner: prefetch = false");
+              dispatch(setProgress([false, false, false]));
               dispatch(scanEnded());
             }, 0);
             return step;
@@ -85,7 +90,7 @@ export default function Spinner({ delay, ...otherProps }) {
     }, tickInterval);
 
     return () => clearInterval(interval);
-  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch]);
+  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch, prefetch]);
 
   // Recalculate percent complete and update Redux frequency
   useEffect(() => {
@@ -97,7 +102,7 @@ export default function Spinner({ delay, ...otherProps }) {
     }
   }, [stepsDone, totalSteps, acquisitionType, dispatch]);
 
-  if (!scanActive) return null;
+  //if (!scanActive) return null;
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>

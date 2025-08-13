@@ -23,6 +23,7 @@ import { BAD_ID } from "../../dictionaries/constants";
  * A component that contains the instrument window
  */
 const InstrumentWindow = () => {
+  console.log("instrument window");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -36,6 +37,8 @@ const InstrumentWindow = () => {
   const [toggled, setToggled] = useState(false);
   const [element, setElement] = useState();
   const [displayToggle, setDisplayToggle] = useState(false);
+
+  //console.log("prefetch inst = " + prefetch);
 
   /**
    * Sets the beginning state of the instrument window

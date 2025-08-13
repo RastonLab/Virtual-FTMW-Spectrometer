@@ -87,17 +87,17 @@ export default function FindPeaksFetch({
 
       if (response.ok) {
         if (data.success) {
-            dispatch(setProgress(false, false, false));
+            dispatch(setProgress([false, false, false]));
             dispatch(setPeaksData(data));
           
         }
         else {
-            dispatch(setProgress(false, false, false));
+            dispatch(setProgress([false, false, false]));
             dispatch(setError([true, data.text]));
         }
       }
     } catch (error) {
-       dispatch(setProgress(false, false, false));
+       dispatch(setProgress([false, false, false]));
        switch (error.name) {
           case "AbortError":
             dispatch(setError([true, "Scan canceled"]));

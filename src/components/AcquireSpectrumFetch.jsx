@@ -25,7 +25,7 @@ export default function AcquireSpectrumFetch({
 
   const dispatch = useDispatch();
   const { fetching } = useSelector((store) => store.progress);
-  console.log("fetching?", fetching);
+  //console.log("fetching?", fetching);
   const { 
     molecule, 
     stepSize,
@@ -69,6 +69,7 @@ export default function AcquireSpectrumFetch({
     console.log("setting error and progress");
     dispatch(setError([true, "Setting instrument parameters...<br/>" +
     "If the instrument window doesn't open soon, please cancel the acquisition and try a smaller frequency range and/or larger step size."]));
+    console.log("set progress 1: prefetch = true");
     dispatch(setProgress([true, true, false]));
     dispatch(setCurrentFrequency(frequencyMin));
     dispatch(setPeaksData(null));
@@ -104,6 +105,7 @@ export default function AcquireSpectrumFetch({
       delay = ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200;
       // No delay for single frequency
       delay = acquisitionType === "single" ? 0 : delay;
+      console.log("set progress 2: prefetch = false");
       dispatch(setProgress([true, false, true]));
 
       if (response.ok) {
@@ -112,11 +114,7 @@ export default function AcquireSpectrumFetch({
           // if the acquisition type is range, navigate to instrument page
           if (acquisitionType === "range") {
             dispatch(scanStarted({ startTime: Date.now(), durationMs: delay }));
-
-            setTimeout(() => {
-              console.log("in timer before nav");
-              nav("/instrument", -1);
-              }, 100);
+            nav("/instrument", -1);
           }
           sleepID = setTimeout(() => {
             dispatch(setSpectrumData([data, frequencyMin, frequencyMax]));
@@ -140,18 +138,21 @@ export default function AcquireSpectrumFetch({
             // Set progress to false if acquisition type is single
             // As for rage, it will be set to false in the when the spinner is done
             if (acquisitionType === "single") {
-              dispatch(setProgress(false, false, false));
+              console.log("set progress 3: prefetch = false");
+              dispatch(setProgress([false, false, false]));
             }
 
           }, delay); 
         }
         else {
-          dispatch(setProgress(false, false, false));
+          console.log("set progress 4: prefetch = false");
+          dispatch(setProgress([false, false, false]));
           dispatch(setError([true, data.text]));
         }
       }
     } catch (error) {
-       dispatch(setProgress(false, false, false));
+       console.log("set progress 5: prefetch = false");
+       dispatch(setProgress([false, false, false]));
        switch (error.name) {
           case "AbortError":
             dispatch(setError([true, "Scan canceled"]));
