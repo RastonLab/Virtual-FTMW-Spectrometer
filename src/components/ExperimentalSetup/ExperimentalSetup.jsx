@@ -174,7 +174,11 @@ const ExperimentalSetup = () => {
             <Spinner variant="indeterminate" size={200} />
         )}
         {error && (
-            <div id="error">
+            <div id="error"
+                 style={{
+                   textAlign: 'center',
+                   width: '600px',
+                   maxWidth: '80%', }}>
               <p style={{ fontSize: 30 }} dangerouslySetInnerHTML={{ __html: errorText}} />
             </div>
         )}
