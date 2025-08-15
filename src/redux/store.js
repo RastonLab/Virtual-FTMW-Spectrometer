@@ -5,6 +5,7 @@ import progressReducer from "../redux/progressSlice";
 import experimentalSetupReducer from "../redux/experimentalSetupSlice";
 import acquireSpectrumReducer from "../redux/acquireSpectrumSlice";
 import scanReducer from "../redux/scanSlice";
+import messageReducer from "../redux/messageSlice";
 
 /**
  * Function that sets the reducers called upon to update state
@@ -12,6 +13,7 @@ import scanReducer from "../redux/scanSlice";
 export const store = configureStore({
   reducer: {
     error: errorReducer,
+    message: messageReducer,
     peaksData: peaksDataReducer,
     progress: progressReducer,
     experimentalSetup: experimentalSetupReducer,

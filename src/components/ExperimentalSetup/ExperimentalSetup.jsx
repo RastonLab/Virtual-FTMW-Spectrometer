@@ -19,6 +19,7 @@ const ExperimentalSetup = () => {
   const { prefetch } = useSelector((store) => store.progress);
   console.log("Experimental Setup prefetch = " + prefetch);
   const { error, errorText } = useSelector((store) => store.error);
+  const { msg, msgText } = useSelector((store) => store.message);
   const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres, frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
   //const { wait, waitText } = useSelector((store) => store.wait);
   /**
@@ -180,6 +181,15 @@ const ExperimentalSetup = () => {
                    width: '600px',
                    maxWidth: '80%', }}>
               <p style={{ fontSize: 30 }} dangerouslySetInnerHTML={{ __html: errorText}} />
+            </div>
+        )}
+        {msg && (
+            <div id="message"
+                 style={{
+                   textAlign: 'center',
+                   width: '600px',
+                   maxWidth: '80%', }}>
+              <p style={{ fontSize: 30 }} dangerouslySetInnerHTML={{ __html: msgText}} />
             </div>
         )}
       </div>

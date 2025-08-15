@@ -3,6 +3,7 @@ import { cancelAnimation } from "./InstrumentWindow/animations/instrumentWindowA
 import { useDispatch, useSelector } from "react-redux";
 import { setProgress } from "../redux/progressSlice";
 import { setError } from "../redux/errorSlice";
+import { setMessage } from "../redux/messageSlice";
 import { setSpectrumData, setSpectrumParameters } from "../redux/acquireSpectrumSlice";
 import { useNavigate } from "react-router-dom";
 import { setCurrentFrequency } from "../redux/experimentalSetupSlice";
@@ -67,7 +68,8 @@ export default function AcquireSpectrumFetch({
   const fetchServer = async () => {
     // remove any errors (if existing) and start a progress spinner
     console.log("setting error and progress");
-    dispatch(setError([true, "Setting instrument parameters...<br/>" +
+    dispatch(setError([false, '']));
+    dispatch(setMessage([true, "Setting instrument parameters...<br/>" +
     "If the instrument window doesn't open soon, please cancel the acquisition and try a smaller frequency range and/or larger step size."]));
     console.log("set progress 1: prefetch = true");
     dispatch(setProgress([true, true, false]));
@@ -111,6 +113,8 @@ export default function AcquireSpectrumFetch({
       if (response.ok) {
         if (data.success) {
 
+          dispatch(setMessage([false, '']));
+
           // if the acquisition type is range, navigate to instrument page
           if (acquisitionType === "range") {
             dispatch(scanStarted({ startTime: Date.now(), durationMs: delay }));
@@ -145,12 +149,16 @@ export default function AcquireSpectrumFetch({
           }, delay); 
         }
         else {
+          dispatch(setMessage([false, '']));
+
           console.log("set progress 4: prefetch = false");
           dispatch(setProgress([false, false, false]));
           dispatch(setError([true, data.text]));
         }
       }
     } catch (error) {
+       dispatch(setMessage([false, '']));
+
        console.log("set progress 5: prefetch = false");
        dispatch(setProgress([false, false, false]));
        switch (error.name) {
