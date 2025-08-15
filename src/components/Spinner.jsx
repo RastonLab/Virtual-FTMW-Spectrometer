@@ -8,7 +8,7 @@ import { scanEnded } from '../redux/scanSlice';
 /**
  * Spinner that tracks a running FTMW scan.
  */
-export default function Spinner({ delay, ...otherProps }) {
+export default function Spinner({ delay, noPadding = false, ...otherProps }) {
   const { variant } = otherProps;
 
   const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
@@ -105,7 +105,7 @@ export default function Spinner({ delay, ...otherProps }) {
   //if (!scanActive) return null;
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 15 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", padding: noPadding ? 0 : 15 }}>
       <CircularProgress {...otherProps} value={elapsed} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
       {acquisitionType === "range" && variant !== "indeterminate" && (
         <Typography variant="caption" component="div" color="inherit" fontFamily="inherit" fontSize={20} fontWeight={650} sx={{ textAlign: "center" }}>

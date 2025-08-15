@@ -171,7 +171,7 @@ const ExperimentalSetup = () => {
       <div id="graph-and-error" className="exp-col">
 
         {prefetch && (
-            <Spinner variant="indeterminate" size={200} />
+            <Spinner variant="indeterminate" size={200} noPadding />
         )}
         {error && (
             <div id="error"
