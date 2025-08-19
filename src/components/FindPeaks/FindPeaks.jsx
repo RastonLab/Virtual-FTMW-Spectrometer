@@ -41,6 +41,9 @@ export default function FindPeaks() {
     }
   }, [data, lowerBound, frequencyMin, frequencyMax, upperBound]);
 
+  console.log("lower bound = " + lowerBound);
+  console.log("upper bound = " + upperBound);
+
   // Update the number of data points in the selected range.
   useEffect(() => {
     if (data && data.x) {
@@ -126,15 +129,19 @@ export default function FindPeaks() {
       </Box>
 
       {/* Slider for Bounds */}
+        {console.log("freq min = " + frequencyMin)}
+        {console.log("freq max = " + frequencyMax)}
+        {console.log("computed frequency min = " + computedFrequencyMin)}
+        {console.log("computed frequency max = " + computedFrequencyMax)}
       <Box className="find-peaks-box">
         <Slider
           sx={{ minWidth: "150px" }}
           value={[
-            lowerBound || computedFrequencyMin,
-            upperBound || computedFrequencyMax,
+            lowerBound === "" ? computedFrequencyMin : lowerBound,
+            upperBound === "" ? computedFrequencyMax : upperBound,
           ]}
-          min={computedFrequencyMin}
-          max={computedFrequencyMax}
+          min={frequencyMin ?? computedFrequencyMin}
+          max={frequencyMax ?? computedFrequencyMax}
           onChange={handleSliderChange}
           aria-labelledby="input-slider"
         />
