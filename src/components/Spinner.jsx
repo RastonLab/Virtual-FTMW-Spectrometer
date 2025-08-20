@@ -30,7 +30,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
 
   // Set the initial state for the spinner
   useEffect(() => {
-    //if (!scanActive) return;
+    if (!scanActive) return;
 
     // Calculate how much time has already passed since scan started
     const elapsedMs = Date.now() - startTime;
@@ -59,7 +59,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
 
   // Set up the interval to update the spinner
   useEffect(() => {
-    //if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
+    if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
 
     let cycleCount = 0;
 
@@ -72,7 +72,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
 
         setStepsDone((step) => {
           const nextStep = step + 1;
-          if (!prefetch && nextStep >= totalSteps) {
+          if (nextStep >= totalSteps) {
             clearInterval(interval);
             setTimeout(() => {
               console.log("set progress spinner: prefetch = false");
