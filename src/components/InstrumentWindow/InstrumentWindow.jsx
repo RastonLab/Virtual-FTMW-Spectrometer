@@ -23,7 +23,6 @@ import { BAD_ID } from "../../dictionaries/constants";
  * A component that contains the instrument window
  */
 const InstrumentWindow = () => {
-  console.log("instrument window");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -37,8 +36,6 @@ const InstrumentWindow = () => {
   const [toggled, setToggled] = useState(false);
   const [element, setElement] = useState();
   const [displayToggle, setDisplayToggle] = useState(false);
-
-  //console.log("prefetch inst = " + prefetch);
 
   /**
    * Sets the beginning state of the instrument window
@@ -116,16 +113,8 @@ const InstrumentWindow = () => {
    * Handler invoked when clicking the PC
    */
   const handlePartClick = (event) => {
-    console.log("handle part click");
-    console.log("event id = " + event.target.parentElement.id);
     setDisplayToggle(!displayToggle);
   };
-
-  // Handler for closing the dialog
-  /*const handleClick = () => {
-    console.log("handle click");
-    setDisplayToggle(!displayToggle);
-  };*/
 
   /**
    * Handler invoked when clicking a svg componenent to navigate to a different page

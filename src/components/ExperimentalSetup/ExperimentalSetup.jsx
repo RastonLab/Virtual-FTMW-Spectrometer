@@ -17,7 +17,6 @@ import * as experimentalSetupReducer from '../../redux/experimentalSetupSlice.js
 const ExperimentalSetup = () => {
   const dispatch = useDispatch();
   const { prefetch } = useSelector((store) => store.progress);
-  console.log("Experimental Setup prefetch = " + prefetch);
   const { error, errorText } = useSelector((store) => store.error);
   const { msg, msgText } = useSelector((store) => store.message);
   const { mwBand, frequencyRange, microwavePulseWidth, numCyclesPerStep, stepSize, repetitionRate, molecularPulseWidth, acquisitionType, vres, frequencyMin, frequencyMax } = useSelector((store) => store.experimentalSetup);
