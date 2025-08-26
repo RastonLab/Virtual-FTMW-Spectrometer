@@ -3380,7 +3380,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               }}
               transform="rotate(.256 0 .002)skewX(-.175)"
             />
-            <g id="g275" stroke="#000" strokeLinecap="square">
+            <g id="diffusion-pump" stroke="#000" strokeLinecap="square">
               <path
                 id="rect273"
                 fill="url(#linearGradient41703)"
@@ -3910,7 +3910,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         />
         <text
           xmlSpace="preserve"
-          id="mw-band-tile"
+          id="mw-band-title"
           x={-280.344}
           y={551.161}
           fill="#fff"
