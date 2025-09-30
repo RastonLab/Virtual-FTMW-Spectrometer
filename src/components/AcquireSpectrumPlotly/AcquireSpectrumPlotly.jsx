@@ -58,7 +58,7 @@ export default function AcquireSpectrumPlotly() {
             font: { family: "Roboto", color: "#000" },
             xaxis: {
               range: xRange,
-              title: { text: "Frequency (GHz)" },
+              title: { text: "Frequency (MHz)" },
               rangeslider: {
                 autorange: true,
                 yaxis: { rangemode: "auto" },
