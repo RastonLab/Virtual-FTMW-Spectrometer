@@ -39,16 +39,6 @@ To use the simulator:
 3. Explore the Schematic tab to learn about the spectrometer’s components.
 4. Generate a spectrum in the Spectrum tab and analyze results in the Find Peaks tab.
 
-## Additional Information
-
-Additional information regarding the FTIR-SIS can be found in the repository's
-[wiki page](../../wiki). This information includes Redux Toolkit, SVG diagrams, 
-SVG optimization, SVG interactivity, and SVG animation.
-
-## Contributing
-
-Upkeep of this project is intended for recruited undergraduate students, but pull requests 
-are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
