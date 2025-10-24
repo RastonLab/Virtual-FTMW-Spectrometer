@@ -64,7 +64,7 @@ const supportRod = {
 };
 
 export const instrumentTips = {
-    "fabry-perot-cavity": {
+    "fabry-perot-cavity-group": {
         text: (
             <div className="popup-instr-tip">
                 <h1>Fabry-Pérot Cavity</h1>

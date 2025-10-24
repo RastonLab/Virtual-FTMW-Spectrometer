@@ -2344,14 +2344,14 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         style={{ strokeWidth: 0.900589, strokeDasharray: "none" }}
         transform="matrix(1.00982 0 0 1 -4.765 0)"
       >
-        <g id="fabry-perot-cavity">
+        <g id="fabry-perot-cavity-group">
           <rect
               id="fabry-perot-cavity"
               x={210}
               y={40}
-              width={269.449}
+              width={101}
               height={145}
-              fill="transparent"
+              fill="black"
               pointerEvents="all"
           />
         </g>

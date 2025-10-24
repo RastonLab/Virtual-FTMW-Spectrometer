@@ -46,7 +46,8 @@ export const S_BAND_KEYFRAMES = createBandKeyframes({
     insideThreadedSpacer: fraction => `translate(${lerp(3400, 0, fraction).toFixed(0)}px, 0px)`,
     wireAndBellows: fraction => `scale(${lerp(0.21, 1, fraction).toFixed(3)}, 1)`,
     radiation: fraction =>
-      `matrix(${lerp(0.551, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(448.287, 459.287, fraction).toFixed(3)}, 41.139)`
+      `matrix(${lerp(0.551, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(448.287, 459.287, fraction).toFixed(3)}, 41.139)`,
+    fabryPerotCavity: fraction => `scale(${lerp(0.21, 1, fraction).toFixed(3)}, 1)`
   }
 });
 

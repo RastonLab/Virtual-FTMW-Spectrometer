@@ -15,6 +15,7 @@ const getComponents = () => ({
   insideThreadedSpacer: document.getElementById("inside-threaded-spacer"),
   wireAndBellows: document.getElementById("wire-and-bellows"),
   radiation: document.getElementById("radiation"),
+  fabryPerotCavity: document.getElementById("fabry-perot-cavity"),
   sBand: document.getElementById("s-band"),
   cBand: document.getElementById("c-band"),
   xBand: document.getElementById("x-band"),
@@ -36,6 +37,7 @@ const sBandState = () => ({
   insideThreadedSpacer: { transform: "translate(3400px, 0px)" },
   wireAndBellows: { transform: "scale(0.21, 1)" },
   radiation: { transform: "matrix(0.551, 0, 0, .17202, 448.287, 41.139)" },
+  fabryPerotCavity: { transform: "scale(2.67, 1)" },
 });
 
 
@@ -47,6 +49,7 @@ export function setSBandState() {
   let state = sBandState();
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
+  components.fabryPerotCavity.style.transformOrigin = "210px 40px";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -78,10 +81,12 @@ export function animateToBand(
     "threadedSpacer",
     "insideThreadedSpacer",
     "wireAndBellows",
-    "radiation"
+    "radiation",
+    "fabryPerotCavity"
   ];
-  
+
   components.wireAndBellows.style.transformOrigin = "160px 80px";
+  components.fabryPerotCavity.style.transformOrigin = "210px 40px";
   components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - currentFrequency) / stepSize + 1) * cyclesPerStep * 1000;
@@ -132,7 +137,8 @@ export function animateToBand(
       easing: "linear",
       fill: "forwards"
     };
-    
+
+    console.log("animation beginning start");
     // Animates the beginning of the scan
     componentNames.forEach(name => {
       components[name].animate(
@@ -143,6 +149,7 @@ export function animateToBand(
         firstTiming
       );
     });
+    console.log("animation beginning end");
   }
   else {
     const currentKeyIndex = availableKeys.findIndex((key) => Number(key) >= currentFrequency);
