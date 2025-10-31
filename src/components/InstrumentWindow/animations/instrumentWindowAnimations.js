@@ -37,7 +37,7 @@ const sBandState = () => ({
   insideThreadedSpacer: { transform: "translate(3400px, 0px)" },
   wireAndBellows: { transform: "scale(0.21, 1)" },
   radiation: { transform: "matrix(0.551, 0, 0, .17202, 448.287, 41.139)" },
-  fabryPerotCavity: { transform: "scale(2.67, 1)" },
+  fabryPerotCavity: { transform: "scale(1, 1)" },
 });
 
 
@@ -86,7 +86,7 @@ export function animateToBand(
   ];
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
-  components.fabryPerotCavity.style.transformOrigin = "210px 40px";
+  components.fabryPerotCavity.style.transformOrigin = "480px 40px";
   components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - currentFrequency) / stepSize + 1) * cyclesPerStep * 1000;

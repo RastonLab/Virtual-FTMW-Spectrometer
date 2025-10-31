@@ -113,7 +113,8 @@ export const Ku_BAND_KEYFRAMES = createBandKeyframes({
     insideThreadedSpacer: fraction => `translate(${lerp(2210, 0, fraction).toFixed(0)}px, 0px)`,
     wireAndBellows: fraction => `scale(${lerp(0.486, 1, fraction).toFixed(3)}, 1)`,
     radiation: fraction =>
-      `matrix(${lerp(0.456, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(452.137, 459.287, fraction).toFixed(3)}, 41.139)`
+      `matrix(${lerp(0.456, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(452.137, 459.287, fraction).toFixed(3)}, 41.139)`,
+    fabryPerotCavity: fraction => `scale(${lerp(0.85, 1, fraction).toFixed(3)}, 1)`
   }  
 });
 
