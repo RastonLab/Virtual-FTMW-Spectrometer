@@ -2351,7 +2351,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               y={40}
               width={270}
               height={145}
-              fill="black"
+              fill="transparent"
               pointerEvents="all"
           />
         </g>
