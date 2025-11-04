@@ -1,9 +1,9 @@
 
-// export const FIND_PEAKS = "http://cloud.rastonlab.org/ftmw/find_peaks";
-export const FIND_PEAKS = "http://localhost:5001/find_peaks"; // local
+export const FIND_PEAKS = "https://cloud.rastonlab.org/ftmw/find_peaks";
+//export const FIND_PEAKS = "http://localhost:5001/find_peaks"; // local
 
-// export const ACQUIRE_SPECTRUM = "http://cloud.rastonlab.org/ftmw/acquire_spectrum";
-export const ACQUIRE_SPECTRUM = "http://localhost:5001/acquire_spectrum"; // local
+export const ACQUIRE_SPECTRUM = "https://cloud.rastonlab.org/ftmw/acquire_spectrum";
+//export const ACQUIRE_SPECTRUM = "http://localhost:5001/acquire_spectrum"; // local
 
 // svg ids that are not associated with instrumentTips but can be selected
 export const BAD_ID = [
