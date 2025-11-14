@@ -208,6 +208,11 @@ export const setSpectrumReady = () => {
   components.spectrumReady.style.display = "";
 }
 
+export function cloudAnimation() {
+  const components = getComponents();
+
+}
+
 /**
  * Function that stops the current animation of the mirror and reset its location
  */

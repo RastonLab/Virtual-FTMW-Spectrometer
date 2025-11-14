@@ -2354,6 +2354,15 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               fill="transparent"
               pointerEvents="all"
           />
+
+          <circle
+              id="fabry-perot-cavity"
+              cx="210"
+              cy="112"
+              r="10"
+              fill="black"
+              opacity="100"
+          />
         </g>
         <g
           id="rod-with-threaded-spacer"
