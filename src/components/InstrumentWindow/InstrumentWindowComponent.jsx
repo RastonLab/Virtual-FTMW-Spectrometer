@@ -2356,7 +2356,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           />
 
           <circle
-              id="fabry-perot-cavity"
+              id="cloud"
               cx="210"
               cy="112"
               r="10"

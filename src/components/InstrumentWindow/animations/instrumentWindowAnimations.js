@@ -16,6 +16,7 @@ const getComponents = () => ({
   wireAndBellows: document.getElementById("wire-and-bellows"),
   radiation: document.getElementById("radiation"),
   fabryPerotCavity: document.getElementById("fabry-perot-cavity"),
+  cloud: document.getElementById("cloud"),
   sBand: document.getElementById("s-band"),
   cBand: document.getElementById("c-band"),
   xBand: document.getElementById("x-band"),
@@ -208,9 +209,10 @@ export const setSpectrumReady = () => {
   components.spectrumReady.style.display = "";
 }
 
-export function cloudAnimation() {
+export function animateCloud() {
   const components = getComponents();
-
+  components.cloud.setAttribute("transform", "translate(100, 0)");
+  console.log("animate cloud");
 }
 
 /**
