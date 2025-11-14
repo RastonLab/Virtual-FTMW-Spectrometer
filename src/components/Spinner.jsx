@@ -109,7 +109,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
       <CircularProgress {...otherProps} value={elapsed} sx={{ "svg circle": { stroke: "url(#my_gradient)" } }} />
       {acquisitionType === "range" && variant !== "indeterminate" && (
         <Typography variant="caption" component="div" color="inherit" fontFamily="inherit" fontSize={20} fontWeight={650} sx={{ textAlign: "center" }}>
-          {Math.round(elapsed)}%<br />Steps Complete: {stepsDone} / {Math.ceil(totalSteps)}
+          {Math.round(elapsed)}%<br />Steps Complete: {stepsDone} / {Math.floor(totalSteps)}
         </Typography>
       )}
       <svg>
