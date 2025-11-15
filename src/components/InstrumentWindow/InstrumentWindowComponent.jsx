@@ -2362,6 +2362,8 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               r="10"
               fill="black"
               opacity="100"
+              transform-origin="center"
+              transform-box="fill-box"
           />
         </g>
         <g

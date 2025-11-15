@@ -39,6 +39,7 @@ const sBandState = () => ({
   wireAndBellows: { transform: "scale(0.21, 1)" },
   radiation: { transform: "matrix(0.551, 0, 0, .17202, 448.287, 41.139)" },
   fabryPerotCavity: { transform: "scale(1, 1)" },
+  cloud: { transform: "scale(1, 1)" }
 });
 
 
@@ -51,6 +52,7 @@ export function setSBandState() {
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "210px 40px";
+  components.cloud.transformOrigin = "210px 112px";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -83,11 +85,13 @@ export function animateToBand(
     "insideThreadedSpacer",
     "wireAndBellows",
     "radiation",
-    "fabryPerotCavity"
+    "fabryPerotCavity",
+    "cloud"
   ];
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "480px 40px";
+  components.cloud.style.transformOrigin = "210px 112px";
   components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - currentFrequency) / stepSize + 1) * cyclesPerStep * 1000;
