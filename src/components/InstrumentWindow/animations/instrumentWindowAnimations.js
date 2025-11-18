@@ -1,4 +1,5 @@
 import { C_BAND_KEYFRAMES, K_BAND_KEYFRAMES, KA_BAND_KEYFRAMES, Ku_BAND_KEYFRAMES, S_BAND_KEYFRAMES, X_BAND_KEYFRAMES } from "./mwBandKeyframes";
+import { CLOUD_KEYFRAMES } from "./cloudKeyframes";
 
 // Global timeout tracker used to cancel all timeouts when the animation is cancelled
 let animationTimeouts = [];
@@ -86,7 +87,6 @@ export function animateToBand(
     "wireAndBellows",
     "radiation",
     "fabryPerotCavity",
-    "cloud"
   ];
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
@@ -121,6 +121,7 @@ export function animateToBand(
 
   // Select the keyframes for the selected mw band
   const bandKeyframes = bandKeyframesMapping[mwBand] || S_BAND_KEYFRAMES;
+  const cloudKeyframes = CLOUD_KEYFRAMES;
   
   // Grabs the keyframes based on frequency range 
   let availableKeys = Object.keys(bandKeyframes)
@@ -130,6 +131,12 @@ export function animateToBand(
                               .map(freq => freq.toString());
   
   const firstKey = availableKeys[0];
+  console.log("first key " + firstKey);
+
+  let cloudKeys = Object.keys(cloudKeyframes)
+                          .map(Number);
+  const firstCloudKey = cloudKeys[0];
+  console.log("first cloud key " + CLOUD_KEYFRAMES[0]);
 
   // If the current frequency is the minimum frequency, then the animation is just starting
   // Otherwise, the animation is already in progress so we dont need bring the instrument back to the initial state
@@ -149,12 +156,19 @@ export function animateToBand(
       components[name].animate(
         [
           { transform: initialSState[name].transform },
-          { transform: bandKeyframes[firstKey][name].transform }
+          { transform: bandKeyframes[firstKey][name].transform },
         ],
         firstTiming
       );
     });
     console.log("animation beginning end");
+
+    console.log("cloud animation begins");
+    components["cloud"].animate(
+        [
+          { transform: cloudKeyframes[firstKey].cloud.transform }
+        ],
+        firstTiming);
   }
   else {
     const currentKeyIndex = availableKeys.findIndex((key) => Number(key) >= currentFrequency);

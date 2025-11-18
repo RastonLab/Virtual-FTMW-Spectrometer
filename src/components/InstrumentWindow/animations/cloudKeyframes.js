@@ -29,5 +29,11 @@ export function createCloudKeyframes({startKey, endKey, steps, transforms}) {
 }
 
 export const CLOUD_KEYFRAMES = createCloudKeyframes({
-
+    startKey: 2000,
+    endKey: 4000,
+    steps: 20,
+    transforms: {
+        cloud: fraction => `scale(${lerp(4, 1, fraction).toFixed(2)}) 
+            translate(${lerp(7, 0, fraction).toFixed(2)}%)`
+    }
 });
