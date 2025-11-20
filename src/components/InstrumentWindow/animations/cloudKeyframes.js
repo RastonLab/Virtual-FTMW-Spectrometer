@@ -18,12 +18,11 @@ export function createCloudKeyframes({startKey, endKey, steps, transforms}) {
     for (let i = 0; i <= steps; i++) {
         const key = startKey + i * stepSize;
         const fraction = (key - startKey) / (endKey - startKey);
-        keyframes[key] = {};
-        for (const component in transforms) {
-            keyframes[key][component] = {
-                transform: transforms[component](fraction)
-            };
-        }
+        keyframes[key] = {
+            cloud: {
+                transform: transforms["cloud"](fraction)
+            }
+        };
     }
     return keyframes;
 }

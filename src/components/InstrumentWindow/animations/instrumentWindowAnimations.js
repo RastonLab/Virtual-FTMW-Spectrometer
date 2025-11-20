@@ -136,7 +136,7 @@ export function animateToBand(
   let cloudKeys = Object.keys(cloudKeyframes)
                           .map(Number);
   const firstCloudKey = cloudKeys[0];
-  console.log("first cloud key " + CLOUD_KEYFRAMES[0]);
+  console.log("first cloud key " + firstCloudKey);
 
   // If the current frequency is the minimum frequency, then the animation is just starting
   // Otherwise, the animation is already in progress so we dont need bring the instrument back to the initial state
@@ -164,9 +164,10 @@ export function animateToBand(
     console.log("animation beginning end");
 
     console.log("cloud animation begins");
+    console.log();
     components["cloud"].animate(
         [
-          { transform: cloudKeyframes[firstKey].cloud.transform }
+          { transform: cloudKeyframes[firstCloudKey]["cloud"].transform }
         ],
         firstTiming);
   }
