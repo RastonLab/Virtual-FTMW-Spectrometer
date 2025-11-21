@@ -118,7 +118,7 @@ export const Ku_BAND_KEYFRAMES = createBandKeyframes({
     wireAndBellows: fraction => `scale(${lerp(0.486, 1, fraction).toFixed(3)}, 1)`,
     radiation: fraction =>
       `matrix(${lerp(0.456, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(452.137, 459.287, fraction).toFixed(3)}, 41.139)`,
-    fabryPerotCavity: fraction => `scale(${lerp(0.85, 1, fraction).toFixed(3)}, 1)`
+    fabryPerotCavity: fraction => `scale(${lerp(0.85, 1, fraction).toFixed(3)}, 1)`,
   }  
 });
 

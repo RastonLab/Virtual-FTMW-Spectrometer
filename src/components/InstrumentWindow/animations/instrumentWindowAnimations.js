@@ -139,7 +139,7 @@ export function animateToBand(
   console.log("first cloud key " + firstCloudKey);
 
   // If the current frequency is the minimum frequency, then the animation is just starting
-  // Otherwise, the animation is already in progress so we dont need bring the instrument back to the initial state
+  // Otherwise, the animation is already in progress so we don't need bring the instrument back to the initial state
   if (currentFrequency === frequencyMin) {
     // Grabs the initial state of the instrument window
     const initialSState = sBandState();
@@ -172,10 +172,10 @@ export function animateToBand(
         ],
         firstTiming);*/
 
-    const cloudTesting = cloudKeys.map(key => ({
+    /*const cloudTesting = cloudKeys.map(key => ({
       transform: cloudKeyframes[key]["cloud"].transform
     }));
-    components["cloud"].animate(cloudTesting, firstTiming);
+    components["cloud"].animate(cloudTesting, firstTiming);*/
     //components["cloud"].animate([{transform: cloudKeyframes[firstCloudKey]["cloud"].transform}], firstTiming);
 
     /*const cloudFrames = cloudKeys.map(key => ({
@@ -183,18 +183,11 @@ export function animateToBand(
     }));
     components["cloud"].animate(cloudFrames, firstTiming);*/
 
-    const cloudFrames = cloudKeys.map(key => ({
-      transform: cloudKeyframes[key]["cloud"].transform,
-      opacity: cloudKeyframes[key]["cloud"].opacity
-    }));
-
-    components["cloud"].animate(cloudFrames, firstTiming);
-
   }
   else {
     const currentKeyIndex = availableKeys.findIndex((key) => Number(key) >= currentFrequency);
     availableKeys = availableKeys.slice(currentKeyIndex);
-    const currentKey = availableKeys[currentKeyIndex];
+    const currentKey = availableKeys[currentKeyIndex]
 
     const jumpTimeout = setTimeout(() => {
       if (currentKey) {
@@ -209,7 +202,26 @@ export function animateToBand(
   // If the current frequency is not the minimum frequency, then we don't need to have the 1200ms pauses
   const firstPause = currentFrequency !== frequencyMin ? 0 : firstSegmentDuration;
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
-  
+
+  const firstTiming = {
+    duration: 1300,
+    easing: "linear",
+    fill: "forwards"
+  };
+
+  // start cloud animation
+  const cloudTimeout = setTimeout(() => {
+
+    const cloudFrames = cloudKeys.map(key => ({
+      transform: cloudKeyframes[key]["cloud"].transform,
+      opacity: cloudKeyframes[key]["cloud"].opacity
+    }));
+
+    components["cloud"].animate(cloudFrames, firstTiming);
+  }, firstSegmentDuration);
+
+  animationTimeouts.push(cloudTimeout);
+
   const radiationTimeout = setTimeout(() => {
     radiationGraphics[mwBand].style.display = "";
 
