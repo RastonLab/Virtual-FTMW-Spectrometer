@@ -6,7 +6,7 @@ import '../../style/InstrumentWindow.css';
 import '../../style/InfoDialog.css';
 import { getMWBand } from './functions/getMWBand';
 import { setCurrentFrequency, setsMWBand } from '../../redux/experimentalSetupSlice';
-import { animateToBand, setSBandState, setSpectrumReady, animateCloud } from './animations/instrumentWindowAnimations';
+import { animateToBand, setSBandState, setSpectrumReady} from './animations/instrumentWindowAnimations';
 import Spinner from '../Spinner';
 import { Dialog } from '@mui/material';
 import CloseButton from '../CloseButton';
@@ -88,7 +88,6 @@ const InstrumentWindow = () => {
   useEffect(() => {
     if (document.getElementById("instrument-window") !== null && postfetch && acquisitionType === "range") {
       animateToBand(mwBand, currentFrequency, frequencyMax, stepSize, numCyclesPerStep, frequencyMin);
-      animateCloud();
     }
   // eslint-disable-next-line
   }, [postfetch, mwBand, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, acquisitionType]);

@@ -164,12 +164,32 @@ export function animateToBand(
     console.log("animation beginning end");
 
     console.log("cloud animation begins");
-    console.log();
-    components["cloud"].animate(
+    //console.log("opacity = " + cloudKeyframes[firstCloudKey]["cloud"].opacity);
+    /*components["cloud"].animate(
         [
-          { transform: cloudKeyframes[firstCloudKey]["cloud"].transform }
+          { transform: cloudKeyframes[firstCloudKey]["cloud"].transform,
+            opacity: cloudKeyframes[firstCloudKey]["cloud"].opacity }
         ],
-        firstTiming);
+        firstTiming);*/
+
+    const cloudTesting = cloudKeys.map(key => ({
+      transform: cloudKeyframes[key]["cloud"].transform
+    }));
+    components["cloud"].animate(cloudTesting, firstTiming);
+    //components["cloud"].animate([{transform: cloudKeyframes[firstCloudKey]["cloud"].transform}], firstTiming);
+
+    /*const cloudFrames = cloudKeys.map(key => ({
+      opacity: cloudKeyframes[key]["cloud"].opacity
+    }));
+    components["cloud"].animate(cloudFrames, firstTiming);*/
+
+    const cloudFrames = cloudKeys.map(key => ({
+      transform: cloudKeyframes[key]["cloud"].transform,
+      opacity: cloudKeyframes[key]["cloud"].opacity
+    }));
+
+    components["cloud"].animate(cloudFrames, firstTiming);
+
   }
   else {
     const currentKeyIndex = availableKeys.findIndex((key) => Number(key) >= currentFrequency);
@@ -186,7 +206,7 @@ export function animateToBand(
     animationTimeouts.push(jumpTimeout);
   }
 
-  // If the current frequency is not the minimum frequency, then we dont need to have the 1200ms pauses
+  // If the current frequency is not the minimum frequency, then we don't need to have the 1200ms pauses
   const firstPause = currentFrequency !== frequencyMin ? 0 : firstSegmentDuration;
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
   
@@ -228,11 +248,11 @@ export const setSpectrumReady = () => {
   components.spectrumReady.style.display = "";
 }
 
-export function animateCloud() {
+/*export function animateCloud() {
   const components = getComponents();
   components.cloud.setAttribute("transform", "translate(100, 0)");
   console.log("animate cloud");
-}
+}*/
 
 /**
  * Function that stops the current animation of the mirror and reset its location

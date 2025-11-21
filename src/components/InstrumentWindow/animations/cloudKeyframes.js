@@ -12,7 +12,7 @@ const lerp = (start, end, fraction) => start + fraction * (end - start);
  *                                      Each function receives a fraction (0 to 1) and returns a transform string.
  * @returns {Object} keyframes - An object mapping frequency keys to keyframe definitions.
  */
-export function createCloudKeyframes({startKey, endKey, steps, transforms}) {
+export function createCloudKeyframes({startKey, endKey, steps, transforms, opacityChange}) {
     const keyframes = {};
     const stepSize = (endKey - startKey) / steps;
     for (let i = 0; i <= steps; i++) {
@@ -20,7 +20,8 @@ export function createCloudKeyframes({startKey, endKey, steps, transforms}) {
         const fraction = (key - startKey) / (endKey - startKey);
         keyframes[key] = {
             cloud: {
-                transform: transforms["cloud"](fraction)
+                transform: transforms["cloud"](fraction),
+                opacity: opacityChange["cloud"](fraction)
             }
         };
     }
@@ -32,7 +33,10 @@ export const CLOUD_KEYFRAMES = createCloudKeyframes({
     endKey: 4000,
     steps: 20,
     transforms: {
-        cloud: fraction => `scale(${lerp(4, 1, fraction).toFixed(2)}) 
-            translate(${lerp(7, 0, fraction).toFixed(2)}%)`
+        cloud: fraction => `translate(${lerp(0, 200, fraction).toFixed(2)}px, 0px)
+            scale(${lerp(1, 4, fraction).toFixed(2)})`
+    },
+    opacityChange: {
+        cloud: fraction => lerp(1, 0, fraction).toFixed(2)
     }
 });
