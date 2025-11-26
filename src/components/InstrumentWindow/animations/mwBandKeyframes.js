@@ -47,9 +47,7 @@ export const S_BAND_KEYFRAMES = createBandKeyframes({
     wireAndBellows: fraction => `scale(${lerp(0.21, 1, fraction).toFixed(3)}, 1)`,
     radiation: fraction =>
       `matrix(${lerp(0.551, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(448.287, 459.287, fraction).toFixed(3)}, 41.139)`,
-    fabryPerotCavity: fraction => `scale(${lerp(1, 1, fraction).toFixed(3)}, 1)`,
-    cloud: fraction => `scale(${lerp(4, 1, fraction).toFixed(2)}) 
-      translate(${lerp(7, 0, fraction).toFixed(2)}%)`
+    fabryPerotCavity: fraction => `scale(${lerp(1, 1, fraction).toFixed(3)}, 1)`
   }
 });
 
@@ -118,7 +116,7 @@ export const Ku_BAND_KEYFRAMES = createBandKeyframes({
     wireAndBellows: fraction => `scale(${lerp(0.486, 1, fraction).toFixed(3)}, 1)`,
     radiation: fraction =>
       `matrix(${lerp(0.456, 0.28034, fraction).toFixed(3)}, 0, 0, 0.17202, ${lerp(452.137, 459.287, fraction).toFixed(3)}, 41.139)`,
-    fabryPerotCavity: fraction => `scale(${lerp(0.85, 1, fraction).toFixed(3)}, 1)`,
+    fabryPerotCavity: fraction => `scale(${lerp(0.85, 1, fraction).toFixed(3)}, 1)`
   }  
 });
 
