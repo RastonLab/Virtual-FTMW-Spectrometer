@@ -190,24 +190,8 @@ export function animateToBand(
   const firstPause = currentFrequency !== frequencyMin ? 0 : firstSegmentDuration;
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
 
-  const firstTiming = {
-    duration: 1300,
-    easing: "linear",
-    fill: "forwards"
-  };
-
-  // start cloud animation
-  const cloudTimeout = setTimeout(() => {
-
-    const cloudFrames = cloudKeys.map(key => ({
-      transform: cloudKeyframes[key]["cloud"].transform,
-      opacity: cloudKeyframes[key]["cloud"].opacity
-    }));
-
-    components["cloud"].animate(cloudFrames, firstTiming);
-  }, firstSegmentDuration);
-
-  animationTimeouts.push(cloudTimeout);
+  // start cloud animation (first pulse)
+  animateCloudPulse();
 
   const radiationTimeout = setTimeout(() => {
     radiationGraphics[mwBand].style.display = "";
@@ -247,11 +231,38 @@ export const setSpectrumReady = () => {
   components.spectrumReady.style.display = "";
 }
 
-/*export function animateCloud() {
+/**
+ * Function that animates the cloud pulse
+ */
+export function animateCloudPulse() {
+  console.log("in cloud pulse function");
+
+  // timing for cloud pulse
+  const timing = {
+    duration: 1300,
+    easing: "linear",
+    fill: "forwards"
+  };
+
   const components = getComponents();
-  components.cloud.setAttribute("transform", "translate(100, 0)");
-  console.log("animate cloud");
-}*/
+  const cloudKeyframes = CLOUD_KEYFRAMES;
+  let cloudKeys = Object.keys(cloudKeyframes)
+      .map(Number);
+  //components.cloud.setAttribute("transform", "translate(100, 0)");
+
+  // start cloud animation
+  const cloudTimeout = setTimeout(() => {
+
+    const cloudFrames = cloudKeys.map(key => ({
+      transform: cloudKeyframes[key]["cloud"].transform,
+      opacity: cloudKeyframes[key]["cloud"].opacity
+    }));
+
+    components["cloud"].animate(cloudFrames, timing);
+  }, 1000);
+
+  animationTimeouts.push(cloudTimeout);
+}
 
 /**
  * Function that stops the current animation of the mirror and reset its location

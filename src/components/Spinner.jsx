@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
 import { setCurrentFrequency, setCurrentCycle } from '../redux/experimentalSetupSlice';
 import { scanEnded } from '../redux/scanSlice';
+import {animateCloudPulse} from "./InstrumentWindow/animations/instrumentWindowAnimations";
 
 /**
  * Spinner that tracks a running FTMW scan.
@@ -65,6 +66,9 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
 
     const interval = setInterval(() => {
       cycleCount++;
+
+      // run cloud pulse animation
+      animateCloudPulse();
 
       // If a full cycle set is complete, increment the step
       if (cycleCount >= numCyclesPerStep) {
