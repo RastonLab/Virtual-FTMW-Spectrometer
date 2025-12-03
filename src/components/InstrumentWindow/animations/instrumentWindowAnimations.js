@@ -17,7 +17,8 @@ const getComponents = () => ({
   wireAndBellows: document.getElementById("wire-and-bellows"),
   radiation: document.getElementById("radiation"),
   fabryPerotCavity: document.getElementById("fabry-perot-cavity"),
-  cloud: document.getElementById("cloud"),
+  cloud1: document.getElementById("cloud1"),
+  cloud2: document.getElementById("cloud2"),
   sBand: document.getElementById("s-band"),
   cBand: document.getElementById("c-band"),
   xBand: document.getElementById("x-band"),
@@ -52,7 +53,7 @@ export function setSBandState() {
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "210px 40px";
-  components.cloud.transformOrigin = "210px 112px";
+  components.cloud1.transformOrigin = "210px 112px";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -90,7 +91,7 @@ export function animateToBand(
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "480px 40px";
-  components.cloud.style.transformOrigin = "210px 112px";
+  components.cloud1.style.transformOrigin = "210px 112px";
   components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - currentFrequency) / stepSize + 1) * cyclesPerStep * 1000;
@@ -168,7 +169,7 @@ export function animateToBand(
     const bandCloudFrames = bandCloudKeys.map(key => ({
       transform: bandCloudKeyframes[key]["cloud"].transform
     }));
-    components["cloud"].animate(bandCloudFrames, firstTiming);
+    components["cloud1"].animate(bandCloudFrames, firstTiming);
     console.log("animation beginning end");
   }
   else {
@@ -191,7 +192,7 @@ export function animateToBand(
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
 
   // start cloud animation (first pulse)
-  animateCloudPulse();
+  animateCloudPulse(0);
 
   const radiationTimeout = setTimeout(() => {
     radiationGraphics[mwBand].style.display = "";
@@ -234,8 +235,9 @@ export const setSpectrumReady = () => {
 /**
  * Function that animates the cloud pulse
  */
-export function animateCloudPulse() {
+export function animateCloudPulse(cloudCount) {
   console.log("in cloud pulse function");
+  console.log("cloud count = " + cloudCount);
 
   // timing for cloud pulse
   const timing = {
@@ -258,7 +260,7 @@ export function animateCloudPulse() {
       opacity: cloudKeyframes[key]["cloud"].opacity
     }));
 
-    components["cloud"].animate(cloudFrames, timing);
+    components["cloud1"].animate(cloudFrames, timing);
   }, 1000);
 
   animationTimeouts.push(cloudTimeout);

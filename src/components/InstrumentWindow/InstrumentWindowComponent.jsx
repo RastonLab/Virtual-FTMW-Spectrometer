@@ -2356,12 +2356,22 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           />
 
           <circle
-              id="cloud"
+              id="cloud1"
               cx="210"
               cy="112"
               r="10"
               fill="black"
-              opacity={0}
+              opacity={100}
+              transform-origin="center"
+              transform-box="fill-box"
+          />
+          <circle
+              id="cloud2"
+              cx="210"
+              cy="112"
+              r="10"
+              fill="black"
+              opacity={100}
               transform-origin="center"
               transform-box="fill-box"
           />

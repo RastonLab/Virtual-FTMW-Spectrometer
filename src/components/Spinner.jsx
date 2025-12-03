@@ -63,12 +63,15 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
     if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
 
     let cycleCount = 0;
+    // count for cloud animation
+    let cloudCount = 0;
 
     const interval = setInterval(() => {
       cycleCount++;
+      cloudCount++;
 
       // run cloud pulse animation
-      animateCloudPulse();
+      animateCloudPulse(cloudCount % 2);
 
       // If a full cycle set is complete, increment the step
       if (cycleCount >= numCyclesPerStep) {
