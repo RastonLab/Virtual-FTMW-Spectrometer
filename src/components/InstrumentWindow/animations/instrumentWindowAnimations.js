@@ -54,6 +54,7 @@ export function setSBandState() {
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "210px 40px";
   components.cloud1.transformOrigin = "210px 112px";
+  components.cloud2.transformOrigin = "210px 112px";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -92,6 +93,7 @@ export function animateToBand(
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "480px 40px";
   components.cloud1.style.transformOrigin = "210px 112px";
+  components.cloud2.style.transformOrigin = "210px 112px";
   components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - currentFrequency) / stepSize + 1) * cyclesPerStep * 1000;
@@ -170,6 +172,7 @@ export function animateToBand(
       transform: bandCloudKeyframes[key]["cloud"].transform
     }));
     components["cloud1"].animate(bandCloudFrames, firstTiming);
+    components["cloud2"].animate(bandCloudFrames, firstTiming);
     console.log("animation beginning end");
   }
   else {
@@ -260,7 +263,12 @@ export function animateCloudPulse(cloudCount) {
       opacity: cloudKeyframes[key]["cloud"].opacity
     }));
 
-    components["cloud1"].animate(cloudFrames, timing);
+    // alternate between clouds
+    if (cloudCount === 0) {
+      components["cloud1"].animate(cloudFrames, timing);
+    } else {
+      components["cloud2"].animate(cloudFrames, timing);
+    }
   }, 1000);
 
   animationTimeouts.push(cloudTimeout);
