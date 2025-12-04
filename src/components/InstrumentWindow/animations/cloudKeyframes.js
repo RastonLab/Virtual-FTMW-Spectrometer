@@ -51,7 +51,7 @@ export const CLOUD_KEYFRAMES = createCloudKeyframes({
     steps: 20,
     transforms: {
         cloud: fraction => `translate(${lerp(move, 150+move, fraction).toFixed(2)}px, 0px)
-            scale(${lerp(1, 4, fraction).toFixed(2)})`
+            scale(${lerp(1, 5, fraction).toFixed(2)})`
     },
     opacityChange: {
         cloud: fraction => lerp(1, 0, fraction).toFixed(2)

@@ -244,7 +244,7 @@ export function animateCloudPulse(cloudCount) {
 
   // timing for cloud pulse
   const timing = {
-    duration: 1300,
+    duration: 1700,
     easing: "linear",
     fill: "forwards"
   };
