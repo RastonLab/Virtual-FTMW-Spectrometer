@@ -1,4 +1,5 @@
 import * as React from "react";
+import cloudImage from "../../assets/svg/components/instruments/white-smoke-cloud.png";
 const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep, pressure, mwBand, onDisplayCLick, onNavigateClick, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -2355,26 +2356,23 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               pointerEvents="all"
           />
 
-          <circle
+          <image
               id="cloud1"
-              cx="210"
-              cy="112"
-              r="10"
-              fill="black"
+              href={cloudImage}
+              x={190}
+              y={91}
+              width={60}
               opacity={0}
-              transform-origin="center"
-              transform-box="fill-box"
           />
-          <circle
+          <image
               id="cloud2"
-              cx="210"
-              cy="112"
-              r="10"
-              fill="black"
+              href={cloudImage}
+              x={190}
+              y={91}
+              width={60}
               opacity={0}
-              transform-origin="center"
-              transform-box="fill-box"
           />
+
         </g>
         <g
           id="rod-with-threaded-spacer"
