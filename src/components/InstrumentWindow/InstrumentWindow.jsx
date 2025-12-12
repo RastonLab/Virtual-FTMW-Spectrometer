@@ -19,8 +19,6 @@ import { instrumentTips } from "../../dictionaries/instrumentTips";
 // constants
 import { BAD_ID } from "../../dictionaries/constants";
 
-import cloudTestImage from "../../assets/svg/components/instruments/white-smoke-cloud.png";
-
 /**
  * A component that contains the instrument window
  */
@@ -164,7 +162,6 @@ const InstrumentWindow = () => {
               size={100}
               delay={delay}
             />
-          <img src={cloudTestImage} alt="" width={200}/>
           </>
         )}
         {!fetching && error && (
