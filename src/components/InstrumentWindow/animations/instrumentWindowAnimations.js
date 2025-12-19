@@ -1,5 +1,5 @@
 import { C_BAND_KEYFRAMES, K_BAND_KEYFRAMES, KA_BAND_KEYFRAMES, Ku_BAND_KEYFRAMES, S_BAND_KEYFRAMES, X_BAND_KEYFRAMES } from "./mwBandKeyframes";
-import {CLOUD_KEYFRAMES, Ku_CLOUD_KEYFRAMES} from "./cloudKeyframes";
+import {CLOUD_KEYFRAMES, S_CLOUD_KEYFRAMES, C_CLOUD_KEYFRAMES, X_CLOUD_KEYFRAMES, Ku_CLOUD_KEYFRAMES, K_CLOUD_KEYFRAMES, KA_CLOUD_KEYFRAMES} from "./cloudKeyframes";
 
 // Global timeout tracker used to cancel all timeouts when the animation is cancelled
 let animationTimeouts = [];
@@ -124,7 +124,15 @@ export function animateToBand(
   // Select the keyframes for the selected mw band
   const bandKeyframes = bandKeyframesMapping[mwBand] || S_BAND_KEYFRAMES;
   const cloudKeyframes = CLOUD_KEYFRAMES;
-  const bandCloudKeyframes = Ku_CLOUD_KEYFRAMES;
+  const bandCloudKeyframesMapping = {
+    S: S_CLOUD_KEYFRAMES,
+    C: C_CLOUD_KEYFRAMES,
+    X: X_CLOUD_KEYFRAMES,
+    Ku: Ku_CLOUD_KEYFRAMES,
+    K: K_CLOUD_KEYFRAMES,
+    Ka: KA_CLOUD_KEYFRAMES
+  };
+  const bandCloudKeyframes = bandCloudKeyframesMapping[mwBand] || S_CLOUD_KEYFRAMES;
   
   // Grabs the keyframes based on frequency range 
   let availableKeys = Object.keys(bandKeyframes)

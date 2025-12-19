@@ -58,10 +58,55 @@ export const CLOUD_KEYFRAMES = createCloudKeyframes({
     }
 });
 
+export const S_CLOUD_KEYFRAMES = createBandCloudKeyframes({
+    startKey: 2000,
+    endKey: 4000,
+    steps: 20,
+    transforms: {
+        cloud: fraction => `translate(${lerp(0, 0, fraction).toFixed(2)}px, 0px)`
+    }
+});
+
+export const C_CLOUD_KEYFRAMES = createBandCloudKeyframes({
+    startKey: 4000,
+    endKey: 8000,
+    steps: 40,
+    transforms: {
+        cloud: fraction => `translate(${lerp(0, 0, fraction).toFixed(2)}px, 0px)`
+    }
+});
+
+export const X_CLOUD_KEYFRAMES = createBandCloudKeyframes({
+    startKey: 8000,
+    endKey: 12000,
+    steps: 60,
+    transforms: {
+        cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
+    }
+});
+
 export const Ku_CLOUD_KEYFRAMES = createBandCloudKeyframes({
     startKey: 2000,
     endKey: 4000,
     steps: 20,
+    transforms: {
+        cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
+    }
+});
+
+export const K_CLOUD_KEYFRAMES = createBandCloudKeyframes({
+    startKey: 18000,
+    endKey: 26500,
+    steps: 85,
+    transforms: {
+        cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
+    }
+});
+
+export const KA_CLOUD_KEYFRAMES = createBandCloudKeyframes({
+    startKey: 26500,
+    endKey: 40000,
+    steps: 145,
     transforms: {
         cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
     }
