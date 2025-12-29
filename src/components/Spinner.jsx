@@ -12,7 +12,7 @@ import {animateCloudPulse} from "./InstrumentWindow/animations/instrumentWindowA
 export default function Spinner({ delay, noPadding = false, ...otherProps }) {
   const { variant } = otherProps;
 
-  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep, mwBand } = useSelector((store) => store.experimentalSetup);
   const { scanActive, startTime, durationMs } = useSelector((store) => store.scan);
 
   const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
@@ -71,7 +71,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
       cloudCount++;
 
       // run cloud pulse animation
-      animateCloudPulse(cloudCount % 2);
+      animateCloudPulse(cloudCount % 2, mwBand);
 
       // If a full cycle set is complete, increment the step
       if (cycleCount >= numCyclesPerStep) {
@@ -97,7 +97,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
     }, tickInterval);
 
     return () => clearInterval(interval);
-  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch, prefetch]);
+  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch, prefetch, mwBand]);
 
   // Recalculate percent complete and update Redux frequency
   useEffect(() => {

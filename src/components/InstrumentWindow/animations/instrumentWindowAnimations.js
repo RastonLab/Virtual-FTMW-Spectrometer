@@ -1,5 +1,5 @@
 import { C_BAND_KEYFRAMES, K_BAND_KEYFRAMES, KA_BAND_KEYFRAMES, Ku_BAND_KEYFRAMES, S_BAND_KEYFRAMES, X_BAND_KEYFRAMES } from "./mwBandKeyframes";
-import {CLOUD_KEYFRAMES, S_CLOUD_KEYFRAMES, C_CLOUD_KEYFRAMES, X_CLOUD_KEYFRAMES, Ku_CLOUD_KEYFRAMES, K_CLOUD_KEYFRAMES, KA_CLOUD_KEYFRAMES} from "./cloudKeyframes";
+import { S_CLOUD_KEYFRAMES, C_CLOUD_KEYFRAMES, X_CLOUD_KEYFRAMES, Ku_CLOUD_KEYFRAMES, K_CLOUD_KEYFRAMES, KA_CLOUD_KEYFRAMES} from "./cloudKeyframes";
 
 // Global timeout tracker used to cancel all timeouts when the animation is cancelled
 let animationTimeouts = [];
@@ -123,7 +123,7 @@ export function animateToBand(
 
   // Select the keyframes for the selected mw band
   const bandKeyframes = bandKeyframesMapping[mwBand] || S_BAND_KEYFRAMES;
-  const cloudKeyframes = CLOUD_KEYFRAMES;
+
   const bandCloudKeyframesMapping = {
     S: S_CLOUD_KEYFRAMES,
     C: C_CLOUD_KEYFRAMES,
@@ -144,10 +144,6 @@ export function animateToBand(
   const firstKey = availableKeys[0];
   console.log("first key " + firstKey);
 
-  let cloudKeys = Object.keys(cloudKeyframes)
-                          .map(Number);
-  const firstCloudKey = cloudKeys[0];
-  console.log("first cloud key " + firstCloudKey);
   let bandCloudKeys = Object.keys(bandCloudKeyframes)
                               .map(Number);
 
@@ -203,7 +199,7 @@ export function animateToBand(
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
 
   // start cloud animation (first pulse)
-  animateCloudPulse(0);
+  animateCloudPulse(0, mwBand);
 
   const radiationTimeout = setTimeout(() => {
     radiationGraphics[mwBand].style.display = "";
@@ -246,9 +242,10 @@ export const setSpectrumReady = () => {
 /**
  * Function that animates the cloud pulse
  */
-export function animateCloudPulse(cloudCount) {
+export function animateCloudPulse(cloudCount, mwBand) {
   console.log("in cloud pulse function");
   console.log("cloud count = " + cloudCount);
+  console.log("animate mwBand = " + mwBand);
 
   // timing for cloud pulse
   const timing = {
@@ -258,17 +255,24 @@ export function animateCloudPulse(cloudCount) {
   };
 
   const components = getComponents();
-  const cloudKeyframes = CLOUD_KEYFRAMES;
-  let cloudKeys = Object.keys(cloudKeyframes)
+  const bandCloudKeyframesMapping = {
+    S: S_CLOUD_KEYFRAMES,
+    C: C_CLOUD_KEYFRAMES,
+    X: X_CLOUD_KEYFRAMES,
+    Ku: Ku_CLOUD_KEYFRAMES,
+    K: K_CLOUD_KEYFRAMES,
+    Ka: KA_CLOUD_KEYFRAMES
+  };
+  const bandCloudKeyframes = bandCloudKeyframesMapping[mwBand] || S_CLOUD_KEYFRAMES
+  let bandCloudKeys = Object.keys(bandCloudKeyframes)
       .map(Number);
-  //components.cloud.setAttribute("transform", "translate(100, 0)");
 
   // start cloud animation
   const cloudTimeout = setTimeout(() => {
 
-    const cloudFrames = cloudKeys.map(key => ({
-      transform: cloudKeyframes[key]["cloud"].transform,
-      opacity: cloudKeyframes[key]["cloud"].opacity
+    const cloudFrames = bandCloudKeys.map(key => ({
+      transform: bandCloudKeyframes[key]["cloud"].transform2,
+      opacity: bandCloudKeyframes[key]["cloud"].opacity
     }));
 
     // alternate between clouds

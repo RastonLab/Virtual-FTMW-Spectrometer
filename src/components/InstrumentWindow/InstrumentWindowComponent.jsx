@@ -2362,7 +2362,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               x={190}
               y={91}
               width={60}
-              opacity={0}
+              opacity={100}
           />
           <image
               id="cloud2"
@@ -2370,7 +2370,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               x={190}
               y={91}
               width={60}
-              opacity={0}
+              opacity={100}
           />
 
         </g>
