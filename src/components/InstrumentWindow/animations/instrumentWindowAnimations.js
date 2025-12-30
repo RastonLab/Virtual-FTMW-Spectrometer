@@ -1,4 +1,5 @@
 import { C_BAND_KEYFRAMES, K_BAND_KEYFRAMES, KA_BAND_KEYFRAMES, Ku_BAND_KEYFRAMES, S_BAND_KEYFRAMES, X_BAND_KEYFRAMES } from "./mwBandKeyframes";
+import { S_CLOUD_KEYFRAMES, C_CLOUD_KEYFRAMES, X_CLOUD_KEYFRAMES, Ku_CLOUD_KEYFRAMES, K_CLOUD_KEYFRAMES, KA_CLOUD_KEYFRAMES} from "./cloudKeyframes";
 
 // Global timeout tracker used to cancel all timeouts when the animation is cancelled
 let animationTimeouts = [];
@@ -16,6 +17,8 @@ const getComponents = () => ({
   wireAndBellows: document.getElementById("wire-and-bellows"),
   radiation: document.getElementById("radiation"),
   fabryPerotCavity: document.getElementById("fabry-perot-cavity"),
+  cloud1: document.getElementById("cloud1"),
+  cloud2: document.getElementById("cloud2"),
   sBand: document.getElementById("s-band"),
   cBand: document.getElementById("c-band"),
   xBand: document.getElementById("x-band"),
@@ -50,6 +53,8 @@ export function setSBandState() {
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "210px 40px";
+  components.cloud1.transformOrigin = "210px 112px";
+  components.cloud2.transformOrigin = "210px 112px";
 
   Object.entries(state).forEach(([key, style]) => {
     if (components[key]) {
@@ -87,6 +92,8 @@ export function animateToBand(
 
   components.wireAndBellows.style.transformOrigin = "160px 80px";
   components.fabryPerotCavity.style.transformOrigin = "480px 40px";
+  components.cloud1.style.transformOrigin = "210px 112px";
+  components.cloud2.style.transformOrigin = "210px 112px";
   components.spectrumReady.style.display = "none";
   
   const totalScanTime = ((frequencyMax - currentFrequency) / stepSize + 1) * cyclesPerStep * 1000;
@@ -116,6 +123,16 @@ export function animateToBand(
 
   // Select the keyframes for the selected mw band
   const bandKeyframes = bandKeyframesMapping[mwBand] || S_BAND_KEYFRAMES;
+
+  const bandCloudKeyframesMapping = {
+    S: S_CLOUD_KEYFRAMES,
+    C: C_CLOUD_KEYFRAMES,
+    X: X_CLOUD_KEYFRAMES,
+    Ku: Ku_CLOUD_KEYFRAMES,
+    K: K_CLOUD_KEYFRAMES,
+    Ka: KA_CLOUD_KEYFRAMES
+  };
+  const bandCloudKeyframes = bandCloudKeyframesMapping[mwBand] || S_CLOUD_KEYFRAMES;
   
   // Grabs the keyframes based on frequency range 
   let availableKeys = Object.keys(bandKeyframes)
@@ -125,9 +142,13 @@ export function animateToBand(
                               .map(freq => freq.toString());
   
   const firstKey = availableKeys[0];
+  console.log("first key " + firstKey);
+
+  let bandCloudKeys = Object.keys(bandCloudKeyframes)
+                              .map(Number);
 
   // If the current frequency is the minimum frequency, then the animation is just starting
-  // Otherwise, the animation is already in progress so we dont need bring the instrument back to the initial state
+  // Otherwise, the animation is already in progress so we don't need bring the instrument back to the initial state
   if (currentFrequency === frequencyMin) {
     // Grabs the initial state of the instrument window
     const initialSState = sBandState();
@@ -144,17 +165,24 @@ export function animateToBand(
       components[name].animate(
         [
           { transform: initialSState[name].transform },
-          { transform: bandKeyframes[firstKey][name].transform }
+          { transform: bandKeyframes[firstKey][name].transform },
         ],
         firstTiming
       );
     });
+
+    // move cloud with the mirror
+    const bandCloudFrames = bandCloudKeys.map(key => ({
+      transform: bandCloudKeyframes[key]["cloud"].transform
+    }));
+    components["cloud1"].animate(bandCloudFrames, firstTiming);
+    components["cloud2"].animate(bandCloudFrames, firstTiming);
     console.log("animation beginning end");
   }
   else {
     const currentKeyIndex = availableKeys.findIndex((key) => Number(key) >= currentFrequency);
     availableKeys = availableKeys.slice(currentKeyIndex);
-    const currentKey = availableKeys[currentKeyIndex];
+    const currentKey = availableKeys[currentKeyIndex]
 
     const jumpTimeout = setTimeout(() => {
       if (currentKey) {
@@ -166,10 +194,13 @@ export function animateToBand(
     animationTimeouts.push(jumpTimeout);
   }
 
-  // If the current frequency is not the minimum frequency, then we dont need to have the 1200ms pauses
+  // If the current frequency is not the minimum frequency, then we don't need to have the 1200ms pauses
   const firstPause = currentFrequency !== frequencyMin ? 0 : firstSegmentDuration;
   const secondPause = currentFrequency !== frequencyMin ? 0 : extraPause;
-  
+
+  // start cloud animation (first pulse)
+  animateCloudPulse(0, mwBand);
+
   const radiationTimeout = setTimeout(() => {
     radiationGraphics[mwBand].style.display = "";
 
@@ -206,6 +237,53 @@ export function animateToBand(
 export const setSpectrumReady = () => {
   const components = getComponents();
   components.spectrumReady.style.display = "";
+}
+
+/**
+ * Function that animates the cloud pulse
+ */
+export function animateCloudPulse(cloudCount, mwBand) {
+  console.log("in cloud pulse function");
+  console.log("cloud count = " + cloudCount);
+  console.log("animate mwBand = " + mwBand);
+
+  // timing for cloud pulse
+  const timing = {
+    duration: 1700,
+    easing: "linear",
+    fill: "forwards"
+  };
+
+  const components = getComponents();
+  const bandCloudKeyframesMapping = {
+    S: S_CLOUD_KEYFRAMES,
+    C: C_CLOUD_KEYFRAMES,
+    X: X_CLOUD_KEYFRAMES,
+    Ku: Ku_CLOUD_KEYFRAMES,
+    K: K_CLOUD_KEYFRAMES,
+    Ka: KA_CLOUD_KEYFRAMES
+  };
+  const bandCloudKeyframes = bandCloudKeyframesMapping[mwBand] || S_CLOUD_KEYFRAMES
+  let bandCloudKeys = Object.keys(bandCloudKeyframes)
+      .map(Number);
+
+  // start cloud animation
+  const cloudTimeout = setTimeout(() => {
+
+    const cloudFrames = bandCloudKeys.map(key => ({
+      transform: bandCloudKeyframes[key]["cloud"].transform2,
+      opacity: bandCloudKeyframes[key]["cloud"].opacity
+    }));
+
+    // alternate between clouds
+    if (cloudCount === 0) {
+      components["cloud1"].animate(cloudFrames, timing);
+    } else {
+      components["cloud2"].animate(cloudFrames, timing);
+    }
+  }, 1000);
+
+  animationTimeouts.push(cloudTimeout);
 }
 
 /**

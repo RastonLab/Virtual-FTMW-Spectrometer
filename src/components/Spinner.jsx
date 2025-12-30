@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProgress } from '../redux/progressSlice';
 import { setCurrentFrequency, setCurrentCycle } from '../redux/experimentalSetupSlice';
 import { scanEnded } from '../redux/scanSlice';
+import {animateCloudPulse} from "./InstrumentWindow/animations/instrumentWindowAnimations";
 
 /**
  * Spinner that tracks a running FTMW scan.
@@ -11,7 +12,7 @@ import { scanEnded } from '../redux/scanSlice';
 export default function Spinner({ delay, noPadding = false, ...otherProps }) {
   const { variant } = otherProps;
 
-  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep } = useSelector((store) => store.experimentalSetup);
+  const { frequencyMin, frequencyMax, stepSize, acquisitionType, numCyclesPerStep, mwBand } = useSelector((store) => store.experimentalSetup);
   const { scanActive, startTime, durationMs } = useSelector((store) => store.scan);
 
   const totalSteps = (frequencyMax - frequencyMin) / stepSize + 1;
@@ -62,9 +63,15 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
     if (!scanActive || totalSteps <= 0 || numCyclesPerStep <= 0) return;
 
     let cycleCount = 0;
+    // count for cloud animation
+    let cloudCount = 0;
 
     const interval = setInterval(() => {
       cycleCount++;
+      cloudCount++;
+
+      // run cloud pulse animation
+      animateCloudPulse(cloudCount % 2, mwBand);
 
       // If a full cycle set is complete, increment the step
       if (cycleCount >= numCyclesPerStep) {
@@ -90,7 +97,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
     }, tickInterval);
 
     return () => clearInterval(interval);
-  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch, prefetch]);
+  }, [scanActive, totalSteps, numCyclesPerStep, tickInterval, dispatch, prefetch, mwBand]);
 
   // Recalculate percent complete and update Redux frequency
   useEffect(() => {

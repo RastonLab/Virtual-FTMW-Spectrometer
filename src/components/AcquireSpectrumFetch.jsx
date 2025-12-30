@@ -166,7 +166,7 @@ export default function AcquireSpectrumFetch({
             dispatch(setError([true, "Scan canceled"]));
             break;
           default:
-            dispatch(setError([true, "We could not collect your data at this time. Please wait a few moments and try again."]));
+            dispatch(setError([true, "We couldn't acquire your spectrum right now. Please try using a smaller frequency range and/or a larger step size."]));
         }
       }
   };
