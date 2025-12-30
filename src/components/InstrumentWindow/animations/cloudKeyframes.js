@@ -95,7 +95,7 @@ export const C_CLOUD_KEYFRAMES = createBandCloudKeyframes({
 export const X_CLOUD_KEYFRAMES = createBandCloudKeyframes({
     startKey: 8000,
     endKey: 12000,
-    steps: 60,
+    steps: 20,
     transforms: {
         cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
     },
@@ -127,7 +127,7 @@ export const Ku_CLOUD_KEYFRAMES = createBandCloudKeyframes({
 export const K_CLOUD_KEYFRAMES = createBandCloudKeyframes({
     startKey: 18000,
     endKey: 26500,
-    steps: 85,
+    steps: 20,
     transforms: {
         cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
     },
@@ -143,7 +143,7 @@ export const K_CLOUD_KEYFRAMES = createBandCloudKeyframes({
 export const KA_CLOUD_KEYFRAMES = createBandCloudKeyframes({
     startKey: 26500,
     endKey: 40000,
-    steps: 145,
+    steps: 20,
     transforms: {
         cloud: fraction => `translate(${lerp(0, 45, fraction).toFixed(2)}px, 0px)`
     },
