@@ -188,7 +188,7 @@ const ExperimentalSetup = () => {
                    textAlign: 'center',
                    width: '600px',
                    maxWidth: '80%', }}>
-              <p style={{ fontSize: 30 }} dangerouslySetInnerHTML={{ __html: msgText}} />
+              <p style={{ fontSize: 25 }} dangerouslySetInnerHTML={{ __html: msgText}} />
             </div>
         )}
       </div>
