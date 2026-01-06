@@ -28,6 +28,7 @@ const InstrumentWindow = () => {
 
   const { molecule, frequencyMin, frequencyMax, stepSize, numCyclesPerStep, mwBand, currentFrequency, acquisitionType, currentCycle } = useSelector((store) => store.experimentalSetup);
   const { error, errorText } = useSelector((store) => store.error);
+  const { msg, msgText } = useSelector((store) => store.message);
   const { fetching, prefetch, postfetch } = useSelector((store) => store.progress);
   const { data } = useSelector((store) => store.acquireSpectrum);
 
@@ -168,6 +169,15 @@ const InstrumentWindow = () => {
           <div id="instrument-error" style={{ display: "grid" }}>
             <p>{errorText}</p>
           </div>
+        )}
+        {msg && (
+            <div id="message"
+                 style={{
+                   textAlign: 'center',
+                   width: '600px',
+                   maxWidth: '80%', }}>
+              <p style={{ fontSize: 25 }} dangerouslySetInnerHTML={{ __html: msgText}} />
+            </div>
         )}
 
         {/* MUI Dialog popup that opens for the spectrum */}
