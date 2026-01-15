@@ -163,6 +163,11 @@ const InstrumentWindow = () => {
               size={100}
               delay={delay}
             />
+            <p style={{
+              textAlign: 'center',
+              maxWidth: '75%',
+              fontSize: 25 }}>Please take this time to explore the instrument
+              by clicking/tapping on the various components</p>
           </>
         )}
         {!fetching && error && (
