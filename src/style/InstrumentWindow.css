@@ -15,14 +15,19 @@
 }
 
 .instrument-container {
+    display: flex;
     position: relative;
-    width: 100%;
+    width: 75%;
     height: 100%;
+
+    justify-content: center;
+    align-items: center;
 }
   
 #instrument {
     height: 90vh;
     flex-grow: 1;
+    justify-content: center;
     position: relative; /* Ensure this is a positioning context */
 }
 
@@ -85,7 +90,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 36%;
+    width: 25%;
     padding-bottom: 25px;
 }
 
@@ -276,6 +281,10 @@
 @media only screen and (max-width: 1200px) {
     #instrument-window {
         flex-direction: column;
+    }
+
+    .instrument-container {
+        width: 100%;
     }
 
     #instrument {
