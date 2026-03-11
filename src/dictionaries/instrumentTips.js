@@ -179,6 +179,22 @@ export const instrumentTips = {
         ),
     },
 
+    "molecule-value": {
+        text: (
+            <div className="popup-instr-tip">
+                <h1>Lecture Bottle</h1>
+
+                <img className="instr-tip-svg" src={lecBottle} alt="Lecture Bottle SVG" />
+
+                <p>
+                    Gas cylinder containing a prepared mixture of a target molecule (often around 1%
+                    concentration) diluted in an inert carrier gas like helium. The gas is pulsed into
+                    the spectrometer through a nozzle to create a cold supersonic expansion.
+                </p>
+            </div>
+        ),
+    },
+
     "ion-gauge": {
         text: (
             <div className="popup-instr-tip">

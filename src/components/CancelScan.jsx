@@ -18,7 +18,7 @@ export default function CancelScan({
 
   const handleClick = () => {
     clearTimeout(sleepID);
-    console.log("set progress cancel scan: prefetch = false");
+    // console.log("set progress cancel scan: prefetch = false");
     dispatch(setProgress([false, false, false]));
     dispatch(setError([true, errorText]));
     dispatch(scanEnded())

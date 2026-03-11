@@ -127,10 +127,10 @@ const InstrumentWindow = () => {
   // handler for dialog popups of clickable instruments
   const handleInstrClick = (event) => {
     if (!BAD_ID.includes(event.target.parentElement.id)) {
-      console.log("event = " + event);
-      console.log("event id = " + event.target.parentElement.id);
+      /*console.log("event = " + event);
+      console.log("event id = " + event.target.parentElement.id);*/
       setElement(event.target.parentElement.id);
-      console.log("the element = " + element);
+      // console.log("the element = " + element);
       setToggled(!toggled);
     }
   }

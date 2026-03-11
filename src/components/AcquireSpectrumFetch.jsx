@@ -67,11 +67,11 @@ export default function AcquireSpectrumFetch({
    */
   const fetchServer = async () => {
     // remove any errors (if existing) and start a progress spinner
-    console.log("setting error and progress");
+    // console.log("setting error and progress");
     dispatch(setError([false, '']));
     dispatch(setMessage([true, "Setting instrument parameters...<br/>" +
     "If the instrument window doesn't open soon, please cancel the acquisition and try a smaller frequency range and/or larger step size."]));
-    console.log("set progress 1: prefetch = true");
+    // console.log("set progress 1: prefetch = true");
     dispatch(setProgress([true, true, false]));
     dispatch(setCurrentFrequency(frequencyMin));
     dispatch(setPeaksData(null));
@@ -107,7 +107,7 @@ export default function AcquireSpectrumFetch({
       delay = ((((frequencyMax - frequencyMin) / stepSize) + 1) * numCyclesPerStep * 1000) + 1200;
       // No delay for single frequency
       delay = acquisitionType === "single" ? 0 : delay;
-      console.log("set progress 2: prefetch = false");
+      // console.log("set progress 2: prefetch = false");
       dispatch(setProgress([true, false, true]));
 
       if (response.ok) {
@@ -142,7 +142,7 @@ export default function AcquireSpectrumFetch({
             // Set progress to false if acquisition type is single
             // As for rage, it will be set to false in the when the spinner is done
             if (acquisitionType === "single") {
-              console.log("set progress 3: prefetch = false");
+              // console.log("set progress 3: prefetch = false");
               dispatch(setProgress([false, false, false]));
             }
 
@@ -151,7 +151,7 @@ export default function AcquireSpectrumFetch({
         else {
           dispatch(setMessage([false, '']));
 
-          console.log("set progress 4: prefetch = false");
+          // console.log("set progress 4: prefetch = false");
           dispatch(setProgress([false, false, false]));
           dispatch(setError([true, data.text]));
         }
@@ -159,7 +159,7 @@ export default function AcquireSpectrumFetch({
     } catch (error) {
        dispatch(setMessage([false, '']));
 
-       console.log("set progress 5: prefetch = false");
+       // console.log("set progress 5: prefetch = false");
        dispatch(setProgress([false, false, false]));
        switch (error.name) {
           case "AbortError":

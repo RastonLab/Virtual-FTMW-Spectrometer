@@ -82,7 +82,7 @@ export default function Spinner({ delay, noPadding = false, ...otherProps }) {
           if (nextStep >= totalSteps) {
             clearInterval(interval);
             setTimeout(() => {
-              console.log("set progress spinner: prefetch = false");
+              // console.log("set progress spinner: prefetch = false");
               dispatch(setProgress([false, false, false]));
               dispatch(scanEnded());
             }, 0);

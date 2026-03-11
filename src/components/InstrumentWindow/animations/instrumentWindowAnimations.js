@@ -142,7 +142,7 @@ export function animateToBand(
                               .map(freq => freq.toString());
   
   const firstKey = availableKeys[0];
-  console.log("first key " + firstKey);
+  // console.log("first key " + firstKey);
 
   let bandCloudKeys = Object.keys(bandCloudKeyframes)
                               .map(Number);
@@ -159,7 +159,6 @@ export function animateToBand(
       fill: "forwards"
     };
 
-    console.log("animation beginning start");
     // Animates the beginning of the scan
     componentNames.forEach(name => {
       components[name].animate(
@@ -177,7 +176,6 @@ export function animateToBand(
     }));
     components["cloud1"].animate(bandCloudFrames, firstTiming);
     components["cloud2"].animate(bandCloudFrames, firstTiming);
-    console.log("animation beginning end");
   }
   else {
     const currentKeyIndex = availableKeys.findIndex((key) => Number(key) >= currentFrequency);
@@ -243,9 +241,9 @@ export const setSpectrumReady = () => {
  * Function that animates the cloud pulse
  */
 export function animateCloudPulse(cloudCount, mwBand) {
-  console.log("in cloud pulse function");
+  /*console.log("in cloud pulse function");
   console.log("cloud count = " + cloudCount);
-  console.log("animate mwBand = " + mwBand);
+  console.log("animate mwBand = " + mwBand);*/
 
   // timing for cloud pulse
   const timing = {
