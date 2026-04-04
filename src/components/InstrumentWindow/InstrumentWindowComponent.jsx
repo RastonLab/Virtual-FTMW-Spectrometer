@@ -1742,7 +1742,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           }}
           transform="translate(239.3 -23.964)scale(.15187)"
         />
-        <g id="ion-gauge">
+        <g id="ion-gauge" className="instrument-cursor">
           <g
             id="g216"
             display="none"
@@ -1942,7 +1942,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
               paintOrder: "fill markers stroke",
             }}
         />
-        <g id="pressure-controller">
+        <g id="pressure-controller" className="instrument-cursor">
           <path
             id="rect16"
             fill="url(#linearGradient14)"
@@ -2089,6 +2089,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           <text
             xmlSpace="preserve"
             id="pressure-value"
+            className="instrument-cursor"
             x={351.843}
             y={125.938}
             fill="#000"
@@ -2122,6 +2123,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
       <g id="bellows-and-gas-hose">
         <g
           id="wire-and-bellows"
+          className="instrument-cursor"
           transform="matrix(.99904 0 0 1.00011 .033 -.013)"
         >
           <path
@@ -2345,7 +2347,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         style={{ strokeWidth: 0.900589, strokeDasharray: "none" }}
         transform="matrix(1.00982 0 0 1 -4.765 0)"
       >
-        <g id="fabry-perot-cavity-group">
+        <g id="fabry-perot-cavity-group" className="instrument-cursor">
           <rect
               id="fabry-perot-cavity"
               x={210}
@@ -2376,6 +2378,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         </g>
         <g
           id="rod-with-threaded-spacer"
+          className="instrument-cursor"
           style={{ strokeWidth: 16.6195, strokeDasharray: "none" }}
           transform="matrix(-.0378 0 0 -.07767 326.624 194.713)"
         >
@@ -2434,6 +2437,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           />
           <g
             id="attachment-and-threaded-spacer"
+            className="instrument-cursor"
             style={{ strokeWidth: 16.6195, strokeDasharray: "none" }}
           >
             <path
@@ -2462,9 +2466,10 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             />
           </g>
         </g>
-        <g id="move-mirror">
+        <g id="move-mirror" className="instrument-cursor">
           <path
               id="movable-mirror"
+              className="instrument-cursor"
               fill="url(#linearGradient31)"
               strokeWidth={1.048}
               d="M324.162 40.139h29.381s-5.892 1.796-11.454 21.74c-6.718 24.091-5.072 73.352-.478 100.592 2.974 17.635 11.932 22.193 11.932 22.193h-29.38z"
@@ -2478,6 +2483,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         </g>
         <path
           id="nozzle"
+          className="instrument-cursor"
           fill="url(#radialGradient180)"
           d="M334.36 103.194v3.189h-10.14l.03 4.448-.03 4.449h10.14v3.189h3.273v-7.205h-3.802l-.016-.433.016-.433h3.802v-7.204z"
           style={{
@@ -2489,6 +2495,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         />
         <g
           id="rod-with-smooth-spacer"
+          className="instrument-cursor"
           style={{ strokeWidth: 0.900589, strokeDasharray: "none" }}
         >
           <path
@@ -2517,6 +2524,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           />
           <g
             id="attachment-and-smooth-spacer"
+            className="instrument-cursor"
             style={{ strokeWidth: 16.6195, strokeDasharray: "none" }}
             transform="matrix(-.0378 0 0 .07767 325.707 30.124)"
           >
@@ -2546,7 +2554,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             />
           </g>
         </g>
-        <g id="fixed-mirror">
+        <g id="fixed-mirror" className="instrument-cursor">
           <path
               id="fixed-mirror"
               fill="url(#linearGradient31)"
@@ -2563,11 +2571,12 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
       </g>
       <g
         id="motor-and-rod"
+        className="instrument-cursor"
         style={{ display: "inline" }}
         transform="rotate(180 100.056 109.95)scale(.4928)"
       >
-        <g id="motor" transform="matrix(-.26648 0 0 -.21404 88.256 140.65)">
-          <g id="motor" strokeLinecap="square">
+        <g id="motor" className="instrument-cursor" transform="matrix(-.26648 0 0 -.21404 88.256 140.65)">
+          <g id="motor" className="instrument-cursor" strokeLinecap="square">
             <path
               id="rect294"
               fill="gray"
@@ -2588,6 +2597,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
             />
             <g
               id="motor"
+              className="instrument-cursor"
               strokeWidth={2.916}
               transform="matrix(.63872 0 0 .89231 -164.67 -26.761)"
             >
@@ -2601,7 +2611,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
                 }}
                 transform="scale(-1)"
               />
-              <g id="motor" fill="#1a1a1a">
+              <g id="motor" className="instrument-cursor" fill="#1a1a1a">
                 <path
                   id="rect297"
                   d="M824.83-82.59h97.754v1.776H824.83z"
@@ -2972,6 +2982,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           </g>
           <g
             id="rotary-pump"
+            className="instrument-cursor"
             transform="matrix(-.18782 0 0 .18782 374.486 301.22)"
           >
             <g id="g285" strokeLinecap="square">
@@ -3136,6 +3147,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           </g>
           <g
             id="diffusion-pump"
+            className="instrument-cursor"
             transform="translate(269.876 200.39)scale(.38073)"
           >
             <path
@@ -3626,7 +3638,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
           />
         </g>
       </g>
-      <g id="lecture" transform="translate(76.398 8.006)scale(.11552)">
+      <g id="lecture" className="instrument-cursor" transform="translate(76.398 8.006)scale(.11552)">
         <g id="lecture">
           <path
             id="rect19-5"
@@ -3700,6 +3712,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
         <text
           xmlSpace="preserve"
           id="molecule-value"
+          className="instrument-cursor"
           x={-291.4}
           y={-8.052}
           fill="#000"

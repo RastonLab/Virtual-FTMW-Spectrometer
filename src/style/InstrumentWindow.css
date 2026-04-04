@@ -25,11 +25,14 @@
 }
   
 #instrument {
-    cursor: pointer;
     height: 90vh;
     flex-grow: 1;
     justify-content: center;
     position: relative; /* Ensure this is a positioning context */
+}
+
+.instrument-cursor {
+    cursor: pointer;
 }
 
 /* Instrument popup css */

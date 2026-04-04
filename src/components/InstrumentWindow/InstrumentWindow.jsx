@@ -130,7 +130,7 @@ const InstrumentWindow = () => {
       /*console.log("event = " + event);
       console.log("event id = " + event.target.parentElement.id);*/
       setElement(event.target.parentElement.id);
-      // console.log("the element = " + element);
+      console.log("the element = " + element);
       setToggled(!toggled);
     }
   }
