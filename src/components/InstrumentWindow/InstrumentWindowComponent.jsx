@@ -3998,6 +3998,7 @@ const SvgInstrumentWindowComponent = ({ molecule, range, frequency, cyclePerStep
       </g>
       <g
         id="display-screen"
+        className="instrument-cursor"
         style={{ display: "inline" }}
         onClick={onDisplayCLick}
         transform="translate(46.907 223.632)scale(.37439)"
